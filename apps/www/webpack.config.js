@@ -8,7 +8,7 @@ module.exports = merge(
   createDefaultConfig({
     input: path.resolve(__dirname, './src/index.html'),
     output: {
-      publicPath: `${process.env.UI_PATH}/`,
+      publicPath: '/app/',
     },
   }),
   {
@@ -28,7 +28,7 @@ module.exports = merge(
       crypto: true,
     },
     devServer: {
-      contentBase: `${process.env.UI_PATH}/`,
+      contentBase: '/app/',
     },
     plugins: [
       new Dotenv({

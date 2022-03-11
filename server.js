@@ -11,8 +11,8 @@ app.enable('trust proxy')
 app.use(compression())
 
 const root = './apps/www/dist'
-app.use(process.env.UI_PATH, express.static(root))
-app.use(process.env.UI_PATH, conditional(
+app.use('/app', express.static(root))
+app.use('/app', conditional(
   req => req.accepts('html'),
   fallback('index.html', { root }),
 ))
