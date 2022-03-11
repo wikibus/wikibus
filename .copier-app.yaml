@@ -1,0 +1,13 @@
+_commit: 1.2.0
+_src_path: https://github.com/hypermedia-app/creta-template-app.git
+apis:
+- api
+app_name: wikibus
+author: wikibus.org
+debugger_port: '36377'
+email: social@wikibus.org
+node_version: '16'
+project_name: wikibus.org
+repository: https://github.com/wikibus/wikibus
+vocabs: []
+
