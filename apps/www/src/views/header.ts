@@ -1,11 +1,16 @@
 import { html, FocusNodeViewContext, Renderer, ObjectViewContext } from '@hydrofoil/roadshow'
 import { dash } from '@tpluscode/rdf-ns-builders/strict'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
+import { TemplateResult } from 'lit'
+
+function renderHeader(primaryMenu?: () => TemplateResult) {
+  return html`<canvas-header .primaryMenu="${primaryMenu}"></canvas-header>`
+}
 
 const headerLoading: Renderer = {
   viewer: roadshow.LoadingViewer,
   render() {
-    return html`<canvas-header></canvas-header>`
+    return renderHeader()
   },
 }
 
@@ -27,7 +32,7 @@ const headerRenderer: Renderer<FocusNodeViewContext> = {
       ${this.state.shape?.property.filter(p => !p.hidden).map(property => this.show({ property }))}
     </ul>`
 
-    return html`<canvas-header .primaryMenu="${renderMenu}"></canvas-header>`
+    return renderHeader(renderMenu)
   },
 }
 
