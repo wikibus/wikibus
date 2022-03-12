@@ -1,6 +1,39 @@
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix hyper-query: <https://hypermedia.app/query#>
 prefix hydra: <http://www.w3.org/ns/hydra/core#>
 
 <>
   a hydra:ApiDocumentation ;
   hydra:entrypoint <../> ;
+.
+
+<>
+  hydra:collection
+    [
+      # Because it's awkward to load the representation of /api/shapes
+      # it is weakly linked to the actual resource
+      schema:sameAs </api/shapes> ;
+      hydra:manages
+        [
+          hydra:property rdf:type ;
+          hydra:object sh:NodeShape ;
+        ]
+    ] ;
+.
+
+sh:NodeShape
+  a hydra:Class ;
+  hydra:apiDocumentation <> ;
+  hyper-query:include
+    [
+      hyper-query:path
+        (
+          # (sh:and|sh:xone|sh:or|sh:not)/rdf:rest*/rdf:first
+          [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
+          [ sh:zeroOrMorePath rdf:rest ]
+          rdf:first
+        )
+    ] ;
 .

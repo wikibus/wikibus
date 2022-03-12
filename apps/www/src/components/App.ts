@@ -1,15 +1,20 @@
 /* eslint-disable class-methods-use-this */
 import { connect } from '@captaincodeman/rdx'
 import type { State } from '@hydrofoil/shell'
-import { css, html, LitElement } from 'lit'
+import { css, html, LitElement, TemplateResult } from 'lit'
 import { property } from 'lit/decorators.js'
 import { store } from '../state/store'
 import CanvasShellBase from './canvas-shell/CanvasShellBase'
 import './canvas-shell/canvas-header.ts'
 import './canvas-shell/canvas-footer.ts'
 import './canvas-shell/canvas-gototop.ts'
+import { wba } from '../lib/ns'
+import ShapesLoaderMap from '../lib/ShapesLoaderMap'
+import * as Header from '../views/header'
 
-export default class extends connect(store, CanvasShellBase(LitElement)) {
+export default class App extends connect(store, CanvasShellBase(LitElement)) {
+  __shapesLoaders?: ShapesLoaderMap
+
   @property({ type: Object })
     state!: State
 
@@ -38,23 +43,33 @@ export default class extends connect(store, CanvasShellBase(LitElement)) {
   }
 
   render() {
-    const view = this.state.core.contentResource
-      ? html`<roadshow-view .resource="${this.state.core.contentResource.pointer}" .params="${this.state}"></roadshow-view>`
-      : ''
+    let main: TemplateResult = html``
+    let header: TemplateResult = html``
+
+    if (this.state.core.contentResource) {
+      header = html`<roadshow-view .resource="${this.state.core.entrypoint}"
+                                   .shapesLoader="${this.__shapesLoaders?.get(wba.MainMenu)}"
+                                   .renderers="${Header.renderers}"
+                                   .viewers="${Header.viewers}"
+                                   .params="${this.state}"></roadshow-view>`
+      main = html`<roadshow-view .resource="${this.state.core.contentResource.pointer}" 
+                                 .params="${this.state}"></roadshow-view>`
+    }
 
     return html`
-      <canvas-header></canvas-header>
+      ${header}
 
-      <section id="main">${view}</section>
+      <section id="main">${main}</section>
 
       <canvas-footer></canvas-footer>
       <canvas-gototop></canvas-gototop>
     `
   }
 
-  mapState(state: State) {
+  mapState(state: State): Partial<App> {
     return {
       state,
+      __shapesLoaders: state.core.client && new ShapesLoaderMap(),
     }
   }
 }

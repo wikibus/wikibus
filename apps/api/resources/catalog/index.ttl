@@ -1,0 +1,7 @@
+PREFIX schema: <http://schema.org/>
+prefix wba: <https://wikibus.org/api#>
+
+<>
+  a schema:WebPage ;
+  wba:brands </brands> ;
+.

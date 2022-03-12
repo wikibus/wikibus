@@ -1,0 +1,29 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+prefix wba: <https://wikibus.org/api#>
+
+<>
+  rdfs:subClassOf schema:EntryPoint ;
+.
+
+<#MainMenuShape>
+  a sh:NodeShape ;
+  sh:targetClass schema:EntryPoint ;
+  rs:shapeRole wba:MainMenu ;
+  sh:property
+    [
+      sh:order 1 ;
+      sh:path wba:home ;
+      sh:name "Home"@en ;
+      dash:viewer dash:LabelViewer ;
+    ],
+    [
+      sh:order 2 ;
+      sh:path wba:catalog ;
+      sh:name "Catalog"@en ;
+      dash:viewer dash:LabelViewer ;
+    ] ;
+.

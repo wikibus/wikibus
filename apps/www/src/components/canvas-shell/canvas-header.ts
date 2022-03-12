@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit'
+import { html, LitElement, TemplateResult } from 'lit'
 import { property } from 'lit/decorators.js'
 import type { Term } from '@rdfjs/types'
 import { Menu, Search } from '../icons'
@@ -15,6 +15,9 @@ export class CanvasHeader extends CanvasShellBase(LitElement) {
 
   @property({ type: Object })
   public home!: Term
+
+  @property({ type: Object })
+    primaryMenu?: () => TemplateResult
 
   public render() {
     return html`
@@ -41,9 +44,7 @@ export class CanvasHeader extends CanvasShellBase(LitElement) {
             </div>
 
             <nav id="primary-menu">
-              <ul>
-                <!-- primary menu -->
-              </ul>
+              ${this.primaryMenu?.() || ''}
 
               <div id="top-search">
                 <button id="top-search-trigger"> ${Search(iconSize)}</button>

@@ -1,0 +1,19 @@
+PREFIX roadshow: <https://hypermedia.app/roadshow#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+[]
+  a sh:NodeShape ;
+  sh:property
+  [
+    sh:path
+    [
+      sh:alternativePath ( dcterms:title rdfs:label schema:name hydra:title ) ;
+    ];
+    dash:viewer roadshow:HeaderViewer ;
+  ] ;
+.

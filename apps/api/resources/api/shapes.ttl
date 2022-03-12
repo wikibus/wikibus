@@ -1,0 +1,39 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix query: <https://hypermedia.app/query#>
+prefix code: <https://code.described.at/>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  a hydra:Collection ;
+  hydra:manages
+    [
+      hydra:property rdf:type ;
+      hydra:object sh:NodeShape ;
+    ] ;
+  hydra:search
+    [
+      a hydra:IriTemplate ;
+      hydra:template "{?resource,role}" ;
+      hydra:mapping
+        [
+          hydra:variable "resource" ;
+          hydra:property sh:targetNode ;
+          query:filter
+            [
+              a code:EcmaScript ;
+              code:link <node:@wikibus/api/lib/shapes#filterByTargetNode> ;
+            ] ;
+        ],
+        [
+          hydra:variable "role" ;
+          hydra:property rs:shapeRole ;
+          query:filter
+            [
+              a code:EcmaScript ;
+              code:link <node:@wikibus/api/lib/shapes#filterByRole> ;
+            ] ;
+        ] ;
+    ]
+.
