@@ -4,6 +4,8 @@
     "project": "./tsconfig.json"
   },
   "globals": {
-    "localStorage": true
+    "localStorage": true,
+    "JQueryStatic": "readonly",
+    "SEMICOLON": "readonly"
   }
 }

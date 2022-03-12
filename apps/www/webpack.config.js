@@ -3,6 +3,7 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const { createDefaultConfig } = require('@open-wc/building-webpack')
 const Dotenv = require('dotenv-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = merge(
   createDefaultConfig({
@@ -22,6 +23,14 @@ module.exports = merge(
       rules: [{
         test: /\.(ttl|nt|nq|rdf|jsonld|trig)$/,
         use: 'webpack-loader-rdf',
+      },
+      {
+        test: /\.css$/i,
+        use: ['raw-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['raw-loader', 'sass-loader'],
       }],
     },
     node: {
@@ -34,6 +43,15 @@ module.exports = merge(
       new Dotenv({
         path: '../../.env',
         systemvars: true,
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'src/images', to: 'images' },
+          { from: 'src/vendor', to: 'vendor' },
+          { from: 'src/css', to: 'css' },
+          { from: 'src/style.css', to: 'style.css' },
+          'src/functions.js',
+        ],
       }),
     ],
   },

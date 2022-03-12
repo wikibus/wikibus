@@ -4,15 +4,20 @@
   "private": true,
   "scripts": {
     "precommit": "lit-analyzer --strict --quiet",
+    "prebuild": "yarn build:style",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "prestart": "yarn build:style",
+    "build:style": "sass --watch src/style.scss src/style.css & exit 0"
   },
   "dependencies": {
     "@captaincodeman/rdx": "^1.0.0-rc.9",
     "@hydrofoil/roadshow": "^0.3.11",
     "@hydrofoil/shell": "^0.3.2",
     "@rdf-esm/data-model": "^0.5.4",
-    "lit": "^2.2.0"
+    "feather-icon-literals": "^1.0.0-rc.11",
+    "lit": "^2.2.0",
+    "simple-icons": "^6.13.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.5",
@@ -20,8 +25,15 @@
     "@babel/plugin-proposal-optional-chaining": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@open-wc/building-webpack": "^2.13.46",
+    "@rdfjs/types": "^1.1.0",
+    "@types/jquery": "^3.5.14",
+    "copy-webpack-plugin": "^6",
+    "css-loader": "^5",
     "dotenv-webpack": "^7",
     "lit-analyzer": "^1.2.1",
+    "raw-loader": "^4.0.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^10",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
