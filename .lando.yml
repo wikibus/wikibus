@@ -15,6 +15,7 @@ services:
         - '36377:36377'
       environment:
         TS_NODE_TRANSPILE_ONLY: "true"
+        DEBUG: wikibus*,hydra*,hydra-box*,labyrinth*,SPARQL,-labyrinth:request:headers
     scanner: false
     moreHttpPorts:
       - 36377

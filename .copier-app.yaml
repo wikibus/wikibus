@@ -1,4 +1,4 @@
-_commit: 1.2.1
+_commit: 1.2.2
 _src_path: https://github.com/hypermedia-app/creta-template-app.git
 apis:
 - api
@@ -9,5 +9,6 @@ email: social@wikibus.org
 node_version: '16'
 project_name: wikibus.org
 repository: https://github.com/wikibus/wikibus
+ui_path: app
 vocabs: []
 
