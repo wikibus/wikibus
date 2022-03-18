@@ -21,7 +21,7 @@ export class CanvasFooter extends CanvasShellBase(LitElement) {
 
             <div class="col_half col_last tright">
               <div class="copyrights-menu copyright-links clearfix">
-                <a href="/">Home</a>/<a href="#">About</a>
+                <a href="/">Home</a>/<a href="/about">About</a>
               </div>
               <div class="fright clearfix">
                 <a

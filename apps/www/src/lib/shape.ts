@@ -3,25 +3,24 @@ import { sh } from '@tpluscode/rdf-ns-builders/strict'
 import type { GraphPointer } from 'clownface'
 import { PropertyState } from '@hydrofoil/roadshow/lib/state'
 
-type ShapeLike = PropertyState | Shape | GraphPointer
+type Orderable = PropertyState | Shape | GraphPointer | { order: number }
 
-function getPointer(arg: ShapeLike) {
+function getOrder(arg: Orderable): number {
+  if ('order' in arg) {
+    return arg.order
+  }
+
+  let pointer: GraphPointer | undefined
   if ('pointer' in arg) {
-    return arg.pointer
+    ({ pointer } = arg)
+  } else if ('propertyShape' in arg) {
+    ({ pointer } = arg.propertyShape)
+  } else {
+    pointer = arg
   }
 
-  if ('propertyShape' in arg) {
-    return arg.propertyShape.pointer
-  }
-
-  return arg
+  return parseInt(pointer.out(sh.order).value || '0', 10) || 0
 }
-export function byOrder(l: ShapeLike, r: ShapeLike): number {
-  const lPointer = getPointer(l)
-  const rPointer = getPointer(r)
-
-  const leftOrder = parseInt(lPointer.out(sh.order).value || '0', 10) || 0
-  const rightOrder = parseInt(rPointer.out(sh.order).value || '0', 10) || 0
-
-  return leftOrder - rightOrder
+export function byOrder(l: Orderable, r: Orderable): number {
+  return getOrder(l) - getOrder(r)
 }

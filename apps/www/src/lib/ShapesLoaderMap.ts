@@ -63,7 +63,7 @@ async function dereferencedShapes(role: NamedNode, ...[arg, state]: Parameters<S
 
   const shapes = await shapePromise
   if (shapes && 'member' in shapes) {
-    return shapes.member.map(m => m.pointer)
+    return shapes.member.map(m => m.pointer).sort(byOrder)
   }
 
   return []

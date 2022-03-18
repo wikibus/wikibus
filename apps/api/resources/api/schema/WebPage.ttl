@@ -1,0 +1,46 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+prefix wba: <https://wikibus.org/api#>
+
+<>
+  a sh:NodeShape ;
+  sh:targetClass schema:WebPage ;
+  rs:shapeRole wba:Content ;
+  sh:order 100 ;
+  sh:property
+    [
+      sh:path wba:header ;
+      dash:viewer dash:HTMLViewer ;
+      sh:order 0 ;
+      sh:values
+        [
+          dash:js """
+            <div class="container clearfix" ?hidden="${!focusNode.title}">
+              <h1>${focusNode.title}</h1>
+              ${focusNode.description && html`<span>${focusNode.description}</span>`}
+            </div>
+       """
+        ] ;
+      sh:group <#headerGroup>
+    ] ;
+  sh:property
+    [
+      schema:identifier "title" ;
+      sh:path hydra:title ;
+      dash:hidden true ;
+    ],
+    [
+      schema:identifier "description" ;
+      sh:path hydra:description ;
+      dash:hidden true ;
+    ] ;
+.
+
+<#headerGroup>
+  sh:order 0 ;
+  schema:identifier "page-title" ;
+.

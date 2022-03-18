@@ -1,3 +1,4 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -26,14 +27,25 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
 sh:NodeShape
   a hydra:Class ;
   hydra:apiDocumentation <> ;
-  hyper-query:include
+  hyper-query:include _:NodeShapeInclude ;
+.
+
+</api/ShapesCollection>
+  a hydra:Class ;
+  hydra:apiDocumentation <> ;
+  hyper-query:memberInclude _:NodeShapeInclude ;
+.
+
+_:NodeShapeInclude
+  hyper-query:path
     [
-      hyper-query:path
+      sh:zeroOrOnePath
         (
-          # (sh:and|sh:xone|sh:or|sh:not)/rdf:rest*/rdf:first
+          # (((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first/(sh:property/sh:group)?)?
           [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
           [ sh:zeroOrMorePath rdf:rest ]
           rdf:first
+          [ sh:zeroOrOnePath (sh:property sh:group) ]
         )
     ] ;
 .

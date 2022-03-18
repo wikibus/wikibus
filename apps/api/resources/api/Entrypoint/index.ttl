@@ -1,3 +1,4 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -6,7 +7,11 @@ prefix rs: <https://hypermedia.app/roadshow#>
 prefix wba: <https://wikibus.org/api#>
 
 <>
+  a rdfs:Class, sh:NodeShape ;
   rdfs:subClassOf schema:EntryPoint ;
+  sh:targetClass schema:EntryPoint ;
+  rs:shapeRole wba:Content ;
+  sh:and ( </api/schema/WebPage> ) ;
 .
 
 <#MainMenuShape>

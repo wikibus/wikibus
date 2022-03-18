@@ -3,7 +3,7 @@ import { dash } from '@tpluscode/rdf-ns-builders/strict'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
 import { TemplateResult } from 'lit'
 
-function renderHeader(primaryMenu?: () => TemplateResult) {
+export function renderHeader(primaryMenu?: () => TemplateResult) {
   return html`<canvas-header .primaryMenu="${primaryMenu}"></canvas-header>`
 }
 

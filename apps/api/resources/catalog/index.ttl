@@ -1,7 +1,27 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
 prefix wba: <https://wikibus.org/api#>
+prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
   a schema:WebPage ;
+  hydra:title "Wikibus.org Catalog" ;
+  hydra:description "Information about manufacturers, brands, and vehicles" ;
   wba:brands </brands> ;
+  wba:companies </companies> ;
+.
+
+<#Shape>
+  a sh:NodeShape ;
+  sh:targetNode <> ;
+  rs:shapeRole wba:Content ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path wba:brands ;
+      sh:name "brands" ;
+    ] ;
 .

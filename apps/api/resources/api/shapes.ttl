@@ -6,7 +6,7 @@ prefix code: <https://code.described.at/>
 prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
-  a hydra:Collection ;
+  a hydra:Collection , </api/ShapesCollection> ;
   hydra:manages
     [
       hydra:property rdf:type ;
