@@ -1,3 +1,6 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+prefix hyper-query: <https://hypermedia.app/query#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 
@@ -7,5 +10,22 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
   [
     hydra:property rdf:type ;
     hydra:object </api/Brand> ;
-  ]
+  ] ;
+  hydra:title "Brands" ;
+  dash:shape
+  [
+    sh:and ( </api/schema/WebPage> </api/hydra/Collection/Paged> ) ;
+    sh:property
+    [
+      sh:path hydra:member ;
+      sh:order 20 ;
+      dash:viewer dash:CollectionViewer ;
+      sh:node
+        [
+          sh:property
+            [
+            ] ;
+        ] ;
+    ] ;
+  ] ;
 .

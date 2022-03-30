@@ -7,7 +7,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@hydrofoil/knossos": "^0.6.1",
+    "@hydrofoil/knossos": "^0.6.3",
     "@tpluscode/rdf-ns-builders": "^1.1.0",
     "@tpluscode/sparql-builder": "^0.3.18"
   },

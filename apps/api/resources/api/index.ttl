@@ -1,3 +1,4 @@
+PREFIX dash: <http://datashapes.org/dash#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -38,14 +39,23 @@ sh:NodeShape
 
 _:NodeShapeInclude
   hyper-query:path
-    [
-      sh:zeroOrOnePath
-        (
-          # (((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first/(sh:property/sh:group)?)?
-          [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
-          [ sh:zeroOrMorePath rdf:rest ]
-          rdf:first
-          [ sh:zeroOrOnePath (sh:property sh:group) ]
-        )
-    ] ;
+    (
+      # ((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first/(sh:property/sh:group)?
+      [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
+      [ sh:zeroOrMorePath rdf:rest ]
+      rdf:first
+      [ sh:zeroOrOnePath ( sh:property sh:group ) ]
+    ) ,
+    (
+      # (((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first)?/(sh:property/sh:group)?
+      [
+        sh:zeroOrOnePath
+          (
+            [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
+            [ sh:zeroOrMorePath rdf:rest ]
+            rdf:first
+          )
+      ]
+      [ sh:zeroOrOnePath ( sh:property sh:group ) ]
+    )
 .

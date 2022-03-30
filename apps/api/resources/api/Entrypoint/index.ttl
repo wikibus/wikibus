@@ -9,14 +9,14 @@ prefix wba: <https://wikibus.org/api#>
 <>
   a rdfs:Class, sh:NodeShape ;
   rdfs:subClassOf schema:EntryPoint ;
-  sh:targetClass schema:EntryPoint ;
+  dash:applicableToClass schema:EntryPoint ;
   rs:shapeRole wba:Content ;
   sh:and ( </api/schema/WebPage> ) ;
 .
 
 <#MainMenuShape>
   a sh:NodeShape ;
-  sh:targetClass schema:EntryPoint ;
+  dash:applicableToClass schema:EntryPoint ;
   rs:shapeRole wba:MainMenu ;
   sh:property
     [

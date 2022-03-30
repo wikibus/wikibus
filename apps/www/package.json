@@ -12,10 +12,11 @@
   },
   "dependencies": {
     "@captaincodeman/rdx": "^1.0.0-rc.9",
-    "@hydrofoil/roadshow": "^0.3.11",
+    "@hydrofoil/roadshow": "^0.4.0",
     "@hydrofoil/shell": "^0.3.2",
     "@hydrofoil/vocabularies": "^0.3.0",
     "@rdfjs/data-model": "^2",
+    "@rdfjs/dataset": "^2",
     "@rdfjs/namespace": "^2",
     "@rdfjs/term-map": "^2",
     "@tpluscode/rdf-ns-builders": "^1.1.0",
@@ -34,6 +35,8 @@
     "@open-wc/building-webpack": "^2.13.46",
     "@rdfjs/types": "^1.1.0",
     "@types/jquery": "^3.5.14",
+    "@types/rdfjs__data-model": "^2.0.0",
+    "@types/rdfjs__dataset": "^2.0.0",
     "@types/rdfjs__namespace": "^2.0.0",
     "@types/rdfjs__term-map": "^2.0.0",
     "copy-webpack-plugin": "^6",
@@ -46,7 +49,7 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
-    "webpack-loader-rdf": "^0.1.1",
+    "webpack-loader-rdf": "^0.2.0",
     "webpack-merge": "^5.8.0"
   }
 }

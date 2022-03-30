@@ -1,3 +1,4 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix hydra: <http://www.w3.org/ns/hydra/core#>
@@ -8,6 +9,6 @@ prefix knossos: <https://hypermedia.app/knossos#>
 <> a acl:Authorization ;
    acl:agentClass foaf:Agent ;
    acl:accessTo </>, </brands>, </api/shapes> ;
-   acl:accessToClass </api/Brand>, schema:WebPage ;
+   acl:accessToClass </api/Brand>, schema:WebPage, sh:Shape ;
    acl:mode acl:Read ;
 .

@@ -44,10 +44,20 @@ export const renderer: Renderer<FocusNodeViewContext> = {
 
     return html`${groupOrdered.map(({ group, properties }) => {
       const section = group?.pointer.out(schema.identifier).value
-      return html`
-        <section id="${section || 'content'}">
-          ${properties?.sort(byOrder).filter(({ propertyShape }) => !propertyShape.hidden).map(property => this.show({ property }))}
-        </section>`
+      const contents = properties?.sort(byOrder)
+        .filter(({ propertyShape }) => !propertyShape.hidden)
+        .map(property => this.show({ property }))
+
+      if (section) {
+        return html`<section id="${section || 'content'}">${contents}</section>`
+      }
+      return html`<section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            ${contents}
+          </div>
+        </div>
+      </section>`
     })}`
   },
 }

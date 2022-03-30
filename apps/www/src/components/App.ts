@@ -74,7 +74,7 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
   mapState(state: State): Partial<App> {
     return {
       state,
-      __shapesLoaders: state.core.client && new ShapesLoaderMap(),
+      __shapesLoaders: state.core.client && new ShapesLoaderMap(state.core.client),
     }
   }
 }

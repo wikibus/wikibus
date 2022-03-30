@@ -1,0 +1,38 @@
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+<>
+  a sh:NodeShape ;
+  sh:property
+    [
+      sh:path hydra:view ;
+      sh:order 30 ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path hydra:first ;
+              rdfs:label "First"
+            ],
+            [
+              sh:path hydra:next ;
+              rdfs:label "Next"
+            ],
+            [
+              sh:path hydra:previous ;
+              rdfs:label "Previous"
+            ],
+            [
+              sh:path hydra:last ;
+              rdfs:label "Last"
+            ]
+        ] ;
+    ],
+    [
+      sh:path hydra:totalItems ;
+      sh:order 40 ;
+      sh:name "Total"@pl ;
+    ] ;
+.

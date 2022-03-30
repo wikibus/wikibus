@@ -8,7 +8,7 @@ prefix wba: <https://wikibus.org/api#>
 
 <>
   a sh:NodeShape ;
-  sh:targetClass schema:WebPage ;
+  dash:applicableToClass schema:WebPage ;
   rs:shapeRole wba:Content ;
   sh:order 100 ;
   sh:property
