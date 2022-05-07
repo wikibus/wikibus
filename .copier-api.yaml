@@ -1,4 +1,4 @@
-_commit: 1.2.4
+_commit: 1.2.5
 _src_path: https://github.com/hypermedia-app/creta-template-api.git
 api: api
 api_delete_handler: false
