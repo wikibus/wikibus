@@ -1252,9 +1252,9 @@
     valid-url "^1.0.9"
 
 "@hydrofoil/roadshow@^0.4.0":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.2.tgz#0e48f8077866e31a377788ef0291c2d583294768"
-  integrity sha512-jO6jvPztpVt/OAtMUvW03IEdM2B9nCWyWhTgEW35zclOedIaDOSvpg/sWvcfmqk8DlPFTBXCmGsgLq/2yDbOdQ==
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.3.tgz#c7ef1034b0e0cbf03629ebc7aacb793ac3dd8a78"
+  integrity sha512-tnogqysDwHRx8du1YWxPe95F2NoAfz13SbwYE/5YY8fO+wDKMNXHmq9J8GTSnBZoNH8LZNlziNINyCJkRPkTog==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3.0"
     "@rdf-esm/dataset" "^0.5.0"
@@ -1271,58 +1271,58 @@
     clownface-shacl-path "^1.1"
     lit "^2.0.0-rc.2"
 
-"@hydrofoil/shell-core@^0.1.1", "@hydrofoil/shell-core@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-core/-/shell-core-0.1.2.tgz#5832812be0a1dd52f5970f171cfa88a00c7323f8"
-  integrity sha512-Oc9PBFtq2ttljJuATRja0RD6V66NuDiYGHhtUV+rv+aCLRwA9SyVwTyaX5CFFRjKRIc87XE+ZakpdPkd4pCzVQ==
+"@hydrofoil/shell-core@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-core/-/shell-core-0.1.3.tgz#9884bfa5cd06da140f3d79cce6be839d585b2f54"
+  integrity sha512-cikMCpYZsPguNPg9sdCiHTBrYQ33NuzWGtI2nc9t9cyXIYePUGkSfbJcR21C/w7jmeisjg9oMMBUwS0JHLqtVw==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     alcaeus "^2.1.2"
 
-"@hydrofoil/shell-operations@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.1.tgz#c5199f50762d22b0a602b3290283411ddf258f1e"
-  integrity sha512-eX4f+q6fwHNG0B7VmbhNYYe9K/YMsiKHDU0KiErypCXbfMdaJN9Vh88TmpWX0k+xsK3jBaGp05HOObWPGzNEGQ==
+"@hydrofoil/shell-operations@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.2.tgz#0cb0ff4d47f8f4b0fa343ee91a807bcdcd1d666e"
+  integrity sha512-f4JVBmRcKfrgZwJejXJRtbFMdE0n95/Md3vv2t4vFtHviEJVQkpJ9gSjl9aPS4roXtGKSY7EJMYo+rkv8YWAPQ==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
-    "@hydrofoil/shell-core" "^0.1.1"
+    "@hydrofoil/shell-core" "^0.1.3"
     "@rdf-esm/term-map" "^0.5.1"
     "@rdfjs/types" "^1.0.1"
     "@tpluscode/rdf-ns-builders" "^1"
     "@tpluscode/rdf-string" "^0.2.25"
     clownface "^1.4.0"
 
-"@hydrofoil/shell-resources@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-resources/-/shell-resources-0.2.1.tgz#1c7bf93e0bee413098449b71d0ac7b37e5b878a7"
-  integrity sha512-NxliDGCMjl4QO0sK7fXrAMQDBNKBfTEasx/Y/6mXgJQH/v1gu9X7QnhMu65/aRtp00bMPPrMZ0J7OIG2dVGW9w==
+"@hydrofoil/shell-resources@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-resources/-/shell-resources-0.2.2.tgz#f853b84dc3a4b4f25ac8797ba26bd6edff87921a"
+  integrity sha512-+zN/dlenVv6QLZ1rM49dgqw2qIOKnmznRkGv9u2NdUJowKJ3/Iphhy8XuVt9CMcnb9Nk09LYLVc4+kboWtYviQ==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
-    "@hydrofoil/shell-core" "^0.1.1"
+    "@hydrofoil/shell-core" "^0.1.3"
     "@rdf-esm/data-model" "^0.5.4"
     "@rdf-esm/term-map" "^0.5.1"
     "@rdfjs/types" "^1.0.1"
     "@tpluscode/rdf-ns-builders" "^1.1.0"
 
-"@hydrofoil/shell-routing@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.1.tgz#bd7904b88bc3977afe12beba566a29e91bc035f7"
-  integrity sha512-0dlkYei6XJ+3TXirTHgm9EA39jFx4olJ0uSSdQTeGPuyyJy01ckmv28LHVU8Y4FSC5Wvfvf1yA/9X/coTrgr2w==
+"@hydrofoil/shell-routing@^0.2.2":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.3.tgz#c536523a5496b3f8feb7a922038e13c08a123a0d"
+  integrity sha512-bNqOKqX8ESLxcQIfBA+O9uxBIx1dL+ZabDb6IPseuy8IyTkRYRcVpI8oHq4jGY9JZx0vLMp3Y05OmbYhlQjYcA==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@mapbox/link-hijacker" data-mazes/link-hijacker#composed-path
     url-state "^2.0.3"
 
 "@hydrofoil/shell@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell/-/shell-0.3.2.tgz#19007c6f56fd6851df79a4e775694b3de9f4d215"
-  integrity sha512-qaWRdzMgw2vdGcMVvWBwT5yqYBBK+5JSwFBnuembLlxfz0mVXKITAXyzy6KghwB9x8nR7MbUkuzj1iYRkt4Zhg==
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell/-/shell-0.3.3.tgz#7dacb9b3a647ecfee6bd1685fdf5af51245b5135"
+  integrity sha512-9tiAdE0AuJ/SrdM153KLwzI53F9/8S3QCbVA6HXZ+9ndfEtadrXd/KSa/FxCbQjoB6rp9q38awwbsDIhaWU0jw==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
-    "@hydrofoil/shell-core" "^0.1.2"
-    "@hydrofoil/shell-operations" "^0.2.1"
-    "@hydrofoil/shell-resources" "^0.2.1"
-    "@hydrofoil/shell-routing" "^0.2.1"
+    "@hydrofoil/shell-core" "^0.1.3"
+    "@hydrofoil/shell-operations" "^0.2.2"
+    "@hydrofoil/shell-resources" "^0.2.2"
+    "@hydrofoil/shell-routing" "^0.2.2"
 
 "@hydrofoil/talos@^0.4.4":
   version "0.4.5"
@@ -1401,7 +1401,7 @@
   resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-1.3.1.tgz#3021ad0fa30a75a41212c5e7f1f169c5762ef8bb"
   integrity sha512-nOJARIr3pReqK3hfFCSW2Zg/kFcFsSAlIE7z4a0C9D2dPrgD/YSn3ZP2ET/rxKB65SXyG7jJbkynBRm+tGlacw==
 
-"@mapbox/link-hijacker@data-mazes/link-hijacker#composed-path":
+"@mapbox/link-hijacker@github:data-mazes/link-hijacker#composed-path":
   version "1.1.0"
   resolved "https://codeload.github.com/data-mazes/link-hijacker/tar.gz/31f2c661694c2f635b2bf9d6ba40a3b5df4f3a31"
 

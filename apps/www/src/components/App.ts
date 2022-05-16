@@ -1,20 +1,19 @@
 /* eslint-disable class-methods-use-this */
 import { connect } from '@captaincodeman/rdx'
 import type { State } from '@hydrofoil/shell'
-import { css, html, LitElement, TemplateResult } from 'lit'
+import { css, html, LitElement } from 'lit'
 import { property } from 'lit/decorators.js'
+import { ResourceLoader } from '@hydrofoil/roadshow/ResourcesController'
 import { store } from '../state/store'
 import CanvasShellBase from './canvas-shell/CanvasShellBase'
-import './canvas-shell/canvas-header.ts'
-import './canvas-shell/canvas-footer.ts'
-import './canvas-shell/canvas-gototop.ts'
 import { wba } from '../lib/ns'
 import ShapesLoaderMap from '../lib/ShapesLoaderMap'
-import * as Header from '../views/header'
-import * as Main from '../views/main'
+import { renderers, viewers, decorators } from '../views'
+import { resourceLoader } from '../lib/resourceLoader'
 
 export default class App extends connect(store, CanvasShellBase(LitElement)) {
   __shapesLoaders?: ShapesLoaderMap
+  __resourceLoader?: ResourceLoader
 
   @property({ type: Object })
     state!: State
@@ -44,30 +43,17 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
   }
 
   render() {
-    let main: TemplateResult = html``
-    let header: TemplateResult = Header.renderHeader()
-
     if (this.state.core.contentResource) {
-      header = html`<app-view .resource="${this.state.core.entrypoint}"
-                              .shapesLoader="${this.__shapesLoaders?.get(wba.MainMenu)}"
-                              .renderers="${Header.renderers}"
-                              .viewers="${Header.viewers}"
-                              .params="${this.state}"></app-view>`
-      main = html`<app-view .resource="${this.state.core.contentResource.pointer}"
+      return html`<app-view .resource="${this.state.core.contentResource.pointer}"
                             .shapesLoader="${this.__shapesLoaders?.get(wba.Content)}"
-                            .renderers="${Main.renderers}"
-                            .viewers="${Main.viewers}"
-                            .decorators="${Main.decorators}"
+                            .resourceLoader="${this.__resourceLoader}"
+                            .renderers="${renderers}"
+                            .viewers="${viewers}"
+                            .decorators="${decorators}"
                             .params="${this.state}"></app-view>`
     }
 
     return html`
-      ${header}
-
-      <section id="main">${main}</section>
-
-      <canvas-footer></canvas-footer>
-      <canvas-gototop></canvas-gototop>
     `
   }
 
@@ -75,6 +61,8 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
     return {
       state,
       __shapesLoaders: state.core.client && new ShapesLoaderMap(state.core.client),
+      __resourceLoader: this.__resourceLoader ||
+        (state.core.client && resourceLoader(state.core.client)),
     }
   }
 }

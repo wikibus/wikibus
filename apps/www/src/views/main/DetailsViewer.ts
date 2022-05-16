@@ -1,6 +1,6 @@
 import type { Renderer, ViewerMatcher } from '@hydrofoil/roadshow'
 import { DetailsViewer } from '@hydrofoil/roadshow/viewers'
-import { dash, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { dash } from '@tpluscode/rdf-ns-builders/strict'
 import { html } from 'lit'
 import type { FocusNodeViewContext } from '@hydrofoil/roadshow/lib/ViewContext'
 import TermMap from '@rdfjs/term-map'
@@ -42,22 +42,13 @@ export const renderer: Renderer<FocusNodeViewContext> = {
 
     const groupOrdered = [...groups.values()].sort(byOrder)
 
-    return html`${groupOrdered.map(({ group, properties }) => {
-      const section = group?.pointer.out(schema.identifier).value
+    return html`${groupOrdered.map(({ properties }) => {
       const contents = properties?.sort(byOrder)
         .filter(({ propertyShape }) => !propertyShape.hidden)
-        .map(property => this.show({ property }))
+        .map(property => html`${this.show({ property })}`)
 
-      if (section) {
-        return html`<section id="${section || 'content'}">${contents}</section>`
-      }
-      return html`<section id="content">
-        <div class="content-wrap">
-          <div class="container clearfix">
-            ${contents}
-          </div>
-        </div>
-      </section>`
+      return html`
+        ${contents}`
     })}`
   },
 }

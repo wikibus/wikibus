@@ -6,4 +6,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 <>
   a rdf:Class, sh:NodeShape ;
   rdfs:subClassOf schema:Brand ;
+  sh:property
+  [
+    sh:path schema:name ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+  ]
 .

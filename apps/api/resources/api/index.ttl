@@ -14,8 +14,8 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
 <>
   hydra:collection
     [
-      # Because it's awkward to load the representation of /api/shapes
-      # it is weakly linked to the actual resource
+    # Because it's awkward to load the representation of /api/shapes
+    # it is weakly linked to the actual resource
       schema:sameAs </api/shapes> ;
       hydra:manages
         [
@@ -40,14 +40,14 @@ sh:NodeShape
 _:NodeShapeInclude
   hyper-query:path
     (
-      # ((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first/(sh:property/sh:group)?
+    # ((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first/(sh:property/sh:group)?
       [ sh:alternativePath ( sh:and sh:xone sh:or ) ]
       [ sh:zeroOrMorePath rdf:rest ]
       rdf:first
       [ sh:zeroOrOnePath ( sh:property sh:group ) ]
-    ) ,
+    ),
     (
-      # (((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first)?/(sh:property/sh:group)?
+    # (((sh:and|sh:xone|sh:or)/rdf:rest*)/rdf:first)?/(sh:property/sh:group)?
       [
         sh:zeroOrOnePath
           (
@@ -58,4 +58,18 @@ _:NodeShapeInclude
       ]
       [ sh:zeroOrOnePath ( sh:property sh:group ) ]
     )
+.
+
+schema:WebPage
+  a hydra:Class ;
+  hydra:apiDocumentation <> ;
+  hyper-query:include
+    [
+      # (dash:shape|schema:hasPart)*/schema:mainEntity?
+      hyper-query:path
+      (
+        [ sh:zeroOrMorePath [ sh:alternativePath ( dash:shape schema:hasPart ) ] ]
+        [ sh:zeroOrOnePath schema:mainEntity ]
+      )
+    ]
 .

@@ -1,0 +1,25 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix wba: <https://wikibus.org/api#>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  a schema:WebPage ;
+  schema:mainEntity </brands> ;
+  schema:hasPart </page/_element/header> ;
+  schema:hasPart [ a schema:WPFooter ] ;
+  hydra:title "Brands" ;
+.
+
+<#Shape>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:targetNode <> ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brands" ;
+    ] ;
+.

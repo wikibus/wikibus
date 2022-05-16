@@ -11,11 +11,15 @@ prefix rs: <https://hypermedia.app/roadshow#>
     [
       hydra:property rdf:type ;
       hydra:object sh:NodeShape ;
+    ],
+    [
+      hydra:property rdf:type ;
+      hydra:object rs:ViewShape ;
     ] ;
   hydra:search
     [
       a hydra:IriTemplate ;
-      hydra:template "{?resource,role}" ;
+      hydra:template "{?resource}" ;
       hydra:mapping
         [
           hydra:variable "resource" ;
@@ -25,15 +29,6 @@ prefix rs: <https://hypermedia.app/roadshow#>
               a code:EcmaScript ;
               code:link <node:@wikibus/api/lib/shapes#filterByTargetNode> ;
             ] ;
-        ],
-        [
-          hydra:variable "role" ;
-          hydra:property rs:shapeRole ;
-          query:filter
-            [
-              a code:EcmaScript ;
-              code:link <node:@wikibus/api/lib/shapes#filterByRole> ;
-            ] ;
-        ] ;
+        ]
     ]
 .

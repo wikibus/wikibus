@@ -1,0 +1,35 @@
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+prefix wba: <https://wikibus.org/api#>
+
+<>
+  a schema:WPHeader ;
+  schema:mainEntity </> ;
+  dash:shape
+    [
+      sh:property
+        [
+          sh:path schema:mainEntity ;
+          dash:viewer dash:DetailsViewer ;
+          rs:dereference true ;
+          sh:node
+          [
+            sh:property
+              [
+                sh:order 1 ;
+                sh:path wba:home ;
+                sh:name "Home"@en ;
+                dash:viewer dash:HeaderLinkViewer ;
+              ],
+              [
+                sh:order 2 ;
+                sh:path wba:catalog ;
+                sh:name "Catalog"@en ;
+                dash:viewer dash:HeaderLinkViewer ;
+              ]
+          ] ;
+        ] ;
+    ] ;
+.

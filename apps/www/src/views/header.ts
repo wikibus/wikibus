@@ -1,21 +1,14 @@
-import { html, FocusNodeViewContext, Renderer, ObjectViewContext } from '@hydrofoil/roadshow'
-import { dash } from '@tpluscode/rdf-ns-builders/strict'
-import { roadshow } from '@hydrofoil/vocabularies/builders'
+import { html, FocusNodeViewContext, Renderer, ObjectViewContext, ViewerMatcher } from '@hydrofoil/roadshow'
+import { dash } from '@tpluscode/rdf-ns-builders'
 import { TemplateResult } from 'lit'
+import { rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
 
 export function renderHeader(primaryMenu?: () => TemplateResult) {
   return html`<canvas-header .primaryMenu="${primaryMenu}"></canvas-header>`
 }
 
-const headerLoading: Renderer = {
-  viewer: roadshow.LoadingViewer,
-  render() {
-    return renderHeader()
-  },
-}
-
 const headerLink: Renderer<ObjectViewContext> = {
-  viewer: dash.LabelViewer,
+  viewer: dash.HeaderLinkViewer,
   render(resource) {
     return html`<li>
       <a href="${resource.value!}">
@@ -26,7 +19,10 @@ const headerLink: Renderer<ObjectViewContext> = {
 }
 
 const headerRenderer: Renderer<FocusNodeViewContext> = {
-  viewer: dash.DetailsViewer,
+  viewer: dash.HeaderViewer,
+  async init() {
+    await import('../components/canvas-shell/canvas-header')
+  },
   render() {
     const renderMenu = () => html`<ul>
       ${this.state.shape?.property.filter(p => !p.hidden).map(property => this.show({ property }))}
@@ -36,5 +32,12 @@ const headerRenderer: Renderer<FocusNodeViewContext> = {
   },
 }
 
-export const renderers = [headerRenderer, headerLink, headerLoading]
-export const viewers = []
+const headerViewer: ViewerMatcher = {
+  viewer: dash.HeaderViewer,
+  match(ptr) {
+    return ptr.resource.has(rdf.type, schema.WPHeader).term ? 100 : 0
+  },
+}
+
+export const renderers = [headerRenderer, headerLink]
+export const viewers = [headerViewer]

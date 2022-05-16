@@ -29,6 +29,7 @@ export default class {
     let loader = this.map.get(role)
     if (!loader) {
       loader = combineLoaders(
+        async (arg, state) => (state.shape ? [state.shape.pointer] : []),
         dashShape(this.client),
         errorShape,
         dereferencedShapes.bind(null, role),

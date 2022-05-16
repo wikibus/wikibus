@@ -7,25 +7,40 @@ prefix rs: <https://hypermedia.app/roadshow#>
 prefix wba: <https://wikibus.org/api#>
 
 <>
-  a sh:NodeShape ;
+  a sh:NodeShape, rs:ViewShape ;
   dash:applicableToClass schema:WebPage ;
-  rs:shapeRole wba:Content ;
   sh:order 100 ;
   sh:property
     [
-      sh:path wba:header ;
-      dash:viewer dash:HTMLViewer ;
+      sh:path schema:hasPart ;
+      sh:class schema:WPHeader ;
       sh:order 0 ;
+    ] ,
+    [
+      sh:path schema:mainEntity ;
+      dash:viewer dash:HTMLViewer ;
+      sh:order 1 ;
       sh:values
         [
           dash:js """
+          <section id="page-title">
             <div class="container clearfix" ?hidden="${!focusNode.title}">
               <h1>${focusNode.title}</h1>
               ${focusNode.description && html`<span>${focusNode.description}</span>`}
             </div>
+          </section>
        """
         ] ;
-      sh:group <#headerGroup>
+    ] ,
+    [
+      sh:path schema:mainEntity ;
+      dash:viewer dash:DetailsViewer ;
+      sh:order 2 ;
+    ] ,
+    [
+      sh:path schema:hasPart ;
+      sh:class schema:WPFooter ;
+      sh:order 100 ;
     ] ;
   sh:property
     [
@@ -38,9 +53,4 @@ prefix wba: <https://wikibus.org/api#>
       sh:path hydra:description ;
       dash:hidden true ;
     ] ;
-.
-
-<#headerGroup>
-  sh:order 0 ;
-  schema:identifier "page-title" ;
 .

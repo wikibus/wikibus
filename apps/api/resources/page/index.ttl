@@ -1,0 +1,28 @@
+PREFIX schema: <http://schema.org/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+prefix wba: <https://wikibus.org/api#>
+prefix hydra: <http://www.w3.org/ns/hydra/core#>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  a schema:WebPage ;
+  hydra:title "wikibus.org" ;
+  hydra:description "Online public transport encyclopedia" ;
+  schema:hasPart </page/_element/header> ;
+  schema:hasPart [ a schema:WPFooter ] ;
+  schema:mainEntity </> ;
+.
+
+<#Shape>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:targetNode <> ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path (schema:mainEntity wba:catalog) ;
+      sh:name "catalog" ;
+    ] ;
+.

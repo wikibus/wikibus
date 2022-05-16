@@ -11,10 +11,9 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
     hydra:property rdf:type ;
     hydra:object </api/Brand> ;
   ] ;
-  hydra:title "Brands" ;
   dash:shape
   [
-    sh:and ( </api/schema/WebPage> </api/hydra/Collection/Paged> ) ;
+    sh:and ( </api/hydra/Collection/Paged> ) ;
     sh:property
     [
       sh:path hydra:member ;
