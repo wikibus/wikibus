@@ -2,3 +2,4 @@ node_modules/
 
 apps/www/src/style.css
 apps/www/src/style.css.map
+apps/www/dist/
