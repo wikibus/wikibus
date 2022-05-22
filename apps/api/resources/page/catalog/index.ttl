@@ -12,6 +12,19 @@ prefix rs: <https://hypermedia.app/roadshow#>
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:mainEntity </catalog> ;
+  schema:breadcrumb
+    [
+      schema:itemListElement
+        [
+          schema:item </> ;
+          schema:name "Home" ;
+          schema:nextItem
+            [
+              schema:item <> ;
+              schema:name "Catalog" ;
+            ]
+        ] ;
+    ] ;
 .
 
 <#Shape>
@@ -21,12 +34,14 @@ prefix rs: <https://hypermedia.app/roadshow#>
   sh:property
     [
       sh:order 50 ;
-      sh:path (schema:mainEntity wba:brands) ;
+      sh:path ( schema:mainEntity wba:brands ) ;
       sh:name "brands" ;
+      sh:group </page/_element/main> ;
     ],
     [
       sh:order 60 ;
-      sh:path (schema:mainEntity wba:companies) ;
+      sh:path ( schema:mainEntity wba:companies ) ;
       sh:name "companies" ;
+      sh:group </page/_element/main> ;
     ] ;
 .

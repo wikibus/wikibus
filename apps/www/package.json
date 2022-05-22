@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@captaincodeman/rdx": "^1.0.0-rc.9",
-    "@hydrofoil/roadshow": "^0.4.0",
+    "@hydrofoil/roadshow": "^0.4.4",
     "@hydrofoil/shell": "^0.3.2",
-    "@hydrofoil/vocabularies": "^0.3.0",
+    "@hydrofoil/vocabularies": "^0.3.1",
     "@rdfjs/data-model": "^2",
     "@rdfjs/dataset": "^2",
     "@rdfjs/namespace": "^2",

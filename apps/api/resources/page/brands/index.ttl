@@ -10,6 +10,19 @@ prefix rs: <https://hypermedia.app/roadshow#>
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   hydra:title "Brands" ;
+  schema:breadcrumb
+    [
+      schema:itemListElement
+        [
+          schema:item </> ;
+          schema:name "Home" ;
+          schema:nextItem
+            [
+              schema:item <> ;
+              schema:name "Brands" ;
+            ]
+        ] ;
+    ] ;
 .
 
 <#Shape>
@@ -21,5 +34,6 @@ prefix rs: <https://hypermedia.app/roadshow#>
       sh:order 50 ;
       sh:path schema:mainEntity ;
       sh:name "brands" ;
+      sh:group </page/_element/main> ;
     ] ;
 .

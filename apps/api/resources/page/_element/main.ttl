@@ -1,0 +1,9 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  schema:identifier "content" ;
+  rs:clearfix true ;
+  sh:order 10 ;
+.

@@ -24,5 +24,6 @@ prefix rs: <https://hypermedia.app/roadshow#>
       sh:order 50 ;
       sh:path (schema:mainEntity wba:catalog) ;
       sh:name "catalog" ;
+      sh:group </page/_element/main> ;
     ] ;
 .

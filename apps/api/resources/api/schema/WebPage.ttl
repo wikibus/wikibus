@@ -14,33 +14,50 @@ prefix wba: <https://wikibus.org/api#>
     [
       sh:path schema:hasPart ;
       sh:class schema:WPHeader ;
-      sh:order 0 ;
+      sh:group
+      [
+        sh:order -1 ;
+      ] ;
     ] ,
     [
       sh:path schema:mainEntity ;
       dash:viewer dash:HTMLViewer ;
       sh:order 1 ;
+      sh:group </page/_element/page-title> ;
       sh:values
         [
           dash:js """
-          <section id="page-title">
-            <div class="container clearfix" ?hidden="${!focusNode.title}">
-              <h1>${focusNode.title}</h1>
-              ${focusNode.description && html`<span>${focusNode.description}</span>`}
-            </div>
-          </section>
-       """
+            ${focusNode.title && html`<h1>${focusNode.title}</h1>`}
+            ${focusNode.description && html`<span>${focusNode.description}</span>`}
+          """
         ] ;
+    ] ,
+    [
+      sh:path schema:breadcrumb ;
+      sh:order 2 ;
+      sh:group </page/_element/page-title> ;
+      sh:node
+      [
+        sh:property
+        [
+          sh:name "items" ;
+          sh:path (schema:itemListElement [ sh:zeroOrMorePath schema:nextItem ])  ; # schema:itemListElement/schema:nextItem*
+        ] ;
+      ] ;
     ] ,
     [
       sh:path schema:mainEntity ;
       dash:viewer dash:DetailsViewer ;
       sh:order 2 ;
+      sh:group </page/_element/main> ;
     ] ,
     [
       sh:path schema:hasPart ;
       sh:class schema:WPFooter ;
-      sh:order 100 ;
+      sh:group
+        [
+          sh:order 100 ;
+        ] ;
     ] ;
   sh:property
     [
