@@ -1,3 +1,4 @@
+PREFIX dash: <http://datashapes.org/dash#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
@@ -18,8 +19,13 @@ prefix rs: <https://hypermedia.app/roadshow#>
           schema:name "Home" ;
           schema:nextItem
             [
-              schema:item <> ;
-              schema:name "Brands" ;
+              schema:item </catalog> ;
+              schema:name "Catalog" ;
+              schema:nextItem
+                [
+                  schema:item <> ;
+                  schema:name "Brands" ;
+                ]
             ]
         ] ;
     ] ;

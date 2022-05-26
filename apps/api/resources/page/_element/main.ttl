@@ -3,7 +3,6 @@ PREFIX schema: <http://schema.org/>
 prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
-  schema:identifier "content" ;
-  rs:clearfix true ;
+  rs:selector "section#content div.content-wrap div.container.clearfix" ;
   sh:order 10 ;
 .

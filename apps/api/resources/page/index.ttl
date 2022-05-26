@@ -5,6 +5,7 @@ PREFIX dash: <http://datashapes.org/dash#>
 prefix wba: <https://wikibus.org/api#>
 prefix hydra: <http://www.w3.org/ns/hydra/core#>
 prefix rs: <https://hypermedia.app/roadshow#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a schema:WebPage ;
@@ -24,6 +25,10 @@ prefix rs: <https://hypermedia.app/roadshow#>
       sh:order 50 ;
       sh:path (schema:mainEntity wba:catalog) ;
       sh:name "catalog" ;
+      sh:description "Producers, brands and their products" ;
       sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "book2" ;
     ] ;
 .

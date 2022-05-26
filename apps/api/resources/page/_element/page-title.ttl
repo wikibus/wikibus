@@ -1,9 +1,7 @@
 PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX schema: <http://schema.org/>
 prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
-  schema:identifier "page-title" ;
-  rs:clearfix true ;
+  rs:selector "section#page-title div.container.clearfix" ;
   sh:order 1 ;
 .

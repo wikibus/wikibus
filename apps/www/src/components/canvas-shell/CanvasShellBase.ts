@@ -3,6 +3,7 @@ import bootstrap from '../../css/bootstrap.css'
 import style from '../../style.scss'
 import dark from '../../sass/dark.scss'
 import rs from '../../sass/responsive.scss'
+import fonts from '../../css/font-icons.css'
 
 type ShellConstructor = new (...args: any[]) => LitElement
 
@@ -18,7 +19,7 @@ export default function mixin<B extends ShellConstructor>(Base: B): B & ReturnCo
 
     public static get styles() {
       return css`
-        ${unsafeCSS(bootstrap)} ${unsafeCSS(style)} ${unsafeCSS(dark)} ${unsafeCSS(rs)}
+        ${unsafeCSS(bootstrap)} ${unsafeCSS(style)} ${unsafeCSS(dark)} ${unsafeCSS(rs)} ${unsafeCSS(fonts)}
       `
     }
 

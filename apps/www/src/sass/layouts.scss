@@ -113,8 +113,8 @@ body.stretched .container-fullwidth {
 	margin-right: 0;
 }
 
-.col_last {
-	margin-right: 0 !important;
-	float: right;
-	clear: right;
+.col_last, .col_one_third:nth-child(3n+3) {
+  margin-right: 0 !important;
+  float: right;
+  clear: right;
 }
