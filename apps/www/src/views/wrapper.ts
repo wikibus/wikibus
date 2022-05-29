@@ -7,6 +7,7 @@ import { applyTokens } from '../lib/css'
 
 class WrapperDirective extends Directive {
   private _element?: HTMLElement
+  private _selector: string | null = null
 
   constructor(partInfo: PartInfo) {
     super(partInfo)
@@ -16,14 +17,15 @@ class WrapperDirective extends Directive {
   }
 
   render(group: PropertyGroup, inner: TemplateResult) {
-    if (this._element) {
+    const selector = group.getString(roadshow.selector, { strict: false })
+    if (this._element && this._selector === selector) {
       render(inner, this._element)
       return noChange
     }
 
     let element: HTMLElement | undefined | null
     let parents: HTMLElement[] = []
-    const selector = group.getString(roadshow.selector, { strict: false })
+    this._selector = selector
     if (selector) {
       [element, ...parents] = WrapperDirective.__createElementTree(selector)
     }
