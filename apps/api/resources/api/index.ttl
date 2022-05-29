@@ -11,20 +11,6 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
   hydra:entrypoint <../> ;
 .
 
-<>
-  hydra:collection
-    [
-    # Because it's awkward to load the representation of /api/shapes
-    # it is weakly linked to the actual resource
-      schema:sameAs </api/shapes> ;
-      hydra:manages
-        [
-          hydra:property rdf:type ;
-          hydra:object sh:NodeShape ;
-        ]
-    ] ;
-.
-
 sh:NodeShape
   a hydra:Class ;
   hydra:apiDocumentation <> ;

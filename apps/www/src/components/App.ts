@@ -43,7 +43,7 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
   }
 
   render() {
-    if (this.state.core.contentResource) {
+    if (this.state.core.contentResource && this.state.core.entrypoint) {
       return html`<app-view .resource="${this.state.core.contentResource.pointer}"
                             .shapesLoader="${this.__shapesLoaders?.get(wba.Content)}"
                             .resourceLoader="${this.__resourceLoader}"
