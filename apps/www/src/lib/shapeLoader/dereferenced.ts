@@ -2,8 +2,9 @@ import type { NamedNode, Term } from '@rdfjs/types'
 import { ShapesLoader } from '@hydrofoil/roadshow/ShapesController'
 import { dash, rdf, sh } from '@tpluscode/rdf-ns-builders/strict'
 import type { Collection, Resource } from 'alcaeus'
+import type { HydraClient } from 'alcaeus/alcaeus'
 import { isNamedNode } from 'is-graph-pointer'
-import clownface from 'clownface'
+import clownface, { GraphPointer } from 'clownface'
 import $rdf from 'rdf-ext'
 import TermMap from '@rdfjs/term-map'
 import { store } from '../../state/store'
@@ -12,12 +13,10 @@ import { byOrder } from '../shape'
 const shapePromises = new Map<string, Promise<Collection | Resource | undefined | null>>()
 
 const shapeCollections = new TermMap<Term, Resource | undefined>()
-async function getCollection() {
-  const { core: { client, entrypoint } } = store.state
-
+async function getCollection(entrypoint: GraphPointer | undefined, client: HydraClient) {
   if (isNamedNode(entrypoint)) {
     if (!shapeCollections.has(entrypoint.term)) {
-      const { representation } = await client!.loadResource(entrypoint.term)
+      const { representation } = await client.loadResource(entrypoint.term)
       shapeCollections.set(entrypoint.term, representation?.root?.getCollections({
         predicate: rdf.type,
         object: sh.NodeShape,
@@ -32,7 +31,8 @@ async function getCollection() {
 
 export
 async function dereferencedShapes(role: NamedNode, ...[arg, state]: Parameters<ShapesLoader>) {
-  if (!store.state.core.client) {
+  const { client, entrypoint } = store.state.core
+  if (!client) {
     return []
   }
 
@@ -40,7 +40,7 @@ async function dereferencedShapes(role: NamedNode, ...[arg, state]: Parameters<S
     return []
   }
 
-  const shapesCollection = await getCollection()
+  const shapesCollection = await getCollection(entrypoint, client)
   if (!isNamedNode(arg)) {
     return []
   }
@@ -56,7 +56,7 @@ async function dereferencedShapes(role: NamedNode, ...[arg, state]: Parameters<S
 
   let shapePromise = shapePromises.get(url)
   if (!shapePromise) {
-    shapePromise = store.state.core.client.loadResource<Collection>(url)
+    shapePromise = client.loadResource<Collection>(url)
       .then(({ representation }) => {
         shapePromises.delete(url)
         return representation?.root
