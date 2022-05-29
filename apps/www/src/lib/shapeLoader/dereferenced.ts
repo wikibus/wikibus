@@ -14,19 +14,18 @@ const shapePromises = new Map<string, Promise<Collection | Resource | undefined 
 
 const shapeCollections = new TermMap<Term, Resource | undefined>()
 async function getCollection(entrypoint: GraphPointer | undefined, client: HydraClient) {
-  if (isNamedNode(entrypoint)) {
-    if (!shapeCollections.has(entrypoint.term)) {
-      const { representation } = await client.loadResource(entrypoint.term)
-      shapeCollections.set(entrypoint.term, representation?.root?.getCollections({
-        predicate: rdf.type,
-        object: sh.NodeShape,
-      }).shift() as Resource)
-    }
-
-    return shapeCollections.get(entrypoint.term)
+  if (!isNamedNode(entrypoint)) {
+    return undefined
+  }
+  if (!shapeCollections.has(entrypoint.term)) {
+    const { representation } = await client.loadResource(entrypoint.term)
+    shapeCollections.set(entrypoint.term, representation?.root?.getCollections({
+      predicate: rdf.type,
+      object: sh.NodeShape,
+    }).shift() as Resource)
   }
 
-  return undefined
+  return shapeCollections.get(entrypoint.term)
 }
 
 export
