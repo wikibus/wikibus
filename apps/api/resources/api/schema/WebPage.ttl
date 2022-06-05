@@ -1,3 +1,4 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
@@ -12,13 +13,21 @@ prefix wba: <https://wikibus.org/api#>
   sh:order 100 ;
   sh:property
     [
-      sh:path schema:hasPart ;
+      sh:path
+        [
+          sh:alternativePath
+            (
+              schema:hasPart
+              ( schema:isBasedOn schema:hasPart )
+            )
+        ] ;
       sh:class schema:WPHeader ;
+      sh:maxCount 1 ;
       sh:group
-      [
-        sh:order -1 ;
-      ] ;
-    ] ,
+        [
+          sh:order -1 ;
+        ] ;
+    ],
     [
       sh:path schema:mainEntity ;
       dash:viewer dash:HTMLViewer ;
@@ -31,29 +40,44 @@ prefix wba: <https://wikibus.org/api#>
             ${focusNode.description && html`<span>${focusNode.description}</span>`}
           """
         ] ;
-    ] ,
+    ],
     [
-      sh:path schema:breadcrumb ;
+      sh:path
+        [
+          sh:alternativePath
+            (
+              schema:breadcrumb
+              ( schema:isBasedOn schema:breadcrumb )
+            )
+        ] ;
       sh:order 2 ;
       sh:group </page/_element/page-title> ;
       sh:node
-      [
-        sh:property
         [
-          sh:name "items" ;
-          sh:path (schema:itemListElement [ sh:zeroOrMorePath schema:nextItem ])  ; # schema:itemListElement/schema:nextItem*
+          sh:property
+            [
+              sh:name "items" ;
+              sh:path ( schema:itemListElement [ sh:zeroOrMorePath schema:nextItem ] ) ; # schema:itemListElement/schema:nextItem*
+            ] ;
         ] ;
-      ] ;
-    ] ,
+    ],
     [
       sh:path schema:mainEntity ;
       dash:viewer dash:DetailsViewer ;
       sh:order 2 ;
       sh:group </page/_element/main> ;
-    ] ,
+    ],
     [
-      sh:path schema:hasPart ;
+      sh:path
+        [
+          sh:alternativePath
+            (
+              schema:hasPart
+              ( schema:isBasedOn schema:hasPart )
+            )
+        ] ;
       sh:class schema:WPFooter ;
+      sh:maxCount 1 ;
       sh:group
         [
           sh:order 100 ;
@@ -62,7 +86,15 @@ prefix wba: <https://wikibus.org/api#>
   sh:property
     [
       schema:identifier "title" ;
-      sh:path hydra:title ;
+      sh:path
+        [
+          sh:alternativePath
+            (
+              hydra:title
+              ( schema:isBasedOn hydra:title )
+            )
+        ] ;
+      sh:maxCount 1 ;
       dash:hidden true ;
     ],
     [

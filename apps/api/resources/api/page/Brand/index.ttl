@@ -1,0 +1,12 @@
+PREFIX code: <https://code.described.at/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix knossos: <https://hypermedia.app/knossos#>
+
+<>
+  a hydra:Class ;
+  knossos:preprocessResponse
+    [
+      a code:EcmaScript ;
+      code:link <file:apps/api/lib/BrandPage#fillTemplate>
+    ] ;
+.

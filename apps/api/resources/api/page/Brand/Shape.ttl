@@ -1,0 +1,16 @@
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main> ;
+      rs:dereference true ;
+    ] ;
+.

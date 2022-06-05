@@ -51,11 +51,14 @@ schema:WebPage
   hydra:apiDocumentation <> ;
   hyper-query:include
     [
-      # (dash:shape|schema:hasPart)*/schema:mainEntity?
+      # schema:isBasedOn?/(dash:shape|schema:hasPart)*
       hyper-query:path
-      (
-        [ sh:zeroOrMorePath [ sh:alternativePath ( dash:shape schema:hasPart ) ] ]
-        [ sh:zeroOrOnePath schema:mainEntity ]
-      )
+        (
+          [ sh:zeroOrOnePath schema:isBasedOn ]
+          [ sh:zeroOrMorePath [ sh:alternativePath ( dash:shape schema:hasPart ) ] ]
+        )
+    ],
+    [
+      hyper-query:path schema:mainEntity ;
     ]
 .

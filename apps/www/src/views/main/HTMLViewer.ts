@@ -24,7 +24,11 @@ export const renderer: Renderer<ObjectViewContext> = {
       focusNode = [...getAllProperties(this.parent.focusNodeShape)].reduce((map, property) => {
         const identifier = property.pointer.out(schema.identifier).value
         const path = property.pointer.out(sh.path)
-        const values = findNodes(this.parent!.focusNode!, path)
+        let { values } = findNodes(this.parent!.focusNode!, path)
+        const { maxCount } = property
+        if (maxCount) {
+          values = values.slice(0, maxCount)
+        }
         if (identifier) {
           return {
             ...map,
