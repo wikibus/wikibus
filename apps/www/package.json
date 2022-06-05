@@ -22,6 +22,7 @@
     "@rdfjs/namespace": "^2",
     "@rdfjs/term-map": "^2",
     "@rdfjs-elements/lit-helpers": "^0.2.1",
+    "@shoelace-style/shoelace": "^2.0.0-beta.74",
     "@tpluscode/rdf-ns-builders": "^1.1.0",
     "@vaadin/vaadin": "^23.1.0-rc1",
     "clownface": "^1.4.0",

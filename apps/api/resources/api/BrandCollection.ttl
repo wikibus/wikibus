@@ -1,3 +1,4 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX code: <https://code.described.at/>
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -31,7 +32,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
       hydra:mapping
         [
           hydra:variable "name" ;
-          hydra:property schema:name ;
+          hydra:property skos:prefLabel ;
           hydra:required true ;
           knossos:transformVariable
             [

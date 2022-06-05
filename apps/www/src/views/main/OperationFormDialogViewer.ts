@@ -83,6 +83,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
             this.controller.host.requestUpdate()
           })
           .catch(() => {
+            // eslint-disable-next-line no-console
             console.log('Failed to load shape')
           })
       }
@@ -106,7 +107,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
     return html`
       <li><button @click="${openDialog}">${taggedLiteral(this.parent?.propertyShape, { property: sh.name })}</button>
       <vaadin-dialog .opened="${this.state.locals.open || false}"
-                     header-title="${taggedLiteral(shape)}"
+                     header-title="${taggedLiteral(shape) as any}"
                      .renderer="${guard([operation, shape], () => renderForm)}"
                      @opened-changed="${closeDialog}"
       ></vaadin-dialog>

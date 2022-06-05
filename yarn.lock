@@ -1028,6 +1028,18 @@
   resolved "https://registry.yarnpkg.com/@fcostarodrigo/walk/-/walk-5.0.1.tgz#5c3c88f0b84156b998232313eacfa031f2eff053"
   integrity sha512-K9oVfs2sDoB/B9Czvqwfryui17rZAJ+k007PHwryYDD99sVPqRZBMq+xhIAniMOpE9TmvLU8YsL2zSbQnL+2Aw==
 
+"@floating-ui/core@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-0.7.2.tgz#f7af9613d080dc29360e77c970965b79b524d45a"
+  integrity sha512-FRVAkSNU/vGXLIsgbggcs70GkXKEOXgBBbNpYPNHSaKsCAMMd00NrjbtKTesxkdv9xm9N3+XiDlcFGY6WnatBg==
+
+"@floating-ui/dom@^0.5.1":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-0.5.2.tgz#908f3febbfc0d6696d70921616ec194fe07af183"
+  integrity sha512-z1DnEa7F3d8Fm/eXSbii8UEGpcjZGkQaYYUI0WpEVgD3vBfebDW8j/3ysusxonuMexoigA+A3b/fYH7sEqiwyg==
+  dependencies:
+    "@floating-ui/core" "^0.7.2"
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
@@ -1451,6 +1463,11 @@
   integrity sha512-bMjKGAJW2lg2jm7StqedeL/TMra0zl5VMtRyzl+WKbopj3AZEvy+FE8zeWvl1x3pofuU4a7ICuwIK/nr5/PEHg==
   dependencies:
     vary "^1.1.2"
+
+"@lit-labs/react@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@lit-labs/react/-/react-1.0.4.tgz#e87a620338955a4e12163b0f3bee18a99c651174"
+  integrity sha512-Sy4RCxTZpTE2TwByjVac6gC7jzr8bCQC6s9bJhhJDKos4ZlN2cqcuVz63n0mpSSr1zxFh+Z0o0VR223l36Y4Ag==
 
 "@lit/reactive-element@^1.3.0":
   version "1.3.1"
@@ -2061,6 +2078,29 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@shoelace-style/animations@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@shoelace-style/animations/-/animations-1.1.0.tgz#17539abafd6dcbf2a79e089e1593175e9f7835b5"
+  integrity sha512-Be+cahtZyI2dPKRm8EZSx3YJQ+jLvEcn3xzRP7tM4tqBnvd/eW/64Xh0iOf0t2w5P8iJKfdBbpVNE9naCaOf2g==
+
+"@shoelace-style/localize@^2.1.3":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@shoelace-style/localize/-/localize-2.2.0.tgz#c0a08fd4a0c709da8e618a768aa86c9332b0643b"
+  integrity sha512-xM8u4w3BVhbXhgYWk4Q7p/K4qZ8iGWpgx7T9aOLXkwR6t1LKu0oY1K+vQ1T6bclKHzGmt8o+HxYEtotHK+euQQ==
+
+"@shoelace-style/shoelace@^2.0.0-beta.74":
+  version "2.0.0-beta.74"
+  resolved "https://registry.yarnpkg.com/@shoelace-style/shoelace/-/shoelace-2.0.0-beta.74.tgz#f855ccb0d1c4a3c12835b11a99d7ca8410c6380a"
+  integrity sha512-uenSeK2tYpKwQkAw/ZqZY7O66wMW7W5YgaxKcJ2CQQ19Ur2w3sgMGwUhmgTcMW6DotqrAw6zVLyEOrQDX0bQeA==
+  dependencies:
+    "@floating-ui/dom" "^0.5.1"
+    "@lit-labs/react" "^1.0.4"
+    "@shoelace-style/animations" "^1.1.0"
+    "@shoelace-style/localize" "^2.1.3"
+    color "4.2"
+    lit "^2.2.5"
+    qr-creator "^1.0.0"
 
 "@tpluscode/eslint-config@^0.3.0":
   version "0.3.0"
@@ -5219,10 +5259,26 @@ color-name@1.1.3:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
   integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
 
-color-name@~1.1.4:
+color-name@^1.0.0, color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+color-string@^1.9.0:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.9.1.tgz#4467f9146f036f855b764dfb5bf8582bf342c7a4"
+  integrity sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
+color@4.2:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"
+  integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
+  dependencies:
+    color-convert "^2.0.1"
+    color-string "^1.9.0"
 
 colorette@^2.0.16:
   version "2.0.16"
@@ -7881,6 +7937,11 @@ is-arrayish@^0.2.1:
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
   integrity sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
 
+is-arrayish@^0.3.1:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
+  integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
+
 is-bigint@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/is-bigint/-/is-bigint-1.0.4.tgz#08147a1875bc2b32005d41ccd8291dffc6691df3"
@@ -8647,7 +8708,7 @@ lit-html@^2.2.0:
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
-lit@^2, lit@^2.0.0, lit@^2.0.0-rc.2, lit@^2.2.0:
+lit@^2, lit@^2.0.0, lit@^2.0.0-rc.2, lit@^2.2.0, lit@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/lit/-/lit-2.2.5.tgz#60e8dd5b751fe31f849c64f74f1784a88235d664"
   integrity sha512-Ln463c0xJZfzVxBcHddNvFQQ8Z22NK7KgNmrzwFF1iESHUud412RRExzepj18wpTbusgwoTnOYuoTpo9uyNBaQ==
@@ -10112,6 +10173,11 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+qr-creator@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/qr-creator/-/qr-creator-1.0.0.tgz#f350a8f0b5be02bd1fc1ef133a038a06ef8bc5ef"
+  integrity sha512-C0cqfbS1P5hfqN4NhsYsUXePlk9BO+a45bAQ3xLYjBL3bOIFzoVEjs79Fado9u9BPBD3buHi3+vY+C8tHh4qMQ==
+
 qs@6.9.7:
   version "6.9.7"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.7.tgz#4610846871485e1e048f44ae3b94033f0e675afe"
@@ -11021,6 +11087,13 @@ simple-icons@^6.13.0:
   version "6.14.0"
   resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-6.14.0.tgz#0440e5a9354e6c83ffd4db70fd7b49ddd6f050a9"
   integrity sha512-G1BloriCtFDxdxLPJJ7Ri4ffYp4ET/KOvpqTWaFUxeHcGognm468hmXp5g7auPYxKg2OsPqJ1zCYEjCRMqFtMg==
+
+simple-swizzle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
+  integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
+  dependencies:
+    is-arrayish "^0.3.1"
 
 slash@^1.0.0:
   version "1.0.0"
