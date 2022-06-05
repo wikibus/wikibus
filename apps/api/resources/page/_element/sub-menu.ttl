@@ -1,0 +1,8 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+
+<>
+  rs:selector "div#page-menu div#page-menu-wrap div.container div.page-menu-row nav.page-menu-nav ul.page-menu-container" ;
+  sh:order 5 ;
+.

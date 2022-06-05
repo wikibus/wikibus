@@ -4,6 +4,7 @@ import * as HTMLViewer from './main/HTMLViewer'
 import * as BreadcrumbViewer from './main/BreadcrumbViewer'
 import * as BreadcrumbItemViewer from './main/BreadcrumbItemViewer'
 import * as FeaturedBoxViewer from './main/FeaturedBoxViewer'
+import * as OperationFormDialogViewer from './main/OperationFormDialogViewer'
 
 export const renderers: Renderer<any>[] = [
   DetailsViewer.renderer,
@@ -11,6 +12,7 @@ export const renderers: Renderer<any>[] = [
   BreadcrumbViewer.renderer,
   BreadcrumbItemViewer.renderer,
   FeaturedBoxViewer.renderer,
+  OperationFormDialogViewer.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [

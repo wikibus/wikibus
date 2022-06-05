@@ -4,6 +4,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix wba: <https://wikibus.org/api#>
 prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
   a schema:WebPage ;
@@ -41,5 +42,12 @@ prefix rs: <https://hypermedia.app/roadshow#>
       sh:path schema:mainEntity ;
       sh:name "brands" ;
       sh:group </page/_element/main> ;
+    ] ,
+    [
+      sh:name "New" ;
+      sh:path schema:mainEntity ;
+      dash:viewer hex:OperationFormDialogViewer ;
+      hex:operation schema:CreateAction ;
+      sh:group </page/_element/sub-menu> ;
     ] ;
 .

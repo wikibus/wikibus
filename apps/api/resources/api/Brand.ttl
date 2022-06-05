@@ -1,3 +1,4 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
@@ -6,10 +7,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 <>
   a rdf:Class, sh:NodeShape ;
   rdfs:subClassOf schema:Brand ;
+  sh:and ( <#Minimal> ) ;
+.
+
+<#Minimal>
+  rdfs:label "New brand"@en, "Nowa marka"@pl ;
   sh:property
-  [
-    sh:path schema:name ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-  ]
+    [
+      sh:name "Name", "Nazwa"@pl ;
+      sh:path skos:prefLabel ;
+      sh:minCount 1 ;
+    ] ;
 .

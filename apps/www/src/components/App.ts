@@ -65,4 +65,10 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
         (state.core.client && resourceLoader(state.core.client)),
     }
   }
+
+  mapEvents() {
+    return {
+      'submit-operation': ({ detail }: CustomEvent) => store.dispatch.operation.invoke(detail),
+    }
+  }
 }

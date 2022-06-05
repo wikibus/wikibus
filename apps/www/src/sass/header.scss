@@ -1292,15 +1292,22 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
 	list-style: none;
 }
 
-#page-menu nav li a {
-	display: block;
-	height: 28px;
-	line-height: 28px;
-	margin: 8px 4px;
-	padding: 0 14px;
-	color: #FFF;
-	font-size: 14px;
-	border-radius: 14px;
+#page-menu nav li {
+  button {
+    background: none;
+    border: none;
+  }
+
+	a, button {
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    margin: 8px 4px;
+    padding: 0 14px;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 14px;
+  }
 }
 
 #page-menu nav li a .icon-angle-down { margin-left: 5px; }
@@ -1309,8 +1316,12 @@ body:not(.device-touch) #page-menu nav li a {
 	@include transition(all .2s ease-in-out);
 }
 
-#page-menu nav li:hover a,
-#page-menu nav li.current a { background-color: rgba(0,0,0,0.15); }
+#page-menu nav li:hover,
+#page-menu nav li.current {
+  a, button {
+    background-color: rgba(0,0,0,0.15);
+  }
+}
 
 #page-menu li:hover ul { display: block; }
 
