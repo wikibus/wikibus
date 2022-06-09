@@ -5,6 +5,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix hyper-query: <https://hypermedia.app/query#>
 prefix hydra: <http://www.w3.org/ns/hydra/core#>
+prefix knossos: <https://hypermedia.app/knossos#>
+PREFIX code: <https://code.described.at/>
 
 <>
   a hydra:ApiDocumentation ;
@@ -51,7 +53,7 @@ schema:WebPage
   hydra:apiDocumentation <> ;
   hyper-query:include
     [
-      # schema:isBasedOn?/(dash:shape|schema:hasPart)*
+    # schema:isBasedOn?/(dash:shape|schema:hasPart)*
       hyper-query:path
         (
           [ sh:zeroOrOnePath schema:isBasedOn ]
@@ -61,4 +63,14 @@ schema:WebPage
     [
       hyper-query:path schema:mainEntity ;
     ]
+.
+
+knossos:WebPageTemplate
+  a hydra:Class ;
+  hydra:apiDocumentation <> ;
+  knossos:preprocessResponse
+    [
+      a code:EcmaScript ;
+      code:link <file:apps/api/lib/BrandPage#fillTemplate>
+    ] ;
 .

@@ -1,17 +1,16 @@
-PREFIX dash: <http://datashapes.org/dash#>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix wba: <https://wikibus.org/api#>
-prefix rs: <https://hypermedia.app/roadshow#>
+prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
-  a schema:WebPage ;
-  schema:mainEntity </brands> ;
+  a schema:WebPage, knossos:WebPageTemplate ;
+  knossos:webPageShape </api/page/Brand/Edit> ;
+  knossos:pattern "/page(/brand/[^/]+)/edit" ;
+  hydra:title "Edit brand" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
-  hydra:title "Brands" ;
   schema:breadcrumb
     [
       schema:itemListElement
@@ -26,28 +25,12 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
                 [
                   schema:item </brands> ;
                   schema:name "Brands" ;
+                  schema:nextItem
+                    [
+                      schema:name "Edit" ;
+                    ]
                 ]
             ]
         ] ;
-    ] ;
-.
-
-<#Shape>
-  a sh:NodeShape, rs:ViewShape ;
-  sh:targetNode <> ;
-  sh:and ( </api/schema/WebPage> ) ;
-  sh:property
-    [
-      sh:order 50 ;
-      sh:path schema:mainEntity ;
-      sh:name "brands" ;
-      sh:group </page/_element/main> ;
-    ] ,
-    [
-      sh:name "New" ;
-      sh:path schema:mainEntity ;
-      dash:viewer hex:OperationFormDialogViewer ;
-      hex:operation schema:CreateAction ;
-      sh:group </page/_element/sub-menu> ;
     ] ;
 .

@@ -1,13 +1,16 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix knossos: <https://hypermedia.app/knossos#>
 
 <>
-  a rdf:Class, sh:NodeShape ;
+  a rdf:Class, sh:NodeShape, hydra:Class ;
   rdfs:subClassOf schema:Brand ;
   sh:and ( <#Minimal> ) ;
+  knossos:editable true ;
 .
 
 <#Minimal>

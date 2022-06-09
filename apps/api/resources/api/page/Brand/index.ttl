@@ -1,12 +1,24 @@
-PREFIX code: <https://code.described.at/>
-PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
-prefix knossos: <https://hypermedia.app/knossos#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
-  a hydra:Class ;
-  knossos:preprocessResponse
+  a sh:NodeShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
     [
-      a code:EcmaScript ;
-      code:link <file:apps/api/lib/BrandPage#fillTemplate>
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main> ;
+      rs:dereference true ;
+    ] ,
+    [
+      sh:name "Edit" ;
+      sh:path schema:mainEntity ;
+      dash:viewer hex:ResponseLinkViewer ;
+      sh:group </page/_element/sub-menu> ;
     ] ;
 .

@@ -1,9 +1,11 @@
+PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
-  a sh:NodeShape, rs:ViewShape ;
+  a sh:NodeShape ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
     [

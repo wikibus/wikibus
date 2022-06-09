@@ -5,8 +5,9 @@ prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
-  a schema:WebPage, knossos:WebPageTemplate, </api/page/Brand> ;
-  knossos:pattern "\\/page(\\/brand\\/.+)" ;
+  a schema:WebPage, knossos:WebPageTemplate ;
+  knossos:webPageShape </api/page/Brand> ;
+  knossos:pattern "/page(/brand/[^/]+)$" ;
   hydra:title "Brand" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
@@ -22,7 +23,7 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
               schema:name "Catalog" ;
               schema:nextItem
                 [
-                  schema:item <> ;
+                  schema:item </brands> ;
                   schema:name "Brands" ;
                 ]
             ]

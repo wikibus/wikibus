@@ -10,4 +10,13 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
     a code:EcmaScript ;
     code:link <file:apps/api/lib/knossos/ResourceLoader#factory> ;
   ] ;
+  knossos:middleware
+  [
+    schema:name "resource" ;
+    code:implementedBy
+    [
+      a code:EcmaScript ;
+      code:link <file:apps/api/lib/knossos/middleware#setEditLink> ;
+    ] ;
+  ] ;
 .
