@@ -46,6 +46,7 @@ module.exports = merge(
       }),
       new CopyWebpackPlugin({
         patterns: [
+          { from: '../../node_modules/@shoelace-style/shoelace/dist/assets', to: 'assets' },
           { from: 'src/images', to: 'images' },
           { from: 'src/vendor', to: 'vendor' },
           { from: 'src/css', to: 'css' },

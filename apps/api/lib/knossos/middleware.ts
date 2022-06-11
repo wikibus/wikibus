@@ -1,12 +1,13 @@
 import { MiddlewareFactory } from '@hydrofoil/knossos/configuration'
-import { knossos } from '@hydrofoil/vocabularies/builders'
+import { hydra, rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
 import clownface from 'clownface'
 
 export const setEditLink: MiddlewareFactory = () => (req, res, next) => {
   if (req.hydra.resource) {
     const editable = clownface(req.hydra.api)
       .node(req.hydra.resource.types)
-      .has(knossos.editable, true)
+      .out(hydra.supportedOperation)
+      .has(rdf.type, schema.ReplaceAction)
       .terms.length > 0
 
     if (editable) {

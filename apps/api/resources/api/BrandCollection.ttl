@@ -18,7 +18,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
     [
       a schema:CreateAction ;
       hydra:method "POST" ;
-      hydra:expects </api/Brand#Minimal> ;
+      hydra:expects </api/Brand#New> ;
       hydra:title "Create" ;
       code:implementedBy
       [

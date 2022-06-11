@@ -1,3 +1,6 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX code: <https://code.described.at/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -5,20 +8,62 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix knossos: <https://hypermedia.app/knossos#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
   rdfs:subClassOf schema:Brand ;
-  sh:and ( <#Minimal> ) ;
-  knossos:editable true ;
+  hydra:supportedOperation
+    [
+      a schema:ReplaceAction ;
+      hydra:title "Save" ;
+      hydra:method "PUT" ;
+      hydra:expects <> ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/knossos/resource#PUT> ;
+        ] ;
+    ] ;
+  sh:property
+    [
+      sh:name "Name", "Nazwa"@pl ;
+      sh:path skos:prefLabel ;
+      sh:minCount 1 ;
+      sh:minLength 3 ;
+      sh:or
+        (
+          [
+            sh:datatype rdf:langString ;
+          ]
+          [
+            sh:datatype xsd:string ;
+          ]
+        ) ;
+      sh:uniqueLang true ;
+      sh:order 10 ;
+    ],
+    [
+      sh:name "Alternative names" ;
+      sh:description "Alternative spelling, abbreviations, etc" ;
+      sh:path skos:altLabel ;
+      sh:order 20 ;
+    ],
+    [
+      sh:name "Search variants" ;
+      sh:description "Hidden labels, such as misspelled variants" ;
+      sh:path skos:hiddenLabel ;
+      sh:order 20 ;
+    ] ;
 .
 
-<#Minimal>
+<#New>
   rdfs:label "New brand"@en, "Nowa marka"@pl ;
   sh:property
     [
       sh:name "Name", "Nazwa"@pl ;
       sh:path skos:prefLabel ;
       sh:minCount 1 ;
+      sh:minLength 3 ;
     ] ;
 .

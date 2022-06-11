@@ -1,14 +1,25 @@
-import { Lazy, SingleEditorComponent, html } from '@hydrofoil/shaperone-wc'
-import { dash, sh } from '@tpluscode/rdf-ns-builders/strict'
-import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
+import { Lazy, SingleEditorComponent } from '@hydrofoil/shaperone-wc'
+import { dash } from '@tpluscode/rdf-ns-builders/strict'
+import type { ComponentInstance } from '@hydrofoil/shaperone-core/models/components'
 
-export const textField: Lazy<SingleEditorComponent> = {
+interface EditorState extends ComponentInstance {
+  noLabel?: boolean
+}
+
+export const textField: Lazy<SingleEditorComponent<EditorState>> = {
   editor: dash.TextFieldEditor,
   async lazyRender() {
-    await import('@shoelace-style/shoelace/dist/components/input/input.js')
+    const { inputRenderer } = await import('./renderer/input')
 
-    return ({ property, value }, { update }) => html`<sl-input .value="${value.object?.value || ''}" 
-                                                     label="${taggedLiteral(property.shape, { property: sh.name })}"
-                                                     @sl-change="${(e: any) => update(e.target.value)}"></sl-input>`
+    return inputRenderer()
+  },
+}
+
+export const uri: Lazy<SingleEditorComponent> = {
+  editor: dash.URIEditor,
+  async lazyRender() {
+    const { inputRenderer } = await import('./renderer/input')
+
+    return inputRenderer({ type: 'url' })
   },
 }

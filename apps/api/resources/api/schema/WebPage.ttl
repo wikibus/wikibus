@@ -62,12 +62,6 @@ prefix wba: <https://wikibus.org/api#>
         ] ;
     ],
     [
-      sh:path schema:mainEntity ;
-      dash:viewer dash:DetailsViewer ;
-      sh:order 2 ;
-      sh:group </page/_element/main> ;
-    ],
-    [
       sh:path
         [
           sh:alternativePath
