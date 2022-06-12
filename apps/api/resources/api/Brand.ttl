@@ -47,6 +47,8 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:name "Alternative names" ;
       sh:description "Alternative spelling, abbreviations, etc" ;
       sh:path skos:altLabel ;
+      sh:datatype rdf:langString ;
+      sh:uniqueLang true ;
       sh:order 20 ;
     ],
     [
