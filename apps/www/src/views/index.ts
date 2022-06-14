@@ -14,4 +14,7 @@ export const viewers = [
   ...Footer.viewers,
 ]
 
-export const { decorators } = Main
+export const decorators = [
+  ...Main.decorators,
+  // diagDecorator,
+]

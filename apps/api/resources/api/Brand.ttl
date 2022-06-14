@@ -55,7 +55,42 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:name "Search variants" ;
       sh:description "Hidden labels, such as misspelled variants" ;
       sh:path skos:hiddenLabel ;
-      sh:order 20 ;
+      sh:order 30 ;
+    ],
+    [
+      sh:name "Logo" ;
+      sh:path schema:image ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:BlankNode ;
+      dash:editor dash:DetailsEditor ;
+      sh:order 40 ;
+      sh:node
+        [
+          rdfs:label "Image object" ;
+          sh:property
+            [
+              sh:name "Image address" ;
+              sh:path schema:contentUrl ;
+              sh:nodeKind sh:IRI ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 1 ;
+            ],
+            [
+              sh:name "Caption" ;
+              sh:path schema:caption ;
+              sh:datatype xsd:string ;
+              sh:maxCount 1 ;
+              sh:order 2 ;
+            ],
+            [
+              sh:path rdf:type ;
+              sh:hasValue schema:ImageObject ;
+              sh:defaultValue schema:ImageObject ;
+              sh:deactivated true ; # TODO reenable and automatically set in a payload hook
+              dash:hidden true ;
+            ] ;
+        ] ;
     ] ;
 .
 

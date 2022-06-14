@@ -71,3 +71,11 @@ export const uri: Lazy<SingleEditorComponent> = {
     return inputRenderer({ type: 'url' })
   },
 }
+
+export const details: Lazy<SingleEditorComponent> = {
+  editor: dash.DetailsEditor,
+  async lazyRender() {
+    const { render } = await import('./renderer/details')
+    return render
+  },
+}

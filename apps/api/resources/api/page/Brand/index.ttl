@@ -1,3 +1,5 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -14,7 +16,24 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
       sh:name "brand" ;
       sh:group </page/_element/main> ;
       rs:dereference true ;
-    ] ,
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path schema:image ;
+              sh:maxCount 1 ;
+              dash:viewer hex:ImageViewer ;
+            ] ;
+        ] ;
+    ],
+    [
+      sh:order 60 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main> ;
+      dash:viewer hex:CommentsViewer ;
+    ],
     [
       sh:name "Edit" ;
       sh:path schema:mainEntity ;
