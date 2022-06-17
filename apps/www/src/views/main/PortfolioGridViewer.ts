@@ -3,6 +3,7 @@ import { hex } from '@hydrofoil/vocabularies/builders'
 import { rdfs, schema } from '@tpluscode/rdf-ns-builders/strict'
 import { repeat } from 'lit/directives/repeat.js'
 import { GraphPointer } from 'clownface'
+import { byAnnotatedPaths } from '../../lib/collection'
 
 export const renderer: MultiRenderer = {
   viewer: hex.CollectionMembersViewer,
@@ -14,8 +15,10 @@ export const renderer: MultiRenderer = {
     await import('../../components/canvas-shell/canvas-portfolio-item')
   },
   render(members) {
+    const collection = this.parent?.pointer
+
     return html`<masonry-layout class="grid-container clearfix">
-      ${repeat(members.toArray(), member => member.value, renderMember)}
+      ${repeat(members.toArray().sort(byAnnotatedPaths(collection)), member => member.value, renderMember)}
     </masonry-layout>`
   },
 }

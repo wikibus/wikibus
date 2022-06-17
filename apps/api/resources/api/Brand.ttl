@@ -12,7 +12,7 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
-  rdfs:subClassOf schema:Brand ;
+  rdfs:subClassOf schema:Brand, hydra:Resource ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;

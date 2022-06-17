@@ -1,7 +1,17 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
   a </api/BrandCollection> ;
+  hydra:view
+  [
+    a hex:OrderedCollectionView ;
+    hex:orderedBy
+      (
+        skos:prefLabel
+      ) ;
+  ] ;
 .
