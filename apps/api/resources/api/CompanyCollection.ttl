@@ -12,13 +12,13 @@ prefix knossos: <https://hypermedia.app/knossos#>
   hydra:memberAssertion
     [
       hydra:property rdf:type ;
-      hydra:object </api/Brand> ;
+      hydra:object </api/Company> ;
     ] ;
   hydra:supportedOperation
     [
       a schema:CreateAction ;
       hydra:method "POST" ;
-      hydra:expects </api/Brand/New> ;
+      hydra:expects </api/Company/New> ;
       hydra:title "Create" ;
       code:implementedBy
       [
@@ -28,7 +28,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
     ] ;
   knossos:memberTemplate
     [
-      hydra:template "/brand/{name}" ;
+      hydra:template "/company/{name}" ;
       hydra:mapping
         [
           hydra:variable "name" ;

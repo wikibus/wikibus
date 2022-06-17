@@ -1,0 +1,15 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+<>
+  rdfs:label "New brand"@en, "Nowa marka"@pl ;
+  sh:property
+    [
+      sh:name "Name", "Nazwa"@pl ;
+      sh:path skos:prefLabel ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:minLength 3 ;
+    ] ;
+.

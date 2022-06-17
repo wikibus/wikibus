@@ -93,14 +93,3 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
         ] ;
     ] ;
 .
-
-<#New>
-  rdfs:label "New brand"@en, "Nowa marka"@pl ;
-  sh:property
-    [
-      sh:name "Name", "Nazwa"@pl ;
-      sh:path skos:prefLabel ;
-      sh:minCount 1 ;
-      sh:minLength 3 ;
-    ] ;
-.

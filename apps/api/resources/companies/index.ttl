@@ -1,0 +1,7 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  a </api/CompanyCollection> ;
+.

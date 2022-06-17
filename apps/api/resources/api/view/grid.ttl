@@ -1,0 +1,18 @@
+PREFIX dash: <http://datashapes.org/dash#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:targetClass </api/BrandCollection>, </api/CompanyCollection> ;
+  sh:property
+    [
+      sh:path hydra:member ;
+      dash:viewer hex:CollectionMembersViewer ;
+      sh:node
+        [
+        ] ;
+    ] ;
+.

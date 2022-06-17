@@ -10,6 +10,7 @@
     "build:style": "sass --watch src/style.scss src/style.css & exit 0"
   },
   "dependencies": {
+    "@appnest/masonry-layout": "^2.0.8",
     "@captaincodeman/rdx": "^1.0.0-rc.9",
     "@web3-storage/parse-link-header": "^3.1.0",
     "@hydrofoil/roadshow": "^0.4.5",

@@ -8,10 +8,10 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
   a schema:WebPage ;
-  schema:mainEntity </brands> ;
+  schema:mainEntity </companies> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
-  hydra:title "Brands" ;
+  hydra:title "Companies" ;
   schema:breadcrumb
     [
       schema:itemListElement
@@ -24,8 +24,8 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
               schema:name "Catalog" ;
               schema:nextItem
                 [
-                  schema:item </brands> ;
-                  schema:name "Brands" ;
+                  schema:item </companies> ;
+                  schema:name "Companies" ;
                 ]
             ]
         ] ;
@@ -41,8 +41,8 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
       sh:order 50 ;
       sh:path schema:mainEntity ;
       sh:group </page/_element/main> ;
-      rs:dereference true ;
       dash:viewer dash:DetailsViewer ;
+      rs:dereference true ;
     ] ,
     [
       sh:name "New" ;

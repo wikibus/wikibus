@@ -9,6 +9,11 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
+"@appnest/masonry-layout@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@appnest/masonry-layout/-/masonry-layout-2.0.8.tgz#b4c1a340dc515c9222d70e8d21b9da64e647f4fc"
+  integrity sha512-kpUh19QrwpADbyRQdXqG3MPMYSdtLmaq45v4JSbmjGa+VU4ZMC11w7kZx18iSzPeQHAdBF+p4CVsCTgtZNll/A==
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
