@@ -85,7 +85,7 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
     const imageUrl = this.resource.out(schema.image).out(schema.contentUrl).value
     return imageUrl
       ? html`<img src="${imageUrl}" alt="${taggedLiteral(this.resource, { property: skos.prefLabel })} Logo">`
-      : html`<img src="https://dummyimage.com/300x200/e0e0e0/64bfdb&amp;text=${taggedLiteral(this.resource, { property: skos.prefLabel })}"
+      : html`<img src="https://dummyimage.com/300x200/f5f5f5/64bfdb&amp;text=${taggedLiteral(this.resource, { property: skos.prefLabel })}"
                 alt="${taggedLiteral(this.resource, { property: skos.prefLabel })} Logo">`
   }
 }

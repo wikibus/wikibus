@@ -5,3 +5,7 @@ vaadin-combo-box-overlay {
 vaadin-date-picker-overlay {
   z-index: 10000;
 }
+
+body {
+  --track-color: var(--theme-color);
+}

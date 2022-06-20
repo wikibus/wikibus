@@ -1,5 +1,5 @@
 import $rdf from '@rdfjs/data-model'
-import { hydra, rdf, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { hydra, rdf, schema, sh } from '@tpluscode/rdf-ns-builders/strict'
 import type { DispatchParam, Store } from '../store'
 
 export default function effects(store: Store) {
@@ -47,6 +47,17 @@ export default function effects(store: Store) {
         if (loaded.representation?.root) {
           dispatch.core.setEntrypoint(loaded.representation.root.pointer)
         }
+      }
+    },
+    'operation/succeeded': ({ response, operation }: DispatchParam<'operation', 'succeeded'>) => {
+      const created = response.xhr.status === 201 && response.xhr.headers.get('location')
+      if (created) {
+        dispatch.routing.goTo(created)
+        return
+      }
+
+      if (operation.types.has(schema.ReplaceAction)) {
+        dispatch.routing.goTo(operation.target.id.value)
       }
     },
   }

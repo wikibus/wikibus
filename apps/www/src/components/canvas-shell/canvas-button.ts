@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit'
+import { css, html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 import CanvasShellBase from './CanvasShellBase'
@@ -21,6 +21,18 @@ type Color =
 
 @customElement('canvas-button')
 export class CanvasButton extends CanvasShellBase(LitElement) {
+  static get styles() {
+    return css`
+      ${super.styles || []}
+      
+      :host([disabled]) {
+        pointer-events: none;
+        cursor: progress;
+        opacity: 0.65;
+      }
+    `
+  }
+
   @property({ type: String })
   public color?: Color
 
@@ -39,8 +51,8 @@ export class CanvasButton extends CanvasShellBase(LitElement) {
   @property({ type: Boolean, reflect: true, attribute: 'dropdown-toggle' })
   public dropdownToggle = false
 
-  @property({ type: Object })
-  public icon: (size: number) => string = () => ''
+  @property({ type: Boolean, reflect: true })
+  public disabled = false
 
   private get __buttonLight() {
     switch (this.color) {
@@ -66,8 +78,8 @@ export class CanvasButton extends CanvasShellBase(LitElement) {
     }
 
     return html`
-      <button class="button ${classMap(classes)}">
-        ${this.icon(this.mini ? 16 : 24)} <slot>${this.label}</slot>
+      <button class="button ${classMap(classes)}" ?disabled="${this.disabled}">
+        <slot name="icon"></slot> <slot>${this.label}</slot>
       </button>
     `
   }

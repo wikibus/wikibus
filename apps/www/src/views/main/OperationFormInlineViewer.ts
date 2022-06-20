@@ -50,6 +50,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
   async init() {
     await import('../../components/canvas-shell/canvas-button')
     await import('@hydrofoil/shaperone-wc/shaperone-form.js')
+    await import('@shoelace-style/shoelace/dist/components/spinner/spinner.js')
   },
   render(pointer) {
     if (!this.state.locals.loading) {
@@ -77,6 +78,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
       return ''
     }
 
+    const operationState = this.params.operation.operations.get(operation.id)
     if (!shape) {
       loadShape(operation)
         .then((loaded) => {
@@ -91,7 +93,11 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
 
     return html`
       <shaperone-form .shapes="${shape?.pointer}" .resource="${resource}">
-        <canvas-button slot="buttons" @click="${submit(operation)}" .label="${operation.title}"></canvas-button>
+        <canvas-button slot="buttons" 
+                       @click="${submit(operation)}" 
+                       .label="${operation.title}"
+                       ?disabled="${operationState?.loading || false}"></canvas-button>
+        ${operationState?.loading ? html`<sl-spinner slot="buttons"></sl-spinner>` : ''}
       </shaperone-form>
     `
   },

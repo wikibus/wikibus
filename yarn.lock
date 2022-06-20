@@ -1353,10 +1353,10 @@
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     alcaeus "^2.1.2"
 
-"@hydrofoil/shell-operations@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.2.tgz#0cb0ff4d47f8f4b0fa343ee91a807bcdcd1d666e"
-  integrity sha512-f4JVBmRcKfrgZwJejXJRtbFMdE0n95/Md3vv2t4vFtHviEJVQkpJ9gSjl9aPS4roXtGKSY7EJMYo+rkv8YWAPQ==
+"@hydrofoil/shell-operations@^0.2.2", "@hydrofoil/shell-operations@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.3.tgz#e65a05fd2bcfe2bec2fad8211465bd078ca08a16"
+  integrity sha512-efVvAUKMTEIHV9Hd6253oDOIpAuwz+p634dONYXKxdLVPsZV7Mb1stVA1O2jDloQu/JBuOC7VtonfYE11o5ppw==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@hydrofoil/shell-core" "^0.1.3"

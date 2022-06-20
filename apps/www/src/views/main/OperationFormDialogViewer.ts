@@ -44,7 +44,7 @@ function getOperation(context: FocusNodeViewContext<Locals>, pointer: GraphPoint
 
   let resource: RdfResource | undefined
   if ('types' in store.state.core.contentResource!) {
-    resource = store.state.core.contentResource._create<RdfResource>(pointer as any)
+    resource = store.state.core.client?.resources.factory.createEntity<RdfResource>(pointer as any)
   } else {
     const rootResource = store.state.core.client?.resources.get(
       store.state.core.contentResource!.id as NamedNode,
@@ -64,6 +64,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
   async init() {
     /* eslint-disable import/no-extraneous-dependencies */
     await import('@vaadin/vaadin-dialog/vaadin-dialog.js')
+    await import('@shoelace-style/shoelace/dist/components/spinner/spinner.js')
     await import('../../components/canvas-shell/canvas-button')
   },
   render(pointer) {
@@ -73,6 +74,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
     if (!operation) {
       return ''
     }
+    const operationState = this.params.operation.operations.get(operation.id)
 
     const openDialog = (e: Event) => {
       this.state.locals.open = true
@@ -97,11 +99,19 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
       this.controller.host.requestUpdate()
     }
 
-    async function renderForm(this:Dialog, root: HTMLElement) {
+    async function renderForm(this: Dialog, root: HTMLElement) {
       await import('@hydrofoil/shaperone-wc/shaperone-form.js')
-      render(html`<shaperone-form .shapes="${shape?.pointer}">
-        <canvas-button slot="buttons" @click="${submit(this, operation)}" .label="${operation.title}"></canvas-button>
-      </shaperone-form>`, root)
+      render(html`<shaperone-form .shapes="${shape?.pointer}"></shaperone-form>`, root)
+    }
+
+    function renderFooter(this: Dialog, root: HTMLElement) {
+      render(html`
+        ${operationState?.loading ? html`<sl-spinner></sl-spinner>` : ''}
+        <canvas-button slot="buttons"
+                       @click="${submit(this, root, operation)}"
+                       .label="${operation.title}"
+                       ?disabled="${operationState?.loading || false}"
+        ></canvas-button>`, root)
     }
 
     return html`
@@ -109,6 +119,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
       <vaadin-dialog .opened="${this.state.locals.open || false}"
                      header-title="${taggedLiteral(shape) as any}"
                      .renderer="${guard([operation, shape], () => renderForm)}"
+                     .footerRenderer="${guard([operationState?.loading], () => renderFooter)}"
                      @opened-changed="${closeDialog}"
       ></vaadin-dialog>
       </li>
@@ -116,16 +127,16 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
   },
 }
 
-function submit(dialog: Dialog, operation: RuntimeOperation) {
-  return (e: any) => {
-    const form: ShaperoneForm = e.target?.parentElement
+function submit(dialog: Dialog, root: HTMLElement, operation: RuntimeOperation) {
+  return () => {
+    const form: ShaperoneForm | null | undefined = root.parentElement?.querySelector('shaperone-form')
 
     dialog.dispatchEvent(new CustomEvent('submit-operation', {
       bubbles: true,
       composed: true,
       detail: {
         operation,
-        payload: form.resource,
+        payload: form?.resource,
       },
     }))
   }
