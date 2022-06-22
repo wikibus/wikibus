@@ -9,3 +9,7 @@ vaadin-date-picker-overlay {
 body {
   --track-color: var(--theme-color);
 }
+
+sl-button::part(base) {
+  background-color: var(--btn-bg-color, var(--secondary));
+}

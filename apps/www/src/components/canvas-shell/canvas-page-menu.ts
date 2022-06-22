@@ -11,6 +11,10 @@ export class CanvasPageMenu extends CanvasShellBase(LitElement) {
         :host([open]) slot::slotted(nav) {
           display: block !important;
         }
+        
+        #page-submenu-trigger {
+          float: right;
+        }
       `,
     ]
   }

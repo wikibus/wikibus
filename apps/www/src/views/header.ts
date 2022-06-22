@@ -1,20 +1,16 @@
 import { html, FocusNodeViewContext, Renderer, ObjectViewContext, ViewerMatcher } from '@hydrofoil/roadshow'
 import { dash } from '@tpluscode/rdf-ns-builders'
-import { TemplateResult } from 'lit'
 import { rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
-
-export function renderHeader(primaryMenu?: () => TemplateResult) {
-  return html`<canvas-header .primaryMenu="${primaryMenu}"></canvas-header>`
-}
+import { hex } from '@hydrofoil/vocabularies/builders'
 
 const headerLink: Renderer<ObjectViewContext> = {
   viewer: dash.HeaderLinkViewer,
   render(resource) {
-    return html`<li>
-      <a href="${resource.value!}">
+    return html`
+      <a href="${resource.value!}" slot="menu-link">
         ${this.parent?.propertyShape.name}
       </a>
-    </li>`
+    `
   },
 }
 
@@ -24,11 +20,11 @@ const headerRenderer: Renderer<FocusNodeViewContext> = {
     await import('../components/canvas-shell/canvas-header')
   },
   render() {
-    const renderMenu = () => html`<ul>
-      ${this.state.shape?.property.filter(p => !p.hidden).map(property => this.show({ property }))}
-    </ul>`
+    const properties = this.state.shape?.property.filter(p => !p.hidden) || []
 
-    return renderHeader(renderMenu)
+    return html`<canvas-header>
+      ${properties.map(property => this.show({ property }))}
+    </canvas-header>`
   },
 }
 
@@ -39,5 +35,25 @@ const headerViewer: ViewerMatcher = {
   },
 }
 
-export const renderers = [headerRenderer, headerLink]
+const profileMenu: Renderer<FocusNodeViewContext> = {
+  viewer: hex.AuthStatusViewer,
+  async init() {
+    await Promise.all([
+      import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/dropdown/dropdown.js'),
+      import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/button/button.js'),
+      import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/icon/icon.js'),
+      import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/menu/menu.js'),
+      import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js'),
+    ])
+  },
+  render() {
+    return html`<sl-dropdown slot="account-menu">
+      <sl-button slot="trigger" caret loading size="small">
+        <sl-icon name="person-fill"></sl-icon>
+      </sl-button>
+    </sl-dropdown>`
+  },
+}
+
+export const renderers = [headerRenderer, headerLink, profileMenu]
 export const viewers = [headerViewer]

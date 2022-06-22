@@ -260,15 +260,6 @@
 		Header
 	-----------------------------------------------------------------*/
 
-	#header,
-	#header-wrap,
-	#header.sticky-style-2,
-	#header.sticky-style-3,
-	#header.sticky-style-2 #header-wrap,
-	#header.sticky-style-3 #header-wrap {
-		height: auto !important;
-	}
-
 	#header.sticky-style-2 #header-wrap,
 	#header.sticky-style-3 #header-wrap {
 		min-height: 60px;
@@ -351,22 +342,6 @@
 		display: none;
 	}
 
-	#logo {
-		display: block;
-		height: 100px;
-		float: none;
-		margin: 0 auto 0 !important;
-		max-width: none;
-		text-align: center;
-		border: 0 !important;
-		padding: 0 !important;
-		a {
-			&.standard-logo {
-				display: inline-block;
-			}
-		}
-	}
-
 	/* ----------------------------------------------------------------
 		Primary Menu
 	-----------------------------------------------------------------*/
@@ -379,15 +354,7 @@
 	#primary-menu-trigger {
 		opacity: 1;
 		pointer-events: auto;
-		top: 25px;
-		margin-top: 0;
-		left: 0;
 		z-index: 1;
-	}
-
-	#primary-menu .container #primary-menu-trigger {
-		top: 5px;
-		left: 0;
 	}
 
 	#primary-menu > ul,
