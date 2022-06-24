@@ -92,11 +92,13 @@ const profileMenu: Renderer<FocusNodeViewContext<AuthStatus>> = {
 function accountMenuSelected(e: any) {
   switch (e.detail.item.value) {
     case 'log-in':
-      store.dispatch.auth.logIn({})
+      store.dispatch.auth.logIn()
       break
-    case 'log-out':
-      store.dispatch.auth.logOut()
+    case 'log-out': {
+      const returnUrl = new URL(store.state.routing.appPath, window.location.href)
+      store.dispatch.auth.logOutWithRedirect(returnUrl.toString())
       break
+    }
     default:
       // eslint-disable-next-line no-console
       console.warn(`Unexpected ${e.detail.item.value}`)

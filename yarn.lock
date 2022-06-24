@@ -1358,10 +1358,10 @@
     concat-merge "^1.0.3"
     lit "^2.0.0"
 
-"@hydrofoil/shell-auth-auth0@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-auth-auth0/-/shell-auth-auth0-0.3.2.tgz#ad22baedb57708d298957200a1b41d23a72e885f"
-  integrity sha512-qsiMpbOP+GS7qpSdZptecUhxc6WQk5mZ1V96P8qr/l/7ODRMYFmzlvUZNXziU+8lSXXu5HCljHHRy1PhUOzKOQ==
+"@hydrofoil/shell-auth-auth0@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-auth-auth0/-/shell-auth-auth0-0.3.3.tgz#fe84a87d3c3259aadc30b738749ba49062f382d7"
+  integrity sha512-2Hi0IY7TDFRQK+lVsSg/uUdVn+cypqS6m3SfVzoBaOebC2k2wqojccQR13ozvsAW0MAsQKVLdKaeFxiK8SdOwA==
   dependencies:
     "@auth0/auth0-spa-js" "^1.19.3"
     "@captaincodeman/rdx" "^1.0.0-rc.9"
@@ -1411,10 +1411,10 @@
     "@rdfjs/types" "^1.0.1"
     "@tpluscode/rdf-ns-builders" "^1.1.0"
 
-"@hydrofoil/shell-routing@^0.2.2", "@hydrofoil/shell-routing@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.4.tgz#c6c0e827d2844c9f70342dfb282b80f5bd69e8ef"
-  integrity sha512-YxFvrmErqhKY2gVTxoKfqh4VzyATooCfcN7DLY6u+CSQpq3OylnrBb7d5TIgHYd81UWzRxjtJJucm5dHuB3KRw==
+"@hydrofoil/shell-routing@^0.2.2", "@hydrofoil/shell-routing@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.5.tgz#97e9d4741b7cf1eff191651d596feb9f709be7da"
+  integrity sha512-WA2h6ORINYErrmEg12r8BGq335zpzQNKt07ironWjLhvoB0+3t1KVsHdzNyzMwQE8WmBSdkmdgzeR+Y/rTQPkQ==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@mapbox/link-hijacker" data-mazes/link-hijacker#composed-path
@@ -1518,7 +1518,7 @@
   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
   integrity sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==
 
-"@mapbox/link-hijacker@data-mazes/link-hijacker#composed-path":
+"@mapbox/link-hijacker@data-mazes/link-hijacker#composed-path", "@mapbox/link-hijacker@github:data-mazes/link-hijacker#composed-path":
   version "1.1.0"
   resolved "https://codeload.github.com/data-mazes/link-hijacker/tar.gz/31f2c661694c2f635b2bf9d6ba40a3b5df4f3a31"
 
