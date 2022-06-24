@@ -13,3 +13,11 @@ body {
 sl-button::part(base) {
   background-color: var(--btn-bg-color, var(--secondary));
 }
+
+canvas-header sl-button::part(label), canvas-header sl-button::part(caret) {
+  color: var(--header-text-color);
+}
+
+canvas-header sl-button::part(label) {
+  font-size: 1.3em;
+}

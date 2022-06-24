@@ -41,7 +41,7 @@ export class CanvasHeader extends CanvasShellBase(LitElement) {
       }
 
       slot[name="menu-link"]::slotted(a) {
-        color: #cccccc !important;
+        color: var(--header-text-color) !important;
         font-weight: bold;
         font-size: 13px;
         letter-spacing: 1px;
@@ -64,11 +64,11 @@ export class CanvasHeader extends CanvasShellBase(LitElement) {
       }
 
       #top-search button {
-        color: #ccc;
+        color: var(--header-text-color);
       }
 
       #primary-menu-trigger {
-        color: #ccc
+        color: var(--header-text-color);
       }
 
       @media only screen and (max-width: 991.98px) {

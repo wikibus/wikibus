@@ -1,5 +1,6 @@
 import { html, FocusNodeViewContext, Renderer, ObjectViewContext, ViewerMatcher } from '@hydrofoil/roadshow'
-import { dash, acl, rdf, schema } from '@tpluscode/rdf-ns-builders'
+import { acl, rdf, schema } from '@tpluscode/rdf-ns-builders'
+import { dash } from '@tpluscode/rdf-ns-builders/loose'
 import { hex } from '@hydrofoil/vocabularies/builders'
 import { GraphPointer } from 'clownface'
 import { isNamedNode } from 'is-graph-pointer'
@@ -55,8 +56,9 @@ const profileMenu: Renderer<FocusNodeViewContext<AuthStatus>> = {
     ])
   },
   render(ptr) {
-    const { loading, user } = this.state.locals
+    let { loading, user } = this.state.locals
     if (typeof loading === 'undefined') {
+      loading = true
       if (isNamedNode(ptr)) {
         this.state.locals.loading = true
         this.state.locals.userPromise = this.controller.resources.load(ptr.term)
@@ -77,11 +79,11 @@ const profileMenu: Renderer<FocusNodeViewContext<AuthStatus>> = {
 
     return html`<sl-dropdown slot="account-menu" placement="bottom-end">
       <sl-button slot="trigger" caret ?loading="${loading}" size="small">
-        <sl-icon name="person-fill"></sl-icon>
+        <sl-icon name="${isAuthenticated ? 'person-fill' : 'person'}"></sl-icon>
       </sl-button>
       <sl-menu @sl-select="${accountMenuSelected}">
         <sl-menu-item ?hidden="${isAuthenticated}" value="log-in">Log in</sl-menu-item>
-        <sl-menu-item ?hidden="${!isAuthenticated}" value="logout">Log out</sl-menu-item>
+        <sl-menu-item ?hidden="${!isAuthenticated}" value="log-out">Log out</sl-menu-item>
       </sl-menu>
     </sl-dropdown>`
   },
