@@ -1,7 +1,10 @@
 import { html, FocusNodeViewContext, Renderer, ObjectViewContext, ViewerMatcher } from '@hydrofoil/roadshow'
 import { dash } from '@tpluscode/rdf-ns-builders'
-import { rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { acl, rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
 import { hex } from '@hydrofoil/vocabularies/builders'
+import { GraphPointer } from 'clownface'
+import { isNamedNode } from 'is-graph-pointer'
+import { store } from '../state/store'
 
 const headerLink: Renderer<ObjectViewContext> = {
   viewer: dash.HeaderLinkViewer,
@@ -35,7 +38,13 @@ const headerViewer: ViewerMatcher = {
   },
 }
 
-const profileMenu: Renderer<FocusNodeViewContext> = {
+interface AuthStatus {
+  loading?: boolean
+  userPromise?: Promise<void>
+  user?: GraphPointer
+}
+
+const profileMenu: Renderer<FocusNodeViewContext<AuthStatus>> = {
   viewer: hex.AuthStatusViewer,
   async init() {
     await Promise.all([
@@ -46,13 +55,51 @@ const profileMenu: Renderer<FocusNodeViewContext> = {
       import(/* webpackChunkName: 'profile-menu' */ '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js'),
     ])
   },
-  render() {
-    return html`<sl-dropdown slot="account-menu">
-      <sl-button slot="trigger" caret loading size="small">
+  render(ptr) {
+    const { loading, user } = this.state.locals
+    if (typeof loading === 'undefined') {
+      if (isNamedNode(ptr)) {
+        this.state.locals.loading = true
+        this.state.locals.userPromise = this.controller.resources.load(ptr.term)
+          .then((loaded) => {
+            if (loaded) {
+              this.state.locals.user = loaded
+            }
+            this.state.locals.loading = false
+            this.controller.host.requestUpdate()
+          })
+      } else {
+        this.state.locals.loading = false
+      }
+      this.controller.host.requestUpdate()
+    }
+
+    const isAuthenticated = !!user?.has(rdf.type, acl.AuthenticatedAgent).terms.length
+
+    return html`<sl-dropdown slot="account-menu" placement="bottom-end">
+      <sl-button slot="trigger" caret ?loading="${loading}" size="small">
         <sl-icon name="person-fill"></sl-icon>
       </sl-button>
+      <sl-menu @sl-select="${accountMenuSelected}">
+        <sl-menu-item ?hidden="${isAuthenticated}" value="log-in">Log in</sl-menu-item>
+        <sl-menu-item ?hidden="${!isAuthenticated}" value="logout">Log out</sl-menu-item>
+      </sl-menu>
     </sl-dropdown>`
   },
+}
+
+function accountMenuSelected(e: any) {
+  switch (e.detail.item.value) {
+    case 'log-in':
+      store.dispatch.auth.logIn({})
+      break
+    case 'log-out':
+      store.dispatch.auth.logOut()
+      break
+    default:
+      // eslint-disable-next-line no-console
+      console.warn(`Unexpected ${e.detail.item.value}`)
+  }
 }
 
 export const renderers = [headerRenderer, headerLink, profileMenu]

@@ -3,6 +3,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 prefix rs: <https://hypermedia.app/roadshow#>
 prefix wba: <https://wikibus.org/api#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
   a schema:WPHeader ;
@@ -22,13 +23,21 @@ prefix wba: <https://wikibus.org/api#>
                 sh:path wba:home ;
                 sh:name "Home"@en ;
                 dash:viewer dash:HeaderLinkViewer ;
+                dash:propertyRole hex:MainMenuRole ;
               ],
               [
                 sh:order 2 ;
                 sh:path wba:catalog ;
                 sh:name "Catalog"@en ;
                 dash:viewer dash:HeaderLinkViewer ;
-              ]
+                dash:propertyRole hex:MainMenuRole ;
+              ],
+              [
+                sh:order 100 ;
+                sh:path </api#currentUser> ;
+                dash:viewer hex:AuthStatusViewer ;
+                dash:propertyRole hex:AccountMenuRole ;
+              ] ;
           ] ;
         ] ;
     ] ;

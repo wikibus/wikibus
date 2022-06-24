@@ -18,9 +18,26 @@ export default function effects(store: Store) {
             .has(hydra.object, sh.NodeShape)
             .terms.length
       }
+      Hydra.defaultHeaders = async ({ uri }): Promise<HeadersInit> => {
+        const { auth0 } = store.getState().auth
+        const sameOrigin = new URL(uri).origin === window.location.origin
+        if (sameOrigin && auth0 && await auth0.isAuthenticated()) {
+          return {
+            Authorization: `Bearer ${await auth0.getTokenSilently()}`,
+          }
+        }
+
+        return {}
+      }
 
       const { resource } = store.getState().routing
       dispatch.resource.load(resource)
+      dispatch.auth.initialize()
+    },
+    'auth/setClient': ({ redirected, referrer }: DispatchParam<'auth', 'setClient'>) => {
+      if (redirected && referrer) {
+        dispatch.routing.goTo(referrer)
+      }
     },
     'resource/succeeded': ({ id, representation }: DispatchParam<'resource', 'succeeded'>) => {
       const { resource } = store.getState().routing

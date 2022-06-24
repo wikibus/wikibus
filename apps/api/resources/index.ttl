@@ -11,4 +11,5 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
   wba:home </> ;
   wba:catalog </catalog> ;
   hydra:collection </api/shapes> ;
+  </api#currentUser> </user/current> ;
 .
