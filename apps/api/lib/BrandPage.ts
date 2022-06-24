@@ -1,6 +1,6 @@
 import { ResourceHook } from '@hydrofoil/labyrinth/resource'
 import { dash, hydra, rdf, schema, skos } from '@tpluscode/rdf-ns-builders'
-import { fromStream } from 'rdf-dataset-ext'
+import dataset from 'rdf-dataset-ext'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'rdf-express-node-factory'
 import { CONSTRUCT } from '@tpluscode/sparql-builder'
@@ -20,7 +20,7 @@ export const fillTemplate: ResourceHook = async (req, pointer) => {
         .addOut(dash.shape, shape)
     })
 
-    await fromStream(pointer.dataset, await CONSTRUCT`${req.hydra.term} ${hydra.title} ?title`
+    await dataset.fromStream(pointer.dataset, await CONSTRUCT`${req.hydra.term} ${hydra.title} ?title`
       .WHERE`
         ${mainEntity} ${skos.prefLabel} ?title
       `
