@@ -1,5 +1,5 @@
 import { MiddlewareFactory } from '@hydrofoil/knossos/configuration'
-import { hydra, rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { hydra, rdf, schema } from '@tpluscode/rdf-ns-builders'
 import clownface from 'clownface'
 
 export const setEditLink: MiddlewareFactory = () => (req, res, next) => {

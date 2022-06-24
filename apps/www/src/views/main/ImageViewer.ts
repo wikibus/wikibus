@@ -1,7 +1,7 @@
 import { Renderer, html, ViewerMatcher } from '@hydrofoil/roadshow'
 import { FocusNodeViewContext } from '@hydrofoil/roadshow/lib/ViewContext'
 import { hex } from '@hydrofoil/vocabularies/builders'
-import { schema, rdf } from '@tpluscode/rdf-ns-builders/strict'
+import { schema, rdf } from '@tpluscode/rdf-ns-builders'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 export const renderer: Renderer<FocusNodeViewContext> = {

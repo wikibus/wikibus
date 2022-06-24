@@ -1,6 +1,5 @@
 import { html, FocusNodeViewContext, Renderer, ViewerMatcher } from '@hydrofoil/roadshow'
-import { dash } from '@tpluscode/rdf-ns-builders'
-import { rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, rdf, schema } from '@tpluscode/rdf-ns-builders'
 
 const footerRenderer: Renderer<FocusNodeViewContext> = {
   viewer: dash.FooterViewer,

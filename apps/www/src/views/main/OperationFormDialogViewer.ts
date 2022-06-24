@@ -9,7 +9,7 @@ import type { NamedNode } from '@rdfjs/types'
 import type { Dialog } from '@vaadin/vaadin-dialog/vaadin-dialog'
 import { ShaperoneForm } from '@hydrofoil/shaperone-wc'
 import { guard } from 'lit/directives/guard.js'
-import { sh } from '@tpluscode/rdf-ns-builders/strict'
+import { sh } from '@tpluscode/rdf-ns-builders'
 import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
 import { store } from '../../state/store'
 

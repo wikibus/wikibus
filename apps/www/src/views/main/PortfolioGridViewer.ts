@@ -1,6 +1,6 @@
 import { html, MultiRenderer } from '@hydrofoil/roadshow'
 import { hex } from '@hydrofoil/vocabularies/builders'
-import { rdfs, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { rdfs, schema } from '@tpluscode/rdf-ns-builders'
 import { repeat } from 'lit/directives/repeat.js'
 import { GraphPointer } from 'clownface'
 import { byAnnotatedPaths } from '../../lib/collection'

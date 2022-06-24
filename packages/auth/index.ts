@@ -11,7 +11,7 @@ import { acl, vcard, rdf, hydra } from '@tpluscode/rdf-ns-builders'
 import type { Context } from '@hydrofoil/knossos'
 import fetch from 'node-fetch'
 import { isNamedNode } from 'is-graph-pointer'
-import asyncMiddleware from 'middleware-async'
+import { asyncMiddleware } from 'middleware-async'
 
 declare module 'express-serve-static-core' {
   interface Request {

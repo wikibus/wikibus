@@ -1,6 +1,6 @@
 import type { Renderer, ViewerMatcher } from '@hydrofoil/roadshow'
 import { DetailsViewer } from '@hydrofoil/roadshow/viewers'
-import { dash } from '@tpluscode/rdf-ns-builders/strict'
+import { dash } from '@tpluscode/rdf-ns-builders'
 import { html } from 'lit'
 import type { FocusNodeViewContext } from '@hydrofoil/roadshow/lib/ViewContext'
 import TermMap from '@rdfjs/term-map'

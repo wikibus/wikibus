@@ -1,6 +1,6 @@
 import { html, ObjectViewContext, Renderer } from '@hydrofoil/roadshow'
 import { getAllProperties } from '@hydrofoil/roadshow/lib/shape'
-import { dash, schema, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, schema, sh } from '@tpluscode/rdf-ns-builders'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { findNodes } from 'clownface-shacl-path'
 

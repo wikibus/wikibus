@@ -7,24 +7,24 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
   a knossos:Configuration ;
   knossos:resourceLoader
     [
-      a code:EcmaScript ;
-      code:link <file:apps/api/lib/knossos/ResourceLoader#factory> ;
+      a code:EcmaScriptModule ;
+      code:link <file:apps/api/lib/knossos/ResourceLoader.js#factory> ;
     ] ;
   knossos:middleware
     [
       schema:name "resource" ;
       code:implementedBy
         [
-          a code:EcmaScript ;
-          code:link <file:apps/api/lib/knossos/middleware#setEditLink> ;
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/knossos/middleware.js#setEditLink> ;
         ] ;
     ],
     [
       schema:name "before" ;
       code:implementedBy
         [
-          a code:EcmaScript ;
-          code:link <node:@wikibus/auth#oidc> ;
+          a code:EcmaScriptModule ;
+          code:link <node:@wikibus/auth/index.js#oidc> ;
         ] ;
     ] ;
 .

@@ -1,5 +1,5 @@
 import { ResourceHook } from '@hydrofoil/labyrinth/resource'
-import { dash, hydra, rdf, schema, skos } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, hydra, rdf, schema, skos } from '@tpluscode/rdf-ns-builders'
 import { fromStream } from 'rdf-dataset-ext'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'rdf-express-node-factory'

@@ -1,5 +1,5 @@
 import type { Shape } from '@rdfine/shacl'
-import { sh } from '@tpluscode/rdf-ns-builders/strict'
+import { sh } from '@tpluscode/rdf-ns-builders'
 import type { GraphPointer } from 'clownface'
 import { PropertyState } from '@hydrofoil/roadshow/lib/state'
 

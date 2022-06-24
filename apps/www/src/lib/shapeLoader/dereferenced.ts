@@ -1,6 +1,6 @@
 import type { NamedNode, Term } from '@rdfjs/types'
 import { ShapesLoader } from '@hydrofoil/roadshow/ShapesController'
-import { dash, rdf, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, rdf, sh } from '@tpluscode/rdf-ns-builders'
 import type { Collection, Resource } from 'alcaeus'
 import type { HydraClient } from 'alcaeus/alcaeus'
 import { isNamedNode } from 'is-graph-pointer'

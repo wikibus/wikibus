@@ -1,5 +1,5 @@
 import $rdf from '@rdfjs/data-model'
-import { hydra, rdf, schema, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { hydra, rdf, schema, sh } from '@tpluscode/rdf-ns-builders'
 import type { DispatchParam, Store } from '../store'
 
 export default function effects(store: Store) {

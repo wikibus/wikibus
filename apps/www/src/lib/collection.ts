@@ -1,7 +1,7 @@
 import { hex } from '@hydrofoil/vocabularies/builders'
 import { GraphPointer } from 'clownface'
 import { findNodes } from 'clownface-shacl-path'
-import { hydra, rdf } from '@tpluscode/rdf-ns-builders/strict'
+import { hydra, rdf } from '@tpluscode/rdf-ns-builders'
 
 export function byAnnotatedPaths(orderable: GraphPointer | undefined) {
   function iteratePaths() {

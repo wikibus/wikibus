@@ -1,5 +1,5 @@
 import { Lazy, SingleEditorComponent } from '@hydrofoil/shaperone-wc'
-import { dash } from '@tpluscode/rdf-ns-builders/strict'
+import { dash } from '@tpluscode/rdf-ns-builders'
 import type { ComponentInstance } from '@hydrofoil/shaperone-core/models/components'
 import { html } from 'lit'
 import rdf from '@rdfjs/data-model'

@@ -2,6 +2,7 @@
   "name": "@wikibus/api",
   "version": "0.0.0",
   "private": "true",
+  "type": "module",
   "scripts": {
     "bootstrap": "talos put --api $API_BASE --endpoint $SPARQL_ENDPOINT --user $SPARQL_USER --password $SPARQL_PASSWORD",
     "build": "tsc"
@@ -10,14 +11,14 @@
     "@hydrofoil/knossos": "^0.7",
     "@hydrofoil/labyrinth": "^0.11.1",
     "@hydrofoil/vocabularies": "^0.3.1",
-    "@tpluscode/rdf-ns-builders": "^1.1.0",
+    "@tpluscode/rdf-ns-builders": "^2",
     "@tpluscode/sparql-builder": "^0.3.18",
     "@wikibus/auth": "^0.0.0",
     "clownface": "^1.5.1",
     "get-stream": "^6.0.1",
     "hydra-box-web-access-control": "^1.2.0",
     "rdf-dataset-ext": "^1.0.1",
-    "rdf-ext": "^1",
+    "rdf-ext": "^2",
     "slug": "^5.3.0"
   },
   "devDependencies": {

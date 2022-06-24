@@ -1,7 +1,7 @@
 import clownface, { GraphPointer } from 'clownface'
 import type { BlankNode, NamedNode } from '@rdfjs/types'
 import { ShapesLoader } from '@hydrofoil/roadshow/ShapesController'
-import { dash, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, sh } from '@tpluscode/rdf-ns-builders'
 import type { HydraClient } from 'alcaeus/alcaeus'
 import factory from '@rdfjs/data-model'
 import Dataset from '@rdfjs/dataset'

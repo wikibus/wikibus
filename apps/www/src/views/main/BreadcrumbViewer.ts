@@ -1,6 +1,6 @@
 import { html, Renderer, ViewerMatcher } from '@hydrofoil/roadshow'
 import { FocusNodeViewContext } from '@hydrofoil/roadshow/lib/ViewContext'
-import { schema } from '@tpluscode/rdf-ns-builders/strict'
+import { schema } from '@tpluscode/rdf-ns-builders'
 import { hex } from '@hydrofoil/vocabularies/builders'
 
 export const matcher: ViewerMatcher = {

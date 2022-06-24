@@ -2,8 +2,7 @@ import { css, html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { GraphPointer } from 'clownface'
 import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
-import { skos } from '@tpluscode/rdf-ns-builders'
-import { schema } from '@tpluscode/rdf-ns-builders/strict'
+import { skos, schema } from '@tpluscode/rdf-ns-builders'
 import CanvasShellBase from './CanvasShellBase'
 
 @customElement('canvas-portfolio-item')

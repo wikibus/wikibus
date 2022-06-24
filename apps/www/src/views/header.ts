@@ -1,6 +1,5 @@
 import { html, FocusNodeViewContext, Renderer, ObjectViewContext, ViewerMatcher } from '@hydrofoil/roadshow'
-import { dash } from '@tpluscode/rdf-ns-builders'
-import { acl, rdf, schema } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, acl, rdf, schema } from '@tpluscode/rdf-ns-builders'
 import { hex } from '@hydrofoil/vocabularies/builders'
 import { GraphPointer } from 'clownface'
 import { isNamedNode } from 'is-graph-pointer'

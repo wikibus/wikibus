@@ -70,7 +70,7 @@ knossos:WebPageTemplate
   hydra:apiDocumentation <> ;
   knossos:preprocessResponse
     [
-      a code:EcmaScript ;
-      code:link <file:apps/api/lib/BrandPage#fillTemplate>
+      a code:EcmaScriptModule ;
+      code:link <file:apps/api/lib/BrandPage.js#fillTemplate>
     ] ;
 .

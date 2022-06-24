@@ -36,8 +36,8 @@ prefix knossos: <https://hypermedia.app/knossos#>
           hydra:required true ;
           knossos:transformVariable
             [
-              a code:EcmaScript ;
-              code:link <file:apps/api/lib/templateTransform#slugify> ;
+              a code:EcmaScriptModule ;
+              code:link <file:apps/api/lib/templateTransform.js#slugify> ;
             ] ;
         ] ;
     ] ;

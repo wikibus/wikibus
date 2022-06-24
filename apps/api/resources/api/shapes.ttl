@@ -26,8 +26,8 @@ prefix rs: <https://hypermedia.app/roadshow#>
           hydra:property sh:targetNode ;
           query:filter
             [
-              a code:EcmaScript ;
-              code:link <node:@wikibus/api/lib/shapes#filterByTargetNode> ;
+              a code:EcmaScriptModule ;
+              code:link <file:apps/api/lib/shapes.js#filterByTargetNode> ;
             ] ;
         ]
     ]

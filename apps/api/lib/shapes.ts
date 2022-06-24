@@ -1,6 +1,6 @@
 import { sparql } from '@tpluscode/sparql-builder'
 import type { Pattern } from '@hydrofoil/labyrinth/lib/query'
-import { dash, sh } from '@tpluscode/rdf-ns-builders/strict'
+import { dash, sh } from '@tpluscode/rdf-ns-builders'
 
 export function filterByTargetNode({ subject, object }: Pattern) {
   return sparql`{
