@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+
+</brand/autosan>
+  schema:text """
+    <h2>
+      <span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Autosan&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span>
+    </h2>
+    <p>The company was founded in 1832 by Walenty Lipiński and Mateusz Beksiński as a <a href="/wiki/Boiler" title="Boiler">boilermaker</a>'s plant. The history of the factory changed depending on domestic and European economic situations. At the beginning of its activity, the factory produced devices and equipment for the oil mining, <a href="/wiki/Distillery" class="mw-redirect" title="Distillery">distillery</a> and <a href="/wiki/Brewing" title="Brewing">brewing</a> industries.
+    It later added transportation to its range and by 1894 it had become Poland's most important manufacturer of <a href="/wiki/Passenger_car_(rail)" class="mw-redirect" title="Passenger car (rail)">rail coaches</a> and <a href="/wiki/Freight_car" class="mw-redirect" title="Freight car">freight cars</a>, <a href="/wiki/Tramcar" class="mw-redirect" title="Tramcar">tramcars</a> and other high-capacity vehicles, while continuing to produce their initial output of boilers and other related devices. Later, even more variety of product was added, including <a href="/wiki/Cistern" title="Cistern">cisterns</a>, <a href="/wiki/Crane_(machine)" title="Crane (machine)">cranes</a>, <a href="/wiki/Dredger" class="mw-redirect" title="Dredger">dredgers</a>, <a href="/wiki/Road_roller" title="Road roller">road rollers</a>, steel <a href="/wiki/Lifeboat_(shipboard)" title="Lifeboat (shipboard)">lifeboats</a>, steel bridge constructions and <a href="/wiki/Casting" title="Casting">casting</a> articles.
+    </p>
+    <p>In 1926, Autosan launched its first lot of buses mounted on <a href="/wiki/Lancia" title="Lancia">Lancia</a> chassis. Activities were interrupted during <a href="/wiki/World_War_II" title="World War II">World War II</a> but resumed in 1950. In 1973, a new family of buses is launched - the H9 bus, with the engine mounted at the rear. It would be followed in 1984 by the high-capacity H10 model.
+    </p>
+    <p>In September 2013 the Court of Krosno declared the factory bankrupt. In a statement issued at the time it was explained that it was impossible to continue financing the restructuring. A few days later Sobiesław Zasada Group, which owned the company, sold a package of shares in Autosan to Gregory Tarnawa for one Polish zloty. Trade unionists from the factory picketed in front of the former owner, Sobiesław Zasada Group, in Kraków, demanding payment of arrears of salary for several months. The company is still operational.
+    </p>
+    <p>Since 2001, the company has developed and produced components for rail vehicles, especially the bodies of railcars and trams.</p>
+  """^^rdf:HTML ;
+.

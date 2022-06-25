@@ -3,10 +3,10 @@ import type { BlankNode, NamedNode } from '@rdfjs/types'
 import { ShapesLoader } from '@hydrofoil/roadshow/ShapesController'
 import { dash, sh } from '@tpluscode/rdf-ns-builders'
 import type { HydraClient } from 'alcaeus/alcaeus'
-import factory from '@rdfjs/data-model'
 import Dataset from '@rdfjs/dataset'
 import { findNodes } from 'clownface-shacl-path'
 import TermMap from '@rdfjs/term-map'
+import factory from './rdf'
 import childShapesPathFactory from './childShapes.ttl'
 
 function isResource(ptr: GraphPointer): ptr is GraphPointer<NamedNode | BlankNode> {
@@ -35,7 +35,7 @@ export const dashShape = (client: HydraClient): ShapesLoader => {
   }
 
   const childShapesPath = clownface({
-    dataset: Dataset.dataset(childShapesPathFactory({ factory })),
+    dataset: Dataset.dataset(childShapesPathFactory(factory)),
   }).has(sh.path).out(sh.path)
 
   async function loadBlankDashShape(pointer: GraphPointer): Promise<GraphPointer<any>> {

@@ -42,6 +42,7 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
         ) ;
       sh:uniqueLang true ;
       sh:order 10 ;
+      sh:group _:Default ;
     ],
     [
       sh:name "Alternative names" ;
@@ -50,12 +51,14 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:datatype rdf:langString ;
       sh:uniqueLang true ;
       sh:order 20 ;
+      sh:group _:Default ;
     ],
     [
       sh:name "Search variants" ;
       sh:description "Hidden labels, such as misspelled variants" ;
       sh:path skos:hiddenLabel ;
       sh:order 30 ;
+      sh:group _:Default ;
     ],
     [
       sh:name "Logo" ;
@@ -64,6 +67,7 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:nodeKind sh:BlankNode ;
       dash:editor dash:DetailsEditor ;
       sh:order 40 ;
+      sh:group _:Default ;
       sh:node
         [
           rdfs:label "Image object" ;
@@ -91,5 +95,23 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
               dash:hidden true ;
             ] ;
         ] ;
+    ],
+    [
+      sh:name "Article content" ;
+      sh:path schema:text ;
+      sh:datatype <https://atomicdata.dev/datatypes/markdown> ;
+      sh:group _:ArticleGroup ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
     ] ;
+.
+
+_:ArticleGroup
+  rdfs:label "Article" ;
+  sh:order 1 ;
+.
+
+_:Default
+  rdfs:label "Base information" ;
+  sh:order 0 ;
 .

@@ -21,3 +21,12 @@ canvas-header sl-button::part(label), canvas-header sl-button::part(caret) {
 canvas-header sl-button::part(label) {
   font-size: 1.3em;
 }
+
+section#content {
+  img#main-image {
+    max-width: 300px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+}
