@@ -1,0 +1,20 @@
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a sh:NodeShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main> ;
+      rs:dereference true ;
+      dash:viewer hex:OperationFormInlineViewer ;
+      hex:operation schema:ReplaceAction ;
+    ] ;
+.

@@ -28,7 +28,12 @@ object.loadDependencies = () => [
   import('./components/sh-sl-object'),
 ]
 
-export const focusNode: FocusNodeTemplate = (renderer, { focusNode: { groups } }) => html`<sl-tab-group>
+export const focusNode: FocusNodeTemplate = (renderer, { focusNode: { groups } }) => {
+  if (groups.length === 1) {
+    return renderer.renderGroup({ group: groups[0] })
+  }
+
+  return html`<sl-tab-group>
       ${repeat(groups, (group) => {
     const groupName = group.group?.id.value || 'default'
 
@@ -40,6 +45,7 @@ export const focusNode: FocusNodeTemplate = (renderer, { focusNode: { groups } }
         `
   })}
     </sl-tab-group>`
+}
 
 focusNode.loadDependencies = () => [
   import('@shoelace-style/shoelace/dist/components/tab-group/tab-group.js'),

@@ -1,0 +1,36 @@
+PREFIX schema: <http://schema.org/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix wba: <https://wikibus.org/api#>
+prefix knossos: <https://hypermedia.app/knossos#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a schema:WebPage, knossos:WebPageTemplate ;
+  knossos:webPageShape </api/page/Company/Edit> ;
+  knossos:pattern "/page(/company/[^/]+)/edit" ;
+  hydra:title "Edit company" ;
+  schema:hasPart </page/_element/header> ;
+  schema:hasPart [ a schema:WPFooter ] ;
+  schema:breadcrumb
+    [
+      schema:itemListElement
+        [
+          schema:item </> ;
+          schema:name "Home" ;
+          schema:nextItem
+            [
+              schema:item </catalog> ;
+              schema:name "Catalog" ;
+              schema:nextItem
+                [
+                  schema:item </companies> ;
+                  schema:name "Companies" ;
+                  schema:nextItem
+                    [
+                      schema:name "Edit" ;
+                    ]
+                ]
+            ]
+        ] ;
+    ] ;
+.

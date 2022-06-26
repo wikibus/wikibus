@@ -10,6 +10,7 @@ import { store } from '../../state/store'
 
 interface Locals {
   shape?: NodeShape
+  shapeLoading?: Promise<void>
   operation?: RuntimeOperation
   resource?: GraphPointer
   loading?: Promise<void>
@@ -73,14 +74,14 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
       return ''
     }
 
-    const { operation, shape, resource } = this.state.locals
+    const { operation, shape, resource, shapeLoading } = this.state.locals
     if (!operation) {
       return ''
     }
 
     const operationState = this.params.operation.operations.get(operation.id)
-    if (!shape) {
-      loadShape(operation)
+    if (!shape && !shapeLoading) {
+      this.state.locals.shapeLoading = loadShape(operation)
         .then((loaded) => {
           this.state.locals.shape = loaded
           this.controller.host.requestUpdate()

@@ -3,6 +3,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 <>
+  a sh:NodeShape ;
   rdfs:label "New company"@en, "Nowa firma"@pl ;
   sh:property
     [
