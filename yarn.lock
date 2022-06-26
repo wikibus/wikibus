@@ -2223,10 +2223,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@tpluscode/eslint-config@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@tpluscode/eslint-config/-/eslint-config-0.3.0.tgz#73c71b4fd6ea3d9a91bc500142f35370026b0103"
-  integrity sha512-hpGHFJx21NZEXqgHNfym55plvVByqaggPDJ0r5xG3Zv3FOCzVIkH+6r8JeFmn1MWExIXgyYrdtkzbXtDtUQ/2w==
+"@tpluscode/eslint-config@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@tpluscode/eslint-config/-/eslint-config-0.3.2.tgz#0bc80d71c80426a32aad277d40d5f8ca748b6a3c"
+  integrity sha512-ojKLVb0/DEfeD4Kw4rBnQTQSEsE2ndKJD4AG7c/SV8MKNVUqNbzIbZfH+T3MHfsKv/LAJ3LGNpvF1p1eYWk6yQ==
 
 "@tpluscode/rdf-ns-builders@^1", "@tpluscode/rdf-ns-builders@^1.0.0", "@tpluscode/rdf-ns-builders@^1.1.0":
   version "1.1.0"
