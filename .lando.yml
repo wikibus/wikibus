@@ -15,7 +15,6 @@ services:
         - '36377:36377'
       environment:
         TS_NODE_TRANSPILE_ONLY: "true"
-        NODE_OPTIONS: "--loader ts-node/esm --inspect=0.0.0.0:36377 --inspect"
         DEBUG: wikibus*,hydra*,hydra-box*,labyrinth*,SPARQL,-labyrinth:request:headers
     scanner: false
     moreHttpPorts:
