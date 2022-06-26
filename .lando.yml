@@ -7,7 +7,7 @@ services:
     type: node:custom
     build:
       - npm i -g nodemon
-    command: nodemon -w packages -w apps -i apps/www --ext ts,js --exec npm start
+    command: nodemon -w packages -w apps -i apps/www --ext ts,js,ttl --exec npm start
     ssl: true
     overrides:
       image: node:16
