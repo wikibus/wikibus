@@ -53,6 +53,9 @@
     "wsrun": "^5.2.4",
     "yarn-deduplicate": "^5.0.0"
   },
+  "resolutions": {
+    "hydra-box": "github:hypermedia-app/hydra-box#loader-req"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"

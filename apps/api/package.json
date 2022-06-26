@@ -17,10 +17,12 @@
     "clownface": "^1.5.1",
     "get-stream": "^6.0.1",
     "hydra-box-web-access-control": "^1.2.0",
+    "is-graph-pointer": "^1.2.2",
     "rdf-dataset-ext": "^1.0.1",
     "rdf-ext": "^2",
     "safe-marked": "^10.0.0",
-    "slug": "^5.3.0"
+    "slug": "^5.3.0",
+    "uri-template-router": "^0.0.13"
   },
   "devDependencies": {
     "@hydrofoil/talos": "^0.4.4",

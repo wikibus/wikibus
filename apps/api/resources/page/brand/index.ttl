@@ -3,11 +3,21 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix wba: <https://wikibus.org/api#>
 prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
+PREFIX code: <https://code.described.at/>
 
 <>
   a schema:WebPage, knossos:WebPageTemplate ;
   knossos:webPageShape </api/page/Brand> ;
-  knossos:pattern "/page(/brand/[^/]+)$" ;
+  knossos:webPageTemplate
+    [
+      hydra:template "/page/brand/{brand}" ;
+      hydra:mapping
+        [
+          hydra:variable "brand" ;
+          hydra:property schema:mainEntity ;
+          knossos:transformVariable "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript;
+        ]
+    ] ;
   hydra:title "Brand" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;

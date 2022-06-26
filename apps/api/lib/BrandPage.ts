@@ -7,23 +7,34 @@ import { CONSTRUCT } from '@tpluscode/sparql-builder'
 import { knossos } from '@hydrofoil/vocabularies/builders'
 
 export const fillTemplate: ResourceHook = async (req, pointer) => {
-  const mainEntityId = req.hydra.resource.mainEntity
+  const { uriTemplateVariables } = req.hydra.resource
 
   const shape = pointer.out(knossos.webPageShape)
 
-  if (mainEntityId) {
-    const mainEntity = req.rdf.namedNode(mainEntityId)
+  if (uriTemplateVariables) {
     pointer.addIn(schema.isBasedOn, req.hydra.term, (page) => {
       page
         .addOut(rdf.type, schema.WebPage)
-        .addOut(schema.mainEntity, mainEntity)
         .addOut(dash.shape, shape)
+
+      const templateQuads = uriTemplateVariables.dataset.match(uriTemplateVariables.term)
+      for (const { predicate, object } of templateQuads) {
+        if (object.termType === 'NamedNode') {
+          page.addOut(predicate, req.rdf.namedNode(object.value))
+        } else {
+          page.addOut(predicate, object)
+        }
+      }
     })
 
-    await dataset.fromStream(pointer.dataset, await CONSTRUCT`${req.hydra.term} ${hydra.title} ?title`
-      .WHERE`
+    // TODO: separate or declarative
+    const mainEntity = pointer.node(req.hydra.term).out(schema.mainEntity).term
+    if (mainEntity) {
+      await dataset.fromStream(pointer.dataset, await CONSTRUCT`${req.hydra.term} ${hydra.title} ?title`
+        .WHERE`
         ${mainEntity} ${skos.prefLabel} ?title
       `
-      .execute(req.labyrinth.sparql.query))
+        .execute(req.labyrinth.sparql.query))
+    }
   }
 }
