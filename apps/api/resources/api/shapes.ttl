@@ -15,10 +15,6 @@ prefix rs: <https://hypermedia.app/roadshow#>
     [
       hydra:property rdf:type ;
       hydra:object rs:ViewShape ;
-    ],
-    [
-      hydra:property hydra:apiDocumentation ;
-      hydra:object </api> ;
     ] ;
   hydra:search
     [
