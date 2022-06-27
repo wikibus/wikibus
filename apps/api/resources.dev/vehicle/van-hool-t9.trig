@@ -1,0 +1,169 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+</vehicle/van-hool/t9> {
+  </vehicle/van-hool/t9>
+    skos:prefLabel "Van Hool T9" ;
+    skos:broader </brand/van-hool> ;
+}
+
+# Alicron
+</vehicle/van-hool/t911-alicron> {
+  </vehicle/van-hool/t911-alicron>
+    skos:prefLabel "Van Hool T911 Alicron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/alicron> ;
+}
+
+</vehicle/van-hool/t915-alicron> {
+  </vehicle/van-hool/t915-alicron>
+    skos:prefLabel "Van Hool T915 Alicron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/alicron> ;
+}
+
+</vehicle/van-hool/t916-alicron> {
+  </vehicle/van-hool/t916-alicron>
+    skos:prefLabel "Van Hool T916 Alicron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/alicron> ;
+}
+
+# Atlino
+</vehicle/van-hool/t915-atlino> {
+  </vehicle/van-hool/t915-atlino>
+    skos:prefLabel "Van Hool T915 Atlino" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/atlino> ;
+}
+
+</vehicle/van-hool/t916-atlino> {
+  </vehicle/van-hool/t916-atlino>
+    skos:prefLabel "Van Hool T916 Atlino" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/atlino> ;
+}
+
+# Atlon
+</vehicle/van-hool/t915-atlon> {
+  </vehicle/van-hool/t915-atlon>
+    skos:prefLabel "Van Hool T915 Atlon" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/atlon> ;
+}
+
+</vehicle/van-hool/t916-atlon> {
+  </vehicle/van-hool/t916-atlon>
+    skos:prefLabel "Van Hool T916 Atlon" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/atlon> ;
+}
+
+# Acron
+</vehicle/van-hool/t915-acron> {
+  </vehicle/van-hool/t915-acron>
+    skos:prefLabel "Van Hool T915 Acron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/acron> ;
+}
+
+</vehicle/van-hool/t916-acron> {
+  </vehicle/van-hool/t916-acron>
+    skos:prefLabel "Van Hool T916 Acron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/acron> ;
+}
+
+</vehicle/van-hool/t917-acron> {
+  </vehicle/van-hool/t917-acron>
+    skos:prefLabel "Van Hool T917 Acron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/acron> ;
+}
+
+# Astron
+</vehicle/van-hool/t916-astron> {
+  </vehicle/van-hool/t916-astron>
+    skos:prefLabel "Van Hool T916 Astron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astron> ;
+
+}
+
+</vehicle/van-hool/t917-astron> {
+  </vehicle/van-hool/t917-astron>
+    skos:prefLabel "Van Hool T917 Astron" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astron> ;
+}
+
+# Astronef
+</vehicle/van-hool/t916-astronef> {
+  </vehicle/van-hool/t916-astronef>
+    skos:prefLabel "Van Hool T916 Astronef" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astronef> ;
+}
+
+</vehicle/van-hool/t917-astronef> {
+  </vehicle/van-hool/t917-astronef>
+    skos:prefLabel "Van Hool T917 Astronef" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astronef> ;
+}
+
+# Altano
+</vehicle/van-hool/t916-altano> {
+  </vehicle/van-hool/t916-altano>
+    skos:prefLabel "Van Hool T916 Altano" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/altano> ;
+}
+
+</vehicle/van-hool/t917-altano> {
+  </vehicle/van-hool/t917-altano>
+    skos:prefLabel "Van Hool T917 Altano" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/altano> ;
+}
+
+</vehicle/van-hool/t918-altano> {
+  </vehicle/van-hool/t918-altano>
+    skos:prefLabel "Van Hool T918 Altano" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/altano> ;
+}
+
+</vehicle/van-hool/t919-altano> {
+  </vehicle/van-hool/t919-altano>
+    skos:prefLabel "Van Hool T919 Altano" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/altano> ;
+}
+
+# Astromega
+</vehicle/van-hool/td924-astromega> {
+  </vehicle/van-hool/td924-astromega>
+    skos:prefLabel "Van Hool TD924 Astromega" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astromega> ;
+}
+
+</vehicle/van-hool/td925-astromega> {
+  </vehicle/van-hool/td925-astromega>
+    skos:prefLabel "Van Hool TD925 Astromega" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astromega> ;
+}
+
+</vehicle/van-hool/td927-astromega> {
+  </vehicle/van-hool/td927-astromega>
+    skos:prefLabel "Van Hool TD927 Astromega" ;
+    skos:broader </brand/van-hool/t9> ;
+    skos:broader </brand/van-hool/astromega> ;
+}
+
+</vehicle/van-hool/td927-astromega-usa> {
+  </vehicle/van-hool/td927-astromega-usa>
+    skos:prefLabel "Van Hool TD927 Astromega USA" ;
+    skos:broader </vehicle/van-hool/td927-astromega> ;
+}

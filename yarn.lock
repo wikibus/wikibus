@@ -1191,10 +1191,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@hydrofoil/knossos-events@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos-events/-/knossos-events-0.3.9.tgz#80b29645eaf000cf538b390f96df1573f9d55c87"
-  integrity sha512-aeNwJtVxh/UFwru5q1h7iFS2zOYWDaAf91+DETm0HsFhVT06sfnbHO92SDvZ5RrU7GcWAA0TSk+V+HPjeKWW7g==
+"@hydrofoil/knossos-events@^0.3.10", "@hydrofoil/knossos-events@^0.3.9":
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos-events/-/knossos-events-0.3.10.tgz#ab3a2d5f9518b4ad9ef6d33d51cac600ef4a8910"
+  integrity sha512-90quJ8XmiBLjUUr7x+gRG0hZZBMQu3qTDlzlG5U72wSRITnxhTlXqfouq50GDkkWaWY/W45q+BlwAOPgm8b2zg==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3.1"
     "@rdfine/as" "^0.2.3"
@@ -1208,15 +1208,15 @@
     rdf-express-node-factory "^1.1"
     rdf-ext "^1.3.5"
 
-"@hydrofoil/knossos@^0.7", "@hydrofoil/knossos@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.7.0.tgz#9dec3dcddda20feff8bcea02b217cf78a255e9af"
-  integrity sha512-Zdtb25gAnlA0LFOaZbQYRKe62/K0N3h/z3dRnXcuDUiqdr5eeu8+CnMywKCOE4Gt6ekpLqNmecggDry4lsTFdg==
+"@hydrofoil/knossos@^0.7", "@hydrofoil/knossos@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.7.1.tgz#2b12b1c411b68df449b0d8d5a27f9cb9d2cf2fb5"
+  integrity sha512-ACtgOrgUWPXvG62g7/LbbCJshQrD0juTc7qY51KXMpeTF5PS6UsaodwR5Uqna18j0oUYsKw092rxrj1IxHk56w==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
     "@graphy/content.trig.read" "^4.3.3"
-    "@hydrofoil/knossos-events" "^0.3.9"
-    "@hydrofoil/labyrinth" "^0.11.0"
+    "@hydrofoil/knossos-events" "^0.3.10"
+    "@hydrofoil/labyrinth" "^0.11.2"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8"
     "@rdfjs-elements/formats-pretty" "^0.4.3"
@@ -1230,9 +1230,9 @@
     absolute-url "^1.2.2"
     camouflage-rewrite "^1.2.0"
     clownface "^1.5.1"
-    commander "^9.2.0"
+    commander "^9.3.0"
     debug "^4.3.4"
-    express "^4.17.3"
+    express "^4.18.1"
     express-middleware-shacl "^1.3.1"
     express-rdf-request "^1.1.2"
     fs-extra "^10.1.0"
@@ -1249,10 +1249,10 @@
     stream-to-array "^2.3.0"
     stream-to-promise "^3.0.0"
 
-"@hydrofoil/labyrinth@^0.11.0", "@hydrofoil/labyrinth@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.11.1.tgz#45b1134ac0c9db2c33961ca7427cccadcf15c1c0"
-  integrity sha512-v1O9iqjHWRnX3rzIb7mEqh9SiCHvAR9aMcm6azjV/EC1jiF9FG7l5g80cRDHLqwdd/d/ejbqG+DzBXDxdCiXcg==
+"@hydrofoil/labyrinth@^0.11.0", "@hydrofoil/labyrinth@^0.11.1", "@hydrofoil/labyrinth@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.11.2.tgz#eb56cb52c4b7dc36d9ef7092beb1e6315a3f2a51"
+  integrity sha512-+PfbTLfQpy9O+FFWVYC8qVoKyYyFOUS8I0ZO0IZsOBDJCgSvvBjT5oON8E1RnkKeM71cDlk0k45pHKWunjzavA==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8"
@@ -1265,9 +1265,9 @@
     "@tpluscode/sparql-builder" "^0.3.21"
     "@types/hydra-box" "^0.6.4"
     clownface "^1.5.1"
-    clownface-shacl-path "^1.3.0"
+    clownface-shacl-path "^1.3.1"
     debug "^4.3.4"
-    express "^4.17.3"
+    express "^4.18.1"
     express-rdf-problem-details "^1.0.1"
     http-errors "^2.0.0"
     http-problem-details "^0.1.5"
@@ -1432,20 +1432,21 @@
     "@hydrofoil/shell-routing" "^0.2.2"
 
 "@hydrofoil/talos@^0.4.10", "@hydrofoil/talos@^0.4.4":
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.10.tgz#39cdb4c1636f052405c3a81008d78a6c481f520c"
-  integrity sha512-8X5WJWPQsAuy8WUPRJc0wQYG5zurZBe8FYKIzN5lgP9muGHdGG+3PdbThPblx8rIdjUleRoXYtf4EM7gRkkWmA==
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.11.tgz#6ce12e00177166ecce60f3ecd29ef92af3f1ee21"
+  integrity sha512-tge8EVi5Lf01eELoXpi+vtgoi6amd0KBJE4Vlh5gqKEmrQcWU8JegDDVJt7k71d+awaWc55UTwAl++7hU+pPJA==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
-    "@hydrofoil/knossos" "^0.7.0"
+    "@hydrofoil/knossos" "^0.7.1"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfjs/formats-common" "^2.2.0"
+    "@rdfjs/term-map" "^1"
     "@tpluscode/rdf-ns-builders" "^1.1.0"
     "@tpluscode/rdf-string" "^0.2.25"
     "@tpluscode/sparql-builder" "^0.3.21"
     "@zazuko/rdf-vocabularies" "*"
     clownface "^1.5.1"
-    commander "^9.2.0"
+    commander "^9.3.0"
     debug "^4.3.4"
     is-absolute-url "^3"
     mime-types "^2.1.33"
@@ -2111,7 +2112,7 @@
   resolved "https://registry.yarnpkg.com/@rdfjs/sink/-/sink-1.0.3.tgz#cdbb4ecf0ff34e6ad6c301a5bc221508c820568c"
   integrity sha512-2KfYa8mAnptRNeogxhQqkWNXqfYVWO04jQThtXKepySrIwYmz83+WlevQtA4VDLFe+kFd2TwgL29ekPe5XVUfA==
 
-"@rdfjs/term-map@^1.0.0", "@rdfjs/term-map@^1.1.0":
+"@rdfjs/term-map@^1", "@rdfjs/term-map@^1.0.0", "@rdfjs/term-map@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rdfjs/term-map/-/term-map-1.1.0.tgz#253b863ca3f8c0f8c3b05ec5df301c6a0a05ba58"
   integrity sha512-utCLVQEZdEL664XoYuBQwMIk0Q5MD6qNPEt12DcmuAlQUS0b0kQ+WL50wyJP1BpWYjOJLokIVTUtphZWnj25BQ==
@@ -5457,7 +5458,7 @@ clone@^2.1.0, clone@^2.1.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
-clownface-shacl-path@^1.1, clownface-shacl-path@^1.2.2, clownface-shacl-path@^1.3.0:
+clownface-shacl-path@^1.1, clownface-shacl-path@^1.2.2, clownface-shacl-path@^1.3.0, clownface-shacl-path@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/clownface-shacl-path/-/clownface-shacl-path-1.3.1.tgz#b8be44e3e2a01f6d0a9f4dbccf7dfe7c23620854"
   integrity sha512-1dcLVRt+akwNbn4BCgzlHlDnUD9+7pxjB1lm2QwqqggcXUY9+nsh5i/yt6fuopAVLkGAWAlgUbuopOzVhVIhtQ==
@@ -5584,10 +5585,10 @@ commander@^8.3.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
 
-commander@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-9.2.0.tgz#6e21014b2ed90d8b7c9647230d8b7a94a4a419a9"
-  integrity sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==
+commander@^9.2.0, commander@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.3.0.tgz#f619114a5a2d2054e0d9ff1b31d5ccf89255e26b"
+  integrity sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==
 
 common-tags@^1.8.0:
   version "1.8.2"

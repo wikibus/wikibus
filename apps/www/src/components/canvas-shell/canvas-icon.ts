@@ -8,7 +8,7 @@ export class CanvasIcon extends CanvasShellBase(LitElement) {
   public icon = ''
 
   protected render(): unknown {
-    return html`<i class="icon-${this.icon}"></i>`
+    return html`<i class="${this.icon}"></i>`
   }
 
   protected createRenderRoot() {

@@ -3,4 +3,5 @@ prefix wba: <https://wikibus.org/api#>
 <>
   wba:brands </brands> ;
   wba:companies </companies> ;
+  wba:vehicles </vehicles> ;
 .

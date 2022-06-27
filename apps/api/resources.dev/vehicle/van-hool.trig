@@ -1,0 +1,68 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+</vehicle/van-hool/alicron> {
+  </vehicle/van-hool/alicron>
+    skos:prefLabel "Van Hool Alicron" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/acron> {
+  </vehicle/van-hool/acron>
+    skos:prefLabel "Van Hool Acron" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/atlino> {
+  </vehicle/van-hool/atlino>
+    skos:prefLabel "Van Hool Atlino" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/atlon> {
+  </vehicle/van-hool/atlon>
+    skos:prefLabel "Van Hool Atlon" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/alizee> {
+  </vehicle/van-hool/alizee>
+    skos:prefLabel "Van Hool Alizée" ;
+    skos:hiddenLabel "Van Hool Alizee" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/altano> {
+  </vehicle/van-hool/altano>
+    skos:prefLabel "Van Hool Altano" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/astron> {
+  </vehicle/van-hool/astron>
+    skos:prefLabel "Van Hool Astron" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/astronef> {
+  </vehicle/van-hool/astronef>
+    skos:prefLabel "Van Hool Astronef" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/amarant> {
+  </vehicle/van-hool/amarant>
+    skos:prefLabel "Van Hool Amarant" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/astromega> {
+  </vehicle/van-hool/astromega>
+    skos:prefLabel "Van Hool Astromega" ;
+    skos:hiddenLabel "Astromega" ;
+}
+
+</vehicle/van-hool/alligator> {
+  </vehicle/van-hool/alligator>
+    skos:prefLabel "Van Hool Alligator" ;
+    skos:broader </brand/van-hool> ;
+}

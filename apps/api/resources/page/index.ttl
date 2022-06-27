@@ -29,6 +29,6 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
       sh:group </page/_element/main> ;
       dash:viewer canvas:FeaturedBoxViewer ;
       rs:attributes "[center][effect][outline].col_one_third" ;
-      canvas:icon "book2" ;
+      canvas:icon "icon-book2" ;
     ] ;
 .

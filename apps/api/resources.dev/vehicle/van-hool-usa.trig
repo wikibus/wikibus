@@ -1,0 +1,19 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+</vehicle/van-hool/c2045> {
+  </vehicle/van-hool/c2045>
+    skos:prefLabel "Van Hool C2045" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/t2140> {
+  </vehicle/van-hool/t2140>
+    skos:prefLabel "Van Hool T2140" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/t2145> {
+  </vehicle/van-hool/t2145>
+    skos:prefLabel "Van Hool T2145" ;
+    skos:broader </brand/van-hool> ;
+}
