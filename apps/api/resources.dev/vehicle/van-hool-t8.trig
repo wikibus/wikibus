@@ -9,132 +9,132 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/t811> {
   </vehicle/van-hool/t811>
     skos:prefLabel "Van Hool T811" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t812> {
   </vehicle/van-hool/t812>
     skos:prefLabel "Van Hool T812" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t813> {
   </vehicle/van-hool/t813>
     skos:prefLabel "Van Hool T813" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t814> {
   </vehicle/van-hool/t814>
     skos:prefLabel "Van Hool T814" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t815> {
   </vehicle/van-hool/t815>
     skos:prefLabel "Van Hool T815" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t-815-s> {
   </vehicle/van-hool/t-815-s>
     skos:prefLabel "Van Hool T 815 S" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/tg821-n> {
   </vehicle/van-hool/t821-n>
     skos:prefLabel "Van Hool T821 N" ;
-    skos:broader </brand/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/t8> ;
 }
 
 # Alizée
 </vehicle/van-hool/t809-alizee> {
   </vehicle/van-hool/t809-alizee>
     skos:prefLabel "Van Hool T809 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 </vehicle/van-hool/t811-alizee> {
   </vehicle/van-hool/t811-alizee>
     skos:prefLabel "Van Hool T811 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 </vehicle/van-hool/t812-alizee> {
   </vehicle/van-hool/t812-alizee>
     skos:prefLabel "Van Hool T812 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 </vehicle/van-hool/t813-alizee> {
   </vehicle/van-hool/t813-alizee>
     skos:prefLabel "Van Hool T813 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 </vehicle/van-hool/t814-alizee> {
   </vehicle/van-hool/t814-alizee>
     skos:prefLabel "Van Hool T814 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 </vehicle/van-hool/t815-alizee> {
   </vehicle/van-hool/t815-alizee>
     skos:prefLabel "Van Hool T815 Alizée" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alizee> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alizee> ;
 }
 
 # Acron
 </vehicle/van-hool/t815-acron> {
   </vehicle/van-hool/t815-acron>
     skos:prefLabel "Van Hool T815 Acron" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/acron> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/acron> ;
 }
 
 # Astron
 </vehicle/van-hool/t818-astron> {
   </vehicle/van-hool/t818-astron>
     skos:prefLabel "Van Hool T818 Astron" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/astron> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/astron> ;
 }
 
 # Amarant
 </vehicle/van-hool/t820-amarant> {
   </vehicle/van-hool/t820-amarant>
     skos:prefLabel "Van Hool T820 Amarant" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/amarant> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/amarant> ;
 }
 
 # Altano
 </vehicle/van-hool/tg822-altano> {
   </vehicle/van-hool/t822-altano>
     skos:prefLabel "Van Hool T822 Altano" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/altano> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/altano> ;
 }
 
 # Astromega
 </vehicle/van-hool/td824-astromega> {
   </vehicle/van-hool/t824-astromega>
     skos:prefLabel "Van Hool T824 Astromega" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/astromega> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/astromega> ;
 }
 
 # Alligator
 </vehicle/van-hool/tg821-alligator> {
   </vehicle/van-hool/t821-alligator>
     skos:prefLabel "Van Hool TG821 Alligator" ;
-    skos:broader </brand/van-hool/t8> ;
-    skos:broader </brand/van-hool/alligator> ;
+    skos:broader </vehicle/van-hool/t8> ;
+    skos:broader </vehicle/van-hool/alligator> ;
 }
