@@ -10,5 +10,6 @@ node_version: '16'
 project_name: wikibus.org
 repository: https://github.com/wikibus/wikibus
 ui_path: app
-vocabs: []
+vocabs:
+- '@zazuko/rdf-vocabularies,skos'
 

@@ -9,7 +9,7 @@
     "copier:root": "copier -a .copier-app.yaml -s apps/api update",
     "bootstrap": "dotenv -c local -- run-s bootstrap:*",
     "bootstrap:dev": "wsrun -msc bootstrap resources resources.dev",
-    "bootstrap:vocabs": "talos put-vocabs --endpoint $SPARQL_ENDPOINT --user $SPARQL_USER --password $SPARQL_PASSWORD",
+    "bootstrap:vocabs": "talos put-vocabs --endpoint $SPARQL_ENDPOINT --user $SPARQL_USER --password $SPARQL_PASSWORD --extraVocabs @zazuko/rdf-vocabularies,skos",
     "start": "node --loader ts-node/esm --inspect=0.0.0.0:36377 --inspect ./node_modules/.bin/knossos serve $SPARQL_ENDPOINT --name $APP_NAME --user $SPARQL_USER --password $SPARQL_PASSWORD",
     "precommit": "yarn lint && wsrun -m -c precommit",
     "build": "yarn wsrun -m -c build",
