@@ -4,7 +4,7 @@
   "type": "module",
   "dependencies": {
     "@tpluscode/rdf-ns-builders": "^2.0.0",
-    "@tpluscode/sparql-builder": "^0.3.21",
+    "@tpluscode/sparql-builder": "^0.3.22",
     "clownface": "^1.5.1",
     "express": "^4.18.1",
     "express-jwt": "^7.7.5",

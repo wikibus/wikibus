@@ -28,7 +28,7 @@
     "path-to-regexp": "^6.2.0"
   },
   "devDependencies": {
-    "@hydrofoil/talos": "^0.4.10",
+    "@hydrofoil/talos": "^0.4.12",
     "@open-wc/eslint-config": "^7.0.0",
     "@tpluscode/eslint-config": "^0.3.2",
     "@types/sparql-http-client": "^2.2.7",
@@ -54,7 +54,8 @@
     "yarn-deduplicate": "^5.0.0"
   },
   "resolutions": {
-    "hydra-box": "github:hypermedia-app/hydra-box#loader-req"
+    "hydra-box": "github:hypermedia-app/hydra-box#loader-req",
+    "@tpluscode/rdf-ns-builders": "2.0.1"
   },
   "workspaces": [
     "apps/*",
