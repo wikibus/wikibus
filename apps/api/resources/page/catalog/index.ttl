@@ -40,7 +40,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
       sh:group </page/_element/main> ;
       dash:viewer canvas:FeaturedBoxViewer ;
       rs:attributes "[center][effect][outline].col_one_third" ;
-      canvas:icon "bi-gear-wide-connected" ;
+      canvas:icon "icon-bus-alt" ;
     ],
     [
       sh:order 50 ;
