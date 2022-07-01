@@ -1,0 +1,61 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+</vehicle/van-hool/ex> {
+  </vehicle/van-hool/ex>
+    skos:prefLabel "Van Hool EX" ;
+    skos:broader </brand/van-hool> ;
+}
+
+</vehicle/van-hool/ex11h> {
+  </vehicle/van-hool/ex11h>
+    skos:prefLabel "Van Hool EX11H" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex11l> {
+  </vehicle/van-hool/ex11l>
+    skos:prefLabel "Van Hool EX11L" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex15l> {
+  </vehicle/van-hool/ex15l>
+    skos:prefLabel "Van Hool EX15L" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex15m> {
+  </vehicle/van-hool/ex15m>
+    skos:prefLabel "Van Hool EX15M" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex15h> {
+  </vehicle/van-hool/ex15h>
+    skos:prefLabel "Van Hool EX15H" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex16l> {
+  </vehicle/van-hool/ex16l>
+    skos:prefLabel "Van Hool EX16L" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex16m> {
+  </vehicle/van-hool/ex16m>
+    skos:prefLabel "Van Hool EX16M" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex16h> {
+  </vehicle/van-hool/ex16h>
+    skos:prefLabel "Van Hool EX16H" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
+
+</vehicle/van-hool/ex17h> {
+  </vehicle/van-hool/ex17h>
+    skos:prefLabel "Van Hool EX17H" ;
+    skos:broader </vehicle/van-hool/ex> ;
+}
