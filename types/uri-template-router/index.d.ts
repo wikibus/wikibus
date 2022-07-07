@@ -8,7 +8,7 @@ declare module 'uri-template-router' {
     varname: string
     operatorChar: string
     prefix: string
-    expand(params: Record<string, unknown>): string
+    expand(params: Record<string, unknown>): string | null
   }
 
   export interface Route {

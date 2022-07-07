@@ -6,9 +6,9 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX code: <https://code.described.at/>
 
 <>
-  a schema:WebPage, knossos:WebPageTemplate ;
+  a schema:WebPage, <brand/template> ; # TODO remove schema:WebPage?
   knossos:webPageShape </api/page/Brand> ;
-  knossos:webPageTemplate
+  knossos:resourceTemplate
     [
       hydra:template "/page/brand/{brand}" ;
       hydra:mapping

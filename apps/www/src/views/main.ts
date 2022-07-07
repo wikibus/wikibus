@@ -14,11 +14,15 @@ import * as ResponseLinkViewer from './main/ResponseLinkViewer'
 import * as CommentsViewer from './main/CommentsViewer'
 import * as ImageViewer from './main/ImageViewer'
 import * as PortfolioGridViewer from './main/PortfolioGridViewer'
+import * as SidebarRelatedResourceViewer from './main/SidebarRelatedResourceViewer'
+import { canvas } from '../lib/ns'
 
 setBasePath('/app')
 
 ViewersController.viewerMeta
   .node(hex.CollectionMembersViewer)
+  .addOut(rdf.type, dash.MultiViewer)
+  .node(canvas.SidebarRelatedResourceViewer)
   .addOut(rdf.type, dash.MultiViewer)
 
 export const renderers: Renderer<any>[] = [
@@ -33,6 +37,7 @@ export const renderers: Renderer<any>[] = [
   CommentsViewer.renderer,
   ImageViewer.renderer,
   PortfolioGridViewer.renderer,
+  SidebarRelatedResourceViewer.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [

@@ -6,3 +6,8 @@ prefix rs: <https://hypermedia.app/roadshow#>
   rs:selector "section#content div.content-wrap div.container.clearfix" ;
   sh:order 10 ;
 .
+
+<#gutters>
+  rs:selector "section#content div.content-wrap div.container.clearfix div.row.gutter-40.col-mb-80" ;
+  sh:order 10 ;
+.

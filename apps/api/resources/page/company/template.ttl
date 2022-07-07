@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix knossos: <https://hypermedia.app/knossos#>
+PREFIX code: <https://code.described.at/>
+
+<>
+  a hydra:Class ;
+  rdfs:subClassOf knossos:TemplatedResource ;
+  knossos:preprocessResponse
+    [
+      a code:EcmaScriptModule ;
+      code:link <file:apps/api/lib/Page.js#fillHydraTitle>
+    ] ;
+.

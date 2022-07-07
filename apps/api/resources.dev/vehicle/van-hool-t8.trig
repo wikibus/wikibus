@@ -2,48 +2,56 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t8> {
   </vehicle/van-hool/t8>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T8" ;
     skos:broader </brand/van-hool> ;
 }
 
 </vehicle/van-hool/t811> {
   </vehicle/van-hool/t811>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T811" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t812> {
   </vehicle/van-hool/t812>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T812" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t813> {
   </vehicle/van-hool/t813>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T813" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t814> {
   </vehicle/van-hool/t814>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T814" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t815> {
   </vehicle/van-hool/t815>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T815" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/t-815-s> {
   </vehicle/van-hool/t-815-s>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T 815 S" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
 
 </vehicle/van-hool/tg821-n> {
   </vehicle/van-hool/t821-n>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T821 N" ;
     skos:broader </vehicle/van-hool/t8> ;
 }
@@ -51,6 +59,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Alizée
 </vehicle/van-hool/t809-alizee> {
   </vehicle/van-hool/t809-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T809 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -58,6 +67,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t811-alizee> {
   </vehicle/van-hool/t811-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T811 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -65,6 +75,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t812-alizee> {
   </vehicle/van-hool/t812-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T812 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -72,6 +83,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t813-alizee> {
   </vehicle/van-hool/t813-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T813 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -79,6 +91,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t814-alizee> {
   </vehicle/van-hool/t814-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T814 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -86,6 +99,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t815-alizee> {
   </vehicle/van-hool/t815-alizee>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T815 Alizée" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alizee> ;
@@ -94,6 +108,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Acron
 </vehicle/van-hool/t815-acron> {
   </vehicle/van-hool/t815-acron>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T815 Acron" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -102,6 +117,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astron
 </vehicle/van-hool/t818-astron> {
   </vehicle/van-hool/t818-astron>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T818 Astron" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/astron> ;
@@ -110,6 +126,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Amarant
 </vehicle/van-hool/t820-amarant> {
   </vehicle/van-hool/t820-amarant>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T820 Amarant" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/amarant> ;
@@ -118,6 +135,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Altano
 </vehicle/van-hool/tg822-altano> {
   </vehicle/van-hool/t822-altano>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T822 Altano" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -126,6 +144,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astromega
 </vehicle/van-hool/td824-astromega> {
   </vehicle/van-hool/t824-astromega>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool T824 Astromega" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/astromega> ;
@@ -134,6 +153,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Alligator
 </vehicle/van-hool/tg821-alligator> {
   </vehicle/van-hool/t821-alligator>
+    a </api/Vehicle> ;
     skos:prefLabel "Van Hool TG821 Alligator" ;
     skos:broader </vehicle/van-hool/t8> ;
     skos:broader </vehicle/van-hool/alligator> ;

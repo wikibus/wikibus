@@ -8,7 +8,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
 
 <> a acl:Authorization ;
    acl:agentClass foaf:Agent ;
-   acl:accessTo </>, </brands>, </companies>, </catalog>, </api/shapes>, </user/current>, </user/anonymous> ;
-   acl:accessToClass </api/Brand>, </api/Company>, schema:WebPage, sh:Shape, knossos:WebPageTemplate ;
+   acl:accessTo </>, </brands>, </vehicles>, </companies>, </catalog>, </api/shapes>, </user/current>, </user/anonymous> ;
+   acl:accessToClass </api/Brand>, </api/Company>, </api/Vehicle>, schema:WebPage, sh:Shape, knossos:TemplatedResource ;
    acl:mode acl:Read ;
 .

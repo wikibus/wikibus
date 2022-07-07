@@ -65,12 +65,12 @@ schema:WebPage
     ]
 .
 
-knossos:WebPageTemplate
+knossos:TemplatedResource
   a hydra:Class ;
   hydra:apiDocumentation <> ;
   knossos:preprocessResponse
     [
       a code:EcmaScriptModule ;
-      code:link <file:apps/api/lib/BrandPage.js#fillTemplate>
+      code:link <file:apps/api/lib/TemplatedResource.js#fillTemplate> ;
     ] ;
 .

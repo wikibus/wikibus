@@ -26,13 +26,13 @@ export const factory: ResourceLoaderFactory = async (
   inner = new SparqlQueryLoader(sparql as any),
 ) => {
   const dataset = await $rdf.dataset().import(await DESCRIBE`?template`
-    .WHERE` ?template a ${knossos.WebPageTemplate}`
+    .WHERE` ?template a ${knossos.TemplatedResource}`
     .execute(client.query))
-  const templates = clownface({ dataset }).has(rdf.type, knossos.WebPageTemplate)
+  const templates = clownface({ dataset }).has(rdf.type, knossos.TemplatedResource)
 
   const router = new Router()
   templates.forEach((template) => {
-    const uriTemplate = template.out(knossos.webPageTemplate).out(hydra.template)
+    const uriTemplate = template.out(knossos.resourceTemplate).out(hydra.template)
     if (isLiteral(uriTemplate)) {
       router.addTemplate(uriTemplate.value, { template }, template.value)
     }
@@ -69,7 +69,7 @@ async function processVariables(template: GraphPointer, routeResult: Result, req
   const variables = clownface({ dataset: $rdf.dataset() }).blankNode()
 
   const promises = template
-    .out(knossos.webPageTemplate)
+    .out(knossos.resourceTemplate)
     .out(hydra.mapping)
     .map(async (variableMapping) => {
       const predicate = variableMapping.out(hydra.property).term
@@ -83,6 +83,9 @@ async function processVariables(template: GraphPointer, routeResult: Result, req
       }
       let value = routeVariable.expand(routeResult.params)
 
+      if (!value) {
+        return
+      }
       const transformPtr = variableMapping.out(knossos.transformVariable)
       if (isGraphPointer(transformPtr)) {
         const transform = await req.loadCode<VariableTransform>(transformPtr)

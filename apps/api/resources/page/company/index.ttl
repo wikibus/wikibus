@@ -6,9 +6,9 @@ prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
-  a schema:WebPage, knossos:WebPageTemplate ;
+  a schema:WebPage, <company/template> ;
   knossos:webPageShape </api/page/Company> ;
-  knossos:webPageTemplate
+  knossos:resourceTemplate
     [
       hydra:template "/page/company/{company}" ;
       hydra:mapping
@@ -18,7 +18,7 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
           knossos:transformVariable "(value, req) => req.rdf.namedNode(`/company/${value}`)"^^code:EcmaScript;
         ]
     ] ;
-  hydra:title "Brand" ;
+  hydra:title "Company" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:breadcrumb

@@ -1282,10 +1282,10 @@
     stream-to-array "^2.3.0"
     valid-url "^1.0.9"
 
-"@hydrofoil/roadshow@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.6.tgz#d16ad0ead3fc9fde3323b20c2632040420ed891a"
-  integrity sha512-UOEAGbqOtRnbD9uNsWJVfPzah19w09psShKN8FJQ3NvawnVftemIdXl7qUQRlxfuOjD0ISLdELDFZJq7sCt8gw==
+"@hydrofoil/roadshow@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.7.tgz#94aaefadc9bb7046ac2094163ceaf5ea9e45b8a3"
+  integrity sha512-gKL4jALKB2h44NhNFO3Horf6tqnPaieTjSy6nvAhKI/M3Gu5IWSJrsI11s6CP5MtON0uwVHtg7weeRn+8n4M1g==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3.0"
     "@rdf-esm/dataset" "^0.5.0"
@@ -2265,10 +2265,10 @@
     clownface "^1"
     once "^1.4.0"
 
-"@tpluscode/sparql-builder@^0.3.22":
-  version "0.3.22"
-  resolved "https://registry.yarnpkg.com/@tpluscode/sparql-builder/-/sparql-builder-0.3.22.tgz#9c5dbab3d7874597b41d957ec0a033a10be5234a"
-  integrity sha512-O6dCkI7qkYvbt/BkCfv59ya5c8zbmrpnQoYiAfy5BZBZxdoDt47e5q9bW1znRjpbDZiQrS8GjAoC3ltZnUy7xQ==
+"@tpluscode/sparql-builder@^0.3.22", "@tpluscode/sparql-builder@^0.3.23":
+  version "0.3.23"
+  resolved "https://registry.yarnpkg.com/@tpluscode/sparql-builder/-/sparql-builder-0.3.23.tgz#a1c0a2dd0f3d42c04742f417a56f2837435e9561"
+  integrity sha512-qJYMAn5MNUcna+8fwloZTVbI7BZ1KjPLhuGluddC0GvcKo3VDqFFD3AwNCKsKdw9MHu5j2kiUufcZJpejOyBRw==
   dependencies:
     "@rdf-esm/data-model" "^0.5.4"
     "@rdf-esm/term-set" "^0.5.0"

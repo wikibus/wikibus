@@ -1,0 +1,74 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+
+<>
+  a sh:NodeShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:group </page/_element/main#gutters> ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+      [
+        sh:property
+          [
+            sh:name "Brand" ;
+            sh:path schema:brand ;
+            sh:group _:LeftSidebarGroup ;
+            sh:order 1 ;
+            dash:viewer canvas:SidebarRelatedResourceViewer ;
+          ] ,
+          [
+            sh:name "Broader" ;
+            sh:path skos:broader ;
+            sh:group _:LeftSidebarGroup ;
+            sh:order 2 ;
+            dash:viewer canvas:SidebarRelatedResourceViewer ;
+            sh:class schema:BusOrCoach ;
+          ] ,
+          [
+            sh:name "Narrower" ;
+            sh:path skos:narrower ;
+            sh:group _:LeftSidebarGroup ;
+            sh:order 3 ;
+            dash:viewer canvas:SidebarRelatedResourceViewer ;
+            sh:class schema:BusOrCoach ;
+          ] ;
+        sh:property
+          [
+            sh:path schema:text ;
+            sh:datatype rdf:HTML ;
+            sh:group _:MainContentGroup ;
+          ] ;
+        sh:property
+          [
+            sh:path <> ;
+            sh:group _:RightSidebarGroup ;
+          ] ;
+      ] ;
+    ];
+.
+
+_:LeftSidebarGroup
+  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
+  sh:order 1 ;
+.
+
+_:MainContentGroup
+  rs:selector "div.postcontent.bothsidebar.col-lg-6" ;
+  sh:order 2 ;
+.
+
+_:RightSidebarGroup
+  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
+  sh:order 3 ;
+.
