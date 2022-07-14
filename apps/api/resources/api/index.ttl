@@ -53,16 +53,26 @@ schema:WebPage
   hydra:apiDocumentation <> ;
   hyper-query:include
     [
-    # schema:isBasedOn?/(dash:shape|schema:hasPart)*
+    # schema:isBasedOn/(dash:shape|schema:hasPart)*
       hyper-query:path
         (
-          [ sh:zeroOrOnePath schema:isBasedOn ]
+          schema:isBasedOn
           [ sh:zeroOrMorePath [ sh:alternativePath ( dash:shape schema:hasPart ) ] ]
         )
     ],
     [
-      hyper-query:path schema:mainEntity ;
-    ]
+    # schema:hasPart*
+      hyper-query:path
+        [ sh:zeroOrMorePath schema:hasPart ]
+    ] ;
+  knossos:preprocessResponse
+    [
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/schema/WebPage.js#preserveAndForwardQuery> ;
+        ] ;
+    ] ;
 .
 
 knossos:TemplatedResource
@@ -70,7 +80,10 @@ knossos:TemplatedResource
   hydra:apiDocumentation <> ;
   knossos:preprocessResponse
     [
-      a code:EcmaScriptModule ;
-      code:link <file:apps/api/lib/TemplatedResource.js#fillTemplate> ;
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/TemplatedResource.js#fillTemplate> ;
+        ] ;
     ] ;
 .

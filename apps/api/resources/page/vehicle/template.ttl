@@ -8,11 +8,17 @@ PREFIX code: <https://code.described.at/>
   rdfs:subClassOf knossos:TemplatedResource ;
   knossos:preprocessResponse
     [
-      a code:EcmaScriptModule ;
-      code:link <file:apps/api/lib/ConceptPage.js#loadSkos> ;
-    ] ,
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/ConceptPage.js#loadSkos> ;
+        ] ;
+    ],
     [
-      a code:EcmaScriptModule ;
-      code:link <file:apps/api/lib/Page.js#fillHydraTitle> ;
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/Page.js#fillHydraTitle> ;
+        ] ;
     ] ;
 .

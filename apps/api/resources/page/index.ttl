@@ -8,7 +8,7 @@ prefix rs: <https://hypermedia.app/roadshow#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
-  a schema:WebPage ;
+  a </api/page/MainEntityInlined> ;
   hydra:title "wikibus.org" ;
   hydra:description "Online public transport encyclopedia" ;
   schema:hasPart </page/_element/header> ;

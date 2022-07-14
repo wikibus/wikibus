@@ -1208,15 +1208,15 @@
     rdf-express-node-factory "^1.1"
     rdf-ext "^1.3.5"
 
-"@hydrofoil/knossos@^0.7", "@hydrofoil/knossos@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.7.2.tgz#0750e4b5149e42756719b459dca20866b2f3523e"
-  integrity sha512-S+N/0/J/nvzigEIt+qSOMN5RwrF9cB5JIOEI0RatSXB3KBmeIzIC4PrtDwe8RGaUr4N6m1OcBF4Sz9gwLWhVfg==
+"@hydrofoil/knossos@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.8.0.tgz#70e41fb6a4e13cf9319fbadf2a8965305d6041ce"
+  integrity sha512-2As2tpApwpclxvPoVkEImMYz8HL2Iq9L2oNr6KtLLwHzTmpvS3BW1avu+Cq8x6kTCN810lD3IDCynQH7wLC7hQ==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
     "@graphy/content.trig.read" "^4.3.3"
     "@hydrofoil/knossos-events" "^0.3.11"
-    "@hydrofoil/labyrinth" "^0.11.3"
+    "@hydrofoil/labyrinth" "^0.12.0"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
     "@rdfjs-elements/formats-pretty" "^0.5.1"
@@ -1240,6 +1240,7 @@
     http-status "^1.5.2"
     hydra-box "^0.6.5"
     hydra-box-web-access-control "^1.2.1"
+    is-graph-pointer "^1.2.2"
     middleware-async "^1.3.1"
     nanoid "^3.3.3"
     path-to-regexp "^6.2.1"
@@ -1249,10 +1250,10 @@
     stream-to-array "^2.3.0"
     stream-to-promise "^3.0.0"
 
-"@hydrofoil/labyrinth@^0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.11.3.tgz#af520a8d4d237cfc6e10c18cd205bf7320be094d"
-  integrity sha512-Sw3SbD2nSsupM0NW1ACNgNNMCkjpe+gWvG8ntojQAk5jFaVdO9gvlLIy/kQx+wXU35jLAvqhHywO17vWakflVQ==
+"@hydrofoil/labyrinth@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.12.0.tgz#46e11d8f8a7ca2ad21bd2be1ba4c7f59600892c1"
+  integrity sha512-pr/Vpx8YXIZElsKbWht09QiksSH0kQpwaZBxrRnupPduvtSjl3fI06Dxs3vlkCs4TT+QtU6UuZWHzmN8MGadwA==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
@@ -1261,7 +1262,7 @@
     "@rdfjs/term-set" "^1.1.0"
     "@tpluscode/rdf-ns-builders" "^2.0.0"
     "@tpluscode/rdf-string" "^0.2.26"
-    "@tpluscode/rdfine" "^0.5.39"
+    "@tpluscode/rdfine" "^0.5.41"
     "@tpluscode/sparql-builder" "^0.3.22"
     "@types/hydra-box" "^0.6.4"
     clownface "^1.5.1"
@@ -1272,12 +1273,14 @@
     http-errors "^2.0.0"
     http-problem-details "^0.1.5"
     http-problem-details-mapper "^0.1.7"
+    is-graph-pointer "^1.2.2"
     middleware-async "^1.2.7"
     once "^1.4.0"
     parse-prefer-header "^1.0.0"
     rdf-express-node-factory "^1.0.1"
     rdf-ext "^1.3.5"
     rdf-literal "^1.3.0"
+    rdf-loader-code "^0.3.2"
     sparql-http-client "^2.4.0"
     stream-to-array "^2.3.0"
     valid-url "^1.0.9"
@@ -1432,12 +1435,12 @@
     "@hydrofoil/shell-routing" "^0.2.2"
 
 "@hydrofoil/talos@^0.4.12":
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.12.tgz#afb6c1e9dabf6c36636de2c7d8f033379a3e8b1f"
-  integrity sha512-gWRBrkvV5L2DVgNNHmCweVlXg1AOMcHQ5TrAYZfnfFIAh52ncN2jtLd4Ei27nj6eYdPw1FhbMgG4Y1h2+fT1vg==
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.13.tgz#476e70dffc4b5486b33c9e406514af7e3068790c"
+  integrity sha512-U8trBuufulghyOhs1PkGpNdOQhu+rRBZFI8r6q4Pjj2gz2P62qfSB4FSBKIK5uvd8TiO4gvaJmCyCv3kIMW7Fw==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
-    "@hydrofoil/knossos" "^0.7.2"
+    "@hydrofoil/knossos" "^0.8.0"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfjs/formats-common" "^2.2.0"
     "@rdfjs/term-map" "^1"
@@ -2251,10 +2254,10 @@
     "@tpluscode/rdf-ns-builders" "^2"
     "@zazuko/rdf-vocabularies" "*"
 
-"@tpluscode/rdfine@^0.5.27", "@tpluscode/rdfine@^0.5.29", "@tpluscode/rdfine@^0.5.39":
-  version "0.5.39"
-  resolved "https://registry.yarnpkg.com/@tpluscode/rdfine/-/rdfine-0.5.39.tgz#0023c9bfd8c0e0b4d5fd441ce501736433a5b02f"
-  integrity sha512-BviMCXx19E7sD6gmTpXYj7RagUEs2vj+u5H5NcvllXtnnSEIGLKM4T64Q5MrPq44Akr2B2RiQxXWA56x3Xdnjg==
+"@tpluscode/rdfine@^0.5.27", "@tpluscode/rdfine@^0.5.29", "@tpluscode/rdfine@^0.5.39", "@tpluscode/rdfine@^0.5.41":
+  version "0.5.41"
+  resolved "https://registry.yarnpkg.com/@tpluscode/rdfine/-/rdfine-0.5.41.tgz#3100cc1feb065174fe243222e6e5223bd02b2b7e"
+  integrity sha512-C6f+zE7KCDO0BbpM15p889umolQgmHPyOOuVBjYtMxpJ/w8dwUHAmvNG01RArDUVEnS71TabIEaduCYWlS/zNg==
   dependencies:
     "@rdf-esm/data-model" "^0.5.3"
     "@rdf-esm/namespace" "^0.5.2"
@@ -11034,7 +11037,7 @@ rdf-literal@^1.3.0:
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.0"
 
-rdf-loader-code@^0.3.0:
+rdf-loader-code@^0.3.0, rdf-loader-code@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/rdf-loader-code/-/rdf-loader-code-0.3.3.tgz#c8abf53329f577b502fac261df0cd44816133cfb"
   integrity sha512-5uLQOLn2YrPO9YxPpMqVqtX3SmCALH+97u2Tj8NA33baYgMMczam6G2EOm0kYRbIk3n5wgBCs2Z4Y6jkgPwRMg==

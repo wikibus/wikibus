@@ -1,0 +1,42 @@
+PREFIX schema: <http://schema.org/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:path schema:mainEntity ;
+      sh:group </page/_element/main#gutters> ;
+      rs:dereference true ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path hydra:member ;
+              dash:viewer hex:CollectionMembersViewer ;
+              sh:group _:MainContentGroup ;
+            ] ;
+          sh:property
+            [
+              sh:path hydra:search ;
+              dash:viewer hex:SearchFormViewer ;
+              sh:group _:SidebarGroup ;
+            ] ;
+        ] ;
+    ] .
+
+_:SidebarGroup
+  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
+  sh:order 2 ;
+.
+
+_:MainContentGroup
+  rs:selector "div.postcontent.col-lg-9" ;
+  sh:order 1 ;
+.

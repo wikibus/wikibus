@@ -70,6 +70,7 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
   mapEvents() {
     return {
       'submit-operation': ({ detail }: CustomEvent) => store.dispatch.operation.invoke(detail),
+      'show-resource': ({ detail }: CustomEvent) => store.dispatch.routing.goTo(detail.id),
     }
   }
 }

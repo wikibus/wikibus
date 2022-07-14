@@ -6,7 +6,7 @@ prefix code: <https://code.described.at/>
 prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
-  a hydra:Collection , </api/ShapesCollection> ;
+  a hydra:Collection, </api/ShapesCollection> ;
   hydra:manages
     [
       hydra:property rdf:type ;
@@ -26,8 +26,11 @@ prefix rs: <https://hypermedia.app/roadshow#>
           hydra:property sh:targetNode ;
           query:filter
             [
-              a code:EcmaScriptModule ;
-              code:link <file:apps/api/lib/shapes.js#filterByTargetNode> ;
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/shapes.js#filterByTargetNode> ;
+                ] ;
             ] ;
         ]
     ]

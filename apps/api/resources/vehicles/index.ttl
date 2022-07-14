@@ -1,6 +1,80 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix query: <https://hypermedia.app/query#>
+prefix code: <https://code.described.at/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
 
 <>
   a </api/VehicleCollection> ;
+  hydra:search
+    [
+      hydra:template "{?page,name,brand}" ;
+      hydra:mapping
+        [
+          hydra:variable "page" ;
+          hydra:property hydra:pageIndex ;
+        ],
+        [
+          hydra:variable "name" ;
+          hydra:property rdfs:label ;
+          query:filter
+            [
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/filter.js#fullTextSearch> ;
+                ];
+              code:arguments
+                [
+                  code:name "flags" ; code:value "i" ;
+                ] ;
+            ] ;
+        ],
+        [
+          hydra:variable "brand" ;
+          hydra:property schema:brand ;
+          query:filter
+          [
+            code:implementedBy
+              [
+                a code:EcmaScriptModule ;
+                code:link <file:apps/api/lib/filter.js#fullTextSearch> ;
+              ];
+            code:arguments
+              [
+                code:name "flags" ; code:value "i" ;
+              ],
+              [
+                code:name "path" ; code:value [ sh:path (skos:broaderTransitive rdfs:label) ] ;
+              ];
+          ] ;
+        ] ;
+      dash:shape
+        [
+          rdfs:label "Search" ;
+          sh:property
+            [
+              sh:path rdfs:label ;
+              sh:name "Name" ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 1 ;
+            ] ,
+            [
+              sh:path schema:brand ;
+              sh:name "Brand" ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 2 ;
+            ] ;
+        ] ;
+    ] ;
+  query:order
+    (
+      [ query:path skos:prefLabel ]
+    ) ;
 .

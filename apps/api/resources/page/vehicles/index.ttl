@@ -2,12 +2,11 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
-prefix rs: <https://hypermedia.app/roadshow#>
-PREFIX hex: <https://w3id.org/hydra/extension#>
 
 <>
   a schema:WebPage ;
   hydra:title "Vehicles" ;
+  dash:shape <vehicles/shape> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:mainEntity </vehicles> ;
@@ -29,38 +28,4 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
             ]
         ] ;
     ] ;
-.
-
-<#Shape>
-  a sh:NodeShape, rs:ViewShape ;
-  sh:targetNode <> ;
-  sh:and ( </api/schema/WebPage> ) ;
-  sh:property
-    [
-      sh:path schema:mainEntity ;
-      sh:group </page/_element/main#gutters> ;
-      rs:dereference true ;
-      dash:viewer dash:DetailsViewer ;
-      sh:node
-      [
-        sh:property
-          [
-            sh:path hydra:member ;
-            dash:viewer hex:CollectionMembersViewer ;
-            sh:group _:MainContentGroup ;
-            sh:node
-              [
-              ] ;
-          ] ;
-      ] ;
-    ] .
-
-_:SidebarGroup
-  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
-  sh:order 2 ;
-.
-
-_:MainContentGroup
-  rs:selector "div.postcontent.col-lg-9.order-lg-last" ;
-  sh:order 1 ;
 .

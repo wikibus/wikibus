@@ -10,6 +10,7 @@ import * as BreadcrumbItemViewer from './main/BreadcrumbItemViewer'
 import * as FeaturedBoxViewer from './main/FeaturedBoxViewer'
 import * as OperationFormDialogViewer from './main/OperationFormDialogViewer'
 import * as OperationFormInlineViewer from './main/OperationFormInlineViewer'
+import * as SearchFormViewer from './main/SearchFormViewer'
 import * as ResponseLinkViewer from './main/ResponseLinkViewer'
 import * as CommentsViewer from './main/CommentsViewer'
 import * as ImageViewer from './main/ImageViewer'
@@ -38,6 +39,7 @@ export const renderers: Renderer<any>[] = [
   ImageViewer.renderer,
   PortfolioGridViewer.renderer,
   SidebarRelatedResourceViewer.renderer,
+  SearchFormViewer.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [
