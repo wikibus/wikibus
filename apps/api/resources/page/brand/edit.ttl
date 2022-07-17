@@ -12,11 +12,14 @@ PREFIX code: <https://code.described.at/>
     [
       hydra:template "/page/brand/{brand}/edit" ;
       hydra:mapping
-      [
-        hydra:variable "brand" ;
-        hydra:property schema:mainEntity ;
-        knossos:transformVariable "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript;
-      ]
+        [
+          hydra:variable "brand" ;
+          hydra:property schema:mainEntity ;
+          knossos:transformVariable
+            [
+              code:implementedBy "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript ;
+            ] ;
+        ]
     ] ;
   hydra:title "Edit brand" ;
   schema:hasPart </page/_element/header> ;

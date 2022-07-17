@@ -14,7 +14,7 @@
     "@captaincodeman/rdx": "^1.0.0-rc.9",
     "@web3-storage/parse-link-header": "^3.1.0",
     "@hydrofoil/roadshow": "^0.4.7",
-    "@hydrofoil/shaperone-hydra": "^0.3.4",
+    "@hydrofoil/shaperone-hydra": "^0.3.6",
     "@hydrofoil/shaperone-wc": "^0.6.10",
     "@hydrofoil/shaperone-wc-shoelace": "^0.0.0",
     "@hydrofoil/shell": "^0.3.3",

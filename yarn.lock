@@ -1208,15 +1208,15 @@
     rdf-express-node-factory "^1.1"
     rdf-ext "^1.3.5"
 
-"@hydrofoil/knossos@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.8.0.tgz#70e41fb6a4e13cf9319fbadf2a8965305d6041ce"
-  integrity sha512-2As2tpApwpclxvPoVkEImMYz8HL2Iq9L2oNr6KtLLwHzTmpvS3BW1avu+Cq8x6kTCN810lD3IDCynQH7wLC7hQ==
+"@hydrofoil/knossos@^0.9.0", "@hydrofoil/knossos@^0.9.2":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.9.2.tgz#30a65a4bbab14937e6ce5595cab57e4f2c378934"
+  integrity sha512-sRpYHrsSsxzLwf45L0QMJPNUD7kysmO9WqvB7NYM3ZPhzlhjgnKDvwvKqm6O0+UrC3ZHfQBTCuPcGeIr2DcsPA==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
     "@graphy/content.trig.read" "^4.3.3"
     "@hydrofoil/knossos-events" "^0.3.11"
-    "@hydrofoil/labyrinth" "^0.12.0"
+    "@hydrofoil/labyrinth" "^0.13.0"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
     "@rdfjs-elements/formats-pretty" "^0.5.1"
@@ -1250,10 +1250,10 @@
     stream-to-array "^2.3.0"
     stream-to-promise "^3.0.0"
 
-"@hydrofoil/labyrinth@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.12.0.tgz#46e11d8f8a7ca2ad21bd2be1ba4c7f59600892c1"
-  integrity sha512-pr/Vpx8YXIZElsKbWht09QiksSH0kQpwaZBxrRnupPduvtSjl3fI06Dxs3vlkCs4TT+QtU6UuZWHzmN8MGadwA==
+"@hydrofoil/labyrinth@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.13.0.tgz#894309518aa36d3d02968781562337b01aa169b6"
+  integrity sha512-doQe9PCf57CWW1T3+TSeNscUbGET2EWzQ9yC57+lQaMg2lT4aRBGnjQ1YvbJFLrHJuTANqUVFKlj2osFMvPx2w==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
@@ -1328,15 +1328,15 @@
     clownface-shacl-path "^1.3.2"
     immer "^9.0.6"
 
-"@hydrofoil/shaperone-hydra@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-hydra/-/shaperone-hydra-0.3.4.tgz#64060015b6406b36aea244a5e31130b3ac8e9ce6"
-  integrity sha512-NEhcE6GC0UwVSWvU63sJfK60vnWnFXOYY/OxZ0HASxyUfBD7/faJSKPIzgY2SlIQx9jifyxIso1dBDuoW40+5w==
+"@hydrofoil/shaperone-hydra@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-hydra/-/shaperone-hydra-0.3.6.tgz#2f3db4d624b881224ef8028c974a5d741caab70f"
+  integrity sha512-qzU/l0zbOCYA99GnIj8hA0/lx6wUkDpWjXZVDLxpWONBj0Tb0co7COEbqhQCRO12HyL25zPdyFITWK1SiKaIoA==
   dependencies:
     "@hydrofoil/shaperone-core" "^0.8.8"
     "@rdf-esm/dataset" "^0.5.0"
     "@rdf-esm/term-map" "^0.5.0"
-    "@rdfine/hydra" "^0.8.4"
+    "@rdfine/hydra" "^0.8.5"
     "@tpluscode/rdf-ns-builders" "^2.0.0"
     "@tpluscode/rdfine" "^0.5.39"
     alcaeus "^2.2.3"
@@ -1435,12 +1435,12 @@
     "@hydrofoil/shell-routing" "^0.2.2"
 
 "@hydrofoil/talos@^0.4.12":
-  version "0.4.13"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.13.tgz#476e70dffc4b5486b33c9e406514af7e3068790c"
-  integrity sha512-U8trBuufulghyOhs1PkGpNdOQhu+rRBZFI8r6q4Pjj2gz2P62qfSB4FSBKIK5uvd8TiO4gvaJmCyCv3kIMW7Fw==
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.14.tgz#14d05ff94436fcbd8bd637c81432b1591b1c22a3"
+  integrity sha512-YanwH7tVIJnY7xZxaqGss+0DSxE6Vq4blRKh9YKt7Gkyn1Rbm0oCHlgjOkdmxvzS1WiVJTH2oo2XaXahoGlnXg==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
-    "@hydrofoil/knossos" "^0.8.0"
+    "@hydrofoil/knossos" "^0.9.0"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfjs/formats-common" "^2.2.0"
     "@rdfjs/term-map" "^1"
@@ -1855,10 +1855,10 @@
     "@tpluscode/rdf-ns-builders" "^2.0.1"
     "@tpluscode/rdfine" "^0.5.39"
 
-"@rdfine/hydra@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@rdfine/hydra/-/hydra-0.8.4.tgz#ab50b6e4074ac415b5dbde80d2f59a0da0f7d2dd"
-  integrity sha512-3YTmo7ZRok1dLIlcu+pUHLdlKnirf76E1Apiog/EjG0oNjdELe/kMy1LFT0XA1cbKSfx8vlwoY4JMpSkyZsWVg==
+"@rdfine/hydra@^0.8.4", "@rdfine/hydra@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@rdfine/hydra/-/hydra-0.8.5.tgz#c7f28d0acacba046bb666f2a406b716129dffb9f"
+  integrity sha512-yhN43s16ocn0JravRjavTvN7xOQPAANi68snEE9p8XMlsbpBPVAvDL0cbrvuhp7NSr5Q6hz222+Vy8Nke11ofg==
   dependencies:
     "@rdf-esm/data-model" "^0.5.3"
     "@rdfine/rdf" "^0.5.7"

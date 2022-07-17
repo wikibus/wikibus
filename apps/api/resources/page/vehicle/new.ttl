@@ -1,27 +1,16 @@
-PREFIX code: <https://code.described.at/>
+PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix wba: <https://wikibus.org/api#>
 prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
+PREFIX code: <https://code.described.at/>
 
 <>
-  a schema:WebPage, <company/template> ;
-  knossos:webPageShape </api/page/Company> ;
-  knossos:resourceTemplate
-    [
-      hydra:template "/page/company/{company}" ;
-      hydra:mapping
-        [
-          hydra:variable "company" ;
-          hydra:property schema:mainEntity ;
-          knossos:transformVariable
-            [
-              code:implementedBy "(value, req) => req.rdf.namedNode(`/company/${value}`)"^^code:EcmaScript ;
-            ] ;
-        ]
-    ] ;
-  hydra:title "Company" ;
+  a schema:WebPage ;
+  dash:shape </api/page/Vehicle/New> ;
+  hydra:title "New vehicle" ;
+  schema:mainEntity </vehicles> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:breadcrumb
@@ -36,8 +25,12 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
               schema:name "Catalog" ;
               schema:nextItem
                 [
-                  schema:item </companies> ;
-                  schema:name "Companies" ;
+                  schema:item </vehicles> ;
+                  schema:name "Vehicles" ;
+                  schema:nextItem
+                    [
+                      schema:name "New" ;
+                    ]
                 ]
             ]
         ] ;

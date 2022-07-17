@@ -2,7 +2,7 @@ import { ResourceHook } from '@hydrofoil/labyrinth/resource'
 import { dash, rdf, schema } from '@tpluscode/rdf-ns-builders'
 import { knossos } from '@hydrofoil/vocabularies/builders'
 
-export const fillTemplate: ResourceHook = async (req, pointer) => {
+export const fillTemplate: ResourceHook = async ({ req, pointer }) => {
   const { uriTemplateVariables } = req.hydra.resource
   if (!uriTemplateVariables) return
 

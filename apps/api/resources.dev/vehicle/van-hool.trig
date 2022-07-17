@@ -1,8 +1,10 @@
+PREFIX schema: <http://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/alicron> {
   </vehicle/van-hool/alicron>
     a </api/Vehicle> ;
+    schema:name "Alicron" ;
     skos:prefLabel "Van Hool Alicron" ;
     skos:broader </brand/van-hool> ;
 }
@@ -10,6 +12,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/acron> {
   </vehicle/van-hool/acron>
     a </api/Vehicle> ;
+    schema:name "Acron" ;
     skos:prefLabel "Van Hool Acron" ;
     skos:broader </brand/van-hool> ;
 }
@@ -17,6 +20,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/atlino> {
   </vehicle/van-hool/atlino>
     a </api/Vehicle> ;
+    schema:name "Atlino" ;
     skos:prefLabel "Van Hool Atlino" ;
     skos:broader </brand/van-hool> ;
 }
@@ -24,6 +28,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/atlon> {
   </vehicle/van-hool/atlon>
     a </api/Vehicle> ;
+    schema:name "Atlon" ;
     skos:prefLabel "Van Hool Atlon" ;
     skos:broader </brand/van-hool> ;
 }
@@ -31,6 +36,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/alizee> {
   </vehicle/van-hool/alizee>
     a </api/Vehicle> ;
+    schema:name "Alizée" ;
     skos:prefLabel "Van Hool Alizée" ;
     skos:hiddenLabel "Van Hool Alizee" ;
     skos:broader </brand/van-hool> ;
@@ -39,6 +45,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/altano> {
   </vehicle/van-hool/altano>
     a </api/Vehicle> ;
+    schema:name "Altano" ;
     skos:prefLabel "Van Hool Altano" ;
     skos:broader </brand/van-hool> ;
 }
@@ -46,6 +53,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/astron> {
   </vehicle/van-hool/astron>
     a </api/Vehicle> ;
+    schema:name "Astron" ;
     skos:prefLabel "Van Hool Astron" ;
     skos:broader </brand/van-hool> ;
 }
@@ -53,6 +61,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/astronef> {
   </vehicle/van-hool/astronef>
     a </api/Vehicle> ;
+    schema:name "Astronef" ;
     skos:prefLabel "Van Hool Astronef" ;
     skos:broader </brand/van-hool> ;
 }
@@ -60,6 +69,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/amarant> {
   </vehicle/van-hool/amarant>
     a </api/Vehicle> ;
+    schema:name "Amarant" ;
     skos:prefLabel "Van Hool Amarant" ;
     skos:broader </brand/van-hool> ;
 }
@@ -67,6 +77,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/astromega> {
   </vehicle/van-hool/astromega>
     a </api/Vehicle> ;
+    schema:name "Astromega" ;
     skos:prefLabel "Van Hool Astromega" ;
     skos:hiddenLabel "Astromega" ;
 }
@@ -74,6 +85,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/alligator> {
   </vehicle/van-hool/alligator>
     a </api/Vehicle> ;
+    schema:name "Alligator" ;
     skos:prefLabel "Van Hool Alligator" ;
     skos:broader </brand/van-hool> ;
 }

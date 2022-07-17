@@ -12,5 +12,13 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:minLength 3 ;
+    ],
+    [
+      sh:name "Slug" ;
+      sh:description "Lower case, URL-friendly string, which will be used in identifiers" ;
+      sh:path skos:notation ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:pattern "^[a-z-]+$" ;
     ] ;
 .

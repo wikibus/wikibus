@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix query: <https://hypermedia.app/query#>
+
+<>
+  a hydra:Collection ;
+  hydra:description "" ;
+  hydra:memberAssertion
+    [
+      hydra:property rdf:type ;
+      hydra:object </api/VehicleConcept> ;
+    ] ;
+  hydra:limit 50 ;
+  hydra:search
+    [
+      hydra:template "{?q,page}" ;
+      hydra:mapping
+        [
+          hydra:variable "q" ;
+          hydra:property hydra:freetextQuery ;
+        ],
+        [
+          hydra:variable "page" ;
+          hydra:property hydra:pageIndex ;
+        ] ;
+    ] ;
+  query:order
+    (
+      [ query:path skos:prefLabel ]
+    ) ;
+.

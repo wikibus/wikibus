@@ -6,7 +6,7 @@ import 'rdf-express-node-factory'
 import { CONSTRUCT } from '@tpluscode/sparql-builder'
 import { isGraphPointer } from 'is-graph-pointer'
 
-export const fillHydraTitle: ResourceHook = async (req, pointer) => {
+export const fillHydraTitle: ResourceHook = async ({ req, pointer }) => {
   const mainEntity = req.hydra.resource.uriTemplateVariables?.out(schema.mainEntity)
 
   if (isGraphPointer(mainEntity)) {

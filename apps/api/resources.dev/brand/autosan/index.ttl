@@ -4,6 +4,7 @@ PREFIX schema: <http://schema.org/>
 <>
   a </api/Brand> ;
   skos:prefLabel "Autosan" ;
+  skos:notation "autosan" ;
   schema:text """
   ## History
 

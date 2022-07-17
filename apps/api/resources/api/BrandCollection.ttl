@@ -32,13 +32,8 @@ prefix knossos: <https://hypermedia.app/knossos#>
       hydra:mapping
         [
           hydra:variable "name" ;
-          hydra:property skos:prefLabel ;
+          hydra:property skos:notation ;
           hydra:required true ;
-          knossos:transformVariable
-            [
-              a code:EcmaScriptModule ;
-              code:link <file:apps/api/lib/templateTransform.js#slugify> ;
-            ] ;
         ] ;
     ] ;
 .

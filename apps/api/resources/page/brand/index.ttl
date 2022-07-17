@@ -15,7 +15,10 @@ PREFIX code: <https://code.described.at/>
         [
           hydra:variable "brand" ;
           hydra:property schema:mainEntity ;
-          knossos:transformVariable "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript;
+          knossos:transformVariable
+            [
+              code:implementedBy "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript ;
+            ] ;
         ]
     ] ;
   hydra:title "Brand" ;

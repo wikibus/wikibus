@@ -5,7 +5,7 @@ import $rdf from 'rdf-ext'
 import { isGraphPointer } from 'is-graph-pointer'
 import type { NamedNode } from '@rdfjs/types'
 
-export const preserveAndForwardQuery: ResourceHook = (req, pointer) => {
+export const preserveAndForwardQuery: ResourceHook = ({ req, pointer }) => {
   const { search } = new URL(req.absoluteUrl())
   if (search !== '') {
     const mainEntity = pointer.out(schema.mainEntity)

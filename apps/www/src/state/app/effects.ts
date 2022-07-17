@@ -20,7 +20,7 @@ export default function effects(store: Store) {
       }
       Hydra.defaultHeaders = async ({ uri }): Promise<HeadersInit> => {
         const { auth0 } = store.getState().auth
-        const sameOrigin = new URL(uri).origin === window.location.origin
+        const sameOrigin = new URL(uri, window.location.origin).origin === window.location.origin
         if (sameOrigin && auth0 && await auth0.isAuthenticated()) {
           return {
             Authorization: `Bearer ${await auth0.getTokenSilently()}`,

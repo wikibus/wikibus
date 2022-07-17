@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+
+<>
+  a </api/Brand> ;
+  skos:prefLabel "LAZ", "ЛАЗ"@uk ;
+  skos:altLabel "Lviv Automobile Factory"@en, "Львівський Автобусний Завод"@uk ;
+  skos:notation "laz" ;
+  schema:text "LAZ"^^rdf:HTML ;
+.

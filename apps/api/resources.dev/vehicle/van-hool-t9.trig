@@ -1,3 +1,4 @@
+PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
@@ -5,6 +6,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
   </vehicle/van-hool/t9>
     a </api/Vehicle> ;
     rdfs:comment "Coach range" ;
+    schema:name "T9" ;
     skos:prefLabel "Van Hool T9" ;
     skos:broader </brand/van-hool> ;
 }
@@ -13,6 +15,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/t911-alicron> {
   </vehicle/van-hool/t911-alicron>
     a </api/Vehicle> ;
+    schema:name "T911 Alicron" ;
     skos:prefLabel "Van Hool T911 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/alicron> ;
@@ -21,6 +24,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/t915-alicron> {
   </vehicle/van-hool/t915-alicron>
     a </api/Vehicle> ;
+    schema:name "T915 Alicron" ;
     skos:prefLabel "Van Hool T915 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/alicron> ;
@@ -29,6 +33,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 </vehicle/van-hool/t916-alicron> {
   </vehicle/van-hool/t916-alicron>
     a </api/Vehicle> ;
+    schema:name "T916 Alicron" ;
     skos:prefLabel "Van Hool T916 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/alicron> ;

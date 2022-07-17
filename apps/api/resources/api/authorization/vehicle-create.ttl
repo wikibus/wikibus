@@ -1,0 +1,10 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+
+<>
+  a acl:Authorization ;
+  acl:mode acl:Write ;
+  acl:accessTo </vehicles> ;
+  acl:accessToClass </api/Vehicle> ;
+  acl:agentClass acl:AuthenticatedAgent ; # TODO restrict
+.

@@ -5,7 +5,7 @@ import fromStream from 'rdf-dataset-ext/fromStream.js'
 import { isGraphPointer } from 'is-graph-pointer'
 import type { NamedNode } from '@rdfjs/types'
 
-export const loadSkos: ResourceHook = async (req, pointer) => {
+export const loadSkos: ResourceHook = async ({ req, pointer }) => {
   const mainEntity = req.hydra.resource.uriTemplateVariables?.out(schema.mainEntity)
 
   if (isGraphPointer(mainEntity)) {

@@ -14,7 +14,10 @@ PREFIX code: <https://code.described.at/>
         [
           hydra:variable "vehicle" ;
           hydra:property schema:mainEntity ;
-          knossos:transformVariable "(vehicle, req) => req.rdf.namedNode(`/vehicle/${vehicle}`)"^^code:EcmaScript;
+          knossos:transformVariable
+            [
+              code:implementedBy "(vehicle, req) => req.rdf.namedNode(`/vehicle/${vehicle}`)"^^code:EcmaScript ;
+            ] ;
         ]
     ] ;
   schema:hasPart </page/_element/header> ;

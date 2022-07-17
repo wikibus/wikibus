@@ -12,7 +12,7 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
-  rdfs:subClassOf schema:Brand, hydra:Resource ;
+  rdfs:subClassOf schema:Brand, hydra:Resource, </api/VehicleConcept> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -43,6 +43,15 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:uniqueLang true ;
       sh:order 10 ;
       sh:group _:Default ;
+    ],
+    [
+      sh:name "Slug" ;
+      sh:description "Lower case, URL-friendly string, which will be used in identifiers" ;
+      sh:path skos:notation ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:pattern "^[a-z-]+$" ;
+      sh:group _:Other ;
     ],
     [
       sh:name "Alternative names" ;
@@ -101,7 +110,6 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:path schema:text ;
       sh:datatype <https://atomicdata.dev/datatypes/markdown> ;
       sh:group _:ArticleGroup ;
-      sh:minCount 1 ;
       sh:maxCount 1 ;
     ] ;
 .
@@ -114,4 +122,9 @@ _:ArticleGroup
 _:Default
   rdfs:label "Base information" ;
   sh:order 0 ;
+.
+
+_:Other
+  rdfs:label "Other" ;
+  sh:order 2 ;
 .

@@ -6,8 +6,9 @@ import $rdf from 'rdf-ext'
 import { Result, Router } from 'uri-template-router'
 import { hydra, rdf } from '@tpluscode/rdf-ns-builders'
 import clownface, { GraphPointer } from 'clownface'
-import { isGraphPointer, isLiteral, isNamedNode } from 'is-graph-pointer'
+import { isLiteral, isNamedNode } from 'is-graph-pointer'
 import type * as express from 'express'
+import { loadImplementations } from '@hydrofoil/labyrinth/lib/code.js'
 
 declare module 'hydra-box' {
   interface Resource {
@@ -40,6 +41,11 @@ export const factory: ResourceLoaderFactory = async (
 
   return {
     async forClassOperation(term, req) {
+      const dbResource = await inner.forClassOperation(term)
+      if (dbResource.length) {
+        return dbResource
+      }
+
       const { pathname } = new URL(term.value)
       const found = router.resolveURI(pathname, {})
 
@@ -53,7 +59,7 @@ export const factory: ResourceLoaderFactory = async (
         return []
       }
 
-      return inner.forClassOperation(term)
+      return []
     },
     forPropertyOperation(term) {
       return inner.forPropertyOperation(term)
@@ -86,10 +92,13 @@ async function processVariables(template: GraphPointer, routeResult: Result, req
       if (!value) {
         return
       }
-      const transformPtr = variableMapping.out(knossos.transformVariable)
-      if (isGraphPointer(transformPtr)) {
-        const transform = await req.loadCode<VariableTransform>(transformPtr)
-        value = transform?.(value, req) || value
+      const [transform] = await loadImplementations<VariableTransform>(
+        variableMapping.out(knossos.transformVariable),
+        req,
+        { single: true },
+      )
+      if (transform) {
+        value = transform[0](value, req)
       }
 
       variables.addOut(predicate, value)
