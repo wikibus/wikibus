@@ -6,6 +6,7 @@ import type { RdfResource, RuntimeOperation } from 'alcaeus'
 import { ShaperoneForm } from '@hydrofoil/shaperone-wc'
 import clownface, { GraphPointer } from 'clownface'
 import $rdf from 'rdf-ext'
+import { schema } from '@tpluscode/rdf-ns-builders'
 import { store } from '../../state/store'
 
 interface Locals {
@@ -14,36 +15,6 @@ interface Locals {
   operation?: RuntimeOperation
   resource?: GraphPointer
   loading?: Promise<void>
-}
-
-function loadShape(operation: RuntimeOperation): Promise<NodeShape> {
-  return new Promise((resolve, reject) => {
-    const { expects } = operation
-    const shapeId = expects[0]?.id
-
-    store.state.core.client?.loadResource<NodeShape>(`${shapeId.value}`)
-      .then(({ representation }) => representation?.root)
-      .then((root) => {
-        if (root) {
-          resolve(root)
-        } else {
-          reject()
-        }
-      })
-  })
-}
-
-function getOperation(context: FocusNodeViewContext<Locals>, resource: RdfResource) {
-  let operationType = context.state.shape?.pointer.out(hex.operation).term
-  if (!operationType) {
-    operationType = context.parent?.propertyShape.pointer.out(hex.operation).term
-  }
-
-  const [operation] = resource?.findOperations({
-    bySupportedOperation: operationType as any,
-  }) || []
-
-  return operation
 }
 
 export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
@@ -61,13 +32,9 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
         .then(({ representation }) => representation?.root)
         .then((resource) => {
           if (resource) {
-            const dataset = $rdf.dataset([...resource.pointer.dataset])
-              .match(null, null, null, resource.id)
-              .map(({ subject, predicate, object }) => $rdf.quad(subject, predicate, object))
-            this.state.locals.resource = clownface({
-              dataset, term: resource.id,
-            })
-            this.state.locals.operation = getOperation(this, resource)
+            const operation = getOperation(this, resource)
+            this.state.locals.resource = getFocusNodePointer(operation, resource)
+            this.state.locals.operation = operation
           }
           this.controller.host.requestUpdate()
         })
@@ -117,4 +84,47 @@ function submit(operation: RuntimeOperation) {
       },
     }))
   }
+}
+
+function loadShape(operation: RuntimeOperation): Promise<NodeShape> {
+  return new Promise((resolve, reject) => {
+    const { expects } = operation
+    const shapeId = expects[0]?.id
+
+    store.state.core.client?.loadResource<NodeShape>(`${shapeId.value}`)
+      .then(({ representation }) => representation?.root)
+      .then((root) => {
+        if (root) {
+          resolve(root)
+        } else {
+          reject()
+        }
+      })
+  })
+}
+
+function getOperation(context: FocusNodeViewContext<Locals>, resource: RdfResource) {
+  let operationType = context.state.shape?.pointer.out(hex.operation).term
+  if (!operationType) {
+    operationType = context.parent?.propertyShape.pointer.out(hex.operation).term
+  }
+
+  const [operation] = resource?.findOperations({
+    bySupportedOperation: operationType as any,
+  }) || []
+
+  return operation
+}
+
+function getFocusNodePointer(operation: RuntimeOperation, resource: RdfResource) {
+  if (operation.types.has(schema.ReplaceAction)) {
+    const dataset = $rdf.dataset([...resource.pointer.dataset])
+      .match(null, null, null, resource.id)
+      .map(({ subject, predicate, object }) => $rdf.quad(subject, predicate, object))
+    return clownface({
+      dataset, term: resource.id,
+    })
+  }
+
+  return clownface({ dataset: $rdf.dataset() }).namedNode('')
 }
