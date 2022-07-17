@@ -6,7 +6,7 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
-  rdfs:subClassOf schema:BusOrCoach, </api/VehicleConcept> ;
+  rdfs:subClassOf schema:BusOrCoach, </api/VehicleConcept>, hydra:Resource ;
   sh:property
     [
       sh:name "Full Name", "Pełna Nazwa"@pl ;

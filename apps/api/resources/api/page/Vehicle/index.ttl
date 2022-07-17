@@ -16,6 +16,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
       sh:order 50 ;
       sh:path schema:mainEntity ;
       sh:group </page/_element/main#gutters> ;
+      rs:dereference true ;
       dash:viewer dash:DetailsViewer ;
       sh:node
       [

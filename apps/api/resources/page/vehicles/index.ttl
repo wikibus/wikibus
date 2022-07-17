@@ -10,6 +10,7 @@ PREFIX schema: <http://schema.org/>
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:mainEntity </vehicles> ;
+  schema:newResourceLink </page/vehicle/new> ;
   schema:breadcrumb
     [
       schema:itemListElement

@@ -16,6 +16,7 @@ import * as CommentsViewer from './main/CommentsViewer'
 import * as ImageViewer from './main/ImageViewer'
 import * as PortfolioGridViewer from './main/PortfolioGridViewer'
 import * as SidebarRelatedResourceViewer from './main/SidebarRelatedResourceViewer'
+import * as SubMenuLink from './main/SubMenuLink'
 import { canvas } from '../lib/ns'
 
 setBasePath('/app')
@@ -40,6 +41,7 @@ export const renderers: Renderer<any>[] = [
   PortfolioGridViewer.renderer,
   SidebarRelatedResourceViewer.renderer,
   SearchFormViewer.renderer,
+  SubMenuLink.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [

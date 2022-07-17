@@ -4,6 +4,7 @@ PREFIX dash: <http://datashapes.org/dash#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a sh:NodeShape, rs:ViewShape ;
@@ -29,6 +30,12 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
               sh:group _:SidebarGroup ;
             ] ;
         ] ;
+    ] ,
+    [
+      sh:name "New" ;
+      sh:path schema:newResourceLink ;
+      sh:group </page/_element/sub-menu> ;
+      dash:viewer canvas:SubMenuLink ;
     ] .
 
 _:SidebarGroup

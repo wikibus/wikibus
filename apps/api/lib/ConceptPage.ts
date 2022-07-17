@@ -18,7 +18,7 @@ export const loadSkos: ResourceHook = async ({ req, pointer }) => {
       ${mainEntity.term} ${schema.brand} ?brand . 
       ?brand ${skos.prefLabel} ?label .
     `.WHERE`
-      ${mainEntity.term} ${skos.broaderTransitive} ?brand .
+      ${mainEntity.term} ${skos.broader}* ?brand .
       ?brand a ${schema.Brand} ; ${skos.prefLabel} ?label  .
     `
 
