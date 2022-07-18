@@ -7,7 +7,7 @@ PREFIX code: <https://code.described.at/>
 
 <>
   a schema:WebPage, <../company/template> ;
-  knossos:webPageShape </api/page/Company/Edit> ;
+  knossos:webPageShape </api/page/Edit> ;
   knossos:resourceTemplate
     [
       hydra:template "/page/company/{company}/edit" ;

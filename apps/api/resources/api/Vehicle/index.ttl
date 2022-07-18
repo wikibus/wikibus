@@ -1,12 +1,26 @@
+PREFIX dash: <http://datashapes.org/dash#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX code: <https://code.described.at/>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
   rdfs:subClassOf schema:BusOrCoach, </api/VehicleConcept>, hydra:Resource ;
+  hydra:supportedOperation
+    [
+      a schema:ReplaceAction ;
+      hydra:title "Save" ;
+      hydra:method "PUT" ;
+      hydra:expects <> ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/knossos/resource#PUT> ;
+        ] ;
+    ] ;
   sh:property
     [
       sh:name "Full Name", "Pełna Nazwa"@pl ;
@@ -25,11 +39,22 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
       sh:order 1 ;
     ],
     [
-      sh:name "Supertype", "Supertype"@pl ;
+      sh:name "Supertype", "Typ nadrzędny"@pl ;
       sh:path skos:broader ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:minLength 1 ;
       sh:order 1 ;
+      dash:editor dash:InstancesSelectEditor ;
+      hydra:search
+        [
+          hydra:template "/vehicle-concepts{?q}" ;
+          hydra:mapping
+            [
+              hydra:variable "q" ;
+              hydra:property hydra:freetextQuery ;
+              sh:minLength 0 ;
+            ] ;
+        ] ;
     ]
 .

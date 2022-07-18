@@ -6,22 +6,22 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX code: <https://code.described.at/>
 
 <>
-  a schema:WebPage, <../brand/template> ;
+  a schema:WebPage, <../vehicle/template> ;
   knossos:webPageShape </api/page/Edit> ;
   knossos:resourceTemplate
     [
-      hydra:template "/page/brand/{brand}/edit" ;
+      hydra:template "/page/vehicle{/vehicle*}/edit" ;
       hydra:mapping
         [
-          hydra:variable "brand" ;
+          hydra:variable "vehicle" ;
           hydra:property schema:mainEntity ;
           knossos:transformVariable
             [
-              code:implementedBy "(value, req) => req.rdf.namedNode(`/brand/${value}`)"^^code:EcmaScript ;
+              code:implementedBy "(vehicle, req) => req.rdf.namedNode(`/vehicle/${vehicle}`)"^^code:EcmaScript ;
             ] ;
         ]
     ] ;
-  hydra:title "Edit brand" ;
+  hydra:title "Edit vehicle" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:breadcrumb
@@ -36,8 +36,8 @@ PREFIX code: <https://code.described.at/>
               schema:name "Catalog" ;
               schema:nextItem
                 [
-                  schema:item </brands> ;
-                  schema:name "Brands" ;
+                  schema:item </vehicles> ;
+                  schema:name "Vehicles" ;
                   schema:nextItem
                     [
                       schema:name "Edit" ;

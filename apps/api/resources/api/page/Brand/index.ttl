@@ -32,13 +32,26 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               sh:path schema:text ;
               sh:datatype rdf:HTML ;
               sh:group _:DefaultBodyGroup ;
-            ],
+            ] ;
+        ] ;
+    ],
+    [
+      # Properties populated in template
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main#gutters> ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
             [
-              sh:name "Narrower" ;
+              sh:name "Buses & coaches" ;
               sh:path skos:narrower ;
               sh:group _:SidebarGroup ;
               sh:order 3 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
+              sh:class schema:BusOrCoach ;
             ] ;
         ] ;
     ],
