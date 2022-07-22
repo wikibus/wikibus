@@ -7,6 +7,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX wba: <https://schema.wikibus.org/>
 
 <>
   a sh:NodeShape ;
@@ -33,7 +34,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               sh:group _:LeftSidebarGroup ;
               sh:order 2 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class schema:BusOrCoach ;
+              sh:class wba:Vehicle ;
             ] ,
             [
               sh:name "Narrower" ;
@@ -41,7 +42,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               sh:group _:LeftSidebarGroup ;
               sh:order 3 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class schema:BusOrCoach ;
+              sh:class wba:Vehicle ;
             ] ;
         ] ;
     ],
@@ -72,6 +73,16 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
       sh:path schema:mainEntity ;
       dash:viewer hex:ResponseLinkViewer ;
       sh:group </page/_element/sub-menu> ;
+      <https://www.w3.org/ns/iana/link-relations/relation> "edit-form" ;
+      sh:order 1 ;
+    ],
+    [
+      sh:name "Add subtype" ;
+      sh:path schema:mainEntity ;
+      dash:viewer hex:ResponseLinkViewer ;
+      sh:group </page/_element/sub-menu> ;
+      <https://www.w3.org/ns/iana/link-relations/relation> "create-form" ;
+      sh:order 2 ;
     ] ;
 .
 

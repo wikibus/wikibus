@@ -1,0 +1,39 @@
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wba: <https://schema.wikibus.org/>
+
+wba:Brand
+  a rdfs:Class ;
+  rdfs:subClassOf schema:Brand ;
+.
+
+wba:Vehicle
+  a rdfs:Class ;
+  rdfs:subClassOf schema:Product ;
+  rdfs:subClassOf schema:Vehicle ;
+  rdfs:label "Vehicle" ;
+.
+
+wba:BusOrCoach
+  a rdfs:Class ;
+  rdfs:subClassOf schema:BusOrCoach, wba:Vehicle ;
+  rdfs:label "Bus or coach" ;
+.
+
+wba:Trolleybus
+  a rdfs:Class ;
+  rdfs:subClassOf wba:Vehicle ;
+  rdfs:label "Trolleybus" ;
+.
+
+wba:Tram
+  a rdfs:Class ;
+  rdfs:subClassOf wba:Vehicle ;
+  rdfs:label "Tram" ;
+.
+
+wba:Chassis
+  a rdfs:Class ;
+  rdfs:subClassOf schema:Product ;
+  rdfs:label "Chassis" ;
+.

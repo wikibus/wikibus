@@ -11,7 +11,9 @@
     "@hydrofoil/knossos": "^0.9.2",
     "@hydrofoil/labyrinth": "^0.13.0",
     "@hydrofoil/vocabularies": "^0.3.1",
+    "@rdfjs/namespace": "^2",
     "@tpluscode/rdf-ns-builders": "^2",
+    "@tpluscode/rdf-string": "^0.2.26",
     "@tpluscode/sparql-builder": "^0.3.23",
     "@wikibus/auth": "^0.0.0",
     "clownface": "^1.5.1",
@@ -31,6 +33,7 @@
     "@types/express": "^4",
     "@types/rdf-dataset-ext": "^1.0.0",
     "@types/rdf-ext": "^1.0.0",
+    "@types/rdfjs__namespace": "^2",
     "@types/slug": "^5.0.3"
   }
 }

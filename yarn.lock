@@ -1208,15 +1208,15 @@
     rdf-express-node-factory "^1.1"
     rdf-ext "^1.3.5"
 
-"@hydrofoil/knossos@^0.9.0", "@hydrofoil/knossos@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.9.2.tgz#30a65a4bbab14937e6ce5595cab57e4f2c378934"
-  integrity sha512-sRpYHrsSsxzLwf45L0QMJPNUD7kysmO9WqvB7NYM3ZPhzlhjgnKDvwvKqm6O0+UrC3ZHfQBTCuPcGeIr2DcsPA==
+"@hydrofoil/knossos@^0.9.0", "@hydrofoil/knossos@^0.9.2", "@hydrofoil/knossos@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.9.3.tgz#ff1111c3fc15bd58668299addca4c7e89b5e841f"
+  integrity sha512-XeNm4PG9XuN3+luY3x7ATFbC1IxdPb3U6Tjd5GjhlzrFD+4goWXyRH5bzpFtt9fR8VD85JgeTHYz2ISCGyP8tA==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
     "@graphy/content.trig.read" "^4.3.3"
     "@hydrofoil/knossos-events" "^0.3.11"
-    "@hydrofoil/labyrinth" "^0.13.0"
+    "@hydrofoil/labyrinth" "^0.13.1"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
     "@rdfjs-elements/formats-pretty" "^0.5.1"
@@ -1230,7 +1230,7 @@
     absolute-url "^1.2.2"
     camouflage-rewrite "^1.2.0"
     clownface "^1.5.1"
-    commander "^9.3.0"
+    commander "^9.4.0"
     debug "^4.3.4"
     express "^4.18.1"
     express-middleware-shacl "^1.3.2"
@@ -1246,14 +1246,14 @@
     path-to-regexp "^6.2.1"
     rdf-ext "^1.3.5"
     rdf-web-access-control "^1.3.2"
-    sparql-http-client "^2.4.0"
+    sparql-http-client "^2.4.1"
     stream-to-array "^2.3.0"
     stream-to-promise "^3.0.0"
 
-"@hydrofoil/labyrinth@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.13.0.tgz#894309518aa36d3d02968781562337b01aa169b6"
-  integrity sha512-doQe9PCf57CWW1T3+TSeNscUbGET2EWzQ9yC57+lQaMg2lT4aRBGnjQ1YvbJFLrHJuTANqUVFKlj2osFMvPx2w==
+"@hydrofoil/labyrinth@^0.13.0", "@hydrofoil/labyrinth@^0.13.1":
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.13.1.tgz#8d82a25735c7a10374acff1ba644e332c81dfd30"
+  integrity sha512-+970v3S3Ago/MgOL0IcQ/0S5FxkTJ7SOhFpdHTe6pvg1Tcpxl1VF+04jW68sBMrrmrZgw3Lb/bSy/EM4j34YgQ==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfine/hydra" "^0.8.4"
@@ -1281,7 +1281,7 @@
     rdf-ext "^1.3.5"
     rdf-literal "^1.3.0"
     rdf-loader-code "^0.3.2"
-    sparql-http-client "^2.4.0"
+    sparql-http-client "^2.4.1"
     stream-to-array "^2.3.0"
     valid-url "^1.0.9"
 
@@ -1344,9 +1344,9 @@
     clownface-shacl-path "^1.3.2"
 
 "@hydrofoil/shaperone-wc@^0.6.10", "@hydrofoil/shaperone-wc@^0.6.9":
-  version "0.6.10"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-wc/-/shaperone-wc-0.6.10.tgz#e518ca8e7b829c70c76ea99a5b2d0585e5b00198"
-  integrity sha512-uTHZ+lSqj54xnb+C5gXWLLN/An4qHvsO8fcqU/greRzU8itVmm/WhjV+sT6yRiQs1qEF1IS38UV+o/lHvQ7O9A==
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-wc/-/shaperone-wc-0.6.11.tgz#d741618f5d207c25a34e10d232b719dabab75c6c"
+  integrity sha512-zN8Q8CktgMk8g5T6AMkQ5Sz8zr+8Yd7Ff3RkE24bS5ixZk7WMgcwjrtfAuM+1cPwWIBJ7CAhw7zx8qBDGyKJOg==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.8"
     "@hydrofoil/shaperone-core" "^0.8.8"
@@ -1435,12 +1435,12 @@
     "@hydrofoil/shell-routing" "^0.2.2"
 
 "@hydrofoil/talos@^0.4.12":
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.14.tgz#14d05ff94436fcbd8bd637c81432b1591b1c22a3"
-  integrity sha512-YanwH7tVIJnY7xZxaqGss+0DSxE6Vq4blRKh9YKt7Gkyn1Rbm0oCHlgjOkdmxvzS1WiVJTH2oo2XaXahoGlnXg==
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/talos/-/talos-0.4.15.tgz#7b1acef771eb1ee3ddc913bc416f809916f2fbe9"
+  integrity sha512-WHKzySOJ/uSFFwVc8LmQzpaW/55EwmDkhaw2xf2PrD+jJshXRGA209kg3c8FaNry3Fd7gzn5ycOBjATeClyzFw==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
-    "@hydrofoil/knossos" "^0.9.0"
+    "@hydrofoil/knossos" "^0.9.3"
     "@hydrofoil/vocabularies" "^0.3"
     "@rdfjs/formats-common" "^2.2.0"
     "@rdfjs/term-map" "^1"
@@ -1449,14 +1449,14 @@
     "@tpluscode/sparql-builder" "^0.3.22"
     "@zazuko/rdf-vocabularies" "*"
     clownface "^1.5.1"
-    commander "^9.3.0"
+    commander "^9.4.0"
     debug "^4.3.4"
     is-absolute-url "^3"
     mime-types "^2.1.35"
     node-fetch "^2.6.7"
     rdf-ext "^1.3.5"
     replacestream "^4.0.3"
-    sparql-http-client "^2.4.0"
+    sparql-http-client "^2.4.1"
 
 "@hydrofoil/vocabularies@^0.3", "@hydrofoil/vocabularies@^0.3.0", "@hydrofoil/vocabularies@^0.3.1":
   version "0.3.1"
@@ -2750,7 +2750,7 @@
     "@types/rdfjs__sink-map" "*"
     rdf-js "^4.0.2"
 
-"@types/rdfjs__namespace@*", "@types/rdfjs__namespace@^2.0.0":
+"@types/rdfjs__namespace@*", "@types/rdfjs__namespace@^2", "@types/rdfjs__namespace@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/rdfjs__namespace/-/rdfjs__namespace-2.0.0.tgz#8830386855f07fee87d6316f0f7af9365725160a"
   integrity sha512-bpVmmBrwg4plwfSNtwbwIYtZEpGFPWHTlfa1iftSY03+V+2wq+pfZxYkZwrhZwyh/Dxy5usIrVt04Rvigc4uXg==
@@ -5579,10 +5579,10 @@ commander@^8.3.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
 
-commander@^9.2.0, commander@^9.3.0:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-9.3.0.tgz#f619114a5a2d2054e0d9ff1b31d5ccf89255e26b"
-  integrity sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==
+commander@^9.2.0, commander@^9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
+  integrity sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==
 
 common-tags@^1.8.0:
   version "1.8.2"
@@ -11974,7 +11974,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sparql-http-client@^2.4.0, sparql-http-client@^2.4.1:
+sparql-http-client@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/sparql-http-client/-/sparql-http-client-2.4.1.tgz#7181eed360fc777f3263b0e00777e9e789f433e5"
   integrity sha512-w1rsSZW/0/byHml/veP4A1IZjEzjzphPr/iee1c20aG+RDEJC+2lAefXGTKZH58E7SSUoXqFW+hfwjVl5K2ecQ==

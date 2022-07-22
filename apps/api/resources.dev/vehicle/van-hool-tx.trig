@@ -1,8 +1,9 @@
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wba: <https://schema.wikibus.org/>
 
 </vehicle/van-hool/tx> {
   </vehicle/van-hool/tx>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX" ;
     skos:broader </brand/van-hool> ;
 }
@@ -10,7 +11,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Alicron
 </vehicle/van-hool/tx11-alicron> {
   </vehicle/van-hool/tx11-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX11 Alicron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/alicron> ;
@@ -18,7 +19,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx15-alicron> {
   </vehicle/van-hool/tx15-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX15 Alicron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/alicron> ;
@@ -26,7 +27,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx16-alicron> {
   </vehicle/van-hool/tx16-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX16 Alicron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/alicron> ;
@@ -35,7 +36,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Acron
 </vehicle/van-hool/tx15-acron> {
   </vehicle/van-hool/tx15-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX15 Acron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -43,7 +44,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx16-acron> {
   </vehicle/van-hool/tx16-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX16 Acron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -51,7 +52,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx17-acron> {
   </vehicle/van-hool/tx17-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX17 Acron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -59,7 +60,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx18-acron> {
   </vehicle/van-hool/tx18-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX18 Acron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -68,7 +69,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astron
 </vehicle/van-hool/tx16-astron> {
   </vehicle/van-hool/tx16-astron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX16 Astron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astron> ;
@@ -76,7 +77,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx17-astron> {
   </vehicle/van-hool/tx17-astron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX17 Astron" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astron> ;
@@ -85,7 +86,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astronef
 </vehicle/van-hool/tx15-astronef> {
   </vehicle/van-hool/tx15-astronef>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX15 Astronef" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astronef> ;
@@ -93,7 +94,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx16-astronef> {
   </vehicle/van-hool/tx16-astronef>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX16 Astronef" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astronef> ;
@@ -101,7 +102,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx17-astronef> {
   </vehicle/van-hool/tx17-astronef>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX17 Astronef" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astronef> ;
@@ -110,7 +111,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Altano
 </vehicle/van-hool/tx17-altano> {
   </vehicle/van-hool/tx17-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX17 Altano" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -118,7 +119,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx18-altano> {
   </vehicle/van-hool/tx18-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX18 Altano" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -126,7 +127,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tx19-altano> {
   </vehicle/van-hool/tx19-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TX19 Altano" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -134,7 +135,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tdx20-altano> {
   </vehicle/van-hool/tdx20-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TDX20 Altano" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -142,7 +143,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tdx21-altano> {
   </vehicle/van-hool/tdx21-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TDX21 Altano" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -151,7 +152,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astromega
 </vehicle/van-hool/tdx25-astromega> {
   </vehicle/van-hool/tdx25-astromega>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TDX25 Astromega" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astromega> ;
@@ -159,7 +160,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/tdx27-astromega> {
   </vehicle/van-hool/tdx27-astromega>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TDX27 Astromega" ;
     skos:broader </vehicle/van-hool/tx> ;
     skos:broader </vehicle/van-hool/astromega> ;

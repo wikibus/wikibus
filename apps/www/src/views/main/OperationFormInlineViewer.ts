@@ -7,6 +7,8 @@ import { ShaperoneForm } from '@hydrofoil/shaperone-wc'
 import clownface, { GraphPointer } from 'clownface'
 import $rdf from 'rdf-ext'
 import { schema } from '@tpluscode/rdf-ns-builders'
+import { n3Parser } from '@rdf-esm/formats-common/parsers'
+import toStream from 'string-to-stream'
 import { store } from '../../state/store'
 
 interface Locals {
@@ -30,10 +32,10 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
         Prefer: 'return=minimal',
       })
         .then(({ representation }) => representation?.root)
-        .then((resource) => {
+        .then(async (resource) => {
           if (resource) {
             const operation = getOperation(this, resource)
-            this.state.locals.resource = getFocusNodePointer(operation, resource)
+            this.state.locals.resource = await getFocusNodePointer(operation, resource)
             this.state.locals.operation = operation
           }
           this.controller.host.requestUpdate()
@@ -116,7 +118,7 @@ function getOperation(context: FocusNodeViewContext<Locals>, resource: RdfResour
   return operation
 }
 
-function getFocusNodePointer(operation: RuntimeOperation, resource: RdfResource) {
+async function getFocusNodePointer(operation: RuntimeOperation, resource: RdfResource) {
   if (operation.types.has(schema.ReplaceAction)) {
     const dataset = $rdf.dataset([...resource.pointer.dataset])
       .match(null, null, null, resource.id)
@@ -126,5 +128,13 @@ function getFocusNodePointer(operation: RuntimeOperation, resource: RdfResource)
     })
   }
 
-  return clownface({ dataset: $rdf.dataset() }).namedNode('')
+  const dataset = $rdf.dataset()
+  if (window.location.hash) {
+    const parser = await n3Parser()
+    const turtle = decodeURIComponent(window.location.hash.substring(1))
+    const quads = parser.import(toStream(turtle))
+    await dataset.import(quads)
+  }
+
+  return clownface({ dataset }).namedNode('')
 }

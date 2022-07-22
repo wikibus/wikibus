@@ -1,3 +1,4 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX dash: <http://datashapes.org/dash#>
@@ -34,5 +35,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       sh:maxCount 1 ;
       sh:minLength 1 ;
       sh:order 1 ;
+    ],
+    [
+      sh:name "Type", "Typ"@pl ;
+      sh:path rdf:type ;
+      hydra:collection </product-types?super=https://schema.wikibus.org/Vehicle> ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+      sh:order 3 ;
+      dash:editor dash:InstancesSelectEditor ;
     ] ;
 .

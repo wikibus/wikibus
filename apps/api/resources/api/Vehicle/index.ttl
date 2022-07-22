@@ -1,3 +1,5 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -5,10 +7,11 @@ PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX code: <https://code.described.at/>
+PREFIX wba: <https://schema.wikibus.org/>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
-  rdfs:subClassOf schema:BusOrCoach, </api/VehicleConcept>, hydra:Resource ;
+  rdfs:subClassOf </api/VehicleConcept>, hydra:Resource ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -29,6 +32,11 @@ PREFIX code: <https://code.described.at/>
       sh:minLength 1 ;
       sh:uniqueLang true ;
       sh:order 2 ;
+      sh:or
+        (
+          [ sh:datatype rdf:langString ]
+          [ sh:datatype xsd:string ]
+        ) ;
     ],
     [
       sh:name "Name", "Nazwa"@pl ;

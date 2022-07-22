@@ -8,11 +8,11 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix knossos: <https://hypermedia.app/knossos#>
-prefix wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wba: <https://schema.wikibus.org/>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
-  rdfs:subClassOf schema:Brand, hydra:Resource, </api/VehicleConcept> ;
+  rdfs:subClassOf wba:Brand, hydra:Resource, </api/VehicleConcept> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -57,7 +57,11 @@ prefix wdt: <http://www.wikidata.org/prop/direct/>
       sh:name "Alternative names" ;
       sh:description "Alternative spelling, abbreviations, etc" ;
       sh:path skos:altLabel ;
-      sh:datatype rdf:langString ;
+      sh:or
+        (
+          [ sh:datatype rdf:langString ]
+          [ sh:datatype xsd:string ]
+        ) ;
       sh:uniqueLang true ;
       sh:order 20 ;
       sh:group _:Default ;

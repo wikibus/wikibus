@@ -7,6 +7,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX wba: <https://schema.wikibus.org/>
 
 <>
   a sh:NodeShape ;
@@ -49,9 +50,33 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               sh:name "Buses & coaches" ;
               sh:path skos:narrower ;
               sh:group _:SidebarGroup ;
+              sh:order 1 ;
+              dash:viewer canvas:SidebarRelatedResourceViewer ;
+              sh:class wba:BusOrCoach ;
+            ] ,
+            [
+              sh:name "Trolleybuses" ;
+              sh:path skos:narrower ;
+              sh:group _:SidebarGroup ;
+              sh:order 2 ;
+              dash:viewer canvas:SidebarRelatedResourceViewer ;
+              sh:class wba:Trolleybus ;
+            ] ,
+            [
+              sh:name "Trams" ;
+              sh:path skos:narrower ;
+              sh:group _:SidebarGroup ;
               sh:order 3 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class schema:BusOrCoach ;
+              sh:class wba:Tram ;
+            ] ,
+            [
+              sh:name "Chassis" ;
+              sh:path skos:narrower ;
+              sh:group _:SidebarGroup ;
+              sh:order 4 ;
+              dash:viewer canvas:SidebarRelatedResourceViewer ;
+              sh:class wba:Chassis ;
             ] ;
         ] ;
     ],

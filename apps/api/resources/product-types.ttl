@@ -1,0 +1,24 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wba: <https://schema.wikibus.org/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  a hydra:Collection ;
+  hydra:memberAssertion
+  [
+    hydra:property rdfs:subClassOf ;
+    hydra:object wba:Vehicle ;
+  ] ;
+  hydra:search
+  [
+    a hydra:IriTemplate ;
+    hydra:variableRepresentation hydra:ExplicitRepresentation ;
+    hydra:template "{?super}" ;
+    hydra:mapping
+      [
+        hydra:variable "super" ;
+        hydra:property rdfs:subClassOf ;
+      ] ;
+  ]
+.

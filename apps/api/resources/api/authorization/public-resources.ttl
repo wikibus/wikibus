@@ -13,6 +13,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
     </brands>,
     </vehicles>,
     </vehicle-concepts>,
+    </product-types>,
     </companies>,
     </catalog>,
     </api/shapes>,

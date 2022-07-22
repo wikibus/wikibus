@@ -1,0 +1,48 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX wba: <https://schema.wikibus.org/>
+
+</vehicle/solaris/tramino> {
+  </vehicle/solaris/tramino>
+    a </api/Vehicle> , wba:Tram ;
+    schema:name "Tramino" ;
+    skos:prefLabel "Solaris Tramino" ;
+    skos:broader </brand/solaris> ;
+  .
+}
+
+</vehicle/solaris/urbino> {
+  </vehicle/solaris/urbino>
+    a </api/Vehicle> , wba:BusOrCoach ;
+    schema:name "Urbino" ;
+    skos:prefLabel "Solaris Urbino" ;
+    skos:broader </brand/solaris> ;
+  .
+}
+
+</vehicle/solaris/urbino-12> {
+  </vehicle/solaris/urbino-12>
+    a </api/Vehicle> , wba:BusOrCoach ;
+    schema:name "Urbino 12" ;
+    skos:prefLabel "Solaris Urbino 12" ;
+    skos:broader </vehicle/solaris/urbino> ;
+  .
+}
+
+</vehicle/solaris/urbino-ii> {
+  </vehicle/solaris/urbino-ii>
+    a </api/Vehicle> , wba:BusOrCoach ;
+    schema:name "Urbino II" ;
+    skos:prefLabel "Solaris Urbino II" ;
+    skos:broader </vehicle/solaris/urbino> ;
+  .
+}
+
+</vehicle/solaris/urbino-ii-12> {
+  </vehicle/solaris/urbino-ii-12>
+    a </api/Vehicle> , wba:BusOrCoach ;
+    schema:name "Urbino 12 (II generacja)"@pl ;
+    skos:prefLabel "Solaris Urbino 12 (II generacja)"@pl ;
+    skos:broader </vehicle/solaris/urbino-12>, </vehicle/solaris/urbino-ii> ;
+  .
+}

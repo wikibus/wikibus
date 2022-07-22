@@ -1,10 +1,11 @@
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wba: <https://schema.wikibus.org/>
 
 </vehicle/van-hool/t9> {
   </vehicle/van-hool/t9>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     rdfs:comment "Coach range" ;
     schema:name "T9" ;
     skos:prefLabel "Van Hool T9" ;
@@ -14,7 +15,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Alicron
 </vehicle/van-hool/t911-alicron> {
   </vehicle/van-hool/t911-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     schema:name "T911 Alicron" ;
     skos:prefLabel "Van Hool T911 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
@@ -23,7 +24,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t915-alicron> {
   </vehicle/van-hool/t915-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     schema:name "T915 Alicron" ;
     skos:prefLabel "Van Hool T915 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
@@ -32,7 +33,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t916-alicron> {
   </vehicle/van-hool/t916-alicron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     schema:name "T916 Alicron" ;
     skos:prefLabel "Van Hool T916 Alicron" ;
     skos:broader </vehicle/van-hool/t9> ;
@@ -42,7 +43,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Atlino
 </vehicle/van-hool/t915-atlino> {
   </vehicle/van-hool/t915-atlino>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T915 Atlino" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/atlino> ;
@@ -50,7 +51,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t916-atlino> {
   </vehicle/van-hool/t916-atlino>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Atlino" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/atlino> ;
@@ -59,7 +60,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Atlon
 </vehicle/van-hool/t915-atlon> {
   </vehicle/van-hool/t915-atlon>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T915 Atlon" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/atlon> ;
@@ -67,7 +68,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t916-atlon> {
   </vehicle/van-hool/t916-atlon>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Atlon" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/atlon> ;
@@ -76,7 +77,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Acron
 </vehicle/van-hool/t915-acron> {
   </vehicle/van-hool/t915-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T915 Acron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -84,7 +85,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t916-acron> {
   </vehicle/van-hool/t916-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Acron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -92,7 +93,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t917-acron> {
   </vehicle/van-hool/t917-acron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T917 Acron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/acron> ;
@@ -101,7 +102,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astron
 </vehicle/van-hool/t916-astron> {
   </vehicle/van-hool/t916-astron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Astron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astron> ;
@@ -110,7 +111,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t917-astron> {
   </vehicle/van-hool/t917-astron>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T917 Astron" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astron> ;
@@ -119,7 +120,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astronef
 </vehicle/van-hool/t916-astronef> {
   </vehicle/van-hool/t916-astronef>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Astronef" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astronef> ;
@@ -127,7 +128,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t917-astronef> {
   </vehicle/van-hool/t917-astronef>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T917 Astronef" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astronef> ;
@@ -136,7 +137,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Altano
 </vehicle/van-hool/t916-altano> {
   </vehicle/van-hool/t916-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T916 Altano" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -144,7 +145,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t917-altano> {
   </vehicle/van-hool/t917-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T917 Altano" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -152,7 +153,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t918-altano> {
   </vehicle/van-hool/t918-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T918 Altano" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -160,7 +161,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/t919-altano> {
   </vehicle/van-hool/t919-altano>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool T919 Altano" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/altano> ;
@@ -169,7 +170,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # Astromega
 </vehicle/van-hool/td924-astromega> {
   </vehicle/van-hool/td924-astromega>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TD924 Astromega" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astromega> ;
@@ -177,7 +178,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/td925-astromega> {
   </vehicle/van-hool/td925-astromega>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TD925 Astromega" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astromega> ;
@@ -185,7 +186,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/td927-astromega> {
   </vehicle/van-hool/td927-astromega>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TD927 Astromega" ;
     skos:broader </vehicle/van-hool/t9> ;
     skos:broader </vehicle/van-hool/astromega> ;
@@ -193,7 +194,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 </vehicle/van-hool/td927-astromega-usa> {
   </vehicle/van-hool/td927-astromega-usa>
-    a </api/Vehicle> ;
+    a </api/Vehicle> , wba:BusOrCoach ;
     skos:prefLabel "Van Hool TD927 Astromega USA" ;
     skos:broader </vehicle/van-hool/td927-astromega> ;
 }
