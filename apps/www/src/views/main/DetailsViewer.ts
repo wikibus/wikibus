@@ -44,9 +44,14 @@ export const renderer: Renderer<FocusNodeViewContext> = {
     const groupOrdered = [...groups.values()].sort(byOrder)
 
     return html`${groupOrdered.map(({ group, properties }) => {
-      const contents = html`${properties?.sort(byOrder)
+      const visibleProps = (properties || []).sort(byOrder)
         .filter(({ propertyShape }) => !propertyShape.hidden)
-        .map(property => html`${this.show({ property })}`)}`
+
+      if (visibleProps.length === 0) {
+        return ''
+      }
+
+      const contents = html`${visibleProps.map(property => this.show({ property }))}`
 
       if (!group) {
         return contents
