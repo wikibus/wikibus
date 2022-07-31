@@ -19,9 +19,9 @@ export const renderer: Renderer<ObjectViewContext> = {
       return html`${unsafeHTML(this.node.value)}`
     }
 
-    let focusNode: Record<string, any> = {}
     if (this.parent?.focusNodeShape && this.parent?.focusNode) {
-      focusNode = [...getAllProperties(this.parent.focusNodeShape)].reduce((map, property) => {
+      const props = [...getAllProperties(this.parent.focusNodeShape)]
+      const focusNode = props.reduce((map, property) => {
         const identifier = property.pointer.out(schema.identifier).value
         const path = property.pointer.out(sh.path)
         let { values } = findNodes(this.parent!.focusNode!, path)
@@ -38,10 +38,12 @@ export const renderer: Renderer<ObjectViewContext> = {
 
         return map
       }, {} as Record<string, any>)
+
+      return interpolate(template, {
+        focusNode,
+      })
     }
 
-    return interpolate(template, {
-      focusNode,
-    })
+    return ''
   },
 }

@@ -1,4 +1,17 @@
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix query: <https://hypermedia.app/query#>
 
-<> rdfs:subClassOf skos:Concept .
+<>
+  a hydra:Class ;
+  rdfs:subClassOf skos:Concept ;
+  query:include
+    [
+      query:path rdfs:seeAlso ;
+    ] ,
+    [
+      query:path ( rdfs:seeAlso [ sh:inversePath schema:about ] ) ;
+    ] ; .

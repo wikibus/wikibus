@@ -10,7 +10,7 @@ import type { Dialog } from '@vaadin/vaadin-dialog/vaadin-dialog'
 import { ShaperoneForm } from '@hydrofoil/shaperone-wc'
 import { guard } from 'lit/directives/guard.js'
 import { sh } from '@tpluscode/rdf-ns-builders'
-import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
+import { localizedLabel } from '@rdfjs-elements/lit-helpers/localizedLabel.js'
 import { store } from '../../state/store'
 
 interface Locals {
@@ -115,9 +115,9 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
     }
 
     return html`
-      <li><button @click="${openDialog}">${taggedLiteral(this.parent?.propertyShape, { property: sh.name })}</button>
+      <li><button @click="${openDialog}">${localizedLabel(this.parent?.propertyShape, { property: sh.name })}</button>
       <vaadin-dialog .opened="${this.state.locals.open || false}"
-                     header-title="${taggedLiteral(shape) as any}"
+                     header-title="${localizedLabel(shape) as any}"
                      .renderer="${guard([operation, shape], () => renderForm)}"
                      .footerRenderer="${guard([operationState?.loading], () => renderFooter)}"
                      @opened-changed="${closeDialog}"

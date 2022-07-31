@@ -1,3 +1,4 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 
@@ -5,4 +6,5 @@ PREFIX schema: <http://schema.org/>
   a </api/Brand> ;
   skos:prefLabel "Solaris" ;
   skos:notation "solaris" ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Solaris_Bus_&_Coach> ;
 .

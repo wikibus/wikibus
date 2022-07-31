@@ -67,6 +67,8 @@
 	margin: 0.5rem 0 0.5rem 1.5rem;
 }
 
+canvas-icon-list > li [class^="icon-"]:first-child,
+canvas-icon-list > li [class*="icon-"]:first-child,
 .iconlist > li [class^="icon-"]:first-child,
 .iconlist > li [class*=" icon-"]:first-child {
 	position: relative;
@@ -77,6 +79,8 @@
     flex: 0 0 auto;
 }
 
+.rtl canvas-icon-list > li [class^="icon-"]:first-child,
+.rtl canvas-icon-list > li [class*="icon-"]:first-child,
 .rtl .iconlist > li [class^="icon-"]:first-child,
 .rtl .iconlist > li [class*=" icon-"]:first-child {
 	margin-left: 0.75rem;
@@ -103,6 +107,7 @@
 	margin-right: 0;
 }
 
+canvas-icon-list > li [class^="icon-"]:first-child,
 .iconlist > li [class^="icon-"]:first-child {
 	color: #1ABC9C;
 	color: var(--themecolor);

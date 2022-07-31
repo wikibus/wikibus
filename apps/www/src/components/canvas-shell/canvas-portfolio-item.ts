@@ -74,7 +74,7 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
       </div>
 
       <div class="portfolio-desc">
-        <h3><a href="${this.resource.value}">${taggedLiteral(this.resource, { property: skos.prefLabel })}</a></h3>
+        <h3><a href="${this.resource.value}">${taggedLiteral(this.resource.out(skos.prefLabel))}</a></h3>
       </div>
     `
   }
@@ -83,8 +83,8 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
     /* eslint-disable lit/no-invalid-html */
     const imageUrl = this.resource.out(schema.image).out(schema.contentUrl).value
     return imageUrl
-      ? html`<img src="${imageUrl}" alt="${taggedLiteral(this.resource, { property: skos.prefLabel })} Logo">`
-      : html`<img src="https://dummyimage.com/300x200/f5f5f5/64bfdb&amp;text=${taggedLiteral(this.resource, { property: skos.prefLabel })}"
-                alt="${taggedLiteral(this.resource, { property: skos.prefLabel })} Logo">`
+      ? html`<img src="${imageUrl}" alt="${taggedLiteral(this.resource.out(skos.prefLabel))} Logo">`
+      : html`<img src="https://dummyimage.com/300x200/f5f5f5/64bfdb&amp;text=${taggedLiteral(this.resource.out(skos.prefLabel))}"
+                alt="${taggedLiteral(this.resource.out(skos.prefLabel))} Logo">`
   }
 }

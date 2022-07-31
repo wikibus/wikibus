@@ -11,6 +11,7 @@ import { wba } from '../lib/ns'
 import ShapesLoaderMap from '../lib/ShapesLoaderMap'
 import { renderers, viewers, decorators } from '../views'
 import { resourceLoader } from '../lib/resourceLoader'
+import './canvas-shell/canvas-icon-list'
 
 export default class App extends connect(store, CanvasShellBase(LitElement)) {
   __shapesLoaders?: ShapesLoaderMap

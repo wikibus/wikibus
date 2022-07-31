@@ -1285,10 +1285,10 @@
     stream-to-array "^2.3.0"
     valid-url "^1.0.9"
 
-"@hydrofoil/roadshow@^0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.7.tgz#94aaefadc9bb7046ac2094163ceaf5ea9e45b8a3"
-  integrity sha512-gKL4jALKB2h44NhNFO3Horf6tqnPaieTjSy6nvAhKI/M3Gu5IWSJrsI11s6CP5MtON0uwVHtg7weeRn+8n4M1g==
+"@hydrofoil/roadshow@^0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.8.tgz#c0e81776ff429ff6c662491b730a0dbc7f3d9b57"
+  integrity sha512-L98HBzjVsj5UpV2GOttcTDa7xYuFIzKiTYKJ/vwH8pjMrGIT6zbx4D0vcMAAbhLwCH6jOo0hjFHphCB5wJVYhw==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3.0"
     "@rdf-esm/dataset" "^0.5.0"
@@ -1306,10 +1306,10 @@
     is-graph-pointer "^1.2.1"
     lit "^2.0.0-rc.2"
 
-"@hydrofoil/shaperone-core@^0.8.8":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-core/-/shaperone-core-0.8.8.tgz#cb681ee2f9f22da53b30d33e0c5f321d5766d18c"
-  integrity sha512-X5N39tZ6WdHiEiVXKt1czooTRWrD3jQicpHsC7OHNC+PU+5YF8rlswuVUsvfVcp+ebEphZkNwlyZ6FmFXLlOUw==
+"@hydrofoil/shaperone-core@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-core/-/shaperone-core-0.9.0.tgz#f2e3c174de5fa9616b42090fd582abcdb23e7ff5"
+  integrity sha512-OjnQW9gO1kOVMsxyvHS7xJYlXLoBkGuhV83F7cEF/b0oeRdyfHAv4HR1PFAvNerwtZEbVtkldN86xOO49lLuxw==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.8"
     "@rdf-esm/data-model" "^0.5.3"
@@ -1320,20 +1320,21 @@
     "@rdfine/dash" "^0.2.4"
     "@rdfine/rdfs" "^0.6.10"
     "@rdfine/shacl" "^0.8.7"
+    "@rdfjs-elements/lit-helpers" "^0.3.3"
     "@rdfjs/types" "*"
     "@tpluscode/rdf-ns-builders" "^2.0.0"
     "@tpluscode/rdfine" "^0.5.39"
     "@zazuko/rdf-vocabularies" "*"
     clownface "^1.2.0"
     clownface-shacl-path "^1.3.2"
-    immer "^9.0.6"
+    immer "^9.0.15"
 
-"@hydrofoil/shaperone-hydra@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-hydra/-/shaperone-hydra-0.3.6.tgz#2f3db4d624b881224ef8028c974a5d741caab70f"
-  integrity sha512-qzU/l0zbOCYA99GnIj8hA0/lx6wUkDpWjXZVDLxpWONBj0Tb0co7COEbqhQCRO12HyL25zPdyFITWK1SiKaIoA==
+"@hydrofoil/shaperone-hydra@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-hydra/-/shaperone-hydra-0.3.7.tgz#d261c83fce206f0841433faab860a613d4389496"
+  integrity sha512-NRs1vTTufPNOodHmjQtd7aRg06jrS4W4tz6/k2Fh8TJVdVm3Eh0S/K0UmP0vA9uTiU3UHiiCsHIdMOsoc525JQ==
   dependencies:
-    "@hydrofoil/shaperone-core" "^0.8.8"
+    "@hydrofoil/shaperone-core" "^0.9.0"
     "@rdf-esm/dataset" "^0.5.0"
     "@rdf-esm/term-map" "^0.5.0"
     "@rdfine/hydra" "^0.8.5"
@@ -1343,18 +1344,18 @@
     clownface "^1.2.0"
     clownface-shacl-path "^1.3.2"
 
-"@hydrofoil/shaperone-wc@^0.6.10", "@hydrofoil/shaperone-wc@^0.6.9":
-  version "0.6.11"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-wc/-/shaperone-wc-0.6.11.tgz#d741618f5d207c25a34e10d232b719dabab75c6c"
-  integrity sha512-zN8Q8CktgMk8g5T6AMkQ5Sz8zr+8Yd7Ff3RkE24bS5ixZk7WMgcwjrtfAuM+1cPwWIBJ7CAhw7zx8qBDGyKJOg==
+"@hydrofoil/shaperone-wc@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shaperone-wc/-/shaperone-wc-0.7.0.tgz#7a4d4a5ce19253eb517a9a36eef4bcd87fc5313d"
+  integrity sha512-KI3PtaRWjL6PxhPb/HytsN30qLSUG3WkrlcaKMTOvQ2p8YO3EoKQ3y0t5Rw5wskg7X/EWjq89jInVp+K2go/NA==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.8"
-    "@hydrofoil/shaperone-core" "^0.8.8"
+    "@hydrofoil/shaperone-core" "^0.9.0"
     "@rdf-esm/data-model" "^0.5.4"
     "@rdf-esm/dataset" "^0.5.1"
     "@rdf-esm/term-map" "^0.5.0"
     "@rdfine/shacl" "^0.8.7"
-    "@rdfjs-elements/lit-helpers" "^0.2.2"
+    "@rdfjs-elements/lit-helpers" "^0.3.3"
     "@tpluscode/rdf-ns-builders" "^2.0.0"
     "@tpluscode/rdfine" "^0.5.27"
     clownface "^1.1.0"
@@ -1927,12 +1928,14 @@
     "@tpluscode/rdf-ns-builders" "^2"
     readable-stream "^3.6.0"
 
-"@rdfjs-elements/lit-helpers@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@rdfjs-elements/lit-helpers/-/lit-helpers-0.2.2.tgz#05a79c6d90ffe1306b8523417bfef57d9a7c7d00"
-  integrity sha512-fQ16ptlk/EuqMbwY7AvMXaXtVo5/Wywzt/BzEBPtzdOUTBIEcvDUd0SsdOE3bsDrxWuFv8w77NHgkNSWemn6Kg==
+"@rdfjs-elements/lit-helpers@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@rdfjs-elements/lit-helpers/-/lit-helpers-0.3.3.tgz#bb72efa87e90f918c233c15f2ff8264d4c66d974"
+  integrity sha512-nYY+aHXTsUA3kR+oMj4q1f2K38MJH0M5X2OPnZSA/oPlJOyWYw+il2VqH94+lGsiAqNpfTD/ojTY5kI7kaJQPA==
   dependencies:
     "@tpluscode/rdf-ns-builders" "^2"
+    "@ungap/event-target" "^0.2.3"
+    clownface "^1.5.1"
     lit "^2"
 
 "@rdfjs/data-model@^1.0.1", "@rdfjs/data-model@^1.1.0", "@rdfjs/data-model@^1.1.2", "@rdfjs/data-model@^1.2", "@rdfjs/data-model@^1.2.0", "@rdfjs/data-model@^1.3.2", "@rdfjs/data-model@^1.3.3", "@rdfjs/data-model@^1.3.4":
@@ -2942,6 +2945,11 @@
   dependencies:
     "@typescript-eslint/types" "5.15.0"
     eslint-visitor-keys "^3.0.0"
+
+"@ungap/event-target@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@ungap/event-target/-/event-target-0.2.3.tgz#be682c681126dca2371c4e1a1721f8e8bb400905"
+  integrity sha512-7Bz0qdvxNGV9n0f+xcMKU7wsEfK6PNzo8IdAcOiBgMNyCuU0Mk9dv0Hbd/Kgr+MFFfn4xLHFbuOt820egT5qEA==
 
 "@vaadin/accordion@23.1.0-rc2":
   version "23.1.0-rc2"
@@ -8192,10 +8200,10 @@ ignore@^5.1.1, ignore@^5.1.8, ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
 
-immer@^9.0.6:
-  version "9.0.14"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.14.tgz#e05b83b63999d26382bb71676c9d827831248a48"
-  integrity sha512-ubBeqQutOSLIFCUBN03jGeOS6a3DoYlSYwYJTa+gSKEZKU5redJIqkIdZ3JVv/4RZpfcXdAWH5zCNLWPRv2WDw==
+immer@^9.0.15:
+  version "9.0.15"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.15.tgz#0b9169e5b1d22137aba7d43f8a81a495dd1b62dc"
+  integrity sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==
 
 immutable@^4.0.0:
   version "4.0.0"

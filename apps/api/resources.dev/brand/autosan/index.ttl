@@ -1,3 +1,4 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX schema: <http://schema.org/>
 
@@ -5,6 +6,7 @@ PREFIX schema: <http://schema.org/>
   a </api/Brand> ;
   skos:prefLabel "Autosan" ;
   skos:notation "autosan" ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Autosan> ;
   schema:text """
   ## History
 

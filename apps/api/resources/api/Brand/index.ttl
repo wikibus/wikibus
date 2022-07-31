@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX code: <https://code.described.at/>
@@ -26,109 +27,131 @@ PREFIX wba: <https://schema.wikibus.org/>
         ] ;
     ] ;
   sh:property
+    _:NameProperty,
+    _:SlugProperty,
+    _:AlternativeNamesProperty,
+    _:SearchVariantsProperty,
+    _:LogoProperty,
+    _:ArticleProperty,
+    _:LinksProperty;
+.
+
+_:NameProperty
+  sh:name "Name", "Nazwa"@pl ;
+  sh:path skos:prefLabel ;
+  sh:minCount 1 ;
+  sh:minLength 3 ;
+  sh:or
+    (
+      [
+        sh:datatype rdf:langString ;
+      ]
+      [
+        sh:datatype xsd:string ;
+      ]
+    ) ;
+  sh:uniqueLang true ;
+  sh:order 10 ;
+.
+
+_:SlugProperty
+  sh:name "Slug" ;
+  sh:description "Lower case, URL-friendly string, which will be used in identifiers" ;
+  sh:path skos:notation ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:pattern "^[a-z-]+$" ;
+.
+
+_:AlternativeNamesProperty
+  sh:name "Alternative names" ;
+  sh:description "Alternative spelling, abbreviations, etc" ;
+  sh:path skos:altLabel ;
+  sh:or
+    (
+      [ sh:datatype rdf:langString ]
+      [ sh:datatype xsd:string ]
+    ) ;
+  sh:uniqueLang true ;
+  sh:order 20 ;
+.
+
+_:SearchVariantsProperty
+  sh:name "Search variants" ;
+  sh:description "Hidden labels, such as misspelled variants" ;
+  sh:path skos:hiddenLabel ;
+  sh:order 30 ;
+.
+
+_:LogoProperty
+  sh:name "Logo" ;
+  sh:path schema:image ;
+  sh:maxCount 1 ;
+  sh:nodeKind sh:BlankNode ;
+  dash:editor dash:DetailsEditor ;
+  sh:order 40 ;
+  sh:node
     [
-      sh:name "Name", "Nazwa"@pl ;
-      sh:path skos:prefLabel ;
-      sh:minCount 1 ;
-      sh:minLength 3 ;
-      sh:or
-        (
-          [
-            sh:datatype rdf:langString ;
-          ]
-          [
-            sh:datatype xsd:string ;
-          ]
-        ) ;
-      sh:uniqueLang true ;
-      sh:order 10 ;
-      sh:group _:Default ;
-    ],
-    [
-      sh:name "Slug" ;
-      sh:description "Lower case, URL-friendly string, which will be used in identifiers" ;
-      sh:path skos:notation ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:pattern "^[a-z-]+$" ;
-      sh:group _:Other ;
-    ],
-    [
-      sh:name "Alternative names" ;
-      sh:description "Alternative spelling, abbreviations, etc" ;
-      sh:path skos:altLabel ;
-      sh:or
-        (
-          [ sh:datatype rdf:langString ]
-          [ sh:datatype xsd:string ]
-        ) ;
-      sh:uniqueLang true ;
-      sh:order 20 ;
-      sh:group _:Default ;
-    ],
-    [
-      sh:name "Search variants" ;
-      sh:description "Hidden labels, such as misspelled variants" ;
-      sh:path skos:hiddenLabel ;
-      sh:order 30 ;
-      sh:group _:Default ;
-    ],
-    [
-      sh:name "Logo" ;
-      sh:path schema:image ;
-      sh:maxCount 1 ;
-      sh:nodeKind sh:BlankNode ;
-      dash:editor dash:DetailsEditor ;
-      sh:order 40 ;
-      sh:group _:Default ;
-      sh:node
+      rdfs:label "Image object" ;
+      sh:property
         [
-          rdfs:label "Image object" ;
-          sh:property
-            [
-              sh:name "Image address" ;
-              sh:path schema:contentUrl ;
-              sh:nodeKind sh:IRI ;
-              sh:minCount 1 ;
-              sh:maxCount 1 ;
-              sh:order 1 ;
-            ],
-            [
-              sh:name "Caption" ;
-              sh:path schema:caption ;
-              sh:datatype xsd:string ;
-              sh:maxCount 1 ;
-              sh:order 2 ;
-            ],
-            [
-              sh:path rdf:type ;
-              sh:hasValue schema:ImageObject ;
-              sh:defaultValue schema:ImageObject ;
-              sh:deactivated true ; # TODO reenable and automatically set in a payload hook
-              dash:hidden true ;
-            ] ;
+          sh:name "Image address" ;
+          sh:path schema:contentUrl ;
+          sh:nodeKind sh:IRI ;
+          sh:minCount 1 ;
+          sh:maxCount 1 ;
+          sh:order 1 ;
+        ],
+        [
+          sh:name "Caption" ;
+          sh:path schema:caption ;
+          sh:datatype xsd:string ;
+          sh:maxCount 1 ;
+          sh:order 2 ;
+        ],
+        [
+          sh:path rdf:type ;
+          sh:hasValue schema:ImageObject ;
+          sh:defaultValue schema:ImageObject ;
+          sh:deactivated true ; # TODO reenable and automatically set in a payload hook
+          dash:hidden true ;
         ] ;
-    ],
-    [
-      sh:name "Article content" ;
-      sh:path schema:text ;
-      sh:datatype <https://atomicdata.dev/datatypes/markdown> ;
-      sh:group _:ArticleGroup ;
-      sh:maxCount 1 ;
     ] ;
+.
+
+_:ArticleProperty
+  sh:name "Article content" ;
+  sh:path schema:text ;
+  sh:datatype <https://atomicdata.dev/datatypes/markdown> ;
+  sh:maxCount 1 ;
 .
 
 _:ArticleGroup
   rdfs:label "Article" ;
   sh:order 1 ;
+  knossos:groupProperty _:ArticleProperty ;
 .
 
 _:Default
   rdfs:label "Base information" ;
   sh:order 0 ;
+  knossos:groupProperty _:NameProperty, _:AlternativeNamesProperty, _:SearchVariantsProperty, _:LogoProperty ;
 .
 
 _:Other
   rdfs:label "Other" ;
+  sh:order 3 ;
+  knossos:groupProperty _:SlugProperty ;
+.
+
+_:LinksGroup
+  rdfs:label "Links" ;
   sh:order 2 ;
+  knossos:groupProperty _:LinksProperty ;
+.
+
+_:LinksProperty
+  sh:path rdfs:seeAlso ;
+  sh:nodeKind sh:IRI ;
+  dash:editor dash:URIEditor ;
 .

@@ -8,6 +8,7 @@ prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
 PREFIX wba: <https://schema.wikibus.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
 
 <>
   a sh:NodeShape ;
@@ -28,16 +29,63 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:maxCount 1 ;
               dash:viewer hex:ImageViewer ;
               sh:group _:ImageGroup ;
+              sh:order 1 ;
             ],
             [
               sh:path schema:text ;
               sh:datatype rdf:HTML ;
               sh:group _:DefaultBodyGroup ;
+              sh:order 2 ;
+            ],
+            [
+              sh:path wba:dbpediaLink ;
+              sh:group _:DefaultBodyGroup ;
+              dash:viewer dash:DetailsViewer ;
+              sh:order 3 ;
+              sh:node
+                [
+                  sh:property
+                    [
+                      sh:path rdfs:label ;
+                      dash:viewer dash:HTMLViewer ;
+                      sh:order 1 ;
+                      sh:values
+                        [
+                          dash:js """
+                            <h4>Wikipedia abstract</h4>
+                          """
+                        ] ;
+                    ],
+                    [
+                      sh:path dbo:abstract ;
+                      dash:viewer dash:SingleLiteralViewer ;
+                      sh:order 2 ;
+                      rs:propertyContainer "p" ;
+                    ],
+                    [
+                      sh:path rdfs:label ;
+                      dash:viewer dash:HTMLViewer ;
+                      sh:order 3 ;
+                      sh:values
+                        [
+                          dash:js """
+                            <h5>See more on wikipedia</h5>
+                          """
+                        ] ;
+                    ],
+                    [
+                      sh:path [ sh:inversePath schema:about ] ;
+                      sh:order 4 ;
+                      rs:propertyContainer "canvas-icon-list[inline]" ;
+                      dash:viewer canvas:IconListItem ;
+                      canvas:icon "icon-line-external-link" ;
+                    ] ;
+                ] ;
             ] ;
         ] ;
     ],
     [
-      # Properties populated in template
+    # Properties populated in template
       sh:order 50 ;
       sh:path schema:mainEntity ;
       sh:name "brand" ;
@@ -53,7 +101,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:order 1 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:BusOrCoach ;
-            ] ,
+            ],
             [
               sh:name "Trolleybuses" ;
               sh:path skos:narrower ;
@@ -61,7 +109,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:order 2 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Trolleybus ;
-            ] ,
+            ],
             [
               sh:name "Trams" ;
               sh:path skos:narrower ;
@@ -69,7 +117,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:order 3 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Tram ;
-            ] ,
+            ],
             [
               sh:name "Chassis" ;
               sh:path skos:narrower ;
@@ -91,6 +139,7 @@ PREFIX wba: <https://schema.wikibus.org/>
       sh:name "Edit" ;
       sh:path schema:mainEntity ;
       dash:viewer hex:ResponseLinkViewer ;
+      <https://www.w3.org/ns/iana/link-relations/relation> "edit-form" ;
       sh:group </page/_element/sub-menu> ;
     ] ;
 .

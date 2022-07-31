@@ -2,7 +2,8 @@ import { Decorator, Renderer, ViewerMatcher } from '@hydrofoil/roadshow'
 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js'
 import { ViewersController } from '@hydrofoil/roadshow/ViewersController'
 import { hex } from '@hydrofoil/vocabularies/builders'
-import { dash, rdf } from '@tpluscode/rdf-ns-builders'
+import { rdf } from '@tpluscode/rdf-ns-builders'
+import { dash } from '@tpluscode/rdf-ns-builders/loose'
 import * as DetailsViewer from './main/DetailsViewer'
 import * as HTMLViewer from './main/HTMLViewer'
 import * as BreadcrumbViewer from './main/BreadcrumbViewer'
@@ -17,7 +18,10 @@ import * as ImageViewer from './main/ImageViewer'
 import * as PortfolioGridViewer from './main/PortfolioGridViewer'
 import * as SidebarRelatedResourceViewer from './main/SidebarRelatedResourceViewer'
 import * as SubMenuLink from './main/SubMenuLink'
+import * as SingleLiteralViewer from './main/SingleLiteralViewer'
+import * as IconListItem from './main/IconListItem'
 import { canvas } from '../lib/ns'
+import { wrapperDecorator } from './decorators/wrapper'
 
 setBasePath('/app')
 
@@ -25,6 +29,8 @@ ViewersController.viewerMeta
   .node(hex.CollectionMembersViewer)
   .addOut(rdf.type, dash.MultiViewer)
   .node(canvas.SidebarRelatedResourceViewer)
+  .addOut(rdf.type, dash.MultiViewer)
+  .node(dash.SingleLiteralViewer)
   .addOut(rdf.type, dash.MultiViewer)
 
 export const renderers: Renderer<any>[] = [
@@ -42,6 +48,8 @@ export const renderers: Renderer<any>[] = [
   SidebarRelatedResourceViewer.renderer,
   SearchFormViewer.renderer,
   SubMenuLink.renderer,
+  SingleLiteralViewer.renderer,
+  IconListItem.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [
@@ -49,4 +57,6 @@ export const viewers: ViewerMatcher[] = [
   ImageViewer.matcher,
 ]
 
-export const decorators: Decorator[] = []
+export const decorators: Decorator[] = [
+  wrapperDecorator,
+]

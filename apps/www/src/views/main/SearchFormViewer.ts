@@ -1,7 +1,7 @@
 import { html, Renderer } from '@hydrofoil/roadshow'
 import { FocusNodeViewContext } from '@hydrofoil/roadshow/lib/ViewContext'
 import { hex } from '@hydrofoil/vocabularies/builders'
-import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
+import { localizedLabel } from '@rdfjs-elements/lit-helpers/localizedLabel.js'
 import { dash, hydra } from '@tpluscode/rdf-ns-builders'
 import { hyper_query as query } from '@hydrofoil/vocabularies/builders/strict'
 import type { IriTemplate } from '@rdfine/hydra'
@@ -42,7 +42,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
 
     return html`
       <div class="widget clearfix">
-        <h4>${taggedLiteral(shape)}</h4>
+        <h4>${localizedLabel(shape)}</h4>
         <shaperone-form .shapes="${shape}" .resource="${mappings}">
           <canvas-button slot="buttons" 
                          @click="${submit(template)}" 

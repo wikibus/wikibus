@@ -1,10 +1,11 @@
 import { Lazy, SingleEditorComponent } from '@hydrofoil/shaperone-wc'
 import { dash } from '@tpluscode/rdf-ns-builders'
-import type { ComponentInstance } from '@hydrofoil/shaperone-core/models/components'
+import type { ComponentInstance, SingleEditorActions } from '@hydrofoil/shaperone-core/models/components'
 import { html } from 'lit'
 import rdf from '@rdfjs/data-model'
 import { isGraphPointer, isLiteral } from 'is-graph-pointer'
 import type { GraphPointer } from 'clownface'
+import type { Term } from '@rdfjs/types'
 
 interface EditorState extends ComponentInstance {
   noLabel?: boolean
@@ -68,8 +69,16 @@ export const uri: Lazy<SingleEditorComponent> = {
   async lazyRender() {
     const { inputRenderer } = await import('./renderer/input')
 
-    return inputRenderer({ type: 'url' })
+    return inputRenderer({ type: 'url', onChange: setUrl })
   },
+}
+
+function setUrl(arg: GraphPointer | Term | string, { update }: SingleEditorActions) {
+  if (typeof arg === 'string') {
+    update(rdf.namedNode(arg))
+  } else {
+    update(rdf.namedNode(arg.value))
+  }
 }
 
 export const details: Lazy<SingleEditorComponent> = {

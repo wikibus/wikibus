@@ -1,8 +1,9 @@
 import { directive, Directive, PartInfo, PartType } from 'lit/directive.js'
 import { noChange, render, TemplateResult } from 'lit'
-import type { PropertyGroup } from '@rdfine/shacl'
+import type { RdfResource } from 'alcaeus'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
 import * as CSSwhat from 'css-what'
+import type { NamedNode } from '@rdfjs/types'
 import { applyTokens } from '../lib/css'
 
 class WrapperDirective extends Directive {
@@ -16,8 +17,16 @@ class WrapperDirective extends Directive {
     }
   }
 
-  render(group: PropertyGroup, inner: TemplateResult) {
-    const selector = group.getString(roadshow.selector, { strict: false })
+  render(
+    group: RdfResource | undefined,
+    inner: TemplateResult | string,
+    property: NamedNode | NamedNode[] = [roadshow.selector, roadshow.container],
+  ) {
+    const selector = group?.pointer.out(property).value
+    if (!selector) {
+      return inner
+    }
+
     if (this._element && this._selector === selector) {
       render(inner, this._element)
       return noChange
