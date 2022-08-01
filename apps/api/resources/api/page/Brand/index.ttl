@@ -88,7 +88,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
     # Properties populated in template
       sh:order 50 ;
       sh:path schema:mainEntity ;
-      sh:name "brand" ;
+      sh:name "brand links" ;
       sh:group </page/_element/main#gutters> ;
       dash:viewer dash:DetailsViewer ;
       sh:node
@@ -131,9 +131,10 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
     [
       sh:order 60 ;
       sh:path schema:mainEntity ;
-      sh:name "brand" ;
+      sh:name "comments" ;
       sh:group </page/_element/main> ;
       dash:viewer hex:CommentsViewer ;
+      dash:hidden true ;
     ],
     [
       sh:name "Edit" ;

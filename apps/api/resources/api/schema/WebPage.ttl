@@ -94,13 +94,7 @@ prefix wba: <https://wikibus.org/api#>
     ],
     [
       schema:identifier "description" ;
-      sh:path
-        [
-          sh:alternativePath
-            (
-              hydra:description
-            )
-        ] ;
+      sh:path hydra:description ;
       dash:hidden true ;
     ] ;
 .
