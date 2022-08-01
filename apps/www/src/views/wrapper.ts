@@ -1,5 +1,5 @@
 import { directive, Directive, PartInfo, PartType } from 'lit/directive.js'
-import { noChange, render, TemplateResult } from 'lit'
+import { render, TemplateResult } from 'lit'
 import type { RdfResource } from 'alcaeus'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
 import * as CSSwhat from 'css-what'
@@ -8,6 +8,7 @@ import { applyTokens } from '../lib/css'
 
 class WrapperDirective extends Directive {
   private _element?: HTMLElement
+  private _wrapped?: HTMLElement
   private _selector: string | null = null
 
   constructor(partInfo: PartInfo) {
@@ -29,7 +30,7 @@ class WrapperDirective extends Directive {
 
     if (this._element && this._selector === selector) {
       render(inner, this._element)
-      return noChange
+      return this._wrapped
     }
 
     let element: HTMLElement | undefined | null
@@ -43,7 +44,7 @@ class WrapperDirective extends Directive {
     }
 
     this._element = element
-    return parents.reduce((wrapped, parent) => {
+    this._wrapped = parents.reduce((wrapped, parent) => {
       if (!parent) {
         return wrapped
       }
@@ -51,6 +52,8 @@ class WrapperDirective extends Directive {
       parent.appendChild(wrapped)
       return parent
     }, element)
+
+    return this._wrapped
   }
 
   private static __createElementTree(selectorString: string) {

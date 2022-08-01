@@ -10,9 +10,9 @@ export const diagDecorator: Decorator<AnyVC> = {
   },
   decorate(inner, context) {
     return html`
-      ${unsafeHTML(`<!-- BEGIN ${context.state.viewer?.value} -->`)}
+      ${unsafeHTML(`<!-- BEGIN NODE=${context.node.value} VIEWER=${context.state.viewer?.value} -->`)}
       ${inner}
-      ${unsafeHTML(`<!-- END ${context.state.viewer?.value} -->`)}
+      ${unsafeHTML(`<!-- END NODE=${context.node.value} VIEWER=${context.state.viewer?.value} -->`)}
     `
   },
 }
