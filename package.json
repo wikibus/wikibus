@@ -53,10 +53,6 @@
     "wsrun": "^5.2.4",
     "yarn-deduplicate": "^5.0.0"
   },
-  "resolutions": {
-    "hydra-box": "github:hypermedia-app/hydra-box#loader-req",
-    "@tpluscode/rdf-ns-builders": "2.0.1"
-  },
   "workspaces": [
     "apps/*",
     "packages/*"
