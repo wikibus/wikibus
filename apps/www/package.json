@@ -13,7 +13,7 @@
     "@appnest/masonry-layout": "^2.0.8",
     "@captaincodeman/rdx": "^1.0.0-rc.9",
     "@web3-storage/parse-link-header": "^3.1.0",
-    "@hydrofoil/roadshow": "^0.4.8",
+    "@hydrofoil/roadshow": "^0.4.9",
     "@hydrofoil/shaperone-hydra": "^0.3.7",
     "@hydrofoil/shaperone-wc": "^0.7.0",
     "@hydrofoil/shaperone-wc-shoelace": "^0.0.0",

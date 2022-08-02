@@ -1285,10 +1285,10 @@
     stream-to-array "^2.3.0"
     valid-url "^1.0.9"
 
-"@hydrofoil/roadshow@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.8.tgz#c0e81776ff429ff6c662491b730a0dbc7f3d9b57"
-  integrity sha512-L98HBzjVsj5UpV2GOttcTDa7xYuFIzKiTYKJ/vwH8pjMrGIT6zbx4D0vcMAAbhLwCH6jOo0hjFHphCB5wJVYhw==
+"@hydrofoil/roadshow@^0.4.9":
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/roadshow/-/roadshow-0.4.9.tgz#3ef6f2450e6ffc8e1e90ee5889869776afee7858"
+  integrity sha512-Zyo/qrkOVz8MhwU3mcQa1dtTKo0gEwhOuWEdy6Im6TtVZHnhX4cZJZ/qjuKcp72zumqPxBxZT6yVXD+D4br0Cg==
   dependencies:
     "@hydrofoil/vocabularies" "^0.3.0"
     "@rdf-esm/dataset" "^0.5.0"
