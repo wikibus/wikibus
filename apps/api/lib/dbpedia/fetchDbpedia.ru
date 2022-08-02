@@ -40,6 +40,33 @@ insert {
 };
 
 insert {
+  graph ?res {
+    ?res schema:image
+      [
+        a schema:ImageObject ;
+        schema:contentUrl ?logo ;
+        schema:caption ?caption ;
+    ]
+  }
+} where {
+  #{resourceValues}
+
+  ?res rdfs:seeAlso ?link .
+  FILTER NOT EXISTS {
+      ?res schema:image []
+  }
+
+  filter(regex(str(?link), "dbpedia.org"))
+
+  bind(iri(concat(str(?res), "#dbpedia")) as ?dbpedia)
+
+  service <https://dbpedia.org/sparql> {
+    ?link dbo:thumbnail ?logo .
+    OPTIONAL { ?link dbo:thumbnailCaption ?caption }
+  }
+};
+
+insert {
   graph ?dbpedia {
     ?wikiPage schema:about ?link .
     ?wikiPage schema:inLanguage ?lang .

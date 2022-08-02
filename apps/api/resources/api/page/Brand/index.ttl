@@ -28,7 +28,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:path schema:image ;
               sh:maxCount 1 ;
               dash:viewer hex:ImageViewer ;
-              sh:group _:ImageGroup ;
+              sh:group _:DefaultBodyGroup ;
               sh:order 1 ;
             ],
             [
