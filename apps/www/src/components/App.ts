@@ -12,13 +12,14 @@ import ShapesLoaderMap from '../lib/ShapesLoaderMap'
 import { renderers, viewers, decorators } from '../views'
 import { resourceLoader } from '../lib/resourceLoader'
 import './canvas-shell/canvas-icon-list'
+import './AppNotifications'
 
 export default class App extends connect(store, CanvasShellBase(LitElement)) {
   __shapesLoaders?: ShapesLoaderMap
   __resourceLoader?: ResourceLoader
 
   @property({ type: Object })
-    state!: State
+  public state!: State
 
   static get styles() {
     return css`
@@ -52,7 +53,9 @@ export default class App extends connect(store, CanvasShellBase(LitElement)) {
                             .renderers="${renderers}"
                             .viewers="${viewers}"
                             .decorators="${decorators}"
-                            .params="${this.state}"></app-view>`
+                            .params="${this.state}"></app-view>
+      
+      <app-notifications></app-notifications>`
     }
 
     return html`
