@@ -66,13 +66,7 @@ export default function effects(store: Store) {
         }
       }
     },
-    'operation/succeeded': ({ response, operation }: DispatchParam<'operation', 'succeeded'>) => {
-      const created = response.xhr.status === 201 && response.xhr.headers.get('location')
-      if (created) {
-        dispatch.routing.goTo(created)
-        return
-      }
-
+    'operation/succeeded': ({ operation }: DispatchParam<'operation', 'succeeded'>) => {
       if (operation.types.has(schema.ReplaceAction)) {
         dispatch.routing.goTo(operation.target.id.value)
       }

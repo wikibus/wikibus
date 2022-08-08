@@ -22,26 +22,27 @@ export class AppNotifications extends connect(store, LitElement) {
     return {}
   }
 
-  private async show(key: string, notification: Notification) {
+  private show(key: string, { variant = 'neutral', content, autoHide = true }: Notification) {
     if (!this.alerts.has(key)) {
-      await import('@shoelace-style/shoelace/dist/components/alert/alert.js')
       this.alerts.add(key)
+      import('@shoelace-style/shoelace/dist/components/alert/alert.js')
+        .then(() => {
+          const slAlert = document.createElement('sl-alert')
+          slAlert.closable = true
+          slAlert.variant = variant as any
+          if (autoHide) {
+            slAlert.duration = 2000
+          }
+          render(content, slAlert)
 
-      const slAlert = document.createElement('sl-alert')
-      slAlert.closable = true
-      slAlert.variant = notification.variant || 'neutral' as any
-      if (notification.autoHide) {
-        slAlert.duration = 2000
-      }
-      render(notification.content, slAlert)
+          slAlert.addEventListener('sl-hide', () => {
+            this.alerts.delete(key)
+            store.dispatch.alerts.hide(key)
+          })
 
-      slAlert.addEventListener('sl-hide', () => {
-        this.alerts.delete(key)
-        store.dispatch.alerts.hide(key)
-      })
-
-      this.renderRoot.append(slAlert)
-      slAlert.toast()
+          this.renderRoot.append(slAlert)
+          slAlert.toast()
+        })
     }
   }
 }
