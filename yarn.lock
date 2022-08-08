@@ -1374,9 +1374,9 @@
     "@rdfjs/types" "^1.0.1"
 
 "@hydrofoil/shell-auth@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-auth/-/shell-auth-0.3.2.tgz#d67918f745029f921c98fb2b107901166bce6b52"
-  integrity sha512-P4Tr53oI+pX9N5CrGIDh1mS+E6D5K/KigqUmUsvUrD/JkfS4V/4GqEHalTWenZURAe48b0jZo5Vv9ZEbGq7SRg==
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-auth/-/shell-auth-0.3.3.tgz#f7277196c0a8af39216612d58e7e9a0a90a15c74"
+  integrity sha512-0c2arKbDVTJBQkn2+lNgyc7KHPGAXVtx9rlJNbBcWbR+XTANKMT4DK/mPgWIllEHd9myKS4NGJGcO6Xd5lqXXA==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@hydrofoil/shell-core" "^0.1.3"
