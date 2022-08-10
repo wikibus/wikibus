@@ -50,6 +50,7 @@ module.exports = merge(
           { from: 'src/images', to: 'images' },
           { from: 'src/vendor', to: 'vendor' },
           { from: 'src/css', to: 'css' },
+          { from: 'src/style.css', to: 'style.css' },
           'src/functions.js',
         ],
       }),

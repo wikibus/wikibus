@@ -5,7 +5,9 @@
   "scripts": {
     "precommit": "lit-analyzer --strict --quiet",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "prestart": "yarn build:style",
+    "build:style": "sass --watch src/style.scss src/style.css & exit 0"
   },
   "dependencies": {
     "@appnest/masonry-layout": "^2.0.8",
