@@ -15,12 +15,11 @@ export const setEditLink: MiddlewareFactory = () => (req, res, next) => {
     if (editable) {
       res.setLink(`/page${req.path}/edit`, 'edit-form')
     }
-  }
+    if (req.hydra.resource.types.has(wba.Vehicle)) {
+      const resource = turtle`<> ${skos.broader} ${req.hydra.resource.term} .`
 
-  if (req.hydra.resource.types.has(wba.Vehicle)) {
-    const resource = turtle`<> ${skos.broader} ${req.hydra.resource.term} .`
-
-    res.setLink(`/page/vehicle/new#${encodeURIComponent(resource.toString())}`, 'create-form')
+      res.setLink(`/page/vehicle/new#${encodeURIComponent(resource.toString())}`, 'create-form')
+    }
   }
 
   next()
