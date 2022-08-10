@@ -1,2 +1,2 @@
-npx wsrun -msc bootstrap:vocabs
+npm run bootstrap:vocabs
 npx wsrun -msc bootstrap resources prod
