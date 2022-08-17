@@ -24,8 +24,9 @@ declare module 'uri-template-router' {
 
 export const factory: ResourceLoaderFactory = async (
   { sparql, client },
-  inner = new SparqlQueryLoader(sparql as any),
 ) => {
+  const inner = new SparqlQueryLoader(sparql as any)
+
   const dataset = await $rdf.dataset().import(await DESCRIBE`?template`
     .WHERE` ?template a ${knossos.TemplatedResource}`
     .execute(client.query))

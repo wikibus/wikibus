@@ -8,6 +8,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@hydrofoil/creta-labs": "^0.1.0",
     "@hydrofoil/knossos": "^0.9.2",
     "@hydrofoil/labyrinth": "^0.13.0",
     "@hydrofoil/vocabularies": "^0.3.1",

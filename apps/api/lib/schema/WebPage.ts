@@ -3,7 +3,10 @@ import { schema } from '@tpluscode/rdf-ns-builders'
 import { GraphPointer } from 'clownface'
 import $rdf from 'rdf-ext'
 import { isGraphPointer } from 'is-graph-pointer'
-import type { NamedNode } from '@rdfjs/types'
+import type { NamedNode, Term } from '@rdfjs/types'
+import type * as express from 'express'
+import { SELECT } from '@tpluscode/sparql-builder'
+import getStream from 'get-stream'
 
 export const preserveAndForwardQuery: ResourceHook = ({ req, pointer }) => {
   const { search } = new URL(req.absoluteUrl())
@@ -41,4 +44,27 @@ function rewriteQuads(pointer: GraphPointer, term: NamedNode) {
     pointer.dataset.delete(quad)
     pointer.dataset.add($rdf.quad(quad.subject, quad.predicate, term, quad.graph))
   }
+}
+
+export async function getPageForResource(path: string, req: express.Request) {
+  const [page] = await getStream.array<{ addr: Term }>(await SELECT`?addr`
+    .WHERE`
+      {
+        ?page ${schema.mainEntity} ${req.hydra.term} .
+      }
+      union 
+      {
+        BIND (${req.hydra.term} as ?page)
+      }
+    
+      ?page a ${schema.WebPage} .
+      BIND(replace(str(?page), "/page", "/app") as ?addr)
+    `
+    .execute(req.labyrinth.sparql.query))
+
+  if (page) {
+    return page.addr.value
+  }
+
+  return `/app${path}`
 }
