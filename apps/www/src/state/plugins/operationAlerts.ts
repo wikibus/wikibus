@@ -41,17 +41,20 @@ export const operationAlerts = {
               variant: 'danger',
               autoHide: false,
             })
-          }
-          if (response?.xhr.status === 403) {
+          } else if (response?.xhr.status === 403) {
             alerts.show({
               content: 'Insufficient permissions',
               variant: 'danger',
               autoHide: false,
             })
-          }
-          if (response?.xhr.status === 400) {
+          } else if (response?.xhr.status === 400) {
             alerts.show({
               content: 'The request data was incorrect',
+              variant: 'danger',
+            })
+          } else {
+            alerts.show({
+              content: 'An error occurred',
               variant: 'danger',
             })
           }
