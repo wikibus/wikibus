@@ -11,7 +11,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       sh:path skos:prefLabel ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
-      sh:minLength 3 ;
+      sh:minLength 2 ;
     ],
     [
       sh:name "Slug" ;

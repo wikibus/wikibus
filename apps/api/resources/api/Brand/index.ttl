@@ -40,7 +40,7 @@ _:NameProperty
   sh:name "Name", "Nazwa"@pl ;
   sh:path skos:prefLabel ;
   sh:minCount 1 ;
-  sh:minLength 3 ;
+  sh:minLength 2 ;
   sh:or
     (
       [
