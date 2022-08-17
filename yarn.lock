@@ -2618,7 +2618,7 @@
   resolved "https://registry.yarnpkg.com/@rdfjs/data-model/-/data-model-2.0.0.tgz#0e366aa0a1f9b2311413b874c63de324f4cd907f"
   integrity sha512-MTnXulGDlglImAszhX44SB4uo3X0K8XcUs7BXBjrAYmempbQ7zh04nInDE83BhK76ILnZcZUtnjETorG/Ss73A==
 
-"@rdfjs/dataset@^1.0.0", "@rdfjs/dataset@^1.0.1", "@rdfjs/dataset@^1.1.1":
+"@rdfjs/dataset@^1.0.1", "@rdfjs/dataset@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@rdfjs/dataset/-/dataset-1.1.1.tgz#0a91746284c517eba360a966939161f500392107"
   integrity sha512-BNwCSvG0cz0srsG5esq6CQKJc1m8g/M0DZpLuiEp0MMpfwguXX7VeS8TCg4UUG3DV/DqEvhy83ZKSEjdsYseeA==
@@ -5328,9 +5328,9 @@ ajv@^8.0.1, ajv@^8.1.0:
     uri-js "^4.2.2"
 
 alcaeus@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/alcaeus/-/alcaeus-2.2.3.tgz#252a2c376235c0f32e58e07087dfeefb747a8d90"
-  integrity sha512-yXDIM5Fc+47pjjiyxU0gI4n9xT8CCsWNSQvS1RfOTm20gNdjvU2ldXTVAgbEfYRezXxHi7CUYMW9K9M0MkTHYw==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/alcaeus/-/alcaeus-2.2.4.tgz#dddb6c7006ec97aa5c818e5204bf68fbdfc0474b"
+  integrity sha512-hkNKka21GJ31eMqKGvuUJutaFhdnQsXcGQ7iVzL5SNFZjOigtiVdXUB0bhKfcSKpdphMkQ76xIwzsrJ22hyPRg==
   dependencies:
     "@rdf-esm/data-model" "^0.5.3"
     "@rdf-esm/formats-common" "^0.5.6"
@@ -6368,7 +6368,7 @@ clownface-shacl-path@^1.1, clownface-shacl-path@^1.3.2:
     "@tpluscode/rdf-ns-builders" "^2.0.0"
     "@tpluscode/rdf-string" "^0.2.26"
 
-clownface@^1, clownface@^1.0.0, clownface@^1.1.0, clownface@^1.2.0, clownface@^1.3.0, clownface@^1.4.0, clownface@^1.5.0, clownface@^1.5.1:
+clownface@^1, clownface@^1.1.0, clownface@^1.2.0, clownface@^1.3.0, clownface@^1.4.0, clownface@^1.5.0, clownface@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/clownface/-/clownface-1.5.1.tgz#5471f462aa8a5945ad878305b832361214424759"
   integrity sha512-Ko8N/UFsnhEGmPlyE1bUFhbRhVgDbxqlIjcqxtLysc4dWaY0A7iCdg3savhAxs7Lheb7FCygIyRh7ADYZWVIng==
@@ -8045,9 +8045,9 @@ express-jwt@^7.7.5:
     jsonwebtoken "^8.5.1"
 
 express-middleware-shacl@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/express-middleware-shacl/-/express-middleware-shacl-1.3.2.tgz#5c78c5a40759c0eaec6a6559815a2f1649c1eb26"
-  integrity sha512-msBtihXXVkX2H3CLyw5LOMjgoJvDbb4T58MA+ucQCQmOu8N6Pji0Wfcz4rwSj2HpG4R3mGPflzL2V7s0WYQaZQ==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/express-middleware-shacl/-/express-middleware-shacl-1.3.3.tgz#4ccce8ff87f8defe209c4860ac9ddb70aca18efd"
+  integrity sha512-K34wOQu5yd4vYzt+ur10OzOnYDnhTyMX/YWpOZ/lVOw0l/k8tl9fDTHoErSsc5Wb1awWtYW9rM3EEOriWLXhYw==
   dependencies:
     "@rdfine/shacl" "^0.8.7"
     "@rdfjs/term-set" "^1.0.1"
@@ -8062,7 +8062,7 @@ express-middleware-shacl@^1.3.2:
     http-problem-details "^0.1.5"
     middleware-async "^1.3.1"
     rdf-ext "^1.3.1"
-    rdf-validate-shacl "^0.2.6"
+    rdf-validate-shacl "^0.4.4"
     set-link "^1.0.0"
 
 express-rdf-problem-details@^1.0.1:
@@ -12260,7 +12260,7 @@ rdf-utils-fs@^2.1.0, rdf-utils-fs@^2.2.0:
     "@rdfjs/formats-common" "^2.2.0"
     readable-stream "^3.6.0"
 
-rdf-validate-datatype@^0.1.1:
+rdf-validate-datatype@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/rdf-validate-datatype/-/rdf-validate-datatype-0.1.4.tgz#bef7267a84d56344b75b91135254285842674b0d"
   integrity sha512-NA2Nv2mf3nGDr9eaefHfSkaTEDh68PPPbylgvXXeAxoU5uKCP1siJjIRzeVD2+IfUfNqTCUrO6F/6Os0YVLFiw==
@@ -12268,17 +12268,18 @@ rdf-validate-datatype@^0.1.1:
     "@rdfjs/namespace" "^1.1.0"
     "@rdfjs/to-ntriples" "^1.0.2"
 
-rdf-validate-shacl@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/rdf-validate-shacl/-/rdf-validate-shacl-0.2.6.tgz#47cea1a2fc01cc8de31ffb95dfa369734c88f013"
-  integrity sha512-u+5hJ8hsxgd54Ll+yWrjLBiXmsDWsBoQCx180fkJSOfmfwqugRQqRyLpFv3c5k38MhAJS+vVTz+me4hwpe7ENw==
+rdf-validate-shacl@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/rdf-validate-shacl/-/rdf-validate-shacl-0.4.4.tgz#6f3d8b0bb30539a0f7575dc4f98a8bb7ea44c520"
+  integrity sha512-LuayoHFEN0VYv2YASBaHW2cAQVkFZS9FHZYY1QZPq0NmNQPff6v0vLWqnX32T2zPpz0CXu5I/iRrfsnO9nSL5A==
   dependencies:
-    "@rdfjs/dataset" "^1.0.0"
+    "@rdfjs/dataset" "^1.1.1"
     "@rdfjs/namespace" "^1.0.0"
-    "@rdfjs/term-set" "^1.0.0"
-    clownface "^1.0.0"
-    debug "^4.0.0"
-    rdf-validate-datatype "^0.1.1"
+    "@rdfjs/term-set" "^1.1.0"
+    clownface "^1.4.0"
+    debug "^4.3.2"
+    rdf-literal "^1.3.0"
+    rdf-validate-datatype "^0.1.4"
 
 rdf-web-access-control@^1.3.2:
   version "1.3.2"
