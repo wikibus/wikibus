@@ -23,6 +23,6 @@ prefix events: <https://hypermedia.app/events#>
   code:implementedBy
     [
       a code:EcmaScriptModule ;
-      code:link <file:apps/api/lib/Brand/seeAlso.js#categoriseLinks> ;
+      code:link <file:apps/api/lib/Brand/seeAlso.js#fetchDbpedia> ;
     ] ;
 .

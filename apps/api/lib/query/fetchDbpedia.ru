@@ -11,9 +11,6 @@ delete {
 } where {
   #{resourceValues}
 
-  ?res rdfs:seeAlso ?link .
-  filter(regex(str(?link), "dbpedia.org"))
-
   bind(iri(concat(str(?res), "#dbpedia")) as ?dbpedia)
 
   graph ?dbpedia {
@@ -23,7 +20,6 @@ delete {
 
 insert {
   graph ?dbpedia {
-    ?res wba:dbpediaLink ?link .
     ?link dbo:abstract ?abs .
   }
 } where {

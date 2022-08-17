@@ -8,6 +8,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX code: <https://code.described.at/>
 PREFIX wba: <https://schema.wikibus.org/>
+prefix knossos: <https://hypermedia.app/knossos#>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
@@ -37,6 +38,7 @@ PREFIX wba: <https://schema.wikibus.org/>
           [ sh:datatype rdf:langString ]
           [ sh:datatype xsd:string ]
         ) ;
+      sh:group _:Default ;
     ],
     [
       sh:name "Name", "Nazwa"@pl ;
@@ -45,6 +47,7 @@ PREFIX wba: <https://schema.wikibus.org/>
       sh:maxCount 1 ;
       sh:minLength 1 ;
       sh:order 1 ;
+      sh:group _:Default ;
     ],
     [
       sh:name "Supertype", "Typ nadrzędny"@pl ;
@@ -54,6 +57,7 @@ PREFIX wba: <https://schema.wikibus.org/>
       sh:minLength 1 ;
       sh:order 1 ;
       dash:editor dash:InstancesSelectEditor ;
+      sh:group _:Default ;
       hydra:search
         [
           hydra:template "/vehicle-concepts{?q}" ;
@@ -64,5 +68,23 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:minLength 0 ;
             ] ;
         ] ;
-    ]
+    ],
+    _:LinksProperty
+.
+
+_:Default
+  rdfs:label "Base information" ;
+  sh:order 0 ;
+.
+
+_:LinksGroup
+  rdfs:label "Links" ;
+  sh:order 1 ;
+  knossos:groupProperty _:LinksProperty ;
+.
+
+_:LinksProperty
+  sh:path rdfs:seeAlso ;
+  sh:nodeKind sh:IRI ;
+  dash:editor dash:URIEditor ;
 .

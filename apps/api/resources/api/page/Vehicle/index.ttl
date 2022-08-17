@@ -1,3 +1,4 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -27,7 +28,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:group _:LeftSidebarGroup ;
               sh:order 1 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-            ] ,
+            ],
             [
               sh:name "Broader" ;
               sh:path skos:broader ;
@@ -35,7 +36,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:order 2 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Vehicle ;
-            ] ,
+            ],
             [
               sh:name "Narrower" ;
               sh:path skos:narrower ;
@@ -47,7 +48,7 @@ PREFIX wba: <https://schema.wikibus.org/>
         ] ;
     ],
     [
-      # Properties populated in template
+    # Properties populated in template
       sh:order 50 ;
       sh:path schema:mainEntity ;
       sh:group </page/_element/main#gutters> ;
@@ -60,6 +61,58 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:path schema:text ;
               sh:datatype rdf:HTML ;
               sh:group _:MainContentGroup ;
+              sh:order 1 ;
+            ],
+            [
+              sh:path wba:dbpediaLink ;
+              sh:group _:MainContentGroup ;
+              dash:viewer dash:DetailsViewer ;
+              sh:order 2 ;
+              sh:node
+                [
+                  sh:property
+                    [
+                      sh:path rdfs:label ;
+                      dash:viewer dash:HTMLViewer ;
+                      sh:order 1 ;
+                      sh:values
+                        [
+                          dash:js """
+                            <h4>Wikipedia abstract</h4>
+                          """
+                        ] ;
+                    ],
+                    [
+                      sh:path dbo:abstract ;
+                      dash:viewer dash:SingleLiteralViewer ;
+                      sh:order 2 ;
+                      rs:propertyContainer "p" ;
+                    ],
+                    [
+                      sh:path rdfs:label ;
+                      dash:viewer dash:HTMLViewer ;
+                      sh:order 3 ;
+                      sh:values
+                        [
+                          dash:js """
+                            <h5>See more on wikipedia</h5>
+                          """
+                        ] ;
+                    ],
+                    [
+                      sh:path [ sh:inversePath schema:about ] ;
+                      sh:order 4 ;
+                      rs:propertyContainer "canvas-icon-list[inline]" ;
+                      dash:viewer canvas:IconListItem ;
+                      canvas:icon "icon-line-external-link" ;
+                    ] ;
+                ] ;
+            ] ;
+          sh:property
+            [
+              sh:path wba:facebookLink ;
+              sh:group _:MainContentGroup ;
+              sh:order 3 ;
             ] ;
           sh:property
             [
