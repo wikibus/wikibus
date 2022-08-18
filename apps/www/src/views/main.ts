@@ -4,6 +4,7 @@ import { ViewersController } from '@hydrofoil/roadshow/ViewersController'
 import { hex } from '@hydrofoil/vocabularies/builders'
 import { rdf } from '@tpluscode/rdf-ns-builders'
 import { dash } from '@tpluscode/rdf-ns-builders/loose'
+import $rdf from '@rdfjs/data-model'
 import * as DetailsViewer from './main/DetailsViewer'
 import * as HTMLViewer from './main/HTMLViewer'
 import * as BreadcrumbViewer from './main/BreadcrumbViewer'
@@ -20,6 +21,7 @@ import * as SidebarRelatedResourceViewer from './main/SidebarRelatedResourceView
 import * as SubMenuLink from './main/SubMenuLink'
 import * as SingleLiteralViewer from './main/SingleLiteralViewer'
 import * as IconListItem from './main/IconListItem'
+import * as FacebookPost from './main/FacebookPost'
 import { canvas } from '../lib/ns'
 import { wrapperDecorator } from './decorators/wrapper'
 
@@ -31,6 +33,8 @@ ViewersController.viewerMeta
   .node(canvas.SidebarRelatedResourceViewer)
   .addOut(rdf.type, dash.MultiViewer)
   .node(dash.SingleLiteralViewer)
+  .addOut(rdf.type, dash.MultiViewer)
+  .node($rdf.namedNode('https://www.facebook.com/plugins/post'))
   .addOut(rdf.type, dash.MultiViewer)
 
 export const renderers: Renderer<any>[] = [
@@ -50,6 +54,7 @@ export const renderers: Renderer<any>[] = [
   SubMenuLink.renderer,
   SingleLiteralViewer.renderer,
   IconListItem.renderer,
+  FacebookPost.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [

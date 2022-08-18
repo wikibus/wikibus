@@ -112,6 +112,7 @@ PREFIX wba: <https://schema.wikibus.org/>
             [
               sh:path wba:facebookLink ;
               sh:group _:MainContentGroup ;
+              dash:viewer <https://www.facebook.com/plugins/post> ;
               sh:order 3 ;
             ] ;
           sh:property
