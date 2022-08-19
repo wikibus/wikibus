@@ -74,11 +74,9 @@ export const uri: Lazy<SingleEditorComponent> = {
 }
 
 function setUrl(arg: GraphPointer | Term | string, { update }: SingleEditorActions) {
-  if (typeof arg === 'string') {
-    update(rdf.namedNode(arg))
-  } else {
-    update(rdf.namedNode(arg.value))
-  }
+  const url = typeof arg === 'string' ? arg : arg.value
+
+  update(rdf.namedNode(encodeURI(url)))
 }
 
 export const details: Lazy<SingleEditorComponent> = {
