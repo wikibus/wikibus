@@ -35,8 +35,8 @@ export class FacebookPostSlider extends LitElement {
 
       <iframe title="Facebook post" height="800"
               src="${embedUrl.toString()}"
-              style="width: 100%;border:none;overflow:hidden" scrolling="no" frameborder="0" allow="fullscreen autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    `
+              style="width: 105%;border:none;overflow:hidden" scrolling="no" frameborder="0" allow="fullscreen autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      <sl-icon name="question-octagon"></sl-icon> Post not showing? Try opening it on <a href="${link}" target="_blank">Facebook directly</a>`
   }
 
   selectPost(e: CustomEvent) {
