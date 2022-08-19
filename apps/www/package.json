@@ -20,7 +20,7 @@
     "@hydrofoil/shell": "^0.3.3",
     "@hydrofoil/shell-auth-auth0": "^0.3.3",
     "@hydrofoil/shell-operations": "^0.2.4",
-    "@hydrofoil/shell-routing": "^0.2.5",
+    "@hydrofoil/shell-routing": "^0.2.6",
     "@hydrofoil/vocabularies": "^0.3.1",
     "@rdf-esm/formats-common": "^0.5.6",
     "@rdfine/hydra": "^0.8.4",

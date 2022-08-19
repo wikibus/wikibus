@@ -133,7 +133,11 @@ async function getFocusNodePointer(operation: RuntimeOperation, resource: RdfRes
     const parser = await n3Parser()
     const turtle = decodeURIComponent(window.location.hash.substring(1))
     const quads = parser.import(toStream(turtle))
-    await dataset.import(quads)
+    await dataset.import(quads).catch((e: unknown) => {
+      /* eslint-disable no-console */
+      console.warn(e)
+      console.warn(turtle)
+    })
   }
 
   return clownface({ dataset }).namedNode('')

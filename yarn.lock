@@ -1535,10 +1535,10 @@
     "@rdfjs/types" "^1.0.1"
     "@tpluscode/rdf-ns-builders" "^2.0.1"
 
-"@hydrofoil/shell-routing@^0.2.2", "@hydrofoil/shell-routing@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.5.tgz#97e9d4741b7cf1eff191651d596feb9f709be7da"
-  integrity sha512-WA2h6ORINYErrmEg12r8BGq335zpzQNKt07ironWjLhvoB0+3t1KVsHdzNyzMwQE8WmBSdkmdgzeR+Y/rTQPkQ==
+"@hydrofoil/shell-routing@^0.2.2", "@hydrofoil/shell-routing@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-routing/-/shell-routing-0.2.6.tgz#7cfd853aca2781f7410b1fab3836f733196072e4"
+  integrity sha512-qHp80iGzkD+tK2xFmqTinKAO4IxW+yPksU525H/86wh/FS2YfA1Te66DP1sUCTwIg8z9NVoRwotMnBncljS2tw==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@mapbox/link-hijacker" data-mazes/link-hijacker#composed-path
@@ -1643,7 +1643,7 @@
   resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
   integrity sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==
 
-"@mapbox/link-hijacker@data-mazes/link-hijacker#composed-path":
+"@mapbox/link-hijacker@data-mazes/link-hijacker#composed-path", "@mapbox/link-hijacker@github:data-mazes/link-hijacker#composed-path":
   version "1.1.0"
   resolved "https://codeload.github.com/data-mazes/link-hijacker/tar.gz/31f2c661694c2f635b2bf9d6ba40a3b5df4f3a31"
 
