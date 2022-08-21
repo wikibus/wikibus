@@ -3,7 +3,7 @@ import sinon from 'sinon'
 import request from 'supertest'
 import { expect } from 'chai'
 import $rdf from 'rdf-ext'
-import middleware from '..'
+import middleware from '../index.js'
 
 const client = {} as any
 

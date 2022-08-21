@@ -5,7 +5,7 @@ import { asyncMiddleware } from 'middleware-async'
 import { compile } from 'micromustache'
 import $rdf from 'rdf-ext'
 import * as rdf from 'rdf-express-node-factory'
-import { getPageMeta as getPageMetaDefault } from './lib/findMeta'
+import { getPageMeta as getPageMetaDefault } from './lib/findMeta.js'
 
 interface Factory {
   index: string

@@ -1,7 +1,7 @@
 import namespace from '@rdfjs/namespace'
 import ParsingClient from 'sparql-http-client/ParsingClient'
 import { expect } from 'chai'
-import { getPageMeta } from '../../lib/findMeta'
+import { getPageMeta } from '../../lib/findMeta.js'
 
 const base = 'https://wikibus.lndo.site/'
 const app = namespace(`${base}app/`)
