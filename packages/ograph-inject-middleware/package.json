@@ -3,6 +3,7 @@
   "name": "@wikibus/ograph-inject-middleware",
   "version": "0.0.0",
   "main": "index.js",
+  "type": "module",
   "dependencies": {
     "absolute-url": "^1.2.2",
     "@tpluscode/rdf-ns-builders": "^2.0.1",
