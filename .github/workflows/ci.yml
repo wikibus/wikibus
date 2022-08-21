@@ -25,7 +25,7 @@ jobs:
         uses: docker-practice/actions-setup-docker@1.0.4
         with:
           docker_version: 20.10.3
-      - uses: tpluscode/setup-lando@master
+      - uses: tpluscode/setup-lando@v0.1.1
         with:
           version: v3.6.4
           healthcheck: http://db.wikibus.lndo.site/
