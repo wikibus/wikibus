@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires,no-console */
-const { Metadata, credentials } = require('@grpc/grpc-js')
-
-const { NodeSDK } = require('@opentelemetry/sdk-node')
-const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node')
-const { Resource } = require('@opentelemetry/resources')
-const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions')
-const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc')
+/* eslint-disable no-console */
+import { Metadata, credentials } from '@grpc/grpc-js'
+import { NodeSDK } from '@opentelemetry/sdk-node'
+import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node'
+import { Resource } from '@opentelemetry/resources'
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-grpc'
 
 const metadata = new Metadata()
 metadata.set('x-honeycomb-team', process.env.HONEYCOMB_TEAM)
