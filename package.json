@@ -1,6 +1,7 @@
 {
   "name": "wikibus",
   "private": true,
+  "type": "module",
   "scripts": {
     "clean": "git clean -dfx -e node_modules -e .idea -e .vscode -e .husky",
     "postinstall": "yarn-deduplicate",
@@ -80,11 +81,11 @@
     "*.rej": "exit 1"
   },
   "mocha": {
-    "watch-files": [
-      "./**/*.ts"
-    ],
+    "recursive": true,
+    "extensions": [".ts"],
+    "loader": "ts-node/esm",
     "require": [
-      "mocha-setup.js"
+      "mocha-setup.cjs"
     ]
   }
 }

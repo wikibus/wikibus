@@ -1,12 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires,no-console */
-const express = require('express')
-const conditional = require('express-conditional-middleware')
-const knossos = require('@hydrofoil/knossos')
-const compression = require('compression')
-const injectMeta = require('@wikibus/ograph-inject-middleware')
-const fs = require('fs')
-const path = require('path')
-const ParsingClient = require('sparql-http-client/ParsingClient')
+/* eslint-disable no-console */
+import express from 'express'
+import conditional from 'express-conditional-middleware'
+import knossos from '@hydrofoil/knossos'
+import compression from 'compression'
+import injectMeta from '@wikibus/ograph-inject-middleware'
+import fs from 'fs'
+import path from 'path'
+import ParsingClient from 'sparql-http-client/ParsingClient'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const sparqlEndpoint = {
   endpointUrl: `${process.env.SPARQL_ENDPOINT}`,

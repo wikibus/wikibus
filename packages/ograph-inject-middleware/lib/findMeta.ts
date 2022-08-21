@@ -9,9 +9,10 @@ interface PageMeta {
   description?: string
   image?: string
   lastModified?: Date
+  url?: string
 }
 
-type Bindings = Partial<Record<'label' | 'note' | 'image' | 'lastModified', Term>>
+type Bindings = Partial<Record<'res' | 'label' | 'note' | 'image' | 'lastModified', Term>>
 
 interface GetPageMeta {
   appUrl: NamedNode
@@ -20,7 +21,7 @@ interface GetPageMeta {
 }
 
 export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promise<PageMeta> {
-  const [result] = await SELECT`?label ?note ?image`
+  const [result] = await SELECT`?res ?label ?note ?image`
     .WHERE`
       bind (iri(replace(str(${appUrl}), "/app", "")) as ?res)
     
@@ -39,12 +40,18 @@ export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promis
     .execute(client.query, { base }) as Bindings[]
 
   if (result) {
-    return {
+    const meta: PageMeta = {
       title: result.label?.value,
       description: result.note?.value,
       image: result.image?.value,
-      lastModified: result.lastModified?.termType === 'Literal' && fromRdf(result.lastModified),
+      url: result.res?.value,
     }
+
+    if (result.lastModified?.termType === 'Literal') {
+      meta.lastModified = fromRdf(result.lastModified)
+    }
+
+    return meta
   }
 
   return {}
