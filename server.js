@@ -1,9 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires,no-console */
 const express = require('express')
-const fallback = require('express-history-api-fallback')
 const conditional = require('express-conditional-middleware')
 const knossos = require('@hydrofoil/knossos')
 const compression = require('compression')
+const injectMeta = require('@wikibus/ograph-inject-middleware')
+const fs = require('fs')
+const path = require('path')
+const ParsingClient = require('sparql-http-client/ParsingClient')
+
+const sparqlEndpoint = {
+  endpointUrl: `${process.env.SPARQL_ENDPOINT}`,
+  user: process.env.SPARQL_USER,
+  password: process.env.SPARQL_PASSWORD,
+}
 
 const app = express()
 
@@ -12,16 +21,16 @@ app.use(compression())
 
 const root = './apps/www/dist'
 app.use('/app', express.static(root))
+
+const appIndex = path.resolve(__dirname, root, 'index.html')
 app.use('/app', conditional(
   req => req.accepts('html'),
-  fallback('index.html', { root }),
+  injectMeta(fs.readFileSync(appIndex).toString(), new ParsingClient(sparqlEndpoint)),
 ))
 
 const apis = knossos.default({
-  endpointUrl: `${process.env.SPARQL_ENDPOINT}`,
   name: 'wikibus',
-  user: process.env.SPARQL_USER,
-  password: process.env.SPARQL_PASSWORD,
+  ...sparqlEndpoint,
 })
 app.use('/', apis)
 

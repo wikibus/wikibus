@@ -6,5 +6,10 @@ PREFIX schema: <http://schema.org/>
   a </api/Brand> ;
   skos:prefLabel "Solaris" ;
   skos:notation "solaris" ;
+  skos:note "A brand of Polish buses, coaches and trams" ;
   rdfs:seeAlso <http://dbpedia.org/resource/Solaris_Bus_&_Coach> ;
+  schema:image
+  [
+    schema:contentUrl "https://upload.wikimedia.org/wikipedia/commons/8/89/Solaris_logo.jpg" ;
+  ] ;
 .

@@ -1,3 +1,4 @@
+PREFIX schema: <http://schema.org/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX dash: <http://datashapes.org/dash#>
@@ -12,4 +13,9 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
   wba:catalog </catalog> ;
   hydra:collection </api/shapes> ;
   </api#currentUser> </user/current> ;
+  schema:image
+  [
+    schema:contentUrl <https://res.cloudinary.com/dytcmwide/image/upload/v1661026437/da2aaxofs6hy1bxru7af.png> ;
+    schema:caption "Wikibus logo" ;
+  ] ;
 .

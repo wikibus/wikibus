@@ -10,6 +10,8 @@ PREFIX schema: <http://schema.org/>
 
 <>
   a </api/VehicleCollection> ;
+  hydra:title "Vehicles" ;
+  hydra:description "Browse and discover buses, trams, trolleys, and others" ;
   hydra:search
     [
       hydra:template "{?page,name,brand}" ;
