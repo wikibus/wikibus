@@ -12,3 +12,22 @@ jobs:
           node-version: 16
       - run: yarn
       - run: yarn build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - run: yarn
+      - name: setup-docker
+        uses: docker-practice/actions-setup-docker@1.0.4
+        with:
+          docker_version: 20.10.3
+      - uses: tpluscode/setup-lando@master
+        with:
+          version: v3.0.26
+          healthcheck: http://db.labyrinth.lndo.site/
+          timeout: 30000
+      - run: yarn test
