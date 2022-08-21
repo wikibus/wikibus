@@ -1,5 +1,5 @@
 import namespace from '@rdfjs/namespace'
-import ParsingClient from 'sparql-http-client/ParsingClient'
+import ParsingClient from 'sparql-http-client/ParsingClient.js'
 import { expect } from 'chai'
 import { getPageMeta } from '../../lib/findMeta.js'
 
