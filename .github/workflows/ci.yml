@@ -27,7 +27,7 @@ jobs:
           docker_version: 20.10.3
       - uses: tpluscode/setup-lando@master
         with:
-          version: v3.0.26
-          healthcheck: http://db.labyrinth.lndo.site/
+          version: v3.6.4
+          healthcheck: https://db.wikibus.lndo.site/
           timeout: 30000
       - run: yarn test
