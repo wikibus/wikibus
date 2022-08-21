@@ -24,6 +24,7 @@ import * as IconListItem from './main/IconListItem'
 import * as FacebookPost from './main/FacebookPost'
 import { canvas } from '../lib/ns'
 import { wrapperDecorator } from './decorators/wrapper'
+import { extractRootResourceTitle } from './decorators/extractRootResourceTitle'
 
 setBasePath('/app')
 
@@ -64,4 +65,5 @@ export const viewers: ViewerMatcher[] = [
 
 export const decorators: Decorator[] = [
   wrapperDecorator,
+  extractRootResourceTitle,
 ]
