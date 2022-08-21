@@ -28,6 +28,6 @@ jobs:
       - uses: tpluscode/setup-lando@master
         with:
           version: v3.6.4
-          healthcheck: https://db.wikibus.lndo.site/
+          healthcheck: http://db.wikibus.lndo.site/
           timeout: 30000
       - run: yarn test
