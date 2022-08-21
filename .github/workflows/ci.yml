@@ -30,4 +30,5 @@ jobs:
           version: v3.6.4
           healthcheck: http://db.wikibus.lndo.site/
           timeout: 30000
+      - run: yarn bootstrap
       - run: yarn test
