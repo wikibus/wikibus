@@ -34,7 +34,8 @@ app.use('/app', conditional(
   }),
 ))
 
-const apis = knossos({
+// TODO: knossos should name-export or become ESM
+const apis = (knossos as any).default({
   name: 'wikibus',
   ...sparqlEndpoint,
 })
