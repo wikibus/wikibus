@@ -7,12 +7,16 @@ import { fromRdf } from 'rdf-literal'
 interface PageMeta {
   title?: string
   description?: string
-  image?: string
+  image?: {
+    url: string
+    width?: string
+    height?: string
+  }
   lastModified?: Date
   url?: string
 }
 
-type Bindings = Partial<Record<'res' | 'label' | 'note' | 'image' | 'lastModified', Term>>
+type Bindings = Partial<Record<'res' | 'label' | 'note' | 'imageUrl' | 'imageWidth' | 'imageHeight' | 'lastModified', Term>>
 
 interface GetPageMeta {
   appUrl: NamedNode
@@ -21,21 +25,26 @@ interface GetPageMeta {
 }
 
 export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promise<PageMeta> {
-  const [result] = await SELECT`?res ?label ?note ?image`
+  const [result] = await SELECT`?res ?label ?note ?imageUrl ?imageWidth ?imageHeight`
     .WHERE`
       bind (iri(replace(str(${appUrl}), "/app", "")) as ?res)
     
       optional { ?res ${hydra.title}|${skos.prefLabel} ?label }
       optional { ?res ${hydra.description}|${skos.note} ?note }
       optional { 
-        ?res ${schema.image}/${schema.contentUrl} ?pageImage
+        ?res ${schema.image} ?pageImage
       }
       
-      OPTIONAL {
-        <> ${schema.image}/${schema.contentUrl} ?defaultImage .
-      }
+      ?e a <api/Entrypoint> .
+      ?e ${schema.image} ?defaultImage .
       
       BIND(COALESCE(?pageImage, ?defaultImage) as ?image)
+      
+      ?image ${schema.contentUrl} ?imageUrl .
+      OPTIONAL {
+        ?image ${schema.width} ?imageWidth .
+        ?image ${schema.height} ?imageHeight .
+      }
     `
     .execute(client.query, { base }) as Bindings[]
 
@@ -43,8 +52,15 @@ export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promis
     const meta: PageMeta = {
       title: result.label?.value,
       description: result.note?.value,
-      image: result.image?.value,
       url: result.res?.value,
+    }
+
+    if (result.imageUrl) {
+      meta.image = {
+        url: result.imageUrl.value,
+        width: result.imageWidth?.value,
+        height: result.imageHeight?.value,
+      }
     }
 
     if (result.lastModified?.termType === 'Literal') {

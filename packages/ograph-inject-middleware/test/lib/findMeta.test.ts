@@ -27,7 +27,11 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
       // then
       expect(meta).to.deep.eq({
         description: 'Browse and discover buses, trams, trolleys, and others',
-        image: 'https://res.cloudinary.com/dytcmwide/image/upload/v1661026437/da2aaxofs6hy1bxru7af.png',
+        image: {
+          url: 'https://res.cloudinary.com/dytcmwide/image/upload/v1661026437/da2aaxofs6hy1bxru7af.png',
+          width: '600',
+          height: '600',
+        },
         title: 'Vehicles',
         url: res('vehicles').value,
       })
@@ -45,7 +49,11 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
         expect(meta).to.deep.eq({
           description: 'A brand of Polish buses, coaches and trams',
           title: 'Solaris',
-          image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Solaris_logo.jpg',
+          image: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Solaris_logo.jpg',
+            width: undefined,
+            height: undefined,
+          },
           url: res('brand/solaris').value,
         })
       })

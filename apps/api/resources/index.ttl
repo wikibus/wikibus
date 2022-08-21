@@ -17,5 +17,7 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
   [
     schema:contentUrl <https://res.cloudinary.com/dytcmwide/image/upload/v1661026437/da2aaxofs6hy1bxru7af.png> ;
     schema:caption "Wikibus logo" ;
+    schema:height 600 ;
+    schema:width 600 ;
   ] ;
 .

@@ -63,12 +63,18 @@ describe('@wikibus/ograph-inject-middleware', () => {
     const index = `<meta property="og:title" content="{{title}}">
 <meta property="og:url" content="{{url}}">
 <meta property="og:description" content="{{description}}">
-<meta property="og:image" content="{{image}}">`
+<meta property="og:image:url" content="{{image.url}}">
+<meta property="og:image:width" content="{{image.width}}">
+<meta property="og:image:height" content="{{image.height}}">`
     getPageMeta.resolves({
       title: 'Foo Bar page',
       url: 'https://example.com/foo-bar',
       description: 'A page about foo and bar and friends',
-      image: 'https://example.com/foo-bar.jpg',
+      image: {
+        url: 'https://example.com/foo-bar.jpg',
+        width: '2000',
+        height: '3000',
+      },
     })
 
     const app = express()
@@ -87,6 +93,8 @@ describe('@wikibus/ograph-inject-middleware', () => {
     await response.expect(`<meta property="og:title" content="Foo Bar page">
 <meta property="og:url" content="https://example.com/foo-bar">
 <meta property="og:description" content="A page about foo and bar and friends">
-<meta property="og:image" content="https://example.com/foo-bar.jpg">`)
+<meta property="og:image:url" content="https://example.com/foo-bar.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="3000">`)
   })
 })
