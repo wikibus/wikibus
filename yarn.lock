@@ -1339,10 +1339,10 @@
     rdf-express-node-factory "^1.1"
     rdf-ext "^1.3.5"
 
-"@hydrofoil/knossos@^0.9.0", "@hydrofoil/knossos@^0.9.2", "@hydrofoil/knossos@^0.9.4":
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.9.4.tgz#8ca269e95c05d0a708e146ed864b91d89a522015"
-  integrity sha512-6TN4p+ek29jIgIYauGcOde43AX2ycC8T0eSvT84/dhpidtL1Mh7B7j296bMn7d/8zZe35qlGF37oho3bX5I5VA==
+"@hydrofoil/knossos@^0.9.2", "@hydrofoil/knossos@^0.9.4", "@hydrofoil/knossos@^0.9.5":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/knossos/-/knossos-0.9.5.tgz#8efb1a179080b709e8f626619829fd86b68ccd84"
+  integrity sha512-dimi+ZwdrnqobY28CXLwVrZNQSkyR+N31p5dR3+kGMNG25BQq9+ZssjBA44lYcfL6ViKT4c2GnExZGUTxYjj6w==
   dependencies:
     "@fcostarodrigo/walk" "^5.0.1"
     "@graphy/content.trig.read" "^4.3.3"
@@ -3160,6 +3160,13 @@
   resolved "https://registry.yarnpkg.com/@types/command-line-usage/-/command-line-usage-5.0.2.tgz#ba5e3f6ae5a2009d466679cc431b50635bf1a064"
   integrity sha512-n7RlEEJ+4x4TS7ZQddTmNSxP+zziEG0TNsMfiRIxcIVXt71ENJ9ojeXmGO3wPoTdn7pJcU2xc3CJYMktNT6DPg==
 
+"@types/compression@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@types/compression/-/compression-1.7.2.tgz#7cc1cdb01b4730eea284615a68fc70a2cdfd5e71"
+  integrity sha512-lwEL4M/uAGWngWFLSG87ZDr2kLrbuR8p7X+QZB1OQlT+qkHsCPDVFnHPyXf4Vyl4yDDorNY+mAhosxkCvppatg==
+  dependencies:
+    "@types/express" "*"
+
 "@types/connect@*", "@types/connect@3.4.35":
   version "3.4.35"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"
@@ -3210,6 +3217,13 @@
   integrity sha512-bsKkeSqN7HYyYntFRAmzcwx/dKW4Wa+KVMTInANlI72PWLQmOpZu96j0OqHZGArW4VQwCmJPteQlXaUDeOB0WQ==
   dependencies:
     "@types/node" "*"
+
+"@types/express-conditional-middleware@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@types/express-conditional-middleware/-/express-conditional-middleware-2.1.0.tgz#d62a79da58423cb1ebc4fcbbf1d251245474975d"
+  integrity sha512-aEUd39bQuYcs0eq8iqDGJmKyLyeiw+Qjqdu1XiGmQ3Tduw1Fv5xbGjZl8RS4lN1uBkul18Euvu4l/heJjgxRLg==
+  dependencies:
+    "@types/express" "*"
 
 "@types/express-serve-static-core@^4.17.18":
   version "4.17.28"
@@ -12453,7 +12467,7 @@ rdf-dataset-ext@^1.0.0, rdf-dataset-ext@^1.0.1:
     rdf-canonize "^3.0.0"
     readable-stream "^3.4.0"
 
-rdf-express-node-factory@^1.0.1, rdf-express-node-factory@^1.1:
+rdf-express-node-factory@^1.0.1, rdf-express-node-factory@^1.1, rdf-express-node-factory@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/rdf-express-node-factory/-/rdf-express-node-factory-1.1.0.tgz#34107589a6a342f62ecfbbba277ba6a25ce77edd"
   integrity sha512-1+w3mr1lTMfIpj3pw99sLD2IvjJaEOSWta5O/wLLO4aGKkYF0ipqR3GAPFAJpksw8QLV61tz2aY8hpBPIYX0Yg==

@@ -23,7 +23,7 @@
   "repository": "https://github.com/wikibus/wikibus",
   "dependencies": {
     "@grpc/grpc-js": "^1.6.9",
-    "@hydrofoil/knossos": "^0.9.0",
+    "@hydrofoil/knossos": "^0.9.5",
     "@opentelemetry/auto-instrumentations-node": "^0.31.2",
     "@opentelemetry/exporter-trace-otlp-grpc": "^0.31.0",
     "@opentelemetry/resources": "^1.5.0",
@@ -43,6 +43,8 @@
     "@open-wc/eslint-config": "^7.0.0",
     "@tpluscode/eslint-config": "^0.3.2",
     "@types/chai": "^4.3.3",
+    "@types/compression": "^1.7.2",
+    "@types/express-conditional-middleware": "^2.1.0",
     "@types/mocha": "^9.1.1",
     "@types/sinon-chai": "^3.2.8",
     "@types/sparql-http-client": "^2.2.7",

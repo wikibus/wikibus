@@ -27,14 +27,17 @@ app.use('/app', express.static(root))
 
 const appIndex = path.resolve(__dirname, root, 'index.html')
 app.use('/app', conditional(
-  req => req.accepts('html'),
-  injectMeta(fs.readFileSync(appIndex).toString(), new ParsingClient(sparqlEndpoint)),
+  req => !!req.accepts('html'),
+  injectMeta({
+    index: fs.readFileSync(appIndex).toString(),
+    client: new ParsingClient(sparqlEndpoint),
+  }),
 ))
 
-const apis = knossos.default({
+const apis = knossos({
   name: 'wikibus',
   ...sparqlEndpoint,
 })
 app.use('/', apis)
 
-app.listen(parseInt(process.env.PORT, 10) || 8080)
+app.listen(parseInt(process.env.PORT!, 10) || 8080)
