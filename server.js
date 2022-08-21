@@ -6,7 +6,7 @@ import compression from 'compression'
 import injectMeta from '@wikibus/ograph-inject-middleware'
 import fs from 'fs'
 import path from 'path'
-import ParsingClient from 'sparql-http-client/ParsingClient'
+import ParsingClient from 'sparql-http-client/ParsingClient.js'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
