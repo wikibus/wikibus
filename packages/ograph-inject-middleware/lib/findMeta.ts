@@ -35,7 +35,7 @@ export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promis
         ?res ${schema.image} ?pageImage
       }
       
-      ?e a <api/Entrypoint> .
+      ?e a </api/Entrypoint> .
       ?e ${schema.image} ?defaultImage .
       
       BIND(COALESCE(?pageImage, ?defaultImage) as ?image)
