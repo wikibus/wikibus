@@ -5,7 +5,6 @@ import { getPageMeta } from '../../lib/findMeta.js'
 
 const base = 'https://wikibus.lndo.site/'
 const app = namespace(`${base}app/`)
-const res = namespace(`${base}`)
 
 const client = new ParsingClient({
   endpointUrl: `${process.env.SPARQL_ENDPOINT}`,
@@ -33,7 +32,7 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
           height: '600',
         },
         title: 'Vehicles',
-        url: res('vehicles').value,
+        url: app('vehicles').value,
       })
     })
 
@@ -54,7 +53,7 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
             width: undefined,
             height: undefined,
           },
-          url: res('brand/solaris').value,
+          url: app('brand/solaris').value,
         })
       })
 
@@ -74,7 +73,7 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
             width: '600',
             height: '600',
           },
-          url: res('brand/laz').value,
+          url: app('brand/laz').value,
         })
       })
     })

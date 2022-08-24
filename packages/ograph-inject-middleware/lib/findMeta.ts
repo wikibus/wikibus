@@ -14,7 +14,7 @@ interface PageMeta {
     height?: string
   }
   lastModified?: Date
-  url?: string
+  url: string
 }
 
 type Bindings = Partial<Record<'res' | 'label' | 'note' | 'imageUrl' | 'imageWidth' | 'imageHeight' | 'lastModified', Term>>
@@ -67,7 +67,7 @@ export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promis
     const meta: PageMeta = {
       title: result.label?.value,
       description: result.note?.value,
-      url: result.res?.value,
+      url: appUrl.value,
     }
 
     if (result.imageUrl) {
@@ -85,5 +85,7 @@ export async function getPageMeta({ appUrl, base, client }: GetPageMeta): Promis
     return meta
   }
 
-  return {}
+  return {
+    url: appUrl.value,
+  }
 }
