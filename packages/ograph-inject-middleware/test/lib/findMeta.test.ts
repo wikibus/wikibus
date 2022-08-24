@@ -38,7 +38,7 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
     })
 
     describe('finds meta for dynamic page', () => {
-      it('Brand', async () => {
+      it('of Brand', async () => {
         // when
         const brandUrl = app('brand/solaris')
 
@@ -55,6 +55,26 @@ describe('@wikibus/ograph-inject-middleware/lib/findMeta', function () {
             height: undefined,
           },
           url: res('brand/solaris').value,
+        })
+      })
+
+      it('with multilingual label', async () => {
+        // when
+        const brandUrl = app('brand/laz')
+
+        // when
+        const meta = await getPageMeta({ appUrl: brandUrl, base, client })
+
+        // then
+        expect(meta).to.deep.eq({
+          description: undefined,
+          title: 'LAZ',
+          image: {
+            url: 'https://res.cloudinary.com/dytcmwide/image/upload/v1661026437/da2aaxofs6hy1bxru7af.png',
+            width: '600',
+            height: '600',
+          },
+          url: res('brand/laz').value,
         })
       })
     })
