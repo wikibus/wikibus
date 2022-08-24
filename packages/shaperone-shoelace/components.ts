@@ -74,9 +74,15 @@ export const uri: Lazy<SingleEditorComponent> = {
 }
 
 function setUrl(arg: GraphPointer | Term | string, { update }: SingleEditorActions) {
-  const url = typeof arg === 'string' ? arg : arg.value
+  let url = typeof arg === 'string' ? arg : arg.value
+  try {
+    url = new URL(url).toString()
+  } catch {
+    // eslint-disable-next-line no-console
+    console.warn(`There was a problem with URL ${url}`)
+  }
 
-  update(rdf.namedNode(encodeURI(url)))
+  update(rdf.namedNode(url))
 }
 
 export const details: Lazy<SingleEditorComponent> = {
