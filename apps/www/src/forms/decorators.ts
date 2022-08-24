@@ -4,7 +4,7 @@ import TermSet from '@rdfjs/term-set'
 import { sh1 } from '../lib/ns'
 
 export function objectFilter(inner: ObjectTemplate): ObjectTemplate {
-  return (context, arg) => {
+  const decorated: ObjectTemplate = (context, arg) => {
     const excludedPointer = context.property.shape.pointer.out(sh1.except)
     if (excludedPointer.isList()) {
       const excluded = new TermSet([...excludedPointer.list()].map(({ term }) => term))
@@ -18,4 +18,8 @@ export function objectFilter(inner: ObjectTemplate): ObjectTemplate {
 
     return inner(context, arg)
   }
+
+  decorated.loadDependencies = inner.loadDependencies
+
+  return decorated
 }
