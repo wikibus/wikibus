@@ -34,6 +34,6 @@ wba:Tram
 
 wba:Chassis
   a rdfs:Class ;
-  rdfs:subClassOf schema:Product ;
+  rdfs:subClassOf wba:Vehicle ;
   rdfs:label "Chassis" ;
 .

@@ -9,6 +9,7 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX code: <https://code.described.at/>
 PREFIX wba: <https://schema.wikibus.org/>
 prefix knossos: <https://hypermedia.app/knossos#>
+prefix sh1: <https://hypermedia.app/shaperone#>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
@@ -32,7 +33,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
       sh:minCount 1 ;
       sh:minLength 1 ;
       sh:uniqueLang true ;
-      sh:order 2 ;
+      sh:order 3 ;
       sh:or
         (
           [ sh:datatype rdf:langString ]
@@ -55,7 +56,7 @@ prefix knossos: <https://hypermedia.app/knossos#>
       sh:minCount 1 ;
       sh:maxCount 1 ;
       sh:minLength 1 ;
-      sh:order 1 ;
+      sh:order 2 ;
       dash:editor dash:InstancesSelectEditor ;
       sh:group _:Default ;
       hydra:search
@@ -69,7 +70,8 @@ prefix knossos: <https://hypermedia.app/knossos#>
             ] ;
         ] ;
     ],
-    _:LinksProperty
+    _:LinksProperty,
+    _:TypeProperty
 .
 
 _:Default
@@ -87,4 +89,28 @@ _:LinksProperty
   sh:path rdfs:seeAlso ;
   sh:nodeKind sh:IRI ;
   dash:editor dash:URIEditor ;
+.
+
+_:TypeProperty
+  sh:name "Type", "Typ"@pl ;
+  sh:path rdf:type ;
+  hydra:collection </product-types?super=https://schema.wikibus.org/Vehicle> ;
+  sh:minCount 1 ;
+  sh:deactivated true ;
+  sh:order 4 ;
+  dash:editor dash:InstancesSelectEditor ;
+  sh:group _:Default ;
+  sh1:except _:MandatoryTypes ;
+.
+
+_:TypeValidationProperty
+  dash:hidden true  ;
+  sh:path rdf:type ;
+  sh:group _:Default ;
+  sh:hasValue _:MandatoryTypes ;
+.
+
+_:MandatoryTypes
+  rdf:first <> ;
+  rdf:rest ( wba:Vehicle )
 .
