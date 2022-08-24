@@ -12,7 +12,7 @@ export const extractRootResourceTitle: Decorator<FocusNodeViewContext> = {
     if (title) {
       document.title = `${title} | Wikibus | Public Transport Encyclopedia`
     } else {
-      document.title = 'Wikibus | Public Transport Encyclopedia'
+      document.title = 'Loading... | Wikibus | Public Transport Encyclopedia'
     }
 
     return inner
