@@ -35,7 +35,11 @@ export class AppNotifications extends connect(store, LitElement) {
           }
           render(content, slAlert)
 
-          slAlert.addEventListener('sl-hide', () => {
+          slAlert.addEventListener('sl-hide', (e) => {
+            if (e.target !== slAlert) {
+              slAlert.hide()
+              return
+            }
             this.alerts.delete(key)
             store.dispatch.alerts.hide(key)
           })

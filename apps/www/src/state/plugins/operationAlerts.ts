@@ -10,7 +10,7 @@ export const operationAlerts = {
     reducers: {
     },
     effects(store: Store) {
-      const { auth, alerts, routing } = store.getDispatch()
+      const { auth, alerts } = store.getDispatch()
 
       return {
         'operation/succeeded': ({ response, operation }: any) => {
@@ -20,7 +20,7 @@ export const operationAlerts = {
             alerts.show({
               content: html`
                 Resource created successfully.
-                <sl-button variant="text" @click="${() => routing.goTo(created)}">Show it</sl-button>
+                <sl-button href="${created}" variant="text" @click="${hide}">Show it</sl-button>
                 <sl-icon slot="icon" name="check2-circle"></sl-icon>
               `,
               variant: 'success',
@@ -77,4 +77,11 @@ export const operationAlerts = {
       }
     },
   },
+}
+
+function hide(e: any) {
+  e.target.dispatchEvent(new Event('sl-hide', {
+    bubbles: true,
+    composed: true,
+  }))
 }
