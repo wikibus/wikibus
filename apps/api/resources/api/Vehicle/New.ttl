@@ -15,7 +15,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       sh:path skos:broader ;
       sh:minCount 1 ;
       sh:maxCount 1 ;
-      dash:editor dash:InstancesSelectEditor ;
+      dash:editor dash:AutoCompleteEditor ;
       hydra:search
       [
         hydra:template "/vehicle-concepts{?q}" ;
@@ -23,7 +23,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
           [
             hydra:variable "q" ;
             hydra:property hydra:freetextQuery ;
-            sh:minLength 0 ;
+            sh:minLength 3 ;
           ] ;
       ] ;
       sh:order 2 ;

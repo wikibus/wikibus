@@ -57,7 +57,7 @@ prefix sh1: <https://hypermedia.app/shaperone#>
       sh:maxCount 1 ;
       sh:minLength 1 ;
       sh:order 2 ;
-      dash:editor dash:InstancesSelectEditor ;
+      dash:editor dash:AutoCompleteEditor ;
       sh:group _:Default ;
       hydra:search
         [
@@ -66,7 +66,7 @@ prefix sh1: <https://hypermedia.app/shaperone#>
             [
               hydra:variable "q" ;
               hydra:property hydra:freetextQuery ;
-              sh:minLength 0 ;
+              sh:minLength 3 ;
             ] ;
         ] ;
     ],
