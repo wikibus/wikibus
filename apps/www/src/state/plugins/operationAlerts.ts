@@ -1,5 +1,7 @@
 import { html } from 'lit'
 import { schema } from '@tpluscode/rdf-ns-builders'
+import { Store } from '@hydrofoil/shell'
+import { turtle } from '@tpluscode/rdf-string'
 
 export const operationAlerts = {
   model: {
@@ -7,7 +9,7 @@ export const operationAlerts = {
     },
     reducers: {
     },
-    effects(store: any) {
+    effects(store: Store) {
       const { auth, alerts, routing } = store.getDispatch()
 
       return {
@@ -34,10 +36,23 @@ export const operationAlerts = {
             })
           }
         },
-        'operation/failed': ({ response }: any) => {
+        'operation/failed': ({ payload, response }: any) => {
+          function logIn() {
+            const resourceUrl = store.getState().core.contentResource?.id.value
+            if (resourceUrl) {
+              const returnTo = new URL(resourceUrl)
+              returnTo.hash = turtle`${payload.dataset}`.toString()
+              auth.logInWithRedirect({
+                returnTo: returnTo.toString(),
+              })
+            } else {
+              auth.logIn()
+            }
+          }
+
           if (response?.xhr.status === 401) {
             alerts.show({
-              content: html`Please <sl-button variant="text" @click="${auth.logIn}">log in</sl-button>`,
+              content: html`Please <sl-button variant="text" @click="${logIn}">log in</sl-button>`,
               variant: 'danger',
               autoHide: false,
             })
