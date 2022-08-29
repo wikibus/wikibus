@@ -42,6 +42,13 @@ prefix sh1: <https://hypermedia.app/shaperone#>
       sh:group _:Default ;
     ],
     [
+      sh:name "Search variants" ;
+      sh:description "Hidden labels, such as misspelled variants" ;
+      sh:path skos:hiddenLabel ;
+      sh:order 4 ;
+      sh:group _:Default ;
+    ],
+    [
       sh:name "Name", "Nazwa"@pl ;
       sh:path schema:name ;
       sh:minCount 1 ;
