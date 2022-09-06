@@ -28,6 +28,7 @@ insert {
     COALESCE(
               IF(regex(str(?link), "^http://dbpedia.org"), wba:dbpediaLink, 1/0),
               IF(regex(str(?link), "^https://www.facebook.com"), wba:facebookLink, 1/0),
+              IF(regex(str(?link), "^https://www.flickr.com/photos"), wba:flickrLink, 1/0),
               1/0
             )
     as ?seeAlso

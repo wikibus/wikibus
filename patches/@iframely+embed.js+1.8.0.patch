@@ -1,0 +1,35 @@
+diff --git a/node_modules/@iframely/embed.js/src/index.js b/node_modules/@iframely/embed.js/src/index.js
+index 907c007..7cc2963 100644
+--- a/node_modules/@iframely/embed.js/src/index.js
++++ b/node_modules/@iframely/embed.js/src/index.js
+@@ -15,7 +15,7 @@ if (!iframely._loaded) {
+     require('./ahref');
+     require('./lazy-img-placeholder');
+     require('./lazy-iframe');
+-    // require('./messaging');
++    require('./messaging');
+     require('./widget-cancel');
+     require('./widget-resize');
+     require('./widget-click');
+diff --git a/node_modules/@iframely/embed.js/src/messaging.js b/node_modules/@iframely/embed.js/src/messaging.js
+index 7a7a25c..8229b63 100644
+--- a/node_modules/@iframely/embed.js/src/messaging.js
++++ b/node_modules/@iframely/embed.js/src/messaging.js
+@@ -48,7 +48,7 @@ function findIframeByContentWindow(iframes, contentWindow) {
+     return foundIframe;
+ }
+ 
+-function findIframe(options) {
++iframely.findIframe = function (options) {
+ 
+     var foundIframe, iframes;
+ 
+@@ -71,7 +71,7 @@ function findIframe(options) {
+ receiveMessage(function(e, message) {
+     if (message && (message.method || message.type)) {
+ 
+-        var foundIframe = findIframe({
++        var foundIframe = iframely.findIframe({
+             contentWindow: e.source,
+             src: message.context,
+             domains: message.domains !== 'all' && iframely.DOMAINS.concat(iframely.CDN)

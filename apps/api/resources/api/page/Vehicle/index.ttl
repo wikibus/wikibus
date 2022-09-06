@@ -110,9 +110,15 @@ PREFIX wba: <https://schema.wikibus.org/>
             ] ;
           sh:property
             [
-              sh:path wba:facebookLink ;
+              sh:name "On social media" ;
+              # TODO: extract subProperty ?
+              sh:path
+                [
+                  sh:alternativePath ( wba:facebookLink wba:flickrLink )
+                ] ;
               sh:group _:MainContentGroup ;
-              dash:viewer <https://www.facebook.com/plugins/post> ;
+              dash:viewer <https://iframe.ly/embed/> ;
+              rs:decorator canvas:SocialPager ;
               sh:order 3 ;
             ] ;
           sh:property
