@@ -1,3 +1,4 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wba: <https://schema.wikibus.org/>
@@ -37,3 +38,8 @@ wba:Chassis
   rdfs:subClassOf wba:Vehicle ;
   rdfs:label "Chassis" ;
 .
+
+wba:socialLink a rdf:Property .
+wba:phototransLink rdfs:subPropertyOf wba:socialLink .
+wba:facebookLink rdfs:subPropertyOf wba:socialLink .
+wba:flickrLink rdfs:subPropertyOf wba:socialLink .
