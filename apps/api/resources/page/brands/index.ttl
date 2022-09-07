@@ -1,15 +1,13 @@
 PREFIX dash: <http://datashapes.org/dash#>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix wba: <https://wikibus.org/api#>
-prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
-prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a schema:WebPage ;
   schema:mainEntity </brands> ;
+  dash:shape <brands/shape> ;
   schema:newResourceLink </page/brand/new> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
@@ -31,25 +29,5 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
                 ]
             ]
         ] ;
-    ] ;
-.
-
-<#Shape>
-  a sh:NodeShape, rs:ViewShape ;
-  sh:targetNode <> ;
-  sh:and ( </api/schema/WebPage> ) ;
-  sh:property
-    [
-      sh:order 50 ;
-      sh:path schema:mainEntity ;
-      sh:group </page/_element/main> ;
-      rs:dereference true ;
-      dash:viewer dash:DetailsViewer ;
-    ] ,
-    [
-      sh:name "New" ;
-      sh:path schema:newResourceLink ;
-      sh:group </page/_element/sub-menu> ;
-      dash:viewer canvas:SubMenuLink ;
     ] ;
 .

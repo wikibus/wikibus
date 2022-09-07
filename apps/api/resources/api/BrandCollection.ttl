@@ -36,4 +36,12 @@ prefix knossos: <https://hypermedia.app/knossos#>
           hydra:required true ;
         ] ;
     ] ;
+  knossos:preprocessResponse
+    [
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/BrandCollection/index.js#createAlphabeticPager> ;
+        ] ;
+    ] ;
 .

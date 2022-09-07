@@ -58,7 +58,7 @@ export class Slider extends LitElement {
   render() {
     let pager = html``
     if (this.total > 1) {
-      pager = html`<canvas-pager full-width 
+      pager = html`<canvas-pager full-width pager-style="prev-next"
                                  .current="${this.selected}"
                                  .total="${this.total}"
                                  @current-changed="${this.selectPost}"></canvas-pager>`

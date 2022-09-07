@@ -1,6 +1,7 @@
 import { css, html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import { repeat } from 'lit/directives/repeat.js'
 import CanvasShellBase from './CanvasShellBase'
 
 @customElement('canvas-pager')
@@ -24,6 +25,9 @@ export class CanvasPager extends CanvasShellBase(LitElement) {
     ]
   }
 
+  @property({ type: String, attribute: 'pager-style' })
+  public pagerStyle: 'links' | 'prev-next' = 'links'
+
   @property({ type: Number })
   public current = 0
 
@@ -33,17 +37,38 @@ export class CanvasPager extends CanvasShellBase(LitElement) {
   @property({ type: String })
   public size?: 'lg' | 'sm'
 
+  @property({ type: Array })
+  public links: Array<{ href: string; label: string}> = []
+
   render() {
     const sizeClass = this.size === 'lg' || this.size === 'sm' ? `pagination-${this.size}` : ''
 
+    const buttons = this.pagerStyle === 'links'
+      ? this.renderLinks()
+      : this.renderPrevNext()
+
     return html`
-      <ul class="pagination pagination-inside-transparent ${sizeClass}">
-        ${this.renderButton('Previous', this.previous, this.current === 0)}
-        <li id="counts" class="page-item disabled">
-          <a class="page-link" href="#">${this.current + 1} <span class="px-1">OF</span> ${this.total}</a>
-        </li>
-        ${this.renderButton('Next', this.next, this.current + 1 === this.total)}
+      <ul class="pagination pagination-inside-transparent justify-content-center ${sizeClass}">
+        ${buttons}
       </ul>`
+  }
+
+  renderLinks() {
+    return html`${repeat(this.links, link => link.href, link => html`
+      <li class="page-item">
+        <a class="page-link" href="${link.href}">${link.label}</a>
+      </li>
+    `)}`
+  }
+
+  renderPrevNext() {
+    return html`
+      ${this.renderButton('Previous', this.previous, this.current === 0)}
+      <li id="counts" class="page-item disabled">
+        <a class="page-link" href="#">${this.current + 1} <span class="px-1">OF</span> ${this.total}</a>
+      </li>
+      ${this.renderButton('Next', this.next, this.current + 1 === this.total)}
+    `
   }
 
   // eslint-disable-next-line class-methods-use-this

@@ -1,0 +1,51 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a sh:NodeShape, rs:ViewShape ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:group </page/_element/main> ;
+      rs:dereference true ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:order 1 ;
+              sh:path hydra:view ;
+              sh:class hex:AlphabeticallyPagedView ;
+              dash:viewer canvas:AlphabeticPager ;
+              rs:selector "div.grid-container.clearfix" ;
+            ],
+            [
+              sh:order 2 ;
+              sh:path <#separator> ;
+              dash:viewer dash:HTMLViewer ;
+              sh:values
+                [
+                  dash:js '<div class="line"></div>'
+                ] ;
+            ],
+            [
+              sh:order 3 ;
+              sh:path hydra:member ;
+              dash:viewer hex:CollectionMembersViewer ;
+            ]
+        ] ;
+    ],
+    [
+      sh:name "New" ;
+      sh:path schema:newResourceLink ;
+      sh:group </page/_element/sub-menu> ;
+      dash:viewer canvas:SubMenuLink ;
+    ] ;
+.

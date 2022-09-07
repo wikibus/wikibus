@@ -3,15 +3,43 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix query: <https://hypermedia.app/query#>
+PREFIX code: <https://code.described.at/>
 
 <>
   a </api/BrandCollection> ;
   hydra:view
-  [
-    a hex:OrderedCollectionView ;
-    hex:orderedBy
-      (
-        skos:prefLabel
-      ) ;
-  ] ;
+    [
+      a hex:OrderedCollectionView ;
+      hex:orderedBy
+        (
+          skos:prefLabel
+        ) ;
+    ] ;
+  hydra:limit 40 ;
+  query:order
+    (
+      [ query:path skos:notation ]
+    ) ;
+  hydra:search
+    [
+      hydra:template "{?page,i}" ;
+      hydra:mapping
+        [
+          hydra:variable "page" ;
+          hydra:property hydra:pageIndex ;
+        ],
+        [
+          hydra:variable "i" ;
+          hydra:property skos:prefLabel ;
+          query:filter
+            [
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/BrandCollection/index.js#filterByInitial> ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
 .

@@ -21,6 +21,7 @@ import * as SubMenuLink from './main/SubMenuLink'
 import * as SingleLiteralViewer from './main/SingleLiteralViewer'
 import * as IconListItem from './main/IconListItem'
 import * as IframelyEmbed from './main/IframelyEmbed'
+import * as AlphabeticallyPagedViewViewer from './main/AlphabeticallyPagedViewViewer'
 import { canvas } from '../lib/ns'
 import { wrapperDecorator } from './decorators/wrapper'
 import { extractRootResourceTitle } from './decorators/extractRootResourceTitle'
@@ -54,6 +55,7 @@ export const renderers: Renderer<any>[] = [
   SingleLiteralViewer.renderer,
   IconListItem.renderer,
   IframelyEmbed.renderer,
+  AlphabeticallyPagedViewViewer.renderer,
 ]
 
 export const viewers: ViewerMatcher[] = [
