@@ -7,10 +7,11 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
   a knossos:Configuration ;
   knossos:resourceLoader
     [
-      code:implementedBy [
-        a code:EcmaScriptModule ;
-        code:link <file:apps/api/lib/knossos/ResourceLoader.js#factory> ;
-      ];
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/knossos/ResourceLoader.js#factory> ;
+        ] ;
     ] ;
   knossos:middleware
     [
@@ -44,6 +45,14 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
         [
           a code:EcmaScriptModule ;
           code:link <node:@wikibus/auth/index.js#oidc> ;
+        ] ;
+    ] ;
+  knossos:authorizationRule
+    [
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:rdf-web-access-control/checks#agentGroup> ;
         ] ;
     ] ;
 .

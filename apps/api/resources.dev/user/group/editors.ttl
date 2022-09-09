@@ -1,0 +1,6 @@
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+<>
+  a vcard:Group ;
+  vcard:hasMember <https://wikibus.lndo.site/user/auth0%7C5e899327b028e30bec6a575a> ;
+.
