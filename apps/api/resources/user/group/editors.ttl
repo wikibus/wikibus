@@ -1,3 +1,4 @@
+prefix talos: <existingResource:merge>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 
 <>
