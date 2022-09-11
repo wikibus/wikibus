@@ -38,9 +38,3 @@ wba:Chassis
   rdfs:subClassOf wba:Vehicle ;
   rdfs:label "Chassis" ;
 .
-
-wba:socialLink a rdf:Property .
-wba:phototransLink rdfs:subPropertyOf wba:socialLink .
-wba:facebookLink rdfs:subPropertyOf wba:socialLink .
-wba:flickrLink rdfs:subPropertyOf wba:socialLink .
-wba:youtubeLink rdfs:subPropertyOf wba:socialLink .

@@ -18,7 +18,8 @@ prefix knossos: <https://hypermedia.app/knossos#>
     </catalog>,
     </api/shapes>,
     </user/current>,
-    </user/anonymous> ;
+    </user/anonymous>,
+    </social-media-postings> ;
   acl:accessToClass </api/Brand>, </api/Company>, </api/Vehicle>, schema:WebPage, sh:Shape, knossos:TemplatedResource ;
   acl:mode acl:Read ;
 .

@@ -1,0 +1,12 @@
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wba: <https://schema.wikibus.org/>
+
+</vehicle/pegaso/bt2> {
+  </vehicle/pegaso/bt2>
+    a </api/Vehicle>, wba:BusOrCoach ;
+    skos:broader </brand/pegaso> ;
+    schema:name "BT2" ;
+    skos:prefLabel "Pegaso BT2" ;
+  .
+}

@@ -4,6 +4,7 @@ import { CONSTRUCT } from '@tpluscode/sparql-builder'
 import fromStream from 'rdf-dataset-ext/fromStream.js'
 import { isGraphPointer } from 'is-graph-pointer'
 import type { NamedNode } from '@rdfjs/types'
+import { wba } from './ns.js'
 
 export const loadSkos: ResourceHook = async ({ req, pointer }) => {
   const mainEntity = req.hydra.resource.uriTemplateVariables?.out(schema.mainEntity)
@@ -28,4 +29,13 @@ export const loadSkos: ResourceHook = async ({ req, pointer }) => {
       fromStream(pointer.dataset, await query(skos.broader).execute(req.labyrinth.sparql.query)),
     ])
   }
+}
+
+export const prepareSocialPostingsLink: ResourceHook = ({ req, pointer }) => {
+  const mainEntity = req.hydra.resource.uriTemplateVariables?.out(schema.mainEntity)
+  if (!isGraphPointer(mainEntity)) return
+
+  pointer
+    .node(req.hydra.term)
+    .addOut(wba.socialMediaPostings, req.rdf.namedNode(`/social-media-postings?what=${encodeURIComponent(mainEntity.value)}`))
 }

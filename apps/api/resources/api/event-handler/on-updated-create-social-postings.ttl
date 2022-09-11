@@ -1,0 +1,28 @@
+PREFIX code: <https://code.described.at/>
+PREFIX as: <https://www.w3.org/ns/activitystreams#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix events: <https://hypermedia.app/events#>
+
+<>
+  a events:EventHandler ;
+  events:handleImmediate true ;
+  events:eventSpec
+    [
+      rdf:predicate rdf:type ;
+      rdf:object as:Update ;
+    ] ,
+    [
+      rdf:predicate rdf:type ;
+      rdf:object as:Create ;
+    ] ;
+  events:objectSpec
+    [
+      rdf:predicate rdf:type ;
+      rdf:object </api/Brand>, </api/Vehicle> ;
+    ] ;
+  code:implementedBy
+    [
+      a code:EcmaScriptModule ;
+      code:link <file:apps/api/lib/schema/SocialMediaPostings.js#createFromSameAs> ;
+    ] ;
+.

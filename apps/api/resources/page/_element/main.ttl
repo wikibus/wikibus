@@ -8,6 +8,6 @@ prefix rs: <https://hypermedia.app/roadshow#>
 .
 
 <#gutters>
-  rs:selector "section#content div.content-wrap div.container.clearfix div.row.gutter-40.col-mb-80" ;
+  rs:selector "canvas-page-both-sidebars" ;
   sh:order 10 ;
 .

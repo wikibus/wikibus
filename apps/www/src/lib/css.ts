@@ -10,6 +10,8 @@ export function applyTokens(element: Element, tokens: CSSwhat.Selector[]) {
         element.classList.add(token.value)
       } else if (token.action === 'exists') {
         element.setAttribute(token.name, '')
+      } else if (token.action === 'equals') {
+        element.setAttribute(token.name, token.value)
       } else {
         // eslint-disable-next-line no-console
         console.warn('Unsupported CSS token', token)

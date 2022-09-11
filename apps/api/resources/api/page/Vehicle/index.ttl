@@ -1,3 +1,4 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -110,19 +111,28 @@ PREFIX wba: <https://schema.wikibus.org/>
             ] ;
           sh:property
             [
-              sh:name "On social media" ;
-              sh:path wba:socialLink ;
-              sh:group _:MainContentGroup ;
-              dash:viewer <https://iframe.ly/embed/> ;
-              rs:decorator canvas:SocialPager ;
-              sh:order 3 ;
-            ] ;
-          sh:property
-            [
               sh:path <> ;
               sh:group _:RightSidebarGroup ;
             ] ;
         ] ;
+    ],
+    [
+      sh:path wba:socialMediaPostings ;
+      dash:viewer dash:DetailsViewer ;
+      sh:group </page/_element/main#gutters> ;
+      sh:order 3 ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:group _:MainContentGroup ;
+              sh:name "On social media" ;
+              sh:path ( hydra:member schema:url ) ;
+              dash:viewer <https://iframe.ly/embed/> ;
+              rs:decorator canvas:SocialPager ;
+            ] ;
+        ] ;
+      rs:dereference true ;
     ],
     [
       sh:name "Edit" ;
@@ -143,16 +153,15 @@ PREFIX wba: <https://schema.wikibus.org/>
 .
 
 _:LeftSidebarGroup
-  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
+  rs:selector "div[slot=left]" ;
   sh:order 1 ;
 .
 
 _:MainContentGroup
-  rs:selector "div.postcontent.bothsidebar.col-lg-6" ;
   sh:order 2 ;
 .
 
 _:RightSidebarGroup
-  rs:selector "div.sidebar.col-lg-3 div.sidebar-widgets-wrap" ;
+  rs:selector "div[slot=right]" ;
   sh:order 3 ;
 .

@@ -1,0 +1,32 @@
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix code: <https://code.described.at/>
+prefix query: <https://hypermedia.app/query#>
+
+<>
+  a hydra:Collection ;
+  hydra:manages
+    [
+      hydra:property rdf:type ;
+      hydra:object schema:SocialMediaPosting ;
+    ] ;
+  hydra:search
+    [
+      hydra:template "{?what}" ;
+      hydra:variableRepresentation hydra:ExplicitRepresentation ;
+      hydra:mapping
+        [
+          hydra:variable "what" ;
+          hydra:property schema:mainEntity ;
+          query:filter
+            [
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/schema/SocialMediaPostings.js#filterByMainEntity> ;
+                ] ;
+            ] ;
+        ] ;
+    ]
+.

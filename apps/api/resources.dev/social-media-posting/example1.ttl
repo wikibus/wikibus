@@ -1,0 +1,7 @@
+PREFIX schema: <http://schema.org/>
+
+<>
+  a schema:SocialMediaPosting ;
+  schema:url <https://www.facebook.com/731581573924781/photos/a.731587017257570/1073311229751812/> ;
+  schema:mainEntity </vehicle/pegaso/bt2>, </brand/isobloc> ;
+.

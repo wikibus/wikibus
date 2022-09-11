@@ -13,6 +13,7 @@ import { renderers, viewers, decorators } from '../views'
 import { resourceLoader } from '../lib/resourceLoader'
 import './canvas-shell/canvas-icon-list'
 import './AppNotifications'
+import './canvas-shell/canvas-page-both-sidebars'
 
 export default class App extends connect(store, CanvasShellBase(LitElement)) {
   __shapesLoaders?: ShapesLoaderMap
