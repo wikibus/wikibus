@@ -38,3 +38,9 @@ wba:Chassis
   rdfs:subClassOf wba:Vehicle ;
   rdfs:label "Chassis" ;
 .
+
+wba:Trailer
+  a rdfs:Class ;
+  rdfs:subClassOf wba:Vehicle ;
+  rdfs:label "Trailer" ;
+.
