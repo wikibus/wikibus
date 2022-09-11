@@ -173,6 +173,6 @@ _:DefaultBodyGroup
 .
 
 _:SidebarGroup
-  rs:selector "div[slot=sidebar]" ;
+  rs:selector "div[slot=left]" ;
   sh:order 2 ;
 .

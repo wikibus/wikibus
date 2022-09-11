@@ -39,7 +39,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
     ] .
 
 _:SidebarGroup
-  rs:selector "div[slot=sidebar]" ;
+  rs:selector "div[slot=right]" ;
   sh:order 2 ;
 .
 

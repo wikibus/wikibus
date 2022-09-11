@@ -8,16 +8,16 @@ prefix rs: <https://hypermedia.app/roadshow#>
 .
 
 <#bothSidebars>
-  rs:selector "canvas-page-both-sidebars" ;
+  rs:selector "canvas-main-content[left-sidebar][right-sidebar]" ;
   sh:order 10 ;
 .
 
 <#rightSidebar>
-  rs:selector "canvas-page-right-sidebar" ;
+  rs:selector "canvas-main-content[right-sidebar]" ;
   sh:order 10 ;
 .
 
 <#leftSidebar>
-  rs:selector "canvas-page-left-sidebar" ;
+  rs:selector "canvas-main-content[left-sidebar]" ;
   sh:order 10 ;
 .

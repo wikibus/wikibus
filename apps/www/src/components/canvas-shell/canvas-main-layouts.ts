@@ -1,63 +1,64 @@
-// eslint-disable-next-line max-classes-per-file
-import { html, LitElement, TemplateResult } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { css, html, LitElement } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 import CanvasShellBase from './CanvasShellBase'
 
-@customElement('canvas-page-both-sidebars')
-export class CanvasBothSidebars extends CanvasShellBase(LitElement) {
-  render() {
-    return renderWrappers(html`
-      <div class="sidebar col-lg-3">
-        <slot name="left"></slot>
-      </div>
-      <div class="postcontent bothsidebar col-lg-6">
-        <slot></slot>
-      </div>
-      <div class="sidebar col-lg-3">
-        <slot name="right"></slot>
-      </div>`)
+@customElement('canvas-main-content')
+export class CanvasMainContent extends CanvasShellBase(LitElement) {
+  static get styles() {
+    return [
+      super.styles || [],
+      css`
+        .sidebar {
+          display: none;
+        }
+        
+        :host([right-sidebar]) .right {
+          display: block;
+        }
+        
+        :host([left-sidebar]) .left {
+          display: block;
+        }
+      `,
+    ]
   }
-}
 
-@customElement('canvas-page-right-sidebar')
-export class CanvasRightSidebar extends CanvasShellBase(LitElement) {
+  @property({ type: Boolean, attribute: 'left-sidebar' })
+  public leftSidebar = false
+
+  @property({ type: Boolean, attribute: 'right-sidebar' })
+  public rightSidebar = false
+
   render() {
-    return renderWrappers(html`
-      <div class="postcontent col-lg-9">
-        <slot></slot>
-      </div>
-      <div class="sidebar col-lg-3">
-        <div class="sidebar-widgets-wrap">
-          <slot name="sidebar"></slot>
-        </div>
-      </div>`)
-  }
-}
+    const mainClasses = {
+      bothsidebar: this.leftSidebar && this.rightSidebar,
+      'col-lg-6': this.leftSidebar && this.rightSidebar,
+      'col-lg-9': this.leftSidebar || this.rightSidebar,
+      'order-lg-last': this.leftSidebar && !this.rightSidebar,
+    }
 
-@customElement('canvas-page-left-sidebar')
-export class CanvasLeftSidebar extends CanvasShellBase(LitElement) {
-  render() {
-    return renderWrappers(html`
-      <div class="sidebar col-lg-3">
-        <div class="sidebar-widgets-wrap">
-          <slot name="sidebar"></slot>
-        </div>
-      </div>
-      <div class="postcontent col-lg-9 order-lg-last">
-        <slot></slot>
-      </div>
-    `)
-  }
-}
-
-function renderWrappers(content: TemplateResult) {
-  return html`<section id="content">
-      <div class="content-wrap">
-        <div class="container clearfix">
-          <div class="row gutter-40 col-mb-80">
-            ${content}
+    return html`
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="row gutter-40 col-mb-80">
+              <div class="left sidebar col-lg-3">
+                <div class="sidebar-widgets-wrap">
+                  <slot name="left"></slot>
+                </div>
+              </div>
+              <div class="postcontent ${classMap(mainClasses)}">
+                <slot></slot>
+              </div>
+              <div class="right sidebar col-lg-3">
+                <div class="sidebar-widgets-wrap">
+                  <slot name="right"></slot>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>`
+      </section>`
+  }
 }
