@@ -31,10 +31,11 @@ export class CanvasMainContent extends CanvasShellBase(LitElement) {
   public rightSidebar = false
 
   render() {
+    const bothsidebar = this.leftSidebar && this.rightSidebar
     const mainClasses = {
-      bothsidebar: this.leftSidebar && this.rightSidebar,
-      'col-lg-6': this.leftSidebar && this.rightSidebar,
-      'col-lg-9': this.leftSidebar || this.rightSidebar,
+      bothsidebar,
+      'col-lg-6': bothsidebar,
+      'col-lg-9': !bothsidebar && (this.leftSidebar || this.rightSidebar),
       'order-lg-last': this.leftSidebar && !this.rightSidebar,
     }
 
