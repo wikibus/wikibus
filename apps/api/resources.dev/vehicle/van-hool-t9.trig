@@ -167,6 +167,14 @@ PREFIX wba: <https://schema.wikibus.org/>
     skos:broader </vehicle/van-hool/altano> ;
 }
 
+</vehicle/van-hool/td920-altano> {
+  </vehicle/van-hool/td920-altano>
+    a </api/Vehicle> , wba:BusOrCoach ;
+    skos:prefLabel "Van Hool TD920 Altano" ;
+    skos:broader </vehicle/van-hool/t9> ;
+    skos:broader </vehicle/van-hool/altano> ;
+}
+
 # Astromega
 </vehicle/van-hool/td924-astromega> {
   </vehicle/van-hool/td924-astromega>

@@ -18,7 +18,7 @@ PREFIX wba: <https://schema.wikibus.org/>
     [
       sh:order 50 ;
       sh:path schema:mainEntity ;
-      sh:group </page/_element/main#gutters> ;
+      sh:group </page/_element/main#bothSidebars> ;
       dash:viewer dash:DetailsViewer ;
       sh:node
         [
@@ -52,7 +52,7 @@ PREFIX wba: <https://schema.wikibus.org/>
     # Properties populated in template
       sh:order 50 ;
       sh:path schema:mainEntity ;
-      sh:group </page/_element/main#gutters> ;
+      sh:group </page/_element/main#bothSidebars> ;
       rs:dereference true ;
       dash:viewer dash:DetailsViewer ;
       sh:node
@@ -119,7 +119,7 @@ PREFIX wba: <https://schema.wikibus.org/>
     [
       sh:path wba:socialMediaPostings ;
       dash:viewer dash:DetailsViewer ;
-      sh:group </page/_element/main#gutters> ;
+      sh:group </page/_element/main#bothSidebars> ;
       sh:order 3 ;
       sh:node
         [

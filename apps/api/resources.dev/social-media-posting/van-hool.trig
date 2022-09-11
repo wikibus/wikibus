@@ -1,0 +1,17 @@
+PREFIX schema: <http://schema.org/>
+
+</social-media-posting/van-hool-t9> {
+  </social-media-posting/van-hool-t9>
+    a schema:SocialMediaPosting ;
+    schema:url <https://www.flickr.com/photos/71092681@N07/52112862561/in/photolist-2np33sn-2nu9BM5-2kyCaFu-uQuFj5-pGjoDW-2nwcRB7-2mpm256-TnonEu-2mcJ58u-2h8hTRr-y1tQ6y-2h8i7ui-LbeZHz-2ntjTYN-2mfAAWo-2nAtqJB-7r1pFF-FxUdbe-2nyrwZZ-2ndGCvG-2nh6csc-2n55kzB-2mN4qBM-2mEHZXK-tQ8m1Z-9uRWTm-2mpjFP9-2njjrC5-2md2jbJ-2mZjL6u-2nmwPDK-2mZqS9A-2netDxV-2j8agX6-2nd26nj-2npkPLW-29WsA7C-23kLTRZ-2nvcchE-2nwjW3P-2nD8zmk-2n2bezi-25kNXkF-YVbATW-2n4etej-2n7v9BG-2n7xUJx-2nEjqbD-2mBEkwc-2kSQpbH> ;
+    schema:mainEntity </vehicle/van-hool/td920-altano> ;
+  .
+}
+
+</social-media-posting/van-hool-unknown> {
+  </social-media-posting/van-hool-unknown>
+    a schema:SocialMediaPosting ;
+    schema:url <https://www.flickr.com/photos/vinylone/52122490182/in/photolist-2npTopQ-2nG6DMJ-MQTZyC-2mAooPa-7x27w5-2npTooY-Rw25hm-2nezFL4-fBbkh4-dsRYk7-2mwp9Q4-2mMwohL-2nvDR66-2mTV2Cn-eVkhe4-2mnkHyB-2nCgZwp-2kgxwLQ-AfLo4X-23tZL3h-9YiNeX-2n6NoNB-2ke7b5p-2m3bk4E-2kzKBSe-2nsUYW3-2j2gLbJ-2kf8m4z-2mbTrJw-2mAFiJD-FFJTti-26B1pVq-2m4sgqE-2gWuPXM-E2pPQw-2hJoi1Z-2kRfved-2kSQpbH-7Jpfk5-2jwF9CJ-BqYZYp-2knFtEm-2iW1UCz-2jUqeCr-Hgie64-2j8XzkD-2mVM8Mg-2nDuHt2-Wui2E9-FVguww> ;
+    schema:mainEntity </brand/van-hool> ;
+  .
+}

@@ -7,7 +7,17 @@ prefix rs: <https://hypermedia.app/roadshow#>
   sh:order 10 ;
 .
 
-<#gutters>
+<#bothSidebars>
   rs:selector "canvas-page-both-sidebars" ;
+  sh:order 10 ;
+.
+
+<#rightSidebar>
+  rs:selector "canvas-page-right-sidebar" ;
+  sh:order 10 ;
+.
+
+<#leftSidebar>
+  rs:selector "canvas-page-left-sidebar" ;
   sh:order 10 ;
 .

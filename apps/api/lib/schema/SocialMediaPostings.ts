@@ -3,6 +3,7 @@ import { isNamedNode } from 'is-graph-pointer'
 import { VALUES } from '@tpluscode/sparql-builder/expressions'
 import type { Filter } from '@hydrofoil/labyrinth/lib/query'
 import { sparql } from '@tpluscode/rdf-string'
+import { skos } from '@tpluscode/rdf-ns-builders'
 import { prepareQuery } from '../query.js'
 
 export const createFromSameAs: Handler = async ({ req, event }) => {
@@ -16,4 +17,11 @@ export const createFromSameAs: Handler = async ({ req, event }) => {
   }
 }
 
-export const filterByMainEntity: Filter = ({ subject, predicate, object }) => sparql`${subject} ${predicate} <${object.value}> .`
+export const filterByMainEntity: Filter = ({ subject, predicate, object, variable }) => {
+  const mainEntity = variable('mainEntity')
+
+  return sparql`
+    ${subject} ${predicate} ${mainEntity} .
+    ${mainEntity} ${skos.broader}* <${object.value}> .
+  `
+}
