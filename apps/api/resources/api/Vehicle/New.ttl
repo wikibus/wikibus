@@ -23,7 +23,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
           [
             hydra:variable "q" ;
             hydra:property hydra:freetextQuery ;
-            sh:minLength 3 ;
+            sh:minLength 2 ;
           ] ;
       ] ;
       sh:order 2 ;
