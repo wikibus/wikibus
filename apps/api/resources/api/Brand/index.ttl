@@ -148,7 +148,7 @@ _:Other
 
 _:DefaultModelPrefixProperty
   sh:path wba:modelPrefix  ;
-  rdfs:label "Default model prefix" ;
+  sh:name "Default model prefix" ;
   sh:order 2 ;
   sh:maxCount 1 ;
 .
