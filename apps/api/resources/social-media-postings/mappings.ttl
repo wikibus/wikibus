@@ -1,0 +1,27 @@
+prefix talos: <existingResource:skip>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX schema: <http://schema.org/>
+
+<>
+  schema:hasPart
+    [
+      schema:name "Facebook" ;
+      sh:pattern "^https://www.facebook.com" ;
+    ],
+    [
+      schema:name "Flickr" ;
+      sh:pattern "^https://www.flickr.com/photos" ;
+    ],
+    [
+      schema:name "Phototrans" ;
+      sh:pattern "^https?://phototrans.\\\\w{2,3}/" ;
+    ],
+    [
+      schema:name "YouTube" ;
+      sh:pattern "^https://(www.)?(youtube.com|youtu.be)/" ;
+    ],
+    [
+      schema:name "busphoto.eu" ;
+      sh:pattern "^https://busphoto.eu/photo/" ;
+    ] ;
+.
