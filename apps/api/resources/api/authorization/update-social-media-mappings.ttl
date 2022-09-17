@@ -1,0 +1,8 @@
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+
+<>
+  a acl:Authorization ;
+  acl:accessTo </social-media-postings/mappings> ;
+  acl:agentGroup </user/group/admins> ;
+  acl:mode acl:Control ;
+.

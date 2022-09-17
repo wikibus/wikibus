@@ -1,8 +1,10 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix talos: <existingResource:skip>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 
 <>
+  a hydra:Resource ;
   schema:hasPart
     [
       schema:name "Facebook" ;
@@ -14,7 +16,7 @@ PREFIX schema: <http://schema.org/>
     ],
     [
       schema:name "Phototrans" ;
-      sh:pattern "^https?://phototrans.\\\\w{2,3}/" ;
+      sh:pattern "^https?://phototrans.\\w{2,3}/" ;
     ],
     [
       schema:name "YouTube" ;
