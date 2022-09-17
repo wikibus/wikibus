@@ -33,7 +33,8 @@ PREFIX wba: <https://schema.wikibus.org/>
     _:SearchVariantsProperty,
     _:LogoProperty,
     _:ArticleProperty,
-    _:LinksProperty;
+    _:LinksProperty,
+    _:DefaultModelPrefixProperty;
 .
 
 _:NameProperty
@@ -60,6 +61,7 @@ _:SlugProperty
   sh:path skos:notation ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
+  sh:order 1 ;
   sh:pattern "^[a-z-]+$" ;
 .
 
@@ -141,7 +143,14 @@ _:Default
 _:Other
   rdfs:label "Other" ;
   sh:order 3 ;
-  knossos:groupProperty _:SlugProperty ;
+  knossos:groupProperty _:SlugProperty, _:DefaultModelPrefixProperty ;
+.
+
+_:DefaultModelPrefixProperty
+  sh:property wba:modelPrefix  ;
+  rdfs:label "Default model prefix" ;
+  sh:order 2 ;
+  sh:maxCount 1 ;
 .
 
 _:LinksGroup

@@ -5,6 +5,7 @@ import getStream from 'get-stream'
 import type { Term, Literal } from '@rdfjs/types'
 import { ResourceHook } from '@hydrofoil/labyrinth/resource'
 import fromStream from 'rdf-dataset-ext/fromStream.js'
+import { wba } from '../ns'
 
 export const createBrandSlug: TransformVariable = async ({ term, req }): Promise<Literal> => {
   const [first, ...excess] = await getStream.array<{ slug: Term }>(await SELECT.DISTINCT`?slug`
@@ -34,17 +35,21 @@ export const initPrefLabel: ResourceHook = async ({ req, pointer }) => {
       ${broader} ${skos.broader}* ?brand .
       ?brand a ${schema.Brand} ; ${skos.prefLabel} ?brandLabel .
       
+      OPTIONAL {
+        ?brand ${wba.modelPrefix} ?modelPrefix
+      }
+      
       BIND(
-        CONCAT(str(?brandLabel), " ", "${name}") as ?literal
+        CONCAT(str(COALESCE(?modelPrefix, ?brandLabel)), " ", "${name}") as ?literal
       )
       
-        BIND(
-          IF(
-            langMatches(lang(?brandLabel), "*"),
-            strlang(?literal, lang(?brandLabel)),
-            ?literal
-          ) as ?prefLabel
-        )
+      BIND(
+        IF(
+          langMatches(lang(?brandLabel), "*"),
+          strlang(?literal, lang(?brandLabel)),
+          ?literal
+        ) as ?prefLabel
+      )
     `.execute(req.labyrinth.sparql.query)
 
   await fromStream(pointer.dataset, getPrefLabel)
