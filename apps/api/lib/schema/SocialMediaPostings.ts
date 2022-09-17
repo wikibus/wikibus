@@ -12,7 +12,9 @@ export const createFromSameAs: Handler = async ({ req, event }) => {
     const resourceValues = VALUES({ res: resource.term })
     const mediaPostingBase = req.rdf.namedNode('/social-media-post/').value
 
-    const update = prepareQuery('createSocialPostings.ru', { resourceValues, mediaPostingBase }).toString()
+    const update = prepareQuery('createSocialPostings.ru', { resourceValues, mediaPostingBase }).toString({
+      base: req.rdf.namedNode('').value,
+    })
     await req.labyrinth.sparql.query.update(update)
   }
 }
