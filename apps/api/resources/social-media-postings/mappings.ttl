@@ -4,7 +4,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 
 <>
-  a hydra:Resource ;
+  a </api/SocialMediaPosting/Mappings> ;
   schema:hasPart
     [
       schema:name "Facebook" ;

@@ -1,0 +1,42 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX code: <https://code.described.at/>
+
+<>
+  a rdfs:Class ;
+  rdfs:subClassOf sh:NodeShape, hydra:Resource ;
+  hydra:supportedOperation
+    [
+      a schema:ReplaceAction ;
+      hydra:title "Save" ;
+      hydra:method "PUT" ;
+      hydra:expects <> ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/knossos/resource#PUT> ;
+        ] ;
+    ] ;
+  sh:property
+    [
+      sh:path schema:hasPart ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path schema:name ;
+              sh:maxCount 1 ;
+              sh:datatype xsd:string ;
+            ],
+            [
+              sh:path sh:pattern ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:datatype xsd:string ;
+            ] ;
+        ] ;
+    ]
+.
