@@ -1,4 +1,3 @@
-PREFIX wba: <https://schema.wikibus.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -81,6 +80,29 @@ insert {
   }
 
   filter(regex(str(?wikidataId), "wikidata.org"))
+  service <https://query.wikidata.org/sparql> {
+    ?wikiPage schema:about ?wikidataId .
+    ?wikiPage schema:inLanguage ?lang .
+    ?wikiPage schema:name ?wikiTitle
+  }
+
+  bind(concat("(", ?lang, ") ", ?wikiTitle) as ?label)
+};
+
+insert {
+  graph ?dbpedia {
+    ?wikiPage schema:about ?link .
+    ?wikiPage schema:inLanguage ?lang .
+    ?wikiPage rdfs:label ?label
+  }
+} where {
+  #{resourceValues}
+
+  ?res rdfs:seeAlso ?wikiPage .
+  filter(regex(str(?wikiPage), "wikipedia.org"))
+
+  bind(iri(concat(str(?res), "#dbpedia")) as ?dbpedia)
+
   service <https://query.wikidata.org/sparql> {
     ?wikiPage schema:about ?wikidataId .
     ?wikiPage schema:inLanguage ?lang .
