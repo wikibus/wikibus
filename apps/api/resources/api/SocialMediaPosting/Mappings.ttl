@@ -6,7 +6,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX code: <https://code.described.at/>
 
 <>
-  a rdfs:Class ;
+  a rdfs:Class, hydra:Class ;
   rdfs:subClassOf sh:NodeShape, hydra:Resource ;
   hydra:supportedOperation
     [
