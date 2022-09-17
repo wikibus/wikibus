@@ -17,9 +17,10 @@ export class CanvasPager extends CanvasShellBase(LitElement) {
         #counts {
           text-align: center;
         }
-        
+
         ul {
-           margin-bottom: 0;
+          margin-bottom: 0;
+          flex-wrap: wrap;
         }
       `,
     ]
@@ -38,7 +39,7 @@ export class CanvasPager extends CanvasShellBase(LitElement) {
   public size?: 'lg' | 'sm'
 
   @property({ type: Array })
-  public links: Array<{ href: string; label: string}> = []
+  public links: Array<{ href: string; label: string }> = []
 
   render() {
     const sizeClass = this.size === 'lg' || this.size === 'sm' ? `pagination-${this.size}` : ''
@@ -80,9 +81,10 @@ export class CanvasPager extends CanvasShellBase(LitElement) {
 
     return html`
       <li class="page-item ${disabled ? 'disabled' : ''}">
-        <button class="page-link ${disabled ? 'text-muted' : ''}" 
+        <button class="page-link ${disabled ? 'text-muted' : ''}"
                 aria-disabled="${ifDefined(ariaDisabled)}"
-                @click="${onClick}">${text}</button>
+                @click="${onClick}">${text}
+        </button>
       </li>`
   }
 
