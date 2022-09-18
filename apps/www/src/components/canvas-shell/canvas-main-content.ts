@@ -20,6 +20,10 @@ export class CanvasMainContent extends CanvasShellBase(LitElement) {
         :host([left-sidebar]) .left {
           display: block;
         }
+        
+        slot[name=left]::slotted(:first-child) {
+          margin-top: -50px;
+        }
       `,
     ]
   }

@@ -20,8 +20,6 @@
 	border-top: 1px solid #EEE;
 }
 
-.widget:first-child { margin-top: 0; }
-
 .sidebar-widgets-wrap .widget:first-child {
 	padding-top: 0;
 	border-top: 0;

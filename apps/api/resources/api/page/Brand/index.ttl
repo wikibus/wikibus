@@ -31,13 +31,20 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:maxCount 1 ;
               dash:viewer hex:ImageViewer ;
               sh:group _:SidebarGroup ;
-              sh:order 1 ;
+              sh:order 10 ;
+            ],
+            [
+              sh:name "Also known as" ;
+              sh:path skos:altLabel ;
+              sh:group _:SidebarGroup ;
+              sh:order 20 ;
+              rs:decorator canvas:SidebarWidget ;
             ],
             [
               sh:path schema:text ;
               sh:datatype rdf:HTML ;
               sh:group _:DefaultBodyGroup ;
-              sh:order 2 ;
+              sh:order 30 ;
             ],
             [
               sh:name "Wikipedia abstract" ;
@@ -46,7 +53,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               dash:viewer dash:SingleLiteralViewer ;
               rs:propertyContainer "p" ;
               rs:propertyHeaderLevel 3 ;
-              sh:order 3 ;
+              sh:order 40 ;
             ],
             [
               sh:name "See more on wikipedia" ;
@@ -59,7 +66,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
                     )
                 ] ;
               sh:class fabio:WikipediaEntry ;
-              sh:order 4 ;
+              sh:order 50 ;
               rs:propertyContainer "canvas-icon-list[inline]" ;
               dash:viewer canvas:IconListItem ;
               canvas:icon "icon-line-external-link" ;

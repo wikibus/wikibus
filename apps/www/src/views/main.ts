@@ -26,6 +26,7 @@ import { canvas } from '../lib/ns'
 import { wrapperDecorator } from './decorators/wrapper'
 import { extractRootResourceTitle } from './decorators/extractRootResourceTitle'
 import { socialPostingDecorator } from './decorators/socialPostingDecorator'
+import { sidebarWidget } from './decorators/sidebarWidget'
 
 setBasePath('/app')
 
@@ -67,4 +68,5 @@ export const decorators: Decorator[] = [
   wrapperDecorator,
   extractRootResourceTitle,
   socialPostingDecorator,
+  sidebarWidget,
 ]

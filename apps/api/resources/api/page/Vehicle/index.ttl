@@ -25,17 +25,24 @@ PREFIX wba: <https://schema.wikibus.org/>
         [
           sh:property
             [
+              sh:name "Also known as" ;
+              sh:path skos:altLabel ;
+              sh:group _:LeftSidebarGroup ;
+              sh:order 10 ;
+              rs:decorator canvas:SidebarWidget ;
+            ],
+            [
               sh:name "Brand" ;
               sh:path schema:brand ;
               sh:group _:LeftSidebarGroup ;
-              sh:order 1 ;
+              sh:order 20 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
             ],
             [
               sh:name "Broader" ;
               sh:path skos:broader ;
               sh:group _:LeftSidebarGroup ;
-              sh:order 2 ;
+              sh:order 30 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Vehicle ;
             ],
@@ -43,7 +50,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:name "Narrower" ;
               sh:path skos:narrower ;
               sh:group _:LeftSidebarGroup ;
-              sh:order 3 ;
+              sh:order 40 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Vehicle ;
             ] ;
