@@ -50,7 +50,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
             ],
             [
               sh:name "See more on wikipedia" ;
-              sh:path rdfs:seeAlso ;
+              sh:path
+                [
+                  sh:alternativePath
+                    (
+                      rdfs:seeAlso
+                      ( wba:dbpediaLink [ sh:inversePath schema:about ] )
+                    )
+                ] ;
               sh:class fabio:WikipediaEntry ;
               sh:order 4 ;
               rs:propertyContainer "canvas-icon-list[inline]" ;
