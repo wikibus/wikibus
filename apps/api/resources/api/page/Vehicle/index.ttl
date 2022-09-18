@@ -1,3 +1,4 @@
+PREFIX fabio: <http://purl.org/spar/fabio/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -65,49 +66,23 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:order 1 ;
             ],
             [
-              sh:path wba:dbpediaLink ;
-              sh:group _:MainContentGroup ;
-              dash:viewer dash:DetailsViewer ;
-              sh:order 2 ;
-              sh:node
-                [
-                  sh:property
-                    [
-                      sh:path rdfs:label ;
-                      dash:viewer dash:HTMLViewer ;
-                      sh:order 1 ;
-                      sh:values
-                        [
-                          dash:js """
-                            <h4>Wikipedia abstract</h4>
-                          """
-                        ] ;
-                    ],
-                    [
-                      sh:path dbo:abstract ;
-                      dash:viewer dash:SingleLiteralViewer ;
-                      sh:order 2 ;
-                      rs:propertyContainer "p" ;
-                    ],
-                    [
-                      sh:path rdfs:label ;
-                      dash:viewer dash:HTMLViewer ;
-                      sh:order 3 ;
-                      sh:values
-                        [
-                          dash:js """
-                            <h5>See more on wikipedia</h5>
-                          """
-                        ] ;
-                    ],
-                    [
-                      sh:path [ sh:inversePath schema:about ] ;
-                      sh:order 4 ;
-                      rs:propertyContainer "canvas-icon-list[inline]" ;
-                      dash:viewer canvas:IconListItem ;
-                      canvas:icon "icon-line-external-link" ;
-                    ] ;
-                ] ;
+              sh:name "Wikipedia abstract" ;
+              sh:path ( wba:dbpediaLink dbo:abstract ) ;
+              sh:group _:DefaultBodyGroup ;
+              dash:viewer dash:SingleLiteralViewer ;
+              rs:propertyContainer "p" ;
+              rs:propertyHeaderLevel 3 ;
+              sh:order 3 ;
+            ],
+            [
+              sh:name "See more on wikipedia" ;
+              sh:path rdfs:seeAlso ;
+              sh:class fabio:WikipediaEntry ;
+              sh:order 4 ;
+              rs:propertyContainer "canvas-icon-list[inline]" ;
+              dash:viewer canvas:IconListItem ;
+              canvas:icon "icon-line-external-link" ;
+              rs:propertyHeaderLevel 4 ;
             ] ;
           sh:property
             [
@@ -120,7 +95,7 @@ PREFIX wba: <https://schema.wikibus.org/>
       sh:path wba:socialMediaPostings ;
       dash:viewer dash:DetailsViewer ;
       sh:group </page/_element/main#bothSidebars> ;
-      sh:order 3 ;
+      sh:order 51 ;
       sh:node
         [
           sh:property
