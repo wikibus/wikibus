@@ -14,11 +14,14 @@ export const wrapperDecorator: Decorator<AnyVC> = {
   decorate(inner, context) {
     let shape: RdfResource | undefined
     let property: NamedNode | undefined
+    let header = true
 
     switch (context.type) {
       case 'property':
         shape = context.state.propertyShape
         property = roadshow.propertyContainer
+        header = context.state.objects.size > 0 ||
+          context.controller.viewers.isMultiViewer(context.state.viewer!)
         break
       case 'object':
         shape = context.parent?.propertyShape
@@ -28,6 +31,6 @@ export const wrapperDecorator: Decorator<AnyVC> = {
         break
     }
 
-    return html`${wrapper(shape, inner, property)}`
+    return html`${wrapper({ shape, inner, property, header })}`
   },
 }

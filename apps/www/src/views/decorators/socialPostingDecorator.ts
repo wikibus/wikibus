@@ -1,7 +1,9 @@
 import { Decorator, html, PropertyViewContext } from '@hydrofoil/roadshow'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
+import { localizedLabel } from '@rdfjs-elements/lit-helpers/localizedLabel'
 import { css, LitElement, PropertyValues } from 'lit'
 import { customElement, property, query } from 'lit/decorators'
+import { sh } from '@tpluscode/rdf-ns-builders'
 import { canvas } from '../../lib/ns'
 
 export const socialPostingDecorator: Decorator<PropertyViewContext> = {
@@ -14,7 +16,7 @@ export const socialPostingDecorator: Decorator<PropertyViewContext> = {
   decorate(inner, context) {
     return html`
       <canvas-social-slider>
-        <h3 slot="header">${context.state.propertyShape.name}</h3>
+        <h3 slot="header">${localizedLabel(context.state.propertyShape, { property: sh.name })}</h3>
         ${inner}
       </canvas-social-slider>
     `

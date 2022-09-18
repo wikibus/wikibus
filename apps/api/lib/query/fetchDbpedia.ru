@@ -2,6 +2,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <http://schema.org/>
+PREFIX fabio: <http://purl.org/spar/fabio/>
 
 delete {
   graph ?dbpedia {
@@ -63,6 +64,7 @@ insert {
 
 insert {
   graph ?dbpedia {
+    ?wikiPage a fabio:WikipediaEntry .
     ?wikiPage schema:about ?link .
     ?wikiPage schema:inLanguage ?lang .
     ?wikiPage rdfs:label ?label
@@ -91,7 +93,7 @@ insert {
 
 insert {
   graph ?dbpedia {
-    ?wikiPage schema:about ?link .
+    ?wikiPage a fabio:WikipediaEntry .
     ?wikiPage schema:inLanguage ?lang .
     ?wikiPage rdfs:label ?label
   }

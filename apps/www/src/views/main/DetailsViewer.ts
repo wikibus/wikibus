@@ -57,7 +57,7 @@ export const renderer: Renderer<FocusNodeViewContext> = {
         return contents
       }
 
-      return html`${wrapper(group, contents)}`
+      return html`${wrapper({ shape: group, inner: contents })}`
     })}`
   },
 }

@@ -4,10 +4,23 @@ import type { RdfResource } from 'alcaeus'
 import { roadshow } from '@hydrofoil/vocabularies/builders'
 import * as CSSwhat from 'css-what'
 import type { NamedNode } from '@rdfjs/types'
+import { html } from '@hydrofoil/roadshow'
+import { fromRdf } from 'rdf-literal'
+import { isLiteral } from 'is-graph-pointer'
+import { localizedLabel } from '@rdfjs-elements/lit-helpers/localizedLabel.js'
+import { sh } from '@tpluscode/rdf-ns-builders'
 import { applyTokens } from '../lib/css'
+
+interface WrapperParams {
+  shape: RdfResource | undefined
+  inner: TemplateResult | string
+  property?: NamedNode | NamedNode[]
+  header?: boolean
+}
 
 class WrapperDirective extends Directive {
   private _element?: HTMLElement
+  private _header?: HTMLElement
   private _wrapped?: HTMLElement
   private _selector: string | null = null
 
@@ -19,18 +32,26 @@ class WrapperDirective extends Directive {
   }
 
   render(
-    group: RdfResource | undefined,
-    inner: TemplateResult | string,
-    property: NamedNode | NamedNode[] = [roadshow.selector, roadshow.container],
+    {
+      shape,
+      inner,
+      property = [roadshow.selector, roadshow.container],
+      header = true,
+    }: WrapperParams,
   ) {
-    const selector = group?.pointer.out(property).value
+    const selector = shape?.pointer.out(property).value
     if (!selector) {
       return inner
+    }
+    const headerLevel = shape.pointer.out(roadshow.propertyHeaderLevel)
+    if (header && !this._header && isLiteral(headerLevel)) {
+      this._header = document.createElement(`h${fromRdf(headerLevel.term)}`)
+      render(html`${localizedLabel(shape, { property: sh.name })}`, this._header)
     }
 
     if (this._element && this._selector === selector) {
       render(inner, this._element)
-      return this._wrapped
+      return html`${this._header} ${this._wrapped}`
     }
 
     let element: HTMLElement | undefined | null
@@ -53,7 +74,7 @@ class WrapperDirective extends Directive {
       return parent
     }, element)
 
-    return this._wrapped
+    return html`${this._header} ${this._wrapped}`
   }
 
   private static __createElementTree(selectorString: string) {
