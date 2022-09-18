@@ -10,6 +10,10 @@ export class CanvasIconList extends CanvasShellBase(LitElement) {
           list-style: none;
         }
         
+        :host(:empty) {
+          display: none;
+        }
+        
         :host([inline]) ul {
           columns: 4;
         }
