@@ -1,0 +1,31 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX knossos: <https://hypermedia.app/knossos#>
+PREFIX code: <https://code.described.at/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  knossos:supportedBy sh:NodeShape ;
+  hydra:method "GET" ;
+  code:implementedBy
+    [
+      a code:EcmaScript ;
+      code:link <node:@hydrofoil/labyrinth/resource#get> ;
+    ] ;
+  knossos:beforeSend
+    [
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/creta-labs/cache#setHeaders> ;
+        ] ;
+      code:arguments
+        [
+          code:name "cache-control" ;
+          code:value "max-age=3600, stale-while-revalidate=120"
+        ],
+        [
+          code:name "etag" ;
+          code:value true
+        ] ;
+    ] ;
+.

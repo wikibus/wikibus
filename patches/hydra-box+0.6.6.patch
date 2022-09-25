@@ -1,0 +1,38 @@
+diff --git a/node_modules/hydra-box/lib/middleware/apiHeader.js b/node_modules/hydra-box/lib/middleware/apiHeader.js
+index 8751fbc..33546b7 100644
+--- a/node_modules/hydra-box/lib/middleware/apiHeader.js
++++ b/node_modules/hydra-box/lib/middleware/apiHeader.js
+@@ -1,15 +1,32 @@
+ const { Router } = require('express')
++const $rdf = require('rdf-ext')
++const etag = require('etag')
++const toCanonical = require('rdf-dataset-ext/toCanonical.js')
++const preconditions = require('express-preconditions');
+
+ function factory (api) {
+   const router = new Router()
+
++  const apiEtag = etag(toCanonical(api.dataset))
++
+   router.use((req, res, next) => {
+     res.setLink(api.term.value, 'http://www.w3.org/ns/hydra/core#apiDocumentation')
+
+     next()
+   })
+
+-  router.get(api.path, (req, res, next) => {
++  router.get(api.path,
++    preconditions({
++      async stateAsync() {
++        return {
++          etag: apiEtag
++        }
++      }
++    }),
++    (req, res, next) => {
++
++    res.setHeader('cache-control', 'max-age=600, stale-while-revalidate=180')
++    res.setHeader('etag', apiEtag)
+     res.dataset(api.dataset).catch(next)
+   })
+

@@ -20,8 +20,6 @@ sh:NodeShape
 .
 
 </api/ShapesCollection>
-  a hydra:Class ;
-  hydra:apiDocumentation <> ;
   hyper-query:memberInclude _:NodeShapeInclude ;
 .
 
@@ -51,6 +49,32 @@ _:NodeShapeInclude
 schema:WebPage
   a hydra:Class ;
   hydra:apiDocumentation <> ;
+  hydra:supportedOperation
+    [
+      hydra:method "GET" ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/labyrinth/resource#get> ;
+        ] ;
+      knossos:beforeSend
+        [
+          code:implementedBy
+            [
+              a code:EcmaScript ;
+              code:link <node:@hydrofoil/creta-labs/cache#setHeaders> ;
+            ] ;
+          code:arguments
+            [
+              code:name "cache-control" ;
+              code:value "max-age=86400, stale-while-revalidate=120" ;
+            ],
+            [
+              code:name "etag" ;
+              code:value true ;
+            ] ;
+        ] ;
+    ] ;
   hyper-query:include
     [
     # schema:isBasedOn/(dash:shape|schema:hasPart)*
@@ -77,6 +101,7 @@ schema:WebPage
 
 knossos:TemplatedResource
   a hydra:Class ;
+  rdfs:subClassOf schema:WebPage ;
   hydra:apiDocumentation <> ;
   knossos:preprocessResponse
     [
@@ -84,6 +109,32 @@ knossos:TemplatedResource
         [
           a code:EcmaScriptModule ;
           code:link <file:apps/api/lib/TemplatedResource.js#fillTemplate> ;
+        ] ;
+    ] ;
+  hydra:supportedOperation
+    [
+      hydra:method "GET" ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/labyrinth/resource#get> ;
+        ] ;
+      knossos:beforeSend
+        [
+          code:implementedBy
+            [
+              a code:EcmaScript ;
+              code:link <node:@hydrofoil/creta-labs/cache#setHeaders> ;
+            ] ;
+          code:arguments
+            [
+              code:name "cache-control" ;
+              code:value "max-age=0, stale-while-revalidate=3600"
+            ],
+            [
+              code:name "etag" ;
+              code:value true ;
+            ] ;
         ] ;
     ] ;
 .

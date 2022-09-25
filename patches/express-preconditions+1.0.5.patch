@@ -1,0 +1,46 @@
+diff --git a/node_modules/express-preconditions/lib/preconditions.js b/node_modules/express-preconditions/lib/preconditions.js
+index 9e44ecc..143be4f 100644
+--- a/node_modules/express-preconditions/lib/preconditions.js
++++ b/node_modules/express-preconditions/lib/preconditions.js
+@@ -25,13 +25,9 @@ let ifMatch = {
+             q = typeof state.etag !== 'undefined';
+         }
+ 
+-        else if (typeof state.etag === 'undefined') {
+-          return 404;
+-        }
+-      
+         // If the field-value is a list of entity-tags, the condition is false if none
+         // of the listed tags match the entity-tag of the selected representation.
+-        else {
++        else if (state.etag) {
+             q = toList(header).find(etag => ETag.strongMatch(etag, state.etag)) !== undefined;
+         }
+ 
+@@ -54,7 +50,7 @@ let ifNoneMatch = {
+ 
+         // If the field-value is a list of entity-tags, the condition is false if one
+         // of the listed tags match the entity-tag of the selected representation.
+-        else {
++        else if (state.etag) {
+             q = toList(header).find(etag => ETag.weakMatch(etag, state.etag)) === undefined;
+         }
+ 
+diff --git a/node_modules/express-preconditions/lib/resourceState.js b/node_modules/express-preconditions/lib/resourceState.js
+index ee445bd..5e39496 100644
+--- a/node_modules/express-preconditions/lib/resourceState.js
++++ b/node_modules/express-preconditions/lib/resourceState.js
+@@ -20,6 +20,13 @@ function getResourceStateAsync(req) {
+         });
+         http
+             .request(options, res => {
++              if (!res.ok) {
++                reject({
++                  status: res.statusCode,
++                  message: res.statusMessage
++                })
++              }
++
+                 resolve({
+                     etag: res.headers['etag'],
+                     lastModified: res.headers['last-modified']

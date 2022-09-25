@@ -1,5 +1,5 @@
 import $rdf from '@rdfjs/data-model'
-import { hydra, rdf, schema, sh } from '@tpluscode/rdf-ns-builders'
+import { hydra, schema } from '@tpluscode/rdf-ns-builders'
 import type { DispatchParam, Store } from '../store'
 
 export default function effects(store: Store) {
@@ -8,16 +8,9 @@ export default function effects(store: Store) {
   return {
     'core/clientReady': (Hydra: DispatchParam<'core', 'clientReady'>) => {
       /* eslint-disable no-param-reassign */
-      Hydra.cacheStrategy.shouldLoad = function shouldLoad({ representation }) {
-        return !representation.root?.hasType(hydra.ApiDocumentation) &&
-          // TODO: implement proper resource cache headers
-          !representation.root?.hasType(sh.NodeShape) &&
-          !representation.root?.pointer
-            .out(hydra.manages)
-            .has(hydra.property, rdf.type)
-            .has(hydra.object, sh.NodeShape)
-            .terms.length
-      }
+      // Disables the default behaviour which sends conditional headers
+      Hydra.cacheStrategy.requestCacheHeaders = () => ({})
+
       Hydra.defaultHeaders = async ({ uri }): Promise<HeadersInit> => {
         const { auth0 } = store.getState().auth
         const sameOrigin = new URL(uri, window.location.origin).origin === window.location.origin

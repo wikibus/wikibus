@@ -26,6 +26,14 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
       schema:name "resource" ;
       code:implementedBy
         [
+          a code:EcmaScriptModule ;
+          code:link <node:@hydrofoil/creta-labs/cache.js#preconditions> ;
+        ] ;
+    ],
+    [
+      schema:name "resource" ;
+      code:implementedBy
+        [
           a code:EcmaScript ;
           code:link <node:@hydrofoil/creta-labs/redirect.js#webPage> ;
         ] ;

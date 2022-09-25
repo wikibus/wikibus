@@ -1,0 +1,27 @@
+PREFIX code: <https://code.described.at/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX knossos: <https://hypermedia.app/knossos#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  knossos:supportedBy foaf:Agent ;
+  hydra:method "GET" ;
+  code:implementedBy
+    [
+      a code:EcmaScript ;
+      code:link <node:@hydrofoil/labyrinth/resource#get> ;
+    ] ;
+  knossos:beforeSend
+    [
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/creta-labs/cache#setHeaders> ;
+        ] ;
+      code:arguments
+        [
+          code:name "cache-control" ;
+          code:value "max-age=3600"
+        ] ;
+    ] ;
+.

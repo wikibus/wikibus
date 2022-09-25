@@ -17,6 +17,7 @@ interface Locals {
   operation?: RuntimeOperation
   resource?: GraphPointer
   loading?: Promise<void>
+  etag?: string | null
 }
 
 export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
@@ -30,8 +31,12 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
     if (!this.state.locals.loading) {
       this.state.locals.loading = this.params.core.client?.loadResource(pointer.value!, {
         Prefer: 'return=minimal',
+        'cache-control': 'no-cache',
       })
-        .then(({ representation }) => representation?.root)
+        .then(({ response, representation }) => {
+          this.state.locals.etag = response?.xhr.headers.get('etag')
+          return representation?.root
+        })
         .then(async (resource) => {
           if (resource) {
             const operation = getOperation(this, resource)
@@ -64,7 +69,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
     return html`
       <shaperone-form .shapes="${shape?.pointer}" .resource="${resource}">
         <canvas-button slot="buttons" 
-                       @click="${submit(operation)}" 
+                       @click="${submit(operation, this.state.locals.etag)}" 
                        .label="${operation.title}"
                        ?disabled="${operationState?.loading || false}"></canvas-button>
         ${operationState?.loading ? html`<sl-spinner slot="buttons"></sl-spinner>` : ''}
@@ -73,7 +78,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
   },
 }
 
-function submit(operation: RuntimeOperation) {
+function submit(operation: RuntimeOperation, etag: string | undefined | null) {
   return (e: any) => {
     const form: ShaperoneForm = e.target?.parentElement
 
@@ -83,6 +88,9 @@ function submit(operation: RuntimeOperation) {
       detail: {
         operation,
         payload: form.resource,
+        headers: {
+          'if-match': etag,
+        },
       },
     }))
   }
