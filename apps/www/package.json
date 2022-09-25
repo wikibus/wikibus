@@ -19,7 +19,7 @@
     "@hydrofoil/shaperone-wc-shoelace": "^0.1.8",
     "@hydrofoil/shell": "^0.3.3",
     "@hydrofoil/shell-auth-auth0": "^0.3.3",
-    "@hydrofoil/shell-operations": "^0.2.5",
+    "@hydrofoil/shell-operations": "^0.2.6",
     "@hydrofoil/shell-routing": "^0.2.6",
     "@hydrofoil/vocabularies": "^0.3.1",
     "@iframely/embed.js": "^1.8.0",

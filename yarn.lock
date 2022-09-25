@@ -1537,10 +1537,10 @@
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     alcaeus "^2.2.3"
 
-"@hydrofoil/shell-operations@^0.2.2", "@hydrofoil/shell-operations@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.5.tgz#79212da0bda30c52618a13659ca08686af182baa"
-  integrity sha512-g+quoP10DwN07r1S82tJTZIADAuM4/zKfNjQPXMV7UNtmA3Pe8r2gP/UAgpWzrBl3RQ4/nwKfd4B7s2h3a6Yww==
+"@hydrofoil/shell-operations@^0.2.2", "@hydrofoil/shell-operations@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/shell-operations/-/shell-operations-0.2.6.tgz#b7cb2c608c3b856f7029c73064815fca8cefe227"
+  integrity sha512-3zcl6Pk1eHoxRUW77kTpvQpMzu25nqFh4lVddNKNA2QVHIXW9CZVr+HWduyoCs7wSAcoeKOj1MAfu9dklEooWQ==
   dependencies:
     "@captaincodeman/rdx" "^1.0.0-rc.9"
     "@hydrofoil/shell-core" "^0.1.4"
@@ -3237,7 +3237,7 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
-"@types/etag@*":
+"@types/etag@*", "@types/etag@^1.8.1":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@types/etag/-/etag-1.8.1.tgz#593ca8ddb43acb3db049bd0955fd64d281ab58b9"
   integrity sha512-bsKkeSqN7HYyYntFRAmzcwx/dKW4Wa+KVMTInANlI72PWLQmOpZu96j0OqHZGArW4VQwCmJPteQlXaUDeOB0WQ==

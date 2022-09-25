@@ -13,4 +13,21 @@ prefix knossos: <https://hypermedia.app/knossos#>
       a code:EcmaScript ;
       code:link <node:@hydrofoil/labyrinth/collection#get> ;
     ] ;
+  knossos:beforeSend
+    [
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/creta-labs/cache#setHeaders> ;
+        ] ;
+      code:arguments
+        [
+          code:name "cache-control" ;
+          code:value "max-age=0, stale-while-revalidate=600"
+        ],
+        [
+          code:name "etag" ;
+          code:value true
+        ] ;
+    ] ;
 .
