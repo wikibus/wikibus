@@ -81,6 +81,10 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
 function submit(operation: RuntimeOperation, etag: string | undefined | null) {
   return (e: any) => {
     const form: ShaperoneForm = e.target?.parentElement
+    const headers: HeadersInit = {}
+    if (etag && operation.types.has(schema.ReplaceAction)) {
+      headers['if-match'] = etag
+    }
 
     form.dispatchEvent(new CustomEvent('submit-operation', {
       bubbles: true,
@@ -88,9 +92,7 @@ function submit(operation: RuntimeOperation, etag: string | undefined | null) {
       detail: {
         operation,
         payload: form.resource,
-        headers: {
-          'if-match': etag,
-        },
+        headers,
       },
     }))
   }
