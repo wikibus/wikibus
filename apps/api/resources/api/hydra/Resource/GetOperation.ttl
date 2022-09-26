@@ -23,8 +23,12 @@ prefix knossos: <https://hypermedia.app/knossos#>
         ] ;
       code:arguments
         [
+          code:name "cache-control" ;
+          code:value "no-transform" ;
+        ] ,
+        [
           code:name "etag" ;
-          code:value true
+          code:value true ;
         ] ;
     ] ;
 .
