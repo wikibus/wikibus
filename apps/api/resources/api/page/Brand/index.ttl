@@ -109,10 +109,18 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:class wba:Tram ;
             ],
             [
-              sh:name "Chassis" ;
+              sh:name "Trailers" ;
               sh:path skos:narrower ;
               sh:group _:SidebarGroup ;
               sh:order 4 ;
+              dash:viewer canvas:SidebarRelatedResourceViewer ;
+              sh:class wba:Trailer ;
+            ],
+            [
+              sh:name "Chassis" ;
+              sh:path skos:narrower ;
+              sh:group _:SidebarGroup ;
+              sh:order 5 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
               sh:class wba:Chassis ;
             ] ;
