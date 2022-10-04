@@ -1,46 +1,47 @@
+PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 
-wba:Brand
+wbo:Brand
   a rdfs:Class ;
   rdfs:subClassOf schema:Brand ;
 .
 
-wba:Vehicle
+wbo:Vehicle
   a rdfs:Class ;
   rdfs:subClassOf schema:Product ;
   rdfs:subClassOf schema:Vehicle ;
   rdfs:label "Vehicle" ;
 .
 
-wba:BusOrCoach
+wbo:BusOrCoach
   a rdfs:Class ;
-  rdfs:subClassOf schema:BusOrCoach, wba:Vehicle ;
+  rdfs:subClassOf schema:BusOrCoach, wbo:Vehicle ;
   rdfs:label "Bus or coach" ;
 .
 
-wba:Trolleybus
+wbo:Trolleybus
   a rdfs:Class ;
-  rdfs:subClassOf wba:Vehicle ;
+  rdfs:subClassOf wbo:Vehicle ;
   rdfs:label "Trolleybus" ;
 .
 
-wba:Tram
+wbo:Tram
   a rdfs:Class ;
-  rdfs:subClassOf wba:Vehicle ;
+  rdfs:subClassOf wbo:Vehicle ;
   rdfs:label "Tram" ;
 .
 
-wba:Chassis
+wbo:Chassis
   a rdfs:Class ;
-  rdfs:subClassOf wba:Vehicle ;
+  rdfs:subClassOf wbo:Vehicle ;
   rdfs:label "Chassis" ;
 .
 
-wba:Trailer
+wbo:Trailer
   a rdfs:Class ;
-  rdfs:subClassOf wba:Vehicle ;
+  rdfs:subClassOf wbo:Vehicle ;
   rdfs:label "Trailer" ;
 .

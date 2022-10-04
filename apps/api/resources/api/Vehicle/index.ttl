@@ -7,7 +7,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX code: <https://code.described.at/>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 prefix knossos: <https://hypermedia.app/knossos#>
 prefix sh1: <https://hypermedia.app/shaperone#>
 
@@ -138,5 +138,5 @@ _:TypeValidationProperty
 
 _:MandatoryTypes
   rdf:first <> ;
-  rdf:rest ( wba:Vehicle )
+  rdf:rest ( wbo:Vehicle )
 .

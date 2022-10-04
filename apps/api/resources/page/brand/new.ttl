@@ -1,7 +1,6 @@
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
-prefix wba: <https://wikibus.org/api#>
 prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX code: <https://code.described.at/>

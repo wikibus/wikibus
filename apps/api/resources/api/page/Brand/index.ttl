@@ -9,7 +9,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
 <>
@@ -48,7 +48,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
             ],
             [
               sh:name "Wikipedia abstract" ;
-              sh:path ( wba:dbpediaLink dbo:abstract ) ;
+              sh:path ( wbo:dbpediaLink dbo:abstract ) ;
               sh:group _:DefaultBodyGroup ;
               dash:viewer dash:SingleLiteralViewer ;
               rs:propertyContainer "p" ;
@@ -62,7 +62,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
                   sh:alternativePath
                     (
                       rdfs:seeAlso
-                      ( wba:dbpediaLink [ sh:inversePath schema:about ] )
+                      ( wbo:dbpediaLink [ sh:inversePath schema:about ] )
                     )
                 ] ;
               sh:class fabio:WikipediaEntry ;
@@ -90,7 +90,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:group _:SidebarGroup ;
               sh:order 1 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:BusOrCoach ;
+              sh:class wbo:BusOrCoach ;
             ],
             [
               sh:name "Trolleybuses" ;
@@ -98,7 +98,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:group _:SidebarGroup ;
               sh:order 2 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Trolleybus ;
+              sh:class wbo:Trolleybus ;
             ],
             [
               sh:name "Trams" ;
@@ -106,7 +106,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:group _:SidebarGroup ;
               sh:order 3 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Tram ;
+              sh:class wbo:Tram ;
             ],
             [
               sh:name "Trailers" ;
@@ -114,7 +114,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:group _:SidebarGroup ;
               sh:order 4 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Trailer ;
+              sh:class wbo:Trailer ;
             ],
             [
               sh:name "Chassis" ;
@@ -122,13 +122,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
               sh:group _:SidebarGroup ;
               sh:order 5 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Chassis ;
+              sh:class wbo:Chassis ;
             ] ;
         ] ;
     ],
     [
       sh:order 55 ;
-      sh:path wba:socialMediaPostings ;
+      sh:path wbo:socialMediaPostings ;
       dash:viewer dash:DetailsViewer ;
       sh:group </page/_element/main#leftSidebar> ;
       sh:node

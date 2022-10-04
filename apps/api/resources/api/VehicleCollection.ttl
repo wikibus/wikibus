@@ -5,7 +5,6 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX code: <https://code.described.at/>
 prefix knossos: <https://hypermedia.app/knossos#>
-PREFIX wba: <https://schema.wikibus.org/>
 
 <>
   a hydra:Class ;

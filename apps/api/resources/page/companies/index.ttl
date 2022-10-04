@@ -2,7 +2,6 @@ PREFIX dash: <http://datashapes.org/dash#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
-prefix wba: <https://wikibus.org/api#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 

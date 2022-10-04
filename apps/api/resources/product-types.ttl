@@ -1,6 +1,6 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 
 <>
@@ -8,7 +8,7 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
   hydra:memberAssertion
   [
     hydra:property rdfs:subClassOf ;
-    hydra:object wba:Vehicle ;
+    hydra:object wbo:Vehicle ;
   ] ;
   hydra:search
   [

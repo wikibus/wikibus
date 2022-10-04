@@ -6,7 +6,6 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
-prefix wba: <https://wikibus.org/api#>
 
 <>
   a sh:NodeShape, rs:ViewShape ;
