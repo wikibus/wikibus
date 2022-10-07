@@ -25,5 +25,9 @@ PREFIX schema: <http://schema.org/>
     [
       schema:name "busphoto.eu" ;
       sh:pattern "^https://busphoto.eu/photo/" ;
+    ],
+    [
+      schema:name "Twitter" ;
+      sh:pattern "^https://twitter.com" ;
     ] ;
 .
