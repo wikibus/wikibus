@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
@@ -30,6 +31,7 @@ PREFIX wba: <https://wikibus.org/api#>
 
 <#Shape>
   a sh:NodeShape, rs:ViewShape ;
+  owl:imports </api/schema/WebPage> , </page/_element/main> ;
   sh:targetNode <> ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property

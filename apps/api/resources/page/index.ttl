@@ -19,6 +19,7 @@ PREFIX wba: <https://wikibus.org/api#>
 <#Shape>
   a sh:NodeShape, rs:ViewShape ;
   sh:targetNode <> ;
+  owl:imports </api/schema/WebPage> , </page/_element/main> ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
     [

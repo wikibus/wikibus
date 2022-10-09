@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX dash: <http://datashapes.org/dash#>
@@ -8,6 +9,10 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a sh:NodeShape, rs:ViewShape ;
+  owl:imports
+    </api/schema/WebPage> ,
+    </page/_element/main#rightSidebar> ,
+    </page/_element/sub-menu> ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
     [

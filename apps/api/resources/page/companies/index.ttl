@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
@@ -34,6 +35,10 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 <#Shape>
   a sh:NodeShape, rs:ViewShape ;
   sh:targetNode <> ;
+  owl:imports
+    </api/schema/WebPage> ,
+    </page/_element/main> ,
+    </page/_element/sub-menu> ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
     [

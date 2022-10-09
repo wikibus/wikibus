@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -6,6 +7,9 @@ prefix rs: <https://hypermedia.app/roadshow#>
 
 <>
   a sh:NodeShape ;
+  owl:imports
+    </api/schema/WebPage> ,
+    </page/_element/main>;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
   [
