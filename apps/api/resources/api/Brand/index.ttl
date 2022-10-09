@@ -9,11 +9,11 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix knossos: <https://hypermedia.app/knossos#>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
-  rdfs:subClassOf wba:Brand, hydra:Resource, </api/VehicleConcept> ;
+  rdfs:subClassOf wbo:Brand, hydra:Resource, </api/VehicleConcept> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -147,7 +147,7 @@ _:Other
 .
 
 _:DefaultModelPrefixProperty
-  sh:path wba:modelPrefix  ;
+  sh:path wbo:modelPrefix  ;
   sh:name "Default model prefix" ;
   sh:order 2 ;
   sh:maxCount 1 ;

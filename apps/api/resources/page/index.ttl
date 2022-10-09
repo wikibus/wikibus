@@ -5,6 +5,7 @@ PREFIX dash: <http://datashapes.org/dash#>
 prefix hydra: <http://www.w3.org/ns/hydra/core#>
 prefix rs: <https://hypermedia.app/roadshow#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX wba: <https://wikibus.org/api#>
 
 <>
   a </api/page/MainEntityInlined> ;

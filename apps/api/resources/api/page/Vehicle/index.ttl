@@ -10,7 +10,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 prefix rs: <https://hypermedia.app/roadshow#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
-PREFIX wba: <https://schema.wikibus.org/>
+PREFIX wbo: <https://schema.wikibus.org/>
 
 <>
   a sh:NodeShape ;
@@ -44,7 +44,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:group _:LeftSidebarGroup ;
               sh:order 30 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Vehicle ;
+              sh:class wbo:Vehicle ;
             ],
             [
               sh:name "Narrower" ;
@@ -52,7 +52,7 @@ PREFIX wba: <https://schema.wikibus.org/>
               sh:group _:LeftSidebarGroup ;
               sh:order 40 ;
               dash:viewer canvas:SidebarRelatedResourceViewer ;
-              sh:class wba:Vehicle ;
+              sh:class wbo:Vehicle ;
             ] ;
         ] ;
     ],
@@ -74,7 +74,7 @@ PREFIX wba: <https://schema.wikibus.org/>
             ],
             [
               sh:name "Wikipedia abstract" ;
-              sh:path ( wba:dbpediaLink dbo:abstract ) ;
+              sh:path ( wbo:dbpediaLink dbo:abstract ) ;
               sh:group _:DefaultBodyGroup ;
               dash:viewer dash:SingleLiteralViewer ;
               rs:propertyContainer "p" ;
@@ -88,7 +88,7 @@ PREFIX wba: <https://schema.wikibus.org/>
                   sh:alternativePath
                     (
                       rdfs:seeAlso
-                      ( wba:dbpediaLink [ sh:inversePath schema:about ] )
+                      ( wbo:dbpediaLink [ sh:inversePath schema:about ] )
                     )
                 ] ;
               sh:class fabio:WikipediaEntry ;
@@ -106,7 +106,7 @@ PREFIX wba: <https://schema.wikibus.org/>
         ] ;
     ],
     [
-      sh:path wba:socialMediaPostings ;
+      sh:path wbo:socialMediaPostings ;
       dash:viewer dash:DetailsViewer ;
       sh:group </page/_element/main#bothSidebars> ;
       sh:order 51 ;
