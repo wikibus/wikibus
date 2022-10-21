@@ -18,13 +18,16 @@ export const renderer: MultiRenderer = {
     const collection = this.parent?.pointer
 
     return html`<masonry-layout class="grid-container clearfix">
-      ${repeat(members.toArray().sort(byAnnotatedPaths(collection)), member => member.value, renderMember)}
+      ${repeat(members.toArray().sort(byAnnotatedPaths(collection)), member => member.value, renderMember(this.state.propertyShape.pointer))}
     </masonry-layout>`
   },
 }
 
-function renderMember(member: GraphPointer) {
-  const image = member.out(schema.image).out(schema.contentUrl)
+function renderMember(shape: GraphPointer) {
+  const titlePath = shape.out(hex.titlePath)
+  return (member: GraphPointer) => {
+    const image = member.out(schema.image).out(schema.contentUrl)
 
-  return html`<canvas-portfolio-item .resource="${member}" .image="${image}"></canvas-portfolio-item>`
+    return html`<canvas-portfolio-item .resource="${member}" .image="${image}" .titlePath="${titlePath}"></canvas-portfolio-item>`
+  }
 }

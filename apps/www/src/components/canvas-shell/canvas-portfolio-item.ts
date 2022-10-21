@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { GraphPointer } from 'clownface'
 import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
 import { skos, schema } from '@tpluscode/rdf-ns-builders'
+import { findNodes } from 'clownface-shacl-path'
 import CanvasShellBase from './CanvasShellBase'
 
 @customElement('canvas-portfolio-item')
@@ -58,6 +59,13 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
   @property({ type: Object })
   public resource!: GraphPointer
 
+  @property({ type: Object })
+  public titlePath?: GraphPointer
+
+  private get _titlePath() {
+    return this.titlePath || this.resource.node(skos.prefLabel)
+  }
+
   render() {
     return html`
       <div class="portfolio-image">
@@ -74,7 +82,7 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
       </div>
 
       <div class="portfolio-desc">
-        <h3><a href="${this.resource.value}">${taggedLiteral(this.resource.out(skos.prefLabel))}</a></h3>
+        <h3><a href="${this.resource.value}">${taggedLiteral(findNodes(this.resource, this._titlePath))}</a></h3>
       </div>
     `
   }
@@ -82,9 +90,10 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
   renderImage() {
     /* eslint-disable lit/no-invalid-html */
     const imageUrl = this.resource.out(schema.image).out(schema.contentUrl).value
+    const title = findNodes(this.resource, this._titlePath)
     return imageUrl
-      ? html`<img src="${imageUrl}" alt="${taggedLiteral(this.resource.out(skos.prefLabel))} Logo">`
-      : html`<img src="https://dummyimage.com/300x200/f5f5f5/64bfdb&amp;text=${taggedLiteral(this.resource.out(skos.prefLabel))}"
+      ? html`<img src="${imageUrl}" alt="${taggedLiteral(title)} Logo">`
+      : html`<img src="https://dummyimage.com/300x200/f5f5f5/64bfdb&amp;text=${taggedLiteral(title)}"
                 alt="${taggedLiteral(this.resource.out(skos.prefLabel))} Logo">`
   }
 }

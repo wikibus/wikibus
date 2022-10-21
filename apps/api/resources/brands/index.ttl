@@ -16,7 +16,7 @@ PREFIX code: <https://code.described.at/>
           skos:prefLabel
         ) ;
     ] ;
-  hydra:limit 40 ;
+  hydra:limit 39 ;
   query:order
     (
       [ query:path skos:notation ]

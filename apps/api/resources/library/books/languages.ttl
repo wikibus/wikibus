@@ -1,0 +1,17 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  a </api/LanguageCollection> ;
+  hydra:memberAssertion
+    [
+      hydra:property dcterms:language ;
+      hydra:subject
+        [
+          a sh:NodeShape ;
+          sh:targetClass bibo:Book ;
+        ] ;
+    ] ;
+.

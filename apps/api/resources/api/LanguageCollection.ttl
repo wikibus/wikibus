@@ -1,0 +1,37 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX code: <https://code.described.at/>
+PREFIX mads: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+PREFIX query: <https://hypermedia.app/query#>
+
+<>
+  rdfs:subClassOf hydra:Collection ;
+  hex:memberShape
+    [
+      sh:property
+        [
+          sh:path rdfs:label ;
+        ] ;
+    ] ;
+  hydra:memberAssertion
+    [
+      hydra:property rdf:type ;
+      hydra:object mads:Language ;
+    ] ;
+  query:memberDescribeStrategy
+    [
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <node:@hydrofoil/creta-labs/describeStrategy.js#constructByNodeShape> ;
+        ] ;
+      code:arguments
+        [
+          code:name "shapePath" ;
+          code:value hex:memberShape ;
+        ] ;
+    ] ;
+.

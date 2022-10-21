@@ -1,0 +1,8 @@
+prefix wba: <https://wikibus.org/api#>
+
+<>
+  wba:brochures </library/brochures> ;
+  wba:books </library/books> ;
+  wba:magazines </library/magazines> ;
+  wba:wishlist </library/wishlist> ;
+.

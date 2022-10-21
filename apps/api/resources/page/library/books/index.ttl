@@ -1,0 +1,32 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX schema: <http://schema.org/>
+
+<>
+  a schema:WebPage ;
+  hydra:title "Books" ;
+  dash:shape <books/shape> ;
+  schema:hasPart </page/_element/header> ;
+  schema:hasPart [ a schema:WPFooter ] ;
+  schema:mainEntity </library/books> ;
+  schema:newResourceLink </page/book/new> ;
+  schema:breadcrumb
+    [
+      schema:itemListElement
+        [
+          schema:item </> ;
+          schema:name "Home" ;
+          schema:nextItem
+            [
+              schema:item </library> ;
+              schema:name "Library" ;
+              schema:nextItem
+                [
+                  schema:item </library/books> ;
+                  schema:name "Books" ;
+                ] ;
+            ]
+        ] ;
+    ] ;
+.

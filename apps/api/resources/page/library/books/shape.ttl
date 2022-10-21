@@ -1,0 +1,55 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+
+<>
+  a sh:NodeShape, rs:ViewShape ;
+  owl:imports
+    </api/schema/WebPage> ,
+    </page/_element/main#rightSidebar> ,
+    </page/_element/sub-menu> ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:path schema:mainEntity ;
+      sh:group </page/_element/main#rightSidebar> ;
+      rs:dereference true ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path hydra:member ;
+              dash:viewer hex:CollectionMembersViewer ;
+              sh:group _:MainContentGroup ;
+              hex:titlePath dcterms:title ;
+            ] ;
+          sh:property
+            [
+              sh:path hydra:search ;
+              dash:viewer hex:SearchFormViewer ;
+              sh:group _:SidebarGroup ;
+            ] ;
+        ] ;
+    ] ,
+    [
+      sh:name "New" ;
+      sh:path schema:newResourceLink ;
+      sh:group </page/_element/sub-menu> ;
+      dash:viewer canvas:SubMenuLink ;
+    ] .
+
+_:SidebarGroup
+  rs:selector "div[slot=right]" ;
+  sh:order 2 ;
+.
+
+_:MainContentGroup
+  sh:order 1 ;
+.

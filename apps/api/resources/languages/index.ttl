@@ -1,0 +1,15 @@
+PREFIX code: <https://code.described.at/>
+PREFIX knossos: <https://hypermedia.app/knossos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mads: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+
+<>
+  a
+    </api/LanguageCollection> ;
+.

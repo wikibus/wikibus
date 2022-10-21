@@ -1,0 +1,53 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX mads: <http://www.loc.gov/mads/rdf/v1#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+<>
+  a rdfs:Class, sh:NodeShape ;
+  sh:targetClass bibo:Book ;
+  owl:imports </api/ImageObject> ;
+  sh:property
+    _:TitleProperty ,
+    _:IsbnProperty ,
+    _:LanguageProperty ,
+    _:ImageProperty ;
+.
+
+_:TitleProperty
+  sh:name "Title" ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:order 10 ;
+.
+
+_:IsbnProperty
+  sh:name "ISBN" ;
+  sh:maxCount 1 ;
+  sh:minLength 1 ;
+  sh:order 20 ;
+.
+
+_:LanguageProperty
+  sh:name "Language" ;
+  sh:minCount 1 ;
+  sh:class mads:Language ;
+  hydra:collection </languages> ;
+  dash:editor dash:InstancesSelectEditor ;
+  sh:order 30 ;
+.
+
+_:ImageProperty
+  sh:name "Cover image" ;
+  sh:path schema:image ;
+  sh:maxCount 1 ;
+  sh:nodeKind sh:BlankNode ;
+  dash:editor dash:DetailsEditor ;
+  sh:order 40 ;
+  sh:node </api/ImageObject> ;
+.

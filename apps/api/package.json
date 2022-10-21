@@ -8,9 +8,9 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@hydrofoil/creta-labs": "^0.1.4",
-    "@hydrofoil/knossos": "^0.9.8",
-    "@hydrofoil/labyrinth": "^0.13.5",
+    "@hydrofoil/creta-labs": "^0.1.6",
+    "@hydrofoil/knossos": "^0.9.10",
+    "@hydrofoil/labyrinth": "^0.13.10",
     "@hydrofoil/vocabularies": "^0.3.1",
     "@rdfjs/namespace": "^2",
     "@tpluscode/rdf-ns-builders": "^2",

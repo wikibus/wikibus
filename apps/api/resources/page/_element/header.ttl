@@ -33,6 +33,13 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
                 dash:propertyRole hex:MainMenuRole ;
               ],
               [
+                sh:order 3 ;
+                sh:path wba:library ;
+                sh:name "Library"@en ;
+                dash:viewer dash:HeaderLinkViewer ;
+                dash:propertyRole hex:MainMenuRole ;
+              ],
+              [
                 sh:order 100 ;
                 sh:path </api#currentUser> ;
                 dash:viewer hex:AuthStatusViewer ;

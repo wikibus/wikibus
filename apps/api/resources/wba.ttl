@@ -45,3 +45,7 @@ wbo:Trailer
   rdfs:subClassOf wbo:Vehicle ;
   rdfs:label "Trailer" ;
 .
+
+wbo:Book
+  rdfs:subClassOf schema:Book, bibo:Book ;
+.

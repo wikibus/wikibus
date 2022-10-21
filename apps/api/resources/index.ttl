@@ -11,6 +11,7 @@ prefix hydra: <http://www.w3.org/ns/hydra/core#>
   a </api/Entrypoint> ;
   wba:home </> ;
   wba:catalog </catalog> ;
+  wba:library </library> ;
   hydra:collection </api/shapes> ;
   </api#currentUser> </user/current> ;
   schema:image

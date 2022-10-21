@@ -1,0 +1,20 @@
+PREFIX schema: <http://schema.org/>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix hyper-query: <https://hypermedia.app/query#>
+
+<>
+  a hydra:Class ;
+  rdfs:subClassOf hydra:Collection ;
+  hydra:memberAssertion
+    [
+      hydra:property rdf:type ;
+      hydra:object bibo:Book ;
+    ] ;
+  hyper-query:memberInclude
+    [
+      hyper-query:path schema:image ;
+    ] ;
+.

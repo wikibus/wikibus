@@ -1,0 +1,78 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX schema: <http://schema.org/>
+prefix rs: <https://hypermedia.app/roadshow#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX wba: <https://wikibus.org/api#>
+
+<>
+  a </api/page/MainEntityInlined> ;
+  hydra:title "Wikibus.org Library" ;
+  hydra:description "Here you can explore the collection of books and other physical and digital media about public transport" ;
+  schema:hasPart </page/_element/header> ;
+  schema:hasPart [ a schema:WPFooter ] ;
+  schema:mainEntity </library> ;
+  schema:breadcrumb
+    [
+      schema:itemListElement
+        [
+          schema:item </> ;
+          schema:name "Home" ;
+          schema:nextItem
+            [
+              schema:item <> ;
+              schema:name "Library" ;
+            ]
+        ] ;
+    ] ;
+.
+
+<#Shape>
+  a sh:NodeShape, rs:ViewShape ;
+  owl:imports </api/schema/WebPage> , </page/_element/main> ;
+  sh:targetNode <> ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 40 ;
+      sh:path ( schema:mainEntity wba:brochures ) ;
+      sh:name "brochures" ;
+      sh:description "Brochures and other promotional publications" ;
+      sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "icon-files" ;
+    ],
+    [
+      sh:order 50 ;
+      sh:path ( schema:mainEntity wba:books ) ;
+      sh:name "books" ;
+      sh:description "Books about public transport history and manufacturers, etc." ;
+      sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "icon-book2" ;
+    ],
+    [
+      sh:order 60 ;
+      sh:path ( schema:mainEntity wba:magazines ) ;
+      sh:name "magazines" ;
+      sh:description "Periodicals such as magazines and manufaturer bulletins, as well as yearly catalogs" ;
+      sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "icon-news" ;
+    ],
+    [
+      sh:order 70 ;
+      sh:path ( schema:mainEntity wba:wishlist ) ;
+      sh:name "wishlist" ;
+      sh:description "Requests to digitise brochures from the collection" ;
+      sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "icon-line-shopping-cart" ;
+    ] ;
+.

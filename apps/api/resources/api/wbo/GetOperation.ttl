@@ -1,0 +1,15 @@
+PREFIX code: <https://code.described.at/>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX knossos: <https://hypermedia.app/knossos#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  a hydra:Operation ;
+  knossos:supportedBy bibo:Book ;
+  hydra:method "GET" ;
+  code:implementedBy
+    [
+      a code:EcmaScript ;
+      code:link <node:@hydrofoil/labyrinth/resource#get> ;
+    ] ;
+.

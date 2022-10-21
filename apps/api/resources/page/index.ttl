@@ -19,14 +19,24 @@ PREFIX wba: <https://wikibus.org/api#>
 <#Shape>
   a sh:NodeShape, rs:ViewShape ;
   sh:targetNode <> ;
-  owl:imports </api/schema/WebPage> , </page/_element/main> ;
+  owl:imports </api/schema/WebPage>, </page/_element/main> ;
   sh:and ( </api/schema/WebPage> ) ;
   sh:property
     [
       sh:order 50 ;
-      sh:path (schema:mainEntity wba:catalog) ;
+      sh:path ( schema:mainEntity wba:catalog ) ;
       sh:name "catalog" ;
       sh:description "Producers, brands and their products" ;
+      sh:group </page/_element/main> ;
+      dash:viewer canvas:FeaturedBoxViewer ;
+      rs:attributes "[center][effect][outline].col_one_third" ;
+      canvas:icon "icon-bus-alt" ;
+    ],
+    [
+      sh:order 51 ;
+      sh:path ( schema:mainEntity wba:library ) ;
+      sh:name "library" ;
+      sh:description "Collection of physical and digital media about public transport" ;
       sh:group </page/_element/main> ;
       dash:viewer canvas:FeaturedBoxViewer ;
       rs:attributes "[center][effect][outline].col_one_third" ;

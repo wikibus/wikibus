@@ -1,3 +1,4 @@
+PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX schema: <http://schema.org/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -19,7 +20,17 @@ prefix knossos: <https://hypermedia.app/knossos#>
     </api/shapes>,
     </user/current>,
     </user/anonymous>,
-    </social-media-postings> ;
-  acl:accessToClass </api/Brand>, </api/Company>, </api/Vehicle>, schema:WebPage, sh:Shape, knossos:TemplatedResource ;
+    </social-media-postings>,
+    </library>,
+    </library/books> ;
+  acl:accessToClass
+    </api/Brand>,
+    </api/Company>,
+    </api/Vehicle>,
+    </api/LanguageCollection>,
+    schema:WebPage,
+    sh:Shape,
+    knossos:TemplatedResource,
+    bibo:Book ;
   acl:mode acl:Read ;
 .
