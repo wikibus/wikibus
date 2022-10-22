@@ -1,0 +1,14 @@
+diff --git a/node_modules/@hydrofoil/roadshow/RoadshowController.js b/node_modules/@hydrofoil/roadshow/RoadshowController.js
+index dcca482..d23a795 100644
+--- a/node_modules/@hydrofoil/roadshow/RoadshowController.js
++++ b/node_modules/@hydrofoil/roadshow/RoadshowController.js
+@@ -68,9 +68,6 @@ export class RoadshowController {
+             state.decorators = this.renderers.getDecorators(context);
+         }
+         this.renderers.beginInitialize(context);
+-        if (state.loading.size) {
+-            return this.renderers.get(roadshow.LoadingViewer)[0];
+-        }
+         if (state.loadingFailed.size) {
+             return this.renderers.get(roadshow.LoadingFailedViewer)[0];
+         }
