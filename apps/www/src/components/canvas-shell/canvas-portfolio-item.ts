@@ -4,6 +4,7 @@ import { GraphPointer } from 'clownface'
 import { taggedLiteral } from '@rdfjs-elements/lit-helpers/taggedLiteral.js'
 import { skos, schema } from '@tpluscode/rdf-ns-builders'
 import { findNodes } from 'clownface-shacl-path'
+import { isGraphPointer } from 'is-graph-pointer'
 import CanvasShellBase from './CanvasShellBase'
 
 @customElement('canvas-portfolio-item')
@@ -63,7 +64,7 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
   public titlePath?: GraphPointer
 
   private get _titlePath() {
-    return this.titlePath || this.resource.node(skos.prefLabel)
+    return isGraphPointer(this.titlePath) ? this.titlePath : this.resource.node(skos.prefLabel)
   }
 
   render() {
