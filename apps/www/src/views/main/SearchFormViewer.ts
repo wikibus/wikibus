@@ -7,10 +7,12 @@ import { hyper_query as query } from '@hydrofoil/vocabularies/builders/strict'
 import type { IriTemplate } from '@rdfine/hydra'
 import { ShaperoneForm } from '@hydrofoil/shaperone-wc'
 import { fromPointer } from '@rdfine/hydra/lib/Resource'
-import { isResource } from 'is-graph-pointer'
+import { isGraphPointer, isResource } from 'is-graph-pointer'
+import clownface, { GraphPointer } from 'clownface'
+import $rdf from 'rdf-ext'
 
 interface Locals {
-  template?: IriTemplate
+  mappings?: GraphPointer
   templateLoaded?: boolean
   templateLoading?: boolean
 }
@@ -30,22 +32,16 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
       factory: this.params.core.client?.resources.factory,
     })
 
-    this.state.locals.template = this.state.locals.template || searchable.search
-    const { template } = this.state.locals
-
-    const shape = template?.pointer.out(dash.shape).toArray().shift()
-
-    // TODO: it should be somehow natively supported to exclude paging properties for mappings
-    const mappings = searchablePtr
-      .out(query.templateMappings)
-      .deleteOut(hydra.pageIndex)
+    const shape = searchable.search?.pointer.out(dash.shape).toArray().shift()
+    const mappings = this.state.locals.mappings || cloneMappings(searchablePtr)
+    this.state.locals.mappings = mappings
 
     return html`
       <div class="widget clearfix">
         <h4>${localizedLabel(shape)}</h4>
         <shaperone-form .shapes="${shape}" .resource="${mappings}">
           <canvas-button slot="buttons" 
-                         @click="${submit(template)}" 
+                         @click="${submit(searchable.search)}" 
                          label="Search"></canvas-button>
         </shaperone-form>
       </div>
@@ -65,4 +61,17 @@ function submit(template: IriTemplate | undefined) {
       }))
     }
   }
+}
+
+function cloneMappings(searchable: GraphPointer) {
+  const original = searchable.out(query.templateMappings)
+  if (isGraphPointer(original)) {
+    return clownface({ dataset: cbd(original) }).node(original)
+  }
+
+  return clownface({ dataset: $rdf.dataset() }).blankNode()
+}
+
+function cbd(pointer: GraphPointer) {
+  return pointer.dataset.match(pointer.term)
 }
