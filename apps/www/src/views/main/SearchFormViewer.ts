@@ -41,7 +41,7 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
         <h4>${localizedLabel(shape)}</h4>
         <shaperone-form .shapes="${shape}" .resource="${mappings}">
           <canvas-button slot="buttons" 
-                         @click="${submit(searchable.search)}" 
+                         @click="${submit(searchable.search, mappings)}" 
                          label="Search"></canvas-button>
         </shaperone-form>
       </div>
@@ -49,11 +49,12 @@ export const renderer: Renderer<FocusNodeViewContext<Locals>> = {
   },
 }
 
-function submit(template: IriTemplate | undefined) {
+function submit(template: IriTemplate | undefined, mappings: GraphPointer) {
   return (e: any) => {
     const form = e.target.parentElement as ShaperoneForm
     if (template && form.value) {
-      const id = template.expand(form.value)
+      [...mappings.dataset.match(null, null, $rdf.literal(''))].forEach(q => mappings.dataset.delete(q))
+      const id = template.expand(mappings)
       form.dispatchEvent(new CustomEvent('show-resource', {
         bubbles: true,
         composed: true,
@@ -66,12 +67,12 @@ function submit(template: IriTemplate | undefined) {
 function cloneMappings(searchable: GraphPointer) {
   const original = searchable.out(query.templateMappings)
   if (isGraphPointer(original)) {
-    return clownface({ dataset: cbd(original) }).node(original)
+    return clownface({ dataset: cbd(original) }).node(original.term)
   }
 
   return clownface({ dataset: $rdf.dataset() }).blankNode()
 }
 
 function cbd(pointer: GraphPointer) {
-  return pointer.dataset.match(pointer.term)
+  return $rdf.dataset([...pointer.dataset.match(pointer.term)])
 }
