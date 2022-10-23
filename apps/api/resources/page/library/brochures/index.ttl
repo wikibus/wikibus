@@ -5,12 +5,12 @@ PREFIX schema: <http://schema.org/>
 
 <>
   a schema:WebPage ;
-  hydra:title "Books" ;
-  dash:shape <books/shape> ;
+  hydra:title "Brochures" ;
+  dash:shape <brochures/shape> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
-  schema:mainEntity </library/books> ;
-  # schema:newResourceLink </page/book/new> ;
+  schema:mainEntity </library/brochures> ;
+  # schema:newResourceLink </page/brochure/new> ;
   schema:breadcrumb
     [
       schema:itemListElement
@@ -23,8 +23,8 @@ PREFIX schema: <http://schema.org/>
               schema:name "Library" ;
               schema:nextItem
                 [
-                  schema:item </library/books> ;
-                  schema:name "Books" ;
+                  schema:item </library/brochures> ;
+                  schema:name "Brochures" ;
                 ] ;
             ]
         ] ;

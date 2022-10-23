@@ -22,6 +22,8 @@ prefix knossos: <https://hypermedia.app/knossos#>
     </user/anonymous>,
     </social-media-postings>,
     </library>,
+    </library/brochures>,
+    </library/brochures/contributors>,
     </library/books> ;
   acl:accessToClass
     </api/Brand>,

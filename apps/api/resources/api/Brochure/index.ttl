@@ -1,0 +1,8 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix wbo: <https://schema.wikibus.org/>
+
+<>
+  a hydra:Class ;
+  rdfs:subClassOf wbo:Brochure ;
+.

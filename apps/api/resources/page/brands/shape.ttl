@@ -44,6 +44,8 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
               sh:order 3 ;
               sh:path hydra:member ;
               dash:viewer hex:CollectionMembersViewer ;
+              canvas:portfolioImageHeight '200px' ;
+              canvas:portfolioImageWidth '300px' ;
             ]
         ] ;
     ],

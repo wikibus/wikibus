@@ -1,0 +1,17 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix wbo: <https://schema.wikibus.org/>
+
+<>
+  a </api/LanguageCollection> ;
+  hydra:memberAssertion
+    [
+      hydra:property dcterms:language ;
+      hydra:subject
+        [
+          a sh:NodeShape ;
+          sh:targetClass wbo:Brochure ;
+        ] ;
+    ] ;
+.

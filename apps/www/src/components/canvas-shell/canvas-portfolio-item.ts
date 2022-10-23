@@ -17,16 +17,16 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
       
       .portfolio-image {
         position: relative;
-        height: 200px;
-        width: 300px;
+        height: var(--portfolio-image-height);
+        width: var(--portfolio-image-width);
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .portfolio-image img {
-        max-width: 300px;
-        max-height: 200px;
+        max-width: var(--portfolio-image-width, 100%);
+        max-height: var(--portfolio-image-height);
       }
       
       .portfolio-overlay {

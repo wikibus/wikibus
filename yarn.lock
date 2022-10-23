@@ -1388,10 +1388,10 @@
     stream-to-array "^2.3.0"
     stream-to-promise "^3.0.0"
 
-"@hydrofoil/labyrinth@^0.13.10", "@hydrofoil/labyrinth@^0.13.7", "@hydrofoil/labyrinth@^0.13.9":
-  version "0.13.10"
-  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.13.10.tgz#00ceefe924bf1e9a36c98c8cdc78e04550e43bc0"
-  integrity sha512-HveRb+3oLCHWPE9+T1RxdjRiIo2jIU8TM/6svwiYgxZYIdtXEFZEirTtm+kF7BeZmFXYc96pOjQx+Gs5vbdN5g==
+"@hydrofoil/labyrinth@^0.13.11", "@hydrofoil/labyrinth@^0.13.7", "@hydrofoil/labyrinth@^0.13.9":
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/@hydrofoil/labyrinth/-/labyrinth-0.13.11.tgz#314bfc2478ec273e84a1c4f3c230f551112040f6"
+  integrity sha512-7h94esEZRa5cr3CPKJnT7xrO/LVZjmhd8lbqNBYfUM2Wju1VKOQndmTKnL/NKX58dn3gKjR9TOdNZZzJoOxZ1Q==
   dependencies:
     "@hydrofoil/shape-to-query" "^0.2.0"
     "@hydrofoil/vocabularies" "^0.3.3"

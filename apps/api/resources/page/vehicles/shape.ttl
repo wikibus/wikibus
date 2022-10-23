@@ -27,6 +27,8 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               sh:path hydra:member ;
               dash:viewer hex:CollectionMembersViewer ;
               sh:group _:MainContentGroup ;
+              canvas:portfolioImageHeight '200px' ;
+              canvas:portfolioImageWidth '300px' ;
             ] ;
           sh:property
             [

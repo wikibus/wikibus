@@ -1,0 +1,93 @@
+PREFIX ldp: <http://www.w3.org/ns/ldp#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX schema: <http://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix query: <https://hypermedia.app/query#>
+PREFIX code: <https://code.described.at/>
+
+<>
+  a </api/Brochure/Collection> ;
+  hydra:limit 20 ;
+  hydra:view
+    [
+      a hex:OrderedCollectionView ;
+      hex:orderedBy
+        (
+          dcterms:title
+        ) ;
+    ] ;
+  query:order
+    (
+      [ query:path dcterms:modified ; query:direction ldp:Descending ]
+    ) ;
+  hydra:search
+    [
+      hydra:template "{?page,title,lang,contributor}" ;
+      hydra:mapping
+        [
+          hydra:variable "page" ;
+          hydra:property hydra:pageIndex ;
+        ],
+        [
+          hydra:variable "title" ;
+          hydra:property dcterms:title ;
+          query:filter
+            [
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/filter.js#fullTextSearch> ;
+                ] ;
+              code:arguments
+                [
+                  code:name "flags" ;
+                  code:value "i" ;
+                ] ;
+            ] ;
+        ],
+        [
+          hydra:variable "lang" ;
+          hydra:property dcterms:language ;
+          hydra:variableRepresentation hydra:ExplicitRepresentation ;
+        ] ,
+        [
+          hydra:variable "contributor" ;
+          hydra:property schema:contributor ;
+          hydra:variableRepresentation hydra:ExplicitRepresentation ;
+        ] ;
+      dash:shape
+        [
+          rdfs:label "Search" ;
+          sh:property
+            [
+              sh:path dcterms:title ;
+              sh:name "Title" ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 1 ;
+            ],
+            [
+              sh:path dcterms:language ;
+              sh:name "Language" ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 2 ;
+              hydra:collection <brochures/languages> ;
+              dash:editor dash:InstancesSelectEditor ;
+            ],
+            [
+              sh:path schema:contributor ;
+              sh:name "Contributor" ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:order 3 ;
+              hydra:collection <brochures/contributors> ;
+              dash:editor dash:InstancesSelectEditor ;
+            ] ;
+        ] ;
+    ] ;
+.

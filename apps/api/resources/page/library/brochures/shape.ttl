@@ -29,8 +29,7 @@ prefix canvas: <https://themes.semicolonweb.com/canvas/>
               dash:viewer hex:CollectionMembersViewer ;
               sh:group _:MainContentGroup ;
               hex:titlePath dcterms:title ;
-              canvas:portfolioImageHeight '200px' ;
-              canvas:portfolioImageWidth '300px' ;
+              canvas:columns 4 ;
             ] ;
           sh:property
             [

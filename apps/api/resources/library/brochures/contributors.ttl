@@ -1,0 +1,20 @@
+PREFIX schema: <http://schema.org/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+prefix wbo: <https://schema.wikibus.org/>
+
+<>
+  a hydra:Collection ;
+  hydra:memberAssertion
+    [
+      hydra:property schema:contributor ;
+      hydra:subject
+        [
+          a sh:NodeShape ;
+          sh:targetClass wbo:Brochure ;
+        ] ;
+    ] ;
+.

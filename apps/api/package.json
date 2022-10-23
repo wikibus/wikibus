@@ -10,7 +10,7 @@
   "dependencies": {
     "@hydrofoil/creta-labs": "^0.1.6",
     "@hydrofoil/knossos": "^0.9.10",
-    "@hydrofoil/labyrinth": "^0.13.10",
+    "@hydrofoil/labyrinth": "^0.13.11",
     "@hydrofoil/vocabularies": "^0.3.1",
     "@rdfjs/namespace": "^2",
     "@tpluscode/rdf-ns-builders": "^2",
