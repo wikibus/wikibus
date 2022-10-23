@@ -100,12 +100,13 @@ insert {
 } where {
   #{resourceValues}
 
-  ?res rdfs:seeAlso ?wikiPage .
-  filter(regex(str(?wikiPage), "wikipedia.org"))
+  ?res rdfs:seeAlso ?ourPage .
+  filter(regex(str(?ourPage), "wikipedia.org"))
 
   bind(iri(concat(str(?res), "#dbpedia")) as ?dbpedia)
 
   service <https://query.wikidata.org/sparql> {
+    ?ourPage schema:about ?wikidataId .
     ?wikiPage schema:about ?wikidataId .
     ?wikiPage schema:inLanguage ?lang .
     ?wikiPage schema:name ?wikiTitle
