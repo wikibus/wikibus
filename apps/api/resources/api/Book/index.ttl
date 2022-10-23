@@ -9,6 +9,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 <>
   a rdfs:Class, sh:NodeShape ;
+  rdfs:subClassOf bibo:Book ;
   sh:targetClass bibo:Book ;
   owl:imports </api/ImageObject> ;
   sh:property
