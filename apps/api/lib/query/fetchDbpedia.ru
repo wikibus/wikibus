@@ -95,12 +95,15 @@ insert {
   graph ?dbpedia {
     ?wikiPage a fabio:WikipediaEntry .
     ?wikiPage schema:inLanguage ?lang .
-    ?wikiPage rdfs:label ?label
+    ?wikiPage rdfs:label ?label .
+    ?res rdfs:seeAlso ?wikiPage .
   }
 } where {
   #{resourceValues}
 
-  ?res rdfs:seeAlso ?ourPage .
+  GRAPH ?res {
+    ?res rdfs:seeAlso ?ourPage .
+  }
   filter(regex(str(?ourPage), "wikipedia.org"))
 
   bind(iri(concat(str(?res), "#dbpedia")) as ?dbpedia)
