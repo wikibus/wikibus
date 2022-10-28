@@ -26,6 +26,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.6.9",
     "@hydrofoil/knossos": "^0.9.5",
+    "@hydrofoil/talos": "^0.4.12",
     "@opentelemetry/auto-instrumentations-node": "^0.31.2",
     "@opentelemetry/exporter-trace-otlp-grpc": "^0.31.0",
     "@opentelemetry/resources": "^1.5.0",
@@ -43,7 +44,6 @@
   },
   "devDependencies": {
     "@babel/register": "^7.18.9",
-    "@hydrofoil/talos": "^0.4.12",
     "@open-wc/eslint-config": "^7.0.0",
     "@tpluscode/eslint-config": "^0.3.2",
     "@types/chai": "^4.3.3",
