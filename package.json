@@ -10,11 +10,13 @@
     "copier:root": "copier -a .copier-app.yaml -s apps/api update",
     "bootstrap": "dotenv -c local -- run-s bootstrap:*",
     "bootstrap:dev": "wsrun -msc bootstrap resources resources.dev",
+    "bootstrap:prod": "wsrun -msc bootstrap resources",
     "bootstrap:vocabs": "talos put-vocabs --endpoint $SPARQL_ENDPOINT --user $SPARQL_USER --password $SPARQL_PASSWORD --extraVocabs @zazuko/rdf-vocabularies,skos",
     "start": "node --loader ts-node/esm --inspect=0.0.0.0:36377 --inspect ./node_modules/.bin/knossos serve $SPARQL_ENDPOINT --name $APP_NAME --user $SPARQL_USER --password $SPARQL_PASSWORD",
     "precommit": "yarn lint && wsrun -m -c precommit",
     "build": "yarn wsrun -m -c build",
-    "serve": "dotenv -e .env.lando -- node server.js",
+    "preprod": "run-s bootstrap:vocabs bootstrap:prod",
+    "prod": "node server.js",
     "copier:api": "copier -a .copier-api.yaml update",
     "test": "mocha --recursive packages/**/*.test.ts"
   },
@@ -34,8 +36,10 @@
     "express": "^4.17.1",
     "express-conditional-middleware": "^2.1.1",
     "express-history-api-fallback": "^2.2.1",
+    "npm-run-all": "^4.1.5",
     "path-to-regexp": "^6.2.0",
-    "sparql-http-client": "^2.4.1"
+    "sparql-http-client": "^2.4.1",
+    "wsrun": "^5.2.4"
   },
   "devDependencies": {
     "@babel/register": "^7.18.9",
@@ -64,14 +68,12 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "mocha": "^10.0.0",
-    "npm-run-all": "^4.1.5",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "sinon-chai": "^3.7.0",
     "standard": "^17.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.5.4",
-    "wsrun": "^5.2.4",
     "yarn-deduplicate": "^5.0.0"
   },
   "workspaces": [

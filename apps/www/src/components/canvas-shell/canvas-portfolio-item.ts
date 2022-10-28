@@ -90,7 +90,9 @@ export class CanvasPortfolioItem extends CanvasShellBase(LitElement) {
 
   renderImage() {
     /* eslint-disable lit/no-invalid-html */
-    const imageUrl = this.resource.out(schema.image).out(schema.contentUrl).value
+    const image = this.resource.out(schema.image)
+    const thumbUrl = image.out(schema.thumbnail).out(schema.contentUrl).value
+    const imageUrl = thumbUrl || image.out(schema.contentUrl).value
     const title = findNodes(this.resource, this._titlePath)
     return imageUrl
       ? html`<img src="${imageUrl}" alt="${taggedLiteral(title)} Logo">`
