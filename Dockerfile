@@ -12,9 +12,9 @@ RUN yarn --frozen-lockfile \
   && yarn cache clean
 
 # then, install required modules for the runtime
-RUN yarn global add yarn-deduplicate \
+RUN yarn global add yarn-deduplicate patch-package \
   && yarn --production --frozen-lockfile \
-  && yarn global remove yarn-deduplicate \
+  && yarn global remove yarn-deduplicate patch-package \
   && yarn cache clean
 
 # some default environment variables
