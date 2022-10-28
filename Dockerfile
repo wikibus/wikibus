@@ -21,4 +21,7 @@ RUN yarn global add yarn-deduplicate patch-package \
 ENV PORT="8080"
 
 EXPOSE 8080
+
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD [ "/app/entrypoint.sh" ]
