@@ -16,7 +16,7 @@
     "precommit": "yarn lint && wsrun -m -c precommit",
     "build": "yarn wsrun -m -c build",
     "preprod": "run-s bootstrap:vocabs bootstrap:prod",
-    "prod": "node server.js",
+    "prod": "node -r ./apps/tracing.cjs server.js",
     "copier:api": "copier -a .copier-api.yaml update",
     "test": "mocha --recursive packages/**/*.test.ts"
   },
