@@ -20,7 +20,7 @@ services:
     moreHttpPorts:
       - 36377
   www:
-    type: node
+    type: node:16
     command: yarn wsrun -p @wikibus/app -c start --disable-host-check --host 0.0.0.0
     ssl: true
     scanner: false
