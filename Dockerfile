@@ -5,6 +5,10 @@ WORKDIR /app
 # copy everything
 COPY . ./
 
+ENV OIDC_AUDIENCE "$OIDC_AUDIENCE"
+ENV OIDC_URL "$OIDC_URL"
+ENV OIDC_CLIENT_ID "$OIDC_CLIENT_ID"
+
 # first do the build
 RUN yarn --frozen-lockfile \
   && yarn build \
