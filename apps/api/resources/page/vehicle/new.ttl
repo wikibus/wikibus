@@ -7,7 +7,7 @@ PREFIX code: <https://code.described.at/>
 
 <>
   a schema:WebPage ;
-  dash:shape </api/page/Vehicle/New> ;
+  dash:shape </api/page/NewResource> ;
   hydra:title "New vehicle" ;
   schema:mainEntity </vehicles> ;
   schema:hasPart </page/_element/header> ;

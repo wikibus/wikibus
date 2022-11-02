@@ -15,7 +15,7 @@ prefix rs: <https://hypermedia.app/roadshow#>
   [
     sh:order 50 ;
     sh:path schema:mainEntity ;
-    sh:name "vehicle" ;
+    sh:name "resource" ;
     sh:group </page/_element/main> ;
     dash:viewer hex:OperationFormInlineViewer ;
     hex:operation schema:CreateAction ;

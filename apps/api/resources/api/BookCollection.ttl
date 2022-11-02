@@ -1,3 +1,4 @@
+PREFIX code: <https://code.described.at/>
 PREFIX schema: <http://schema.org/>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -16,5 +17,17 @@ prefix hyper-query: <https://hypermedia.app/query#>
   hyper-query:memberInclude
     [
       hyper-query:path schema:image ;
+    ] ;
+  hydra:supportedOperation
+    [
+      a schema:CreateAction ;
+      hydra:method "POST" ;
+      hydra:expects </api/Book> ;
+      hydra:title "Create" ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/knossos/collection#CreateMember> ;
+        ] ;
     ] ;
 .
