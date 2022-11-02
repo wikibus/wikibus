@@ -6,7 +6,6 @@ const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumenta
 const { Resource } = require('@opentelemetry/resources')
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions')
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc')
-const { ExpressLayerType } = require('@opentelemetry/instrumentation-express')
 
 const metadata = new Metadata()
 metadata.set('x-honeycomb-team', process.env.HONEYCOMB_TEAM)
@@ -22,15 +21,7 @@ const sdk = new NodeSDK({
     [SemanticResourceAttributes.SERVICE_NAME]: 'wikibus',
   }),
   traceExporter,
-  instrumentations: [getNodeAutoInstrumentations({
-    '@opentelemetry/instrumentation-express':{
-      requestHook(span, info) {
-        if (info.layerType === ExpressLayerType.REQUEST_HANDLER) {
-          span.setAttribute('express.path', info.request.path)
-        }
-      }
-    }
-  })],
+  instrumentations: [getNodeAutoInstrumentations()],
 })
 
 sdk.start()
