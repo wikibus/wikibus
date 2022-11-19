@@ -1,0 +1,8 @@
+{
+  "name": "@wikibus/core",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@rdfjs/namespace": "^2"
+  }
+}
