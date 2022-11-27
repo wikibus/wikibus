@@ -64,3 +64,21 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
         ] ;
     ] ;
 .
+
+<> </api#cloudinary> _:cloudinary .
+_:cloudinary
+  schema:hasPart _:cloudinary-brochures-folder ;
+  schema:hasPart _:cloudinary-books-folder ;
+  schema:hasPart
+    [
+      schema:name "cloudinary:default_transformation" ;
+      schema:value "default_downsize" ;
+    ],
+    [
+      schema:name "cloudinary:thumbnail_transformation" ;
+      schema:value "media_lib_thumb" ;
+    ] ;
+.
+
+_:cloudinary-brochures-folder schema:name "cloudinary:brochures-folder" .
+_:cloudinary-books-folder schema:name "cloudinary:books-folder" .

@@ -7,3 +7,9 @@ export const contains: Filter = ({ subject, object, variable }) => sparql`
   
   FILTER( REGEX(${variable('label')}, "${object.value}", "i") )
 `
+
+export const startsWith: Filter = ({ subject, object, variable }) => sparql`
+  ${subject} ${rdfs.label} ${variable('label')} .
+  
+  FILTER( STRSTARTS(lcase(${variable('label')}), lcase("${object.value}")) )
+`

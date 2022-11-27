@@ -1,0 +1,8 @@
+PREFIX acl: <http://www.w3.org/ns/auth/acl#>
+
+<>
+  a acl:Authorization ;
+  acl:agentGroup </user/group/editors> ;
+  acl:accessToClass </api/ImageObject/Upload> ;
+  acl:mode acl:Write ;
+.

@@ -1,0 +1,72 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX fabio: <http://purl.org/spar/fabio/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dash: <http://datashapes.org/dash#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix rs: <https://hypermedia.app/roadshow#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+PREFIX wbo: <https://schema.wikibus.org/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+<>
+  a sh:NodeShape ;
+  owl:imports
+    </api/schema/WebPage>,
+    </page/_element/main#rightSidebar>,
+    </page/_element/main>,
+    </page/_element/sub-menu> ;
+  sh:and ( </api/schema/WebPage> ) ;
+  sh:property
+    [
+      sh:order 50 ;
+      sh:path schema:mainEntity ;
+      sh:name "brand" ;
+      sh:group </page/_element/main#rightSidebar> ;
+      rs:dereference true ;
+      dash:viewer dash:DetailsViewer ;
+      sh:node
+        [
+          sh:property
+            [
+              sh:path schema:image ;
+              sh:maxCount 1 ;
+              dash:viewer hex:ImageViewer ;
+              sh:group _:DefaultBodyGroup ;
+              sh:order 10 ;
+            ],
+            [
+              sh:name "Title" ;
+              sh:path dcterms:title ;
+              sh:group _:SidebarGroup ;
+              sh:order 20 ;
+              rs:decorator canvas:SidebarWidget ;
+            ];
+        ] ;
+    ],
+    [
+      sh:name "Edit" ;
+      sh:path schema:mainEntity ;
+      dash:viewer hex:ResponseLinkViewer ;
+      <https://www.w3.org/ns/iana/link-relations/relation> "edit-form" ;
+      sh:group </page/_element/sub-menu> ;
+    ] ;
+.
+
+_:ImageGroup
+  a sh:PropertyGroup ;
+.
+
+_:DefaultBodyGroup
+  sh:order 1 ;
+.
+
+_:SidebarGroup
+  rs:selector "div[slot=right]" ;
+  sh:order 2 ;
+.

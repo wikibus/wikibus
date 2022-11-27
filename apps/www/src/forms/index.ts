@@ -5,6 +5,7 @@ import hydra from '@hydrofoil/shaperone-hydra'
 import * as Editors from './editors'
 import * as Components from './components'
 import * as Decorators from './decorators'
+import * as shoelaceTemplates from './templates'
 
 hydra(configure)
 configure.components.pushComponents(SL)
@@ -13,4 +14,8 @@ configure.editors.addMatchers(Editors)
 configure.renderer.setTemplates(templates)
 configure.renderer.setTemplates({
   object: Decorators.objectFilter(templates.object),
+})
+
+configure.renderer.setTemplates({
+  shoelace: shoelaceTemplates,
 })

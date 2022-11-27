@@ -1,0 +1,4 @@
+PREFIX schema: <http://schema.org/>
+
+_:cloudinary-brochures-folder schema:value "wikibus library/brochures" .
+_:cloudinary-books-folder schema:value "wikibus library/books" .

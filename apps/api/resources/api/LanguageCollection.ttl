@@ -7,7 +7,10 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX query: <https://hypermedia.app/query#>
 
+mads:authoritativeLabel rdfs:subPropertyOf rdfs:label .
+
 <>
+  a hydra:Class ;
   rdfs:subClassOf hydra:Collection ;
   hex:memberShape
     [

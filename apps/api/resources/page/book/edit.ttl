@@ -1,4 +1,3 @@
-PREFIX dash: <http://datashapes.org/dash#>
 PREFIX schema: <http://schema.org/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 prefix knossos: <https://hypermedia.app/knossos#>
@@ -6,10 +5,22 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX code: <https://code.described.at/>
 
 <>
-  a schema:WebPage ;
-  dash:shape </api/page/NewResource> ;
-  hydra:title "New book" ;
-  schema:mainEntity </library/books> ;
+  a schema:WebPage, <../book/template> ;
+  knossos:webPageShape </api/page/Edit> ;
+  knossos:resourceTemplate
+    [
+      hydra:template "/page/book/{book}/edit" ;
+      hydra:mapping
+        [
+          hydra:variable "book" ;
+          hydra:property schema:mainEntity ;
+          knossos:transformVariable
+            [
+              code:implementedBy "(value, req) => req.rdf.namedNode(`/book/${value}`)"^^code:EcmaScript ;
+            ] ;
+        ]
+    ] ;
+  hydra:title "Edit book" ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:breadcrumb
@@ -21,14 +32,14 @@ PREFIX code: <https://code.described.at/>
           schema:nextItem
             [
               schema:item </library> ;
-              schema:name "Catalog" ;
+              schema:name "Library" ;
               schema:nextItem
                 [
                   schema:item </library/books> ;
                   schema:name "Books" ;
                   schema:nextItem
                     [
-                      schema:name "New" ;
+                      schema:name "Edit" ;
                     ]
                 ]
             ]

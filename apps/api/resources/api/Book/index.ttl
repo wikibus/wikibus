@@ -9,12 +9,16 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix query: <https://hypermedia.app/query#>
+PREFIX wba: <https://wikibus.org/api#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a rdfs:Class, sh:NodeShape ;
-  rdfs:subClassOf bibo:Book ;
+  rdfs:subClassOf bibo:Book, hydra:Resource ;
   sh:targetClass bibo:Book ;
-  owl:imports </api/ImageObject> ;
+  owl:imports </api/ImageObject/Shape>, </image/upload> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -27,13 +31,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
           code:link <node:@hydrofoil/knossos/resource#PUT> ;
         ] ;
     ] ;
+  query:include
+    [
+      query:path schema:image ;
+    ] ;
   sh:property
     _:TitleProperty,
     _:IsbnProperty,
     _:LanguageProperty,
     _:ImageProperty,
     _:AuthorProperty,
-    _:PagesProperty;
+    _:PagesProperty ;
 .
 
 _:TitleProperty
@@ -49,17 +57,19 @@ _:AuthorProperty
   sh:path schema:author ;
   sh:name "Author" ;
   sh:order 20 ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
   dash:editor dash:DetailsEditor ;
   sh:node
-  [
-    sh:property
     [
-      sh:path schema:name ;
-      sh:name "Name" ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
+      rdfs:label "Person" ;
+      sh:property
+        [
+          sh:path schema:name ;
+          sh:name "Name" ;
+          sh:minCount 1 ;
+          sh:maxCount 1 ;
+        ] ;
     ] ;
-  ] ;
 .
 
 _:IsbnProperty
@@ -75,8 +85,17 @@ _:LanguageProperty
   sh:name "Language" ;
   sh:minCount 1 ;
   sh:class mads:Language ;
-  hydra:collection </languages> ;
-  dash:editor dash:InstancesSelectEditor ;
+  dash:editor dash:AutoCompleteEditor ;
+  hydra:search
+    [
+      hydra:template "/languages{?q}" ;
+      hydra:mapping
+        [
+          hydra:variable "q" ;
+          hydra:property hydra:freetextQuery ;
+          sh:minLength 2 ;
+        ] ;
+    ] ;
   sh:order 40 ;
 .
 
@@ -93,8 +112,22 @@ _:ImageProperty
   sh:name "Cover image" ;
   sh:path schema:image ;
   sh:maxCount 1 ;
-  sh:nodeKind sh:BlankNode ;
-  dash:editor dash:DetailsEditor ;
+  dash:editor canvas:ImageFormPreview ;
+  sh:or
+    (
+      [
+        sh:name "Inline image" ;
+        sh:nodeKind sh:BlankNode ;
+        dash:editor dash:DetailsEditor ;
+        sh:node </api/ImageObject/Shape> ;
+      ]
+      [
+        sh:name "Upload image" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor wba:FileUploadEditor ;
+        hex:fileUploadCollection </image/upload?folder=books> ;
+      ]
+    ) ;
   sh:order 60 ;
-  sh:node </api/ImageObject> ;
+  sh:class </api/ImageObject> ;
 .

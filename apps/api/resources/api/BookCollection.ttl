@@ -1,3 +1,5 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX knossos: <https://hypermedia.app/knossos#>
 PREFIX code: <https://code.described.at/>
 PREFIX schema: <http://schema.org/>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
@@ -12,7 +14,7 @@ prefix hyper-query: <https://hypermedia.app/query#>
   hydra:memberAssertion
     [
       hydra:property rdf:type ;
-      hydra:object bibo:Book ;
+      hydra:object </api/Book> ;
     ] ;
   hyper-query:memberInclude
     [
@@ -28,6 +30,29 @@ prefix hyper-query: <https://hypermedia.app/query#>
         [
           a code:EcmaScript ;
           code:link <node:@hydrofoil/knossos/collection#CreateMember> ;
+        ] ;
+    ] ;
+  knossos:memberTemplate
+    [
+      hydra:template "/book/{title}" ;
+      hydra:mapping
+        [
+          hydra:variable "title" ;
+          hydra:property dcterms:title ;
+          hydra:required true ;
+          knossos:transformVariable
+            [
+              code:implementedBy
+                [
+                  a code:EcmaScriptModule ;
+                  code:link <file:apps/api/lib/templateTransform.js#slugify> ;
+                ] ;
+              code:arguments
+                [
+                  code:name "prependUniqueChars" ;
+                  code:value true ;
+                ] ;
+            ] ;
         ] ;
     ] ;
 .

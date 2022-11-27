@@ -1,0 +1,27 @@
+PREFIX knossos: <https://hypermedia.app/knossos#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX code: <https://code.described.at/>
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+
+<>
+  a hydra:Class ;
+  hydra:supportedOperation
+    [
+      a schema:CreateAction ;
+      hydra:method "POST" ;
+      code:implementedBy
+        [
+          a code:EcmaScriptModule ;
+          code:link <file:apps/api/lib/MediaObject.js#upload> ;
+        ] ;
+    ] ;
+  knossos:preprocessResponse
+    [
+      code:implementedBy
+      [
+        a code:EcmaScriptModule ;
+        code:link <file:apps/api/lib/knossos/preprecessResource.js#resourceWithQuery> ;
+      ] ;
+    ] ;
+.
