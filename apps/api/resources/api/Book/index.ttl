@@ -13,6 +13,7 @@ prefix query: <https://hypermedia.app/query#>
 PREFIX wba: <https://wikibus.org/api#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
+prefix sh1: <https://hypermedia.app/shaperone#>
 
 <>
   a rdfs:Class, sh:NodeShape ;
@@ -120,12 +121,14 @@ _:ImageProperty
         sh:nodeKind sh:BlankNode ;
         dash:editor dash:DetailsEditor ;
         sh:node </api/ImageObject/Shape> ;
+        sh1:newObjectOverrides true ;
       ]
       [
         sh:name "Upload image" ;
         sh:nodeKind sh:IRI ;
         dash:editor wba:FileUploadEditor ;
         hex:fileUploadCollection </image/upload?folder=books> ;
+        sh1:newObjectOverrides true ;
       ]
     ) ;
   sh:order 60 ;
