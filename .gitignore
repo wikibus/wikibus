@@ -7,3 +7,4 @@ apps/www/dist/
 *.js
 
 apps/api/resources.dev/wikibus.trig
+.env

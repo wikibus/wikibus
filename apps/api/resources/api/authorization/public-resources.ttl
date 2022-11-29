@@ -31,8 +31,10 @@ prefix knossos: <https://hypermedia.app/knossos#>
     </api/Vehicle>,
     </api/LanguageCollection>,
     schema:WebPage,
+    schema:ImageObject,
     sh:Shape,
     knossos:TemplatedResource,
-    bibo:Book ;
+    bibo:Book,
+    </api/ImageObject/Upload>;
   acl:mode acl:Read ;
 .

@@ -8,8 +8,8 @@ PREFIX code: <https://code.described.at/>
 <>
   a schema:WebPage ;
   dash:shape </api/page/NewResource> ;
-  hydra:title "New brand" ;
-  schema:mainEntity </brands> ;
+  hydra:title "New book" ;
+  schema:mainEntity </library/books> ;
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:breadcrumb
@@ -20,12 +20,12 @@ PREFIX code: <https://code.described.at/>
           schema:name "Home" ;
           schema:nextItem
             [
-              schema:item </catalog> ;
+              schema:item </library> ;
               schema:name "Catalog" ;
               schema:nextItem
                 [
-                  schema:item </brands> ;
-                  schema:name "Brands" ;
+                  schema:item </library/books> ;
+                  schema:name "Books" ;
                   schema:nextItem
                     [
                       schema:name "New" ;

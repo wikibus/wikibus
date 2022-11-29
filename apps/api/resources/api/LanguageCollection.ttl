@@ -8,6 +8,7 @@ PREFIX hex: <https://w3id.org/hydra/extension#>
 PREFIX query: <https://hypermedia.app/query#>
 
 <>
+  a hydra:Class ;
   rdfs:subClassOf hydra:Collection ;
   hex:memberShape
     [

@@ -1,3 +1,6 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX code: <https://code.described.at/>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX mads: <http://www.loc.gov/mads/rdf/v1#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -6,20 +9,44 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX bibo: <http://purl.org/ontology/bibo/>
 PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix query: <https://hypermedia.app/query#>
+PREFIX wba: <https://wikibus.org/api#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+prefix sh1: <https://hypermedia.app/shaperone#>
 
 <>
   a rdfs:Class, sh:NodeShape ;
-  rdfs:subClassOf bibo:Book ;
+  rdfs:subClassOf bibo:Book, hydra:Resource ;
   sh:targetClass bibo:Book ;
-  owl:imports </api/ImageObject> ;
+  owl:imports </api/ImageObject/Shape>, </image/upload> ;
+  hydra:supportedOperation
+    [
+      a schema:ReplaceAction ;
+      hydra:title "Save" ;
+      hydra:method "PUT" ;
+      hydra:expects <> ;
+      code:implementedBy
+        [
+          a code:EcmaScript ;
+          code:link <node:@hydrofoil/knossos/resource#PUT> ;
+        ] ;
+    ] ;
+  query:include
+    [
+      query:path schema:image ;
+    ] ;
   sh:property
-    _:TitleProperty ,
-    _:IsbnProperty ,
-    _:LanguageProperty ,
-    _:ImageProperty ;
+    _:TitleProperty,
+    _:IsbnProperty,
+    _:LanguageProperty,
+    _:ImageProperty,
+    _:AuthorProperty,
+    _:PagesProperty ;
 .
 
 _:TitleProperty
+  sh:path dcterms:title ;
   sh:name "Title" ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
@@ -27,28 +54,83 @@ _:TitleProperty
   sh:order 10 ;
 .
 
+_:AuthorProperty
+  sh:path schema:author ;
+  sh:name "Author" ;
+  sh:order 20 ;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  dash:editor dash:DetailsEditor ;
+  sh:node
+    [
+      rdfs:label "Person" ;
+      sh:property
+        [
+          sh:path schema:name ;
+          sh:name "Name" ;
+          sh:minCount 1 ;
+          sh:maxCount 1 ;
+        ] ;
+    ] ;
+.
+
 _:IsbnProperty
+  sh:path schema:isbn ;
   sh:name "ISBN" ;
   sh:maxCount 1 ;
   sh:minLength 1 ;
-  sh:order 20 ;
+  sh:order 30 ;
 .
 
 _:LanguageProperty
+  sh:path dcterms:language ;
   sh:name "Language" ;
   sh:minCount 1 ;
   sh:class mads:Language ;
-  hydra:collection </languages> ;
-  dash:editor dash:InstancesSelectEditor ;
-  sh:order 30 ;
+  dash:editor dash:AutoCompleteEditor ;
+  hydra:search
+    [
+      hydra:template "/languages{?q}" ;
+      hydra:mapping
+        [
+          hydra:variable "q" ;
+          hydra:property hydra:freetextQuery ;
+          sh:minLength 2 ;
+        ] ;
+    ] ;
+  sh:order 40 ;
+.
+
+_:PagesProperty
+  sh:name "Number of pages" ;
+  sh:path bibo:pages ;
+  sh:order 50 ;
+  sh:datatype xsd:int ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
 .
 
 _:ImageProperty
   sh:name "Cover image" ;
   sh:path schema:image ;
   sh:maxCount 1 ;
-  sh:nodeKind sh:BlankNode ;
-  dash:editor dash:DetailsEditor ;
-  sh:order 40 ;
-  sh:node </api/ImageObject> ;
+  dash:editor canvas:ImageFormPreview ;
+  sh:or
+    (
+      [
+        sh:name "Inline image" ;
+        sh:nodeKind sh:BlankNode ;
+        dash:editor dash:DetailsEditor ;
+        sh:node </api/ImageObject/Shape> ;
+        sh1:newObjectOverrides true ;
+      ]
+      [
+        sh:name "Upload image" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor wba:FileUploadEditor ;
+        hex:fileUploadCollection </image/upload?folder=books> ;
+        sh1:newObjectOverrides true ;
+      ]
+    ) ;
+  sh:order 60 ;
+  sh:class </api/ImageObject> ;
 .

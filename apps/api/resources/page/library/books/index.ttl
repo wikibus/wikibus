@@ -10,7 +10,7 @@ PREFIX schema: <http://schema.org/>
   schema:hasPart </page/_element/header> ;
   schema:hasPart [ a schema:WPFooter ] ;
   schema:mainEntity </library/books> ;
-  # schema:newResourceLink </page/book/new> ;
+  schema:newResourceLink </page/book/new> ;
   schema:breadcrumb
     [
       schema:itemListElement
