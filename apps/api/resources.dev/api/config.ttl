@@ -2,4 +2,5 @@ PREFIX schema: <http://schema.org/>
 
 _:cloudinary-brochures-folder schema:value "wikibus test/brochures" .
 _:cloudinary-books-folder schema:value "wikibus test/books" .
+_:cloudinary-brands-folder schema:value "wikibus test/logos" .
 

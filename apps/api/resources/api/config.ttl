@@ -69,6 +69,7 @@ PREFIX knossos: <https://hypermedia.app/knossos#>
 _:cloudinary
   schema:hasPart _:cloudinary-brochures-folder ;
   schema:hasPart _:cloudinary-books-folder ;
+  schema:hasPart _:cloudinary-brands-folder ;
   schema:hasPart
     [
       schema:name "cloudinary:default_transformation" ;
@@ -81,4 +82,5 @@ _:cloudinary
 .
 
 _:cloudinary-brochures-folder schema:name "cloudinary:brochures-folder" .
+_:cloudinary-brands-folder schema:name "cloudinary:brands-folder" .
 _:cloudinary-books-folder schema:name "cloudinary:books-folder" .

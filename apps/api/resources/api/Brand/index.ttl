@@ -10,6 +10,10 @@ PREFIX schema: <http://schema.org/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix knossos: <https://hypermedia.app/knossos#>
 PREFIX wbo: <https://schema.wikibus.org/>
+PREFIX wba: <https://wikibus.org/api#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
+prefix sh1: <https://hypermedia.app/shaperone#>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
@@ -89,36 +93,26 @@ _:LogoProperty
   sh:name "Logo" ;
   sh:path schema:image ;
   sh:maxCount 1 ;
-  sh:nodeKind sh:BlankNode ;
-  dash:editor dash:DetailsEditor ;
+  dash:editor canvas:ImageFormPreview ;
   sh:order 40 ;
-  sh:node
-    [
-      rdfs:label "Image object" ;
-      sh:property
-        [
-          sh:name "Image address" ;
-          sh:path schema:contentUrl ;
-          sh:nodeKind sh:IRI ;
-          sh:minCount 1 ;
-          sh:maxCount 1 ;
-          sh:order 1 ;
-        ],
-        [
-          sh:name "Caption" ;
-          sh:path schema:caption ;
-          sh:datatype xsd:string ;
-          sh:maxCount 1 ;
-          sh:order 2 ;
-        ],
-        [
-          sh:path rdf:type ;
-          sh:hasValue schema:ImageObject ;
-          sh:defaultValue schema:ImageObject ;
-          sh:deactivated true ; # TODO reenable and automatically set in a payload hook
-          dash:hidden true ;
-        ] ;
-    ] ;
+  sh:class </api/ImageObject> ;
+  sh:or
+    (
+      [
+        sh:name "Inline image" ;
+        sh:nodeKind sh:BlankNode ;
+        dash:editor dash:DetailsEditor ;
+        sh:node </api/ImageObject/Shape> ;
+        sh1:newObjectOverrides true ;
+      ]
+      [
+        sh:name "Upload image" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor wba:FileUploadEditor ;
+        hex:fileUploadCollection </image/upload?folder=brands> ;
+        sh1:newObjectOverrides true ;
+      ]
+    ) ;
 .
 
 _:ArticleProperty
