@@ -18,6 +18,7 @@ prefix sh1: <https://hypermedia.app/shaperone#>
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
   rdfs:subClassOf wbo:Brand, hydra:Resource, </api/VehicleConcept> ;
+  owl:imports </api/ImageObject/Shape> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -131,12 +132,12 @@ _:ArticleGroup
 _:Default
   rdfs:label "Base information" ;
   sh:order 0 ;
-  knossos:groupProperty _:NameProperty, _:AlternativeNamesProperty, _:SearchVariantsProperty, _:LogoProperty ;
+  knossos:groupProperty _:NameProperty, _:AlternativeNamesProperty, _:SearchVariantsProperty ;
 .
 
 _:Other
   rdfs:label "Other" ;
-  sh:order 3 ;
+  sh:order 4 ;
   knossos:groupProperty _:SlugProperty, _:DefaultModelPrefixProperty ;
 .
 
@@ -157,4 +158,36 @@ _:LinksProperty
   sh:path rdfs:seeAlso ;
   sh:nodeKind sh:IRI ;
   dash:editor dash:URIEditor ;
+.
+
+_:LogoProperty
+  sh:name "Logo" ;
+  sh:path schema:image ;
+  sh:maxCount 1 ;
+  dash:editor canvas:ImageFormPreview ;
+  sh:order 40 ;
+  sh:class </api/ImageObject> ;
+  sh:or
+    (
+      [
+        sh:name "Inline image" ;
+        sh:nodeKind sh:BlankNode ;
+        dash:editor dash:DetailsEditor ;
+        sh:node </api/ImageObject/Shape> ;
+        sh1:newObjectOverrides true ;
+      ]
+      [
+        sh:name "Upload image" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor wba:FileUploadEditor ;
+        hex:fileUploadCollection </image/upload?folder=brands> ;
+        sh1:newObjectOverrides true ;
+      ]
+    ) ;
+.
+
+_:LogoGroup
+  rdfs:label "Logo";
+  sh:order 3 ;
+  knossos:groupProperty _:LogoProperty ;
 .

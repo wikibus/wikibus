@@ -1,3 +1,4 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX dash: <http://datashapes.org/dash#>
@@ -10,10 +11,14 @@ PREFIX code: <https://code.described.at/>
 PREFIX wbo: <https://schema.wikibus.org/>
 prefix knossos: <https://hypermedia.app/knossos#>
 prefix sh1: <https://hypermedia.app/shaperone#>
+PREFIX wba: <https://wikibus.org/api#>
+PREFIX hex: <https://w3id.org/hydra/extension#>
+prefix canvas: <https://themes.semicolonweb.com/canvas/>
 
 <>
   a hydra:Class, sh:NodeShape, rdfs:Class ;
   rdfs:subClassOf </api/VehicleConcept>, hydra:Resource ;
+  owl:imports </api/ImageObject/Shape> ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
@@ -92,7 +97,8 @@ prefix sh1: <https://hypermedia.app/shaperone#>
         ] ;
     ],
     _:LinksProperty,
-    _:TypeProperty
+    _:TypeProperty,
+    _:DepictionProperty
 .
 
 _:Default
@@ -139,4 +145,36 @@ _:TypeValidationProperty
 _:MandatoryTypes
   rdf:first <> ;
   rdf:rest ( wbo:Vehicle )
+.
+
+_:DepictionProperty
+  sh:name "Logo" ;
+  sh:path schema:image ;
+  sh:maxCount 1 ;
+  dash:editor canvas:ImageFormPreview ;
+  sh:order 40 ;
+  sh:class </api/ImageObject> ;
+  sh:or
+    (
+      [
+        sh:name "Inline image" ;
+        sh:nodeKind sh:BlankNode ;
+        dash:editor dash:DetailsEditor ;
+        sh:node </api/ImageObject/Shape> ;
+        sh1:newObjectOverrides true ;
+      ]
+      [
+        sh:name "Upload image" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor wba:FileUploadEditor ;
+        hex:fileUploadCollection </image/upload?folder=brands> ;
+        sh1:newObjectOverrides true ;
+      ]
+    ) ;
+.
+
+_:DepictionGroup
+  rdfs:label "Logo";
+  sh:order 3 ;
+  knossos:groupProperty _:DepictionProperty ;
 .
