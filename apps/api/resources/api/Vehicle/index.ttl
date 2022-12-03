@@ -148,7 +148,7 @@ _:MandatoryTypes
 .
 
 _:DepictionProperty
-  sh:name "Logo" ;
+  sh:name "Depiction" ;
   sh:path schema:image ;
   sh:maxCount 1 ;
   dash:editor canvas:ImageFormPreview ;
@@ -174,7 +174,7 @@ _:DepictionProperty
 .
 
 _:DepictionGroup
-  rdfs:label "Logo";
+  rdfs:label "Images";
   sh:order 3 ;
   knossos:groupProperty _:DepictionProperty ;
 .
