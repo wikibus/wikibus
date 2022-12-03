@@ -160,32 +160,6 @@ _:LinksProperty
   dash:editor dash:URIEditor ;
 .
 
-_:LogoProperty
-  sh:name "Logo" ;
-  sh:path schema:image ;
-  sh:maxCount 1 ;
-  dash:editor canvas:ImageFormPreview ;
-  sh:order 40 ;
-  sh:class </api/ImageObject> ;
-  sh:or
-    (
-      [
-        sh:name "Inline image" ;
-        sh:nodeKind sh:BlankNode ;
-        dash:editor dash:DetailsEditor ;
-        sh:node </api/ImageObject/Shape> ;
-        sh1:newObjectOverrides true ;
-      ]
-      [
-        sh:name "Upload image" ;
-        sh:nodeKind sh:IRI ;
-        dash:editor wba:FileUploadEditor ;
-        hex:fileUploadCollection </image/upload?folder=brands> ;
-        sh1:newObjectOverrides true ;
-      ]
-    ) ;
-.
-
 _:LogoGroup
   rdfs:label "Logo";
   sh:order 3 ;
