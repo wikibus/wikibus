@@ -1,6 +1,7 @@
 {
   "name": "@wikibus/sentry",
   "version": "0.0.0",
+  "type": "module",
   "dependencies": {
     "@sentry/node": "^7.23.0",
     "@sentry/tracing": "^7.23.0",
