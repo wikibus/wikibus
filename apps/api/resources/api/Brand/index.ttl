@@ -14,11 +14,16 @@ PREFIX wba: <https://wikibus.org/api#>
 PREFIX hex: <https://w3id.org/hydra/extension#>
 prefix canvas: <https://themes.semicolonweb.com/canvas/>
 prefix sh1: <https://hypermedia.app/shaperone#>
+prefix query: <https://hypermedia.app/query#>
 
 <>
   a rdf:Class, sh:NodeShape, hydra:Class ;
   rdfs:subClassOf wbo:Brand, hydra:Resource, </api/VehicleConcept> ;
   owl:imports </api/ImageObject/Shape> ;
+  query:include
+    [
+      query:path schema:image ;
+    ] ;
   hydra:supportedOperation
     [
       a schema:ReplaceAction ;
