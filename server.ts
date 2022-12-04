@@ -8,6 +8,7 @@ import fs from 'fs'
 import path from 'path'
 import ParsingClient from 'sparql-http-client/ParsingClient.js'
 import { fileURLToPath } from 'url'
+import * as Sentry from '@wikibus/sentry'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -18,6 +19,8 @@ const sparqlEndpoint = {
 }
 
 const app = express()
+
+Sentry.setup(app)
 
 app.enable('trust proxy')
 app.use(compression())
