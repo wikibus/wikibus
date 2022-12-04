@@ -50,6 +50,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
         ] ;
     ],
     [
+      sh:order 60 ;
+      sh:path schema:mainEntity ;
+      sh:name "comments" ;
+      sh:group </page/_element/main> ;
+      dash:viewer hex:CommentsViewer ;
+    ],
+    [
       sh:name "Edit" ;
       sh:path schema:mainEntity ;
       dash:viewer hex:ResponseLinkViewer ;

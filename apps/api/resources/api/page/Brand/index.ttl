@@ -156,7 +156,6 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
       sh:name "comments" ;
       sh:group </page/_element/main> ;
       dash:viewer hex:CommentsViewer ;
-      dash:hidden true ;
     ],
     [
       sh:name "Edit" ;

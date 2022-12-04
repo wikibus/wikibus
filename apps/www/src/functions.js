@@ -1,15 +1,4 @@
 /* eslint-disable */
-const $ = jQuery.noConflict()
-
-$.fn.inlineStyle = function (prop) {
-  return this.prop('style')[$.camelCase(prop)]
-}
-
-$.fn.doOnce = function (func) {
-  this.length && func.apply(this)
-  return this
-};
-
 (function () {
   let lastTime = 0
   const vendors = ['ms', 'moz', 'webkit', 'o']
@@ -82,6 +71,14 @@ var SEMICOLON = SEMICOLON || {};
 
 (function ($) {
   // USE STRICT
+  $.fn.inlineStyle = function (prop) {
+    return this.prop('style')[$.camelCase(prop)]
+  }
+
+  $.fn.doOnce = function (func) {
+    this.length && func.apply(this)
+    return this
+  };
 
   SEMICOLON.initialize = {
 

@@ -17,6 +17,7 @@ PREFIX wbo: <https://schema.wikibus.org/>
   a sh:NodeShape ;
   owl:imports
     </api/schema/WebPage> ,
+    </page/_element/main> ,
     </page/_element/main#bothSidebars> ,
     </page/_element/sub-menu> ;
   sh:and ( </api/schema/WebPage> ) ;
@@ -127,6 +128,13 @@ PREFIX wbo: <https://schema.wikibus.org/>
             ] ;
         ] ;
       rs:dereference true ;
+    ],
+    [
+      sh:order 60 ;
+      sh:path schema:mainEntity ;
+      sh:name "comments" ;
+      sh:group </page/_element/main> ;
+      dash:viewer hex:CommentsViewer ;
     ],
     [
       sh:name "Edit" ;
