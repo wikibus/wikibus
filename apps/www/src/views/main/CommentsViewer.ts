@@ -10,6 +10,7 @@ export const renderer: Renderer<FocusNodeViewContext> = {
     const script = document.createElement('script')
     script.src = 'https://talk.hyvor.com/embed/embed.js'
     script.crossOrigin = 'anonymous'
+    script.type = 'module'
 
     document.head.appendChild(script)
   }),
