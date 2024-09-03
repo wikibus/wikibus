@@ -10,7 +10,7 @@ services:
     command: nodemon -w packages -w apps -i apps/www --ext ts,js,ttl --exec npm start
     ssl: true
     overrides:
-      image: node:16
+      image: node:20
       ports:
         - '36377:36377'
       environment:
@@ -20,11 +20,14 @@ services:
     moreHttpPorts:
       - 36377
   www:
-    type: node:16
+    type: node:20
     command: yarn wsrun -p @wikibus/app -c start --disable-host-check --host 0.0.0.0
     ssl: true
     scanner: false
     port: 8080
+    overrides:
+      environment:
+        NODE_OPTIONS: "--openssl-legacy-provider"
   store:
     type: compose
     volumes:
