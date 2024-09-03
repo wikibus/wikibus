@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -8,6 +8,7 @@ COPY . ./
 ENV OIDC_AUDIENCE "$OIDC_AUDIENCE"
 ENV OIDC_URL "$OIDC_URL"
 ENV OIDC_CLIENT_ID "$OIDC_CLIENT_ID"
+ENV NODE_OPTIONS "--openssl-legacy-provider"
 
 # first do the build
 RUN yarn --frozen-lockfile \
