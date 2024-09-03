@@ -26,7 +26,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.6.9",
     "@hydrofoil/knossos": "^0.9.5",
-    "@hydrofoil/talos": "^0.6.2",
+    "@hydrofoil/talos": "^0.6.13",
     "@wikibus/ograph-inject-middleware": "*",
     "@wikibus/sentry": "*",
     "@zazuko/rdf-vocabularies": ">=2022.11.28",
@@ -92,8 +92,5 @@
     "require": [
       "mocha-setup.cjs"
     ]
-  },
-  "engines": {
-    "node": "~16"
   }
 }

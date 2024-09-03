@@ -4,6 +4,7 @@
   "private": "true",
   "type": "module",
   "scripts": {
+    "print-resources": "talos print --base https://wikibus.org resources",
     "bootstrap": "talos put --api $API_BASE --endpoint $SPARQL_ENDPOINT --user $SPARQL_USER --password $SPARQL_PASSWORD",
     "build": "tsc"
   },
@@ -34,7 +35,7 @@
     "uri-template-router": "^0.0.13"
   },
   "devDependencies": {
-    "@hydrofoil/talos": "^0.6.2",
+    "@hydrofoil/talos": "^0.6.13",
     "@types/clownface": "^1.5.0",
     "@types/etag": "^1.8.1",
     "@types/express": "^4",
