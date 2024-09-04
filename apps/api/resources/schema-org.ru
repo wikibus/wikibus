@@ -24,6 +24,7 @@ INSERT {
       ?s ?p ?o .
       VALUES ?s {
         schema:height
+        schema:vehicleEngine
         schema:width
         schema:brand
         schema:producer
