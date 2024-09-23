@@ -532,3 +532,16 @@ wbo:axle
     "aks"@tr,
     "oś"@pl ;
 .
+
+wbo:brakingDistance
+  a rdf:Property ;
+  rdfs:label
+    "braking distance"@en,
+    "Bremsweg"@de,
+    "distance de freinage"@fr,
+    "distancia de frenado"@es,
+    "distância de travagem"@pt,
+    "distanza di frenata"@it,
+    "Fren mesafesi"@tr,
+    "droga hamowania"@pl ;
+.
