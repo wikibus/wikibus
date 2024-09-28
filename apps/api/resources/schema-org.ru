@@ -33,6 +33,7 @@ INSERT {
         schema:minValue
         schema:additionalProperty
         schema:valueReference
+        schema:weight
       }
     }
   }
