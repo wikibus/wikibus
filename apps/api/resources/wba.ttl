@@ -545,3 +545,16 @@ wbo:brakingDistance
     "Fren mesafesi"@tr,
     "droga hamowania"@pl ;
 .
+
+wbo:fuelConsumption
+  a rdf:Property ;
+  rdfs:label
+    "fuel consumption"@en,
+    "Kraftstoffverbrauch"@de,
+    "consommation de carburant"@fr,
+    "consumo de combustible"@es,
+    "consumo de combustível"@pt,
+    "consumo di carburante"@it,
+    "Yakıt tüketimi"@tr,
+    "zużycie paliwa"@pl ;
+.
