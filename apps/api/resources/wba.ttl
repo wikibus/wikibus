@@ -571,3 +571,16 @@ wbo:maxLoad
     "maksimum yük"@tr,
     "maksymalne obciążenie"@pl ;
 .
+
+wbo:emissionStandard
+  a rdf:Property ;
+  rdfs:label
+    "emission standard"@en,
+    "Emissionsstandard"@de,
+    "norme d'émission"@fr,
+    "norma de emisión"@es,
+    "norma de emissão"@pt,
+    "normativa sulle emissioni"@it,
+    "Emisyon standardı"@tr,
+    "norma emisji"@pl ;
+.
