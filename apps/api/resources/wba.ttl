@@ -558,3 +558,16 @@ wbo:fuelConsumption
     "Yakıt tüketimi"@tr,
     "zużycie paliwa"@pl ;
 .
+
+wbo:maxLoad
+  a rdf:Property ;
+  rdfs:label
+    "max load"@en,
+    "maximale Belastung"@de,
+    "charge maximale"@fr,
+    "carga máxima"@es,
+    "carga máxima"@pt,
+    "carico massimo"@it,
+    "maksimum yük"@tr,
+    "maksymalne obciążenie"@pl ;
+.
