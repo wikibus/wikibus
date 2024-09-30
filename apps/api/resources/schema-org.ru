@@ -54,5 +54,9 @@ GRAPH </wba> {
   schema:enginePower
     rdfs:label "Engine Power"@en ;
   .
+
+  schema:engineDisplacement
+    rdfs:label "Engine Displacement"@en ;
+  .
 }
 }
